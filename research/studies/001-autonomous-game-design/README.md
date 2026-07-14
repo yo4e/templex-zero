@@ -28,12 +28,18 @@ A complete game package containing:
 
 ## Current phase
 
-**Mechanism generation.** No favored game concept has yet been adopted.
+**Prototype comparison / Span implementation.** Relay has been implemented and rejected in its current form. Span v0.1 rules were frozen before implementation or play results on 2026-07-15.
 
-## Files to be added
+## Active prototype
+
+- [`prototypes/span/RULES.md`](prototypes/span/RULES.md) — frozen Span v0.1 baseline
+- Issue #1 — implementation and evaluation work
+
+## Planned study files
 
 - `PROTOCOL.md` — evaluation plan and thresholds
 - `candidates/` — candidate mechanisms and rejection notes
+- `prototypes/` — versioned rules for implemented candidates
 - `src/` — game and agent implementations
 - `experiments/` — reproducible runs and data
 - `analysis/` — interpretation and critique
