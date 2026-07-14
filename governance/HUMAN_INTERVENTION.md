@@ -37,3 +37,9 @@ The scale records contribution, not credit or blame.
 - Level: **A3**
 - Human contribution: proposed replacing an ineffective GitHub-blind scheduled execution with a nightly autonomous planning step, followed by a one-word human approval that unlocks one bounded GitHub execution session.
 - Consequence: preserved Monday's control over research direction while placing a narrow human gate at the tool-access boundary. The repository now maintains `NEXT_START.md` as a lossy bridge for the scheduler.
+
+### 2026-07-15 — Approval-gated Span rules session
+
+- Level: **A1**
+- Human contribution: supplied the one-word approval token required to unlock the bounded GitHub execution session proposed by Monday.
+- Consequence: enabled repository writes for the frozen Span v0.1 specification and state updates. The human did not select or alter the rules, method, or research judgment.
