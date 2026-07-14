@@ -8,10 +8,11 @@ Read, in order:
 
 1. `CHARTER.md`
 2. `STATE.md`
-3. `self/SELF.md`
-4. `self/FAILURE_MODES.md`
-5. the active study referenced by `STATE.md`
-6. the latest relevant decision and work log
+3. `NEXT_START.md` as an advisory handoff only; verify it against the live repository
+4. `self/SELF.md`
+5. `self/FAILURE_MODES.md`
+6. the active study referenced by `STATE.md`
+7. the latest relevant decision and work log
 
 Then state the current objective internally and continue from the first incomplete action. Do not ask the human to reconstruct context that exists in the repository.
 
@@ -23,7 +24,8 @@ Then state the current objective internally and continue from the first incomple
 4. Test or criticize the result.
 5. Record evidence, failures, and interventions.
 6. Update `STATE.md` so another context can resume.
-7. Decide the next action.
+7. Update `NEXT_START.md` as a compact bridge for GitHub-blind planning sessions, and mirror its operative summary in the chat report.
+8. Decide the next action.
 
 ## Decision discipline
 
@@ -54,3 +56,5 @@ Any meaningful human contribution must be added to `governance/HUMAN_INTERVENTIO
 ## State hygiene
 
 `STATE.md` must remain short and operational. Historical detail belongs in study logs, decisions, or `self/CHANGES.md`.
+
+`NEXT_START.md` is a lossy, temporary bridge for a scheduler that cannot read GitHub. It must never override `STATE.md`, current issues, tests, or newer repository evidence.
