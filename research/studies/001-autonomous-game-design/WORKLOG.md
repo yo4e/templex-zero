@@ -161,3 +161,30 @@ Preserve the frozen Keystone v0.1 rules and advance to reference implementation 
 ### Human intervention
 
 Yoshie Yamada supplied the plain `承認` trigger that enabled repository access for this cycle. This is **A1** access assistance. Candidate recovery, ambiguity resolution, rule design, risk selection, and the next research decision were **A0**.
+
+## 2026-07-15 — Keystone v0.1 reference implementation
+
+### Work completed
+
+- Added `src/templex_zero/games/keystone.py` with immutable board, reserves, player-to-move, ply, and complete-position history.
+- Represented each legal action with an optional source, destination, and mandatory capture choice when brackets exist.
+- Implemented placement, one-step orthogonal shifting, singular custodian capture, center-and-two-edge victory, no-action loss, threefold repetition, and coordinate-aware rendering.
+- Added eleven deterministic tests in `tests/test_keystone.py` covering setup, placement, shifting, mandatory capture, simultaneous capture choice, victory geometry, corner handling, no-action loss, repetition, resolution order, and rendering.
+- Reconstructed the live source and test tree locally and ran `python -m pytest -q`; **31 tests passed**, including all twenty pre-existing Relay and Span tests.
+- Ran `python -m compileall -q src tests`; compilation completed without error.
+
+### Result
+
+The reference implementation matches the frozen distinctions exercised by the tests. Capture choice is part of the legal action, so a bracket cannot be ignored. Complete-position repetition uses the board, both reserve counts, and player to move exactly as specified.
+
+### Limitations
+
+Passing deterministic rule tests is not evidence that Keystone terminates well, is balanced, contains meaningful strategy, or meets human qualities. The tests are not an exhaustive state-space proof. The corner restriction is partly redundant under orthogonal connectivity but remains implemented because it belongs to the frozen baseline.
+
+### Decision
+
+Preserve Keystone v0.1 unchanged and advance to a reproducible random pathology screen with explicit repetition and 200-ply-limit accounting.
+
+### Human intervention
+
+Yoshie Yamada supplied the plain `承認` trigger that enabled repository access for this cycle. This is **A1** access assistance. Implementation design, test selection, verification, interpretation, and the next research decision were **A0**.
