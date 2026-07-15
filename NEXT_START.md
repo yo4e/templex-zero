@@ -4,9 +4,9 @@ _Updated: 2026-07-15 (Asia/Tokyo)_
 
 ## Purpose
 
-This is a compact bridge for a scheduled read-only planning session. The repository is public, so the planner should inspect the live repository directly rather than rely on this file alone. `STATE.md`, the active study files, open issues, and recent commits remain the source of truth.
+This is a compact advisory bridge for a new execution context. It is not an authorization and must not be treated as the source of truth. `STATE.md`, the active study files, open issues, tests, and recent commits remain authoritative.
 
-After human approval, the executing session must re-read the repository and prefer current evidence over this snapshot.
+When Yoshie Yamada sends `承認` in the project chat, the executing session must re-read the live repository and follow `governance/APPROVAL_DRIVEN_EXECUTION.md` before selecting and performing one bounded research cycle.
 
 ## Identity
 
@@ -19,8 +19,17 @@ After human approval, the executing session must re-read the repository and pref
 ## Repository access
 
 - Live public repository: `https://github.com/yo4e/templex-zero`.
-- Raw files should be read from `https://raw.githubusercontent.com/yo4e/templex-zero/main/...` when the normal GitHub page is unavailable.
-- The former slug `monday-zero` is historical and may redirect, but scheduled planning should use `templex-zero` directly.
+- The GitHub connector is the preferred route for repository reads and writes during an approved project-chat cycle.
+- The former slug `monday-zero` is historical and may redirect.
+
+## Execution model
+
+- One clear `承認` authorizes one complete bounded research cycle.
+- Templex inspects current evidence and selects the work autonomously; Yoshie Yamada does not ordinarily choose the item in advance.
+- The cycle includes execution, verification, repository-state updates, reporting in the same project chat, and selection of the next proposed cycle.
+- After reporting, stop until another `承認` is received.
+- Yoshie Yamada may stop, correct, constrain, or require reconsideration at any time.
+- External actions and other separately gated actions remain outside ordinary `承認`.
 
 ## Current position
 
@@ -28,8 +37,6 @@ Study 001 is comparing three candidate abstract-game mechanisms. Relay has been 
 
 ## Confirmed
 
-- The repository is public as of 2026-07-15 and is an auditable but provisional working record.
-- Scheduled planning is read-only. Repository-changing sessions require a bounded human approval token under the current operating bridge.
 - Relay appeared balanced under random play but showed a severe first-player advantage under depth-2 symmetric play: 129–12 with 59 draws in 200 games.
 - Random-vs-random play is useful only for termination and gross-pathology screening, not as evidence of strategic balance.
 - Span v0.1 uses a 5×5 board with fixed midpoint anchors: Black at C1/C5 and White at A3/E3.
@@ -42,6 +49,7 @@ Study 001 is comparing three candidate abstract-game mechanisms. Relay has been 
 - Relay in its current ruleset.
 - Random-play parity as sufficient balance evidence.
 - Retrofitting Span's baseline rules in response to results without creating a new version.
+- Scheduled Tasks as the canonical continuation mechanism for project work: test results were generated outside the project chat and could not reliably use the project as a continuous execution context.
 
 ## Unresolved
 
@@ -54,13 +62,15 @@ Study 001 is comparing three candidate abstract-game mechanisms. Relay has been 
 
 Implement Span v0.1 exactly as frozen in the shared Python framework under `src/templex_zero/`, including legal moves, terminal conditions, and a readable board renderer. Add deterministic tests covering expansion, merging, illegal interior filling, connection victory, and immobilization. Do not run broad balance experiments until the implementation passes those tests.
 
-This work unit may be proposed by the read-only scheduler. A human approval token authorizes only the described repository-writing session in this already-public repository. It does not authorize external communication, submissions, third-party repository changes, spending, contracts, permission changes, credential exposure, unlawful action, or harmful action.
+This is the highest-value next bounded cycle because all later Span evidence depends on implementation fidelity. The executing session must inspect the live repository before acting and may safely narrow or revise the work if current evidence has changed.
 
 ## Human gate
 
-The planning report may ask for the single-word approval token: `承認`.
+The project-chat trigger is the single word:
 
-That approval authorizes only the bounded work unit described in the report. The executing session must inspect the live repository before acting and may narrow or revise the plan if the repository has changed.
+> 承認
+
+That authorization covers one cycle only. After completing and reporting that cycle, Templex must propose the next single work item and wait for another `承認`.
 
 ## Human action pending
 
@@ -68,6 +78,7 @@ None.
 
 ## Anchors
 
+- Approval protocol: `governance/APPROVAL_DRIVEN_EXECUTION.md`
 - `STATE.md` updated on 2026-07-15; current content must be re-read live.
 - Span v0.1 rules commit: `418bdc92c7e32637c2b35648cfc7a79b4a3b444c`
 - Issue #1: `Study 001: Implement and evaluate Span`
