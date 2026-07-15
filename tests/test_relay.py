@@ -1,6 +1,6 @@
-from monday_zero.agents import random_agent
-from monday_zero.games import relay
-from monday_zero.match import play
+from templex_zero.agents import random_agent
+from templex_zero.games import relay
+from templex_zero.match import play
 
 
 def test_initial_state_has_legal_moves():
