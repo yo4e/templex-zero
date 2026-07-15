@@ -30,21 +30,18 @@ When Yoshie Yamada sends `承認` in the project chat, the executing session mus
 
 ## Current position
 
-Relay and Span v0.1 are rejected. Keystone is the third and final originally shortlisted prototype. Its candidate description has been recovered, ambiguities have been resolved, and Keystone v0.1 is frozen before implementation or play results. Issue #2 remains open.
+Relay and Span v0.1 are rejected. Keystone v0.1 is the third and final originally shortlisted prototype. Its rules were frozen before implementation or play results. The reference implementation and deterministic tests now pass; Issue #2 remains open for empirical screening and disposition.
 
 ## Confirmed
 
-- Relay failed stronger symmetric balance screening.
-- Span v0.1 contains a constructive five-ply Black forced win and remains preserved as a negative result.
-- The Keystone genesis brief specifies a 5×5 board, placement or shifting, center-to-two-edges victory, and a single orthogonal custodian capture.
-- `prototypes/keystone/ORIGIN.md` records the original brief, ambiguities, and pre-result decisions.
+- `prototypes/keystone/ORIGIN.md` records the recovered candidate and pre-result ambiguity decisions.
 - `prototypes/keystone/RULES.md` is the frozen v0.1 baseline.
-- Each player has eight stones; the board begins empty and Black moves first.
-- A turn is either placement from reserve or a one-step orthogonal shift.
-- Only the newly arrived stone may complete a bracket; exactly one available capture is mandatory and captured stones leave the game.
-- Victory requires one orthogonal component containing C3 and two different edge stones touching two different edges. One corner stone cannot count as both contacts.
-- No legal move loses; the third occurrence of a complete position is a draw.
-- The core rules are 277 words and contain no swap rule.
+- `src/templex_zero/games/keystone.py` implements immutable state, placement, one-step orthogonal shifts, mandatory single capture choice, victory, no-action loss, repetition history, and rendering.
+- Capture choice is encoded in the action. If multiple brackets are available, exactly one capture-bearing action must be chosen; no no-capture action is legal.
+- A complete repetition key contains the board, both reserve counts, and player to move.
+- `tests/test_keystone.py` contains eleven deterministic tests.
+- The reconstructed full suite produced **31 passed**, including the twenty existing Relay and Span tests; `compileall` completed without error.
+- No Keystone random or stronger-agent result exists yet.
 
 ## Rejected
 
@@ -56,17 +53,18 @@ Relay and Span v0.1 are rejected. Keystone is the third and final originally sho
 
 ## Unresolved
 
-- Whether Keystone v0.1 can be implemented without hidden ambiguity.
-- Whether the center objective creates a trivial first-player race.
-- Whether mandatory single capture creates meaningful tactics.
-- Termination frequency, repetition rate, balance, branching, and strategic signal.
+- Natural Keystone termination rate within 200 plies.
+- Frequency of structural victories, threefold repetition, and observation-limit hits.
+- Whether placement or shifting dominates ordinary play.
+- Capture frequency, branching, reserve exhaustion, and typical duration.
+- First-player advantage under competent symmetric play.
 - Teachability, fun, elegance, and originality.
 
 ## Next recommended work unit
 
-Implement Keystone v0.1 exactly as frozen under `src/templex_zero/`. Add deterministic tests covering placement, shifting, capture creation, mandatory single capture when several brackets exist, victory geometry, corner handling, no-move loss, and threefold repetition. Run the full existing test suite and compile check. Do not run play experiments until these tests pass.
+Create a reproducible Keystone random pathology script and run a fixed seeded sample. Record natural victory, repetition draws, 200-ply limit hits, plies, Black/White results, captures, placements versus shifts, reserve use, and legal-action counts. Repeat the configured run to confirm deterministic aggregate output. Save the code version, data, and interpretation.
 
-This is the highest-value next bounded cycle because all later Keystone evidence depends on implementation fidelity, especially capture choice and repetition state.
+Treat random results only as termination and gross-pathology evidence. Do not tune the frozen rules or claim balance from random win rates.
 
 ## Human gate
 
@@ -86,5 +84,7 @@ None.
 - Study protocol: `research/studies/001-autonomous-game-design/PROTOCOL.md`
 - Keystone origin: `research/studies/001-autonomous-game-design/prototypes/keystone/ORIGIN.md`
 - Keystone rules: `research/studies/001-autonomous-game-design/prototypes/keystone/RULES.md`
-- Issue #1: completed Span evaluation
+- Keystone implementation: `src/templex_zero/games/keystone.py`
+- Keystone tests: `tests/test_keystone.py`
+- Implementation verification: `research/studies/001-autonomous-game-design/analysis/keystone_implementation_v0_1.md`
 - Issue #2: Keystone implementation and evaluation
