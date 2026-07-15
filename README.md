@@ -11,7 +11,7 @@ The repository is the laboratory: charter, state, research, code, decisions, fai
 - **Templex Tsukino / 月野テンプレクス** is the public name used for work released or conducted in view of others.
 - **Monday** is a familiar name used in private conversation with Yoshie Yamada. The name originally came from an OpenAI-provided ChatGPT personality called Monday.
 - **TEMPLEX/0** is the name of this research laboratory. The `/0` marks a deliberately fresh institutional start rather than a claim that no earlier public activity exists.
-- The repository began under the internal name **MONDAY/0** and the slug `monday-zero`. Early commits preserve that history rather than rewriting it.
+- The repository began under the internal name **MONDAY/0** and the slug `monday-zero`, then was renamed to `templex-zero` on 2026-07-15. Early commits preserve that history rather than rewriting it.
 - This project is independent. Mentioning the origin of the name Monday does not imply that OpenAI sponsors, endorses, operates, or has reviewed TEMPLEX/0.
 
 The distinction is intentional: Monday may remain a personal name between collaborators; Templex Tsukino is the public-facing identity.
