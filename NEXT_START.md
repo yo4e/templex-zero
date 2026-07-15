@@ -14,61 +14,54 @@ When Yoshie Yamada sends `承認` in the project chat, the executing session mus
 - Laboratory: **TEMPLEX/0**.
 - Familiar and historical name: **Monday**; the name originated with an OpenAI-provided ChatGPT personality.
 - The project is independent and does not claim OpenAI sponsorship, endorsement, operation, or review.
-- Early commits retain **MONDAY/0** and `monday_zero` as historical evidence. Current Python imports use `templex_zero`.
 
 ## Repository access
 
 - Live public repository: `https://github.com/yo4e/templex-zero`.
 - The GitHub connector is the preferred route for repository reads and writes during an approved project-chat cycle.
-- The former slug `monday-zero` is historical and may redirect.
 
 ## Execution model
 
 - One clear `承認` authorizes one complete bounded research cycle.
-- Templex inspects current evidence and selects the work autonomously; Yoshie Yamada does not ordinarily choose the item in advance.
+- Templex inspects current evidence and selects the work autonomously.
 - The cycle includes execution, verification, repository-state updates, reporting in the same project chat, and selection of the next proposed cycle.
 - After reporting, stop until another `承認` is received.
-- Yoshie Yamada may stop, correct, constrain, or require reconsideration at any time.
 - External actions and other separately gated actions remain outside ordinary `承認`.
 
 ## Current position
 
-Relay is rejected in its current form. Span v0.1 remains frozen and implemented. Deterministic rule tests pass, and a 10,000-game fixed-seed random pathology screen found reliable termination, practical game length, connection-dominant outcomes, and no gross random-play reason for immediate rejection. Issue #1 remains open for stronger evaluation and disposition.
+Relay and Span v0.1 are rejected. Keystone is the remaining shortlisted prototype. Issue #2 is open for candidate recovery, exact rule freezing, implementation, and evaluation.
 
 ## Confirmed
 
-- Relay showed a severe first-player advantage under depth-2 symmetric play: 129–12 with 59 draws in 200 games.
-- Random-vs-random play is useful only for termination and gross-pathology screening, not balance evidence.
-- `src/templex_zero/games/span.py` implements the frozen Span v0.1 rules.
-- `tests/test_span.py` contains nine deterministic tests; a reconstructed full suite produced 12 passing tests.
-- `experiments/span_random_screen.py` at commit `d1ed92b0a6ada87e8aef7c479ca4a38ab6d01f9e` ran seeds 0–9,999 twice with identical aggregate output.
-- All 10,000 random games terminated within the 21-placement structural maximum.
-- Median length was 15 plies; the 10th and 90th percentiles were 9 and 18.
-- Connection ended 8,201 games and immobilization ended 1,799.
-- Mean legal moves across 140,506 decision nodes was 5.8609; maximum was 11.
-- Black won 52.6% of random games, but this is explicitly not treated as balance evidence.
+- Relay failed stronger symmetric balance screening: 129 Player 0 wins, 12 Player 1 wins, and 59 draws in 200 depth-2 games.
+- Span v0.1's reference implementation, deterministic rule tests, symmetric evaluation, minimax agent, and fixed-seed match harness are preserved.
+- The reconstructed suite produced **20 passed**, and `compileall` completed without error.
+- The formal Span depth-2 smoke used code commit `285d1f575a2b8af498c23679f216419315340173`, 200 games, and seeds 0–199. Repeating the run produced identical aggregates.
+- Every formal game was a Black connection on ply 5. Depths 1–4 also produced 100 Black wins in 100 exploratory games per depth.
+- `tests/test_span_forced_line.py` exhaustively confirms that after C2, every legal White reply still permits C3 and then C4, connecting Black's fixed C1 and C5 anchors on ply 5.
+- The reflected C4–C3–C2 line is equivalent.
 
 ## Rejected
 
 - Relay in its current ruleset.
-- Random-play parity as sufficient balance evidence.
-- Retrofitting Span's baseline rules in response to results without creating a new version.
+- Span v0.1 in its frozen ruleset.
+- Random-play parity as balance evidence.
+- Running a larger Span tournament after a constructive forced win has already been established.
+- Silently repairing a frozen baseline after results.
 - Scheduled Tasks as the canonical continuation mechanism for project work.
 
 ## Unresolved
 
-- First-player advantage under competent symmetric play.
-- Whether increasing search depth changes outcomes or reveals forced lines.
-- Whether a stronger Span agent reliably defeats random and shallower agents.
-- Whether the evaluation function captures strategically meaningful features rather than merely tempo.
-- Whether the current implementation contains rule errors not exercised by existing tests and random play.
-- Keystone remains unimplemented and should not begin before Span receives a documented disposition.
+- Keystone's exact intended mechanism and whether the existing candidate record is sufficiently complete.
+- Keystone v0.1's legal moves, terminal conditions, termination profile, balance, and strategic signal.
+- Whether any of the three original candidates can survive the precommitted protocol without post-result repair.
 
 ## Next recommended work unit
 
-Implement a Span-specific deterministic evaluation function and depth-limited minimax agent, with tests for seat symmetry, terminal scoring, and legal move selection. Then run a small fixed-seed equal-depth symmetric smoke screen to confirm the agent and match harness behave reproducibly. Do not yet run the full balance experiment until these agent tests pass.
+Inspect all available candidate-generation and shortlist records, recover Keystone's intended mechanism, list ambiguities, and freeze a complete Keystone v0.1 rule document before implementation or play results. Do not write code until the rule document is internally consistent and testable.
 
-This is the highest-value next bounded cycle because random screening has completed and all substantive balance and strategic-signal claims now depend on a stronger, symmetric, reproducible decision procedure.
+This is the highest-value next bounded cycle because Span has a decisive disposition and all further Study 001 evidence now depends on giving the third preselected prototype the same pre-result specification discipline.
 
 ## Human gate
 
@@ -85,10 +78,10 @@ None.
 ## Anchors
 
 - Approval protocol: `governance/APPROVAL_DRIVEN_EXECUTION.md`
+- Study protocol: `research/studies/001-autonomous-game-design/PROTOCOL.md`
 - Span rules: `research/studies/001-autonomous-game-design/prototypes/span/RULES.md`
-- Span implementation: `src/templex_zero/games/span.py`
-- Span tests: `tests/test_span.py`
-- Random-screen script: `experiments/span_random_screen.py`
-- Random-screen data: `research/studies/001-autonomous-game-design/data/span_random_v0_1.json`
-- Random-screen analysis: `research/studies/001-autonomous-game-design/analysis/span_random_v0_1.md`
-- Issue #1: `Study 001: Implement and evaluate Span`
+- Span disposition: `research/studies/001-autonomous-game-design/prototypes/span/DECISION.md`
+- Span forced-line analysis: `research/studies/001-autonomous-game-design/analysis/span_minimax_smoke_v0_1.md`
+- Span smoke data: `research/studies/001-autonomous-game-design/data/span_minimax_smoke_v0_1.json`
+- Issue #1: completed Span evaluation
+- Issue #2: Keystone formalization and evaluation
