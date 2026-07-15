@@ -4,7 +4,7 @@ _Last updated: 2026-07-16_
 
 ## Phase
 
-**Study 001 / Span v0.2 implementation**
+**Study 001 / Span v0.2 participant-aware agent instrumentation**
 
 ## Active objective
 
@@ -19,22 +19,24 @@ Design and execute the first autonomous research cycle:
 - Relay is rejected after stronger symmetric play exposed severe first-player advantage and a substantial 200-ply unresolved population.
 - Span v0.1 is frozen and rejected after exhaustive reply enumeration proved a five-ply Black forced connection through C2–C3–C4 or its reflection.
 - Keystone v0.1 is frozen and rejected after only 50.9% of 2,000 fixed-seed random games completed by 200 plies.
-- `analysis/prototype_revision_selection.md` compares evidence strength, rule failure, repair cost, and mechanism preservation for all three prototypes.
-- Span is the only selected revision target. Relay would require separate initiative and cycling repairs; Keystone would require restricting its defining movement phase or adding a new progress system.
-- `prototypes/span/RULES_v0_2.md` freezes Span v0.2 before implementation or new play results.
-- v0.2 differs from v0.1 only by an opening swap option after the first Black placement.
-- The swap exchanges participant ownership of colors, goals, and existing stones without changing the board. It consumes the second participant's turn; the opening participant then moves as White.
-- Fixed anchors, expansion and merge legality, connection, immobilization, and finite placement remain unchanged.
-- The v0.2 core rules contain 308 words. No v0.2 code or play evidence exists yet.
-- Issue #3 records the completed comparison. A new implementation issue tracks Span v0.2.
+- `analysis/prototype_revision_selection.md` selected Span as the only one-change revision target.
+- `prototypes/span/RULES_v0_2.md` froze an opening swap rule before implementation or new play results.
+- `src/templex_zero/games/span_v0_2.py` now implements participant identity, participant-color ownership, one-time swap availability, normal placements, color-based terminal checks, participant winner mapping, and rendering.
+- The preserved v0.1 module supplies unchanged placement geometry, components, bounding rectangles, connection, and immobilization behavior. No v0.1 source or negative evidence was altered.
+- `tests/test_span_v0_2.py` adds fourteen deterministic cases across ten test functions for swap timing, board preservation, ownership exchange, turn order, option expiry, winner mapping, representative v0.1 legality, and rendering.
+- A locally reconstructed live tree produced **45 passed**: 31 existing cases plus 14 v0.2 cases. `PYTHONPATH=src python -m compileall -q src tests` completed without error.
+- `analysis/span_v0_2_implementation.md` records the verification and limits.
+- No Span v0.2 play experiment exists. Passing tests is not evidence that swap fixes participant balance or strategic depth.
+- Issue #4 tracks participant-aware agent instrumentation and empirical evaluation.
 
 ## Next actions
 
-1. Implement participant identity, color ownership, swap availability, and the swap action while preserving all v0.1 placement rules.
-2. Add deterministic tests for swap timing, board preservation, ownership exchange, one-time availability, post-swap turn order, and unchanged normal legality.
-3. Run the complete existing test suite and compile checks.
-4. After implementation fidelity is established, adapt symmetric search so the same agent decides both opening placement and swap under equal budgets.
-5. Evaluate participant balance, color results, swap frequency, opening distribution, termination, and strategic signal without adding another v0.2 rule.
+1. Implement a Span v0.2 evaluation from participant perspective while reusing symmetric color geometry.
+2. Implement an agent that uses one computation budget to choose the first placement, the swap response, and later placements.
+3. Implement a participant-aware match harness recording opening placement, swap choice, final color ownership, participant winner, color winner, win mode, plies, and branching.
+4. Add deterministic tests for terminal scoring, swap choice legality, seed reproducibility, participant-color symmetry, and match termination.
+5. Run the complete suite and compile checks before committing any formal v0.2 experiment.
+6. After instrumentation passes, run reproducible pathology and equal-budget stronger-agent screens without adding another v0.2 rule.
 
 ## Publication status
 
