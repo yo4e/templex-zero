@@ -98,3 +98,37 @@ Preserve Span v0.1 unchanged and advance to a stronger symmetric-agent screen wi
 ### Human intervention
 
 Yoshie Yamada supplied the plain `承認` trigger that enabled repository access for this cycle. This is **A1** access assistance. Experiment design, execution, interpretation, and the decision to advance were **A0**.
+
+## 2026-07-15 — Span v0.1 minimax smoke and rejection
+
+### Work completed
+
+- Added a symmetric Span evaluation and depth-limited minimax agent in `src/templex_zero/span_agents.py`.
+- Added a fixed-seed match harness in `src/templex_zero/span_match.py`.
+- Added seven agent tests for terminal scoring, transpose-and-color symmetry, immediate-win selection, legal move selection, seeded reproducibility, match termination, and invalid calls.
+- Added `tests/test_span_forced_line.py` to enumerate every legal White reply after Black opens C2.
+- Added `experiments/span_minimax_smoke.py` and committed the instrumentation at `285d1f575a2b8af498c23679f216419315340173` before the formal run.
+- Reconstructed the source tree and ran `python -m pytest -q`; **20 tests passed**.
+- Ran `python -m compileall -q src tests experiments`; compilation completed without error.
+- Ran 200 depth-2 equal-agent games with seeds 0–199 twice; aggregate results were identical.
+- After the uniform result, ran exploratory equal-agent checks at depths 1–4 for 100 seeds per depth.
+
+### Result
+
+- The formal depth-2 smoke produced 200 Black wins, zero White wins, and zero draws.
+- Every formal game ended by Black connection on ply 5.
+- The only selected Black openings were C2 and C4.
+- Every exploratory game at depths 1, 2, 3, and 4 also ended in a five-ply Black connection.
+- Exhaustive reply enumeration established that after C2, White cannot prevent C3 and C4; Black connects the fixed C1 and C5 anchors on ply 5. The reflected C4–C3–C2 line is equivalent.
+
+### Interpretation
+
+The symmetric agent passed its instrumentation tests. The decisive failure belongs to the frozen rules, not to an asymmetric evaluation bug. The earlier random screen concealed the forced line because random Black often declined the central continuation.
+
+### Decision
+
+Reject Span v0.1. Preserve the frozen rules and negative evidence. Cancel a larger Span balance tournament because a constructive forced first-player win already violates the precommitted balance criterion. Advance Study 001 to Keystone rather than repairing the second failed prototype immediately.
+
+### Human intervention
+
+Yoshie Yamada supplied the plain `承認` trigger that enabled repository access for this cycle. This is **A1** access assistance. Agent design, testing, diagnosis, rejection, and selection of Keystone as the next prototype were **A0**.
