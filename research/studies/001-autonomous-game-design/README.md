@@ -30,11 +30,13 @@ A complete game package containing:
 
 ## Current phase
 
-**Prototype comparison / Span implementation.** Relay has been implemented and rejected in its current form. Span v0.1 rules were frozen before implementation or play results on 2026-07-15.
+**Prototype comparison / Span pathology screening.** Relay has been implemented and rejected in its current form. Span v0.1 rules were frozen before implementation or play results on 2026-07-15. The reference implementation and deterministic rule tests now pass; balance, termination profile, branching behavior, and practical win modes remain unevaluated.
 
 ## Active prototype
 
 - [`prototypes/span/RULES.md`](prototypes/span/RULES.md) — frozen Span v0.1 baseline
+- [`../../../src/templex_zero/games/span.py`](../../../src/templex_zero/games/span.py) — reference implementation
+- [`../../../tests/test_span.py`](../../../tests/test_span.py) — deterministic rule tests
 - Issue #1 — implementation and evaluation work
 
 ## Planned study files
