@@ -26,50 +26,55 @@ When Yoshie Yamada sends `承認` in the project chat, the executing session mus
 
 ## Current position
 
-Relay, Span v0.1, and Keystone v0.1 are rejected in their tested forms.
+Relay, Span v0.1, and Keystone v0.1 are rejected in their tested forms. A common comparison selected **Span v0.2** as the only revision target.
 
-- **Relay:** stronger symmetric play showed severe first-player advantage and substantial unresolved games; one rule would not address both symptoms.
-- **Span v0.1:** exhaustive reply enumeration proved a Black connection win on ply 5, but random termination and practical duration were sound.
-- **Keystone v0.1:** only 50.9% of 2,000 random games completed by 200 plies; fixing the post-reserve movement phase would require a larger redesign.
+Span v0.2 is now implemented but has not been empirically evaluated.
 
-A common comparison selected **Span v0.2** as the only revision target. The decision is recorded in `analysis/prototype_revision_selection.md`.
+- Frozen rules: `research/studies/001-autonomous-game-design/prototypes/span/RULES_v0_2.md`
+- Implementation: `src/templex_zero/games/span_v0_2.py`
+- Tests: `tests/test_span_v0_2.py`
+- Verification: `research/studies/001-autonomous-game-design/analysis/span_v0_2_implementation.md`
+- Tracking issue: Issue #4
 
-## Frozen Span v0.2
+## Confirmed Span v0.2 behavior
 
-- Rules: `research/studies/001-autonomous-game-design/prototypes/span/RULES_v0_2.md`
-- Frozen before implementation or new play results on 2026-07-16.
-- The only rule change from v0.1 is an opening swap option.
-- First participant makes one normal Black placement.
-- Second participant either makes one normal White placement or swaps sides.
-- A swap exchanges participant ownership of colors, goals, and all existing stones without changing the board.
-- The swap consumes the second participant's turn; the opening participant, now White, moves next.
-- No further swap is available.
-- Anchors, expansion, merger, victory, immobilization, and finite termination are unchanged.
-- Core rules: 308 words.
-- No v0.2 implementation or play result exists yet.
+- The preserved v0.1 module remains unchanged.
+- Initial board, anchors, expansion, merger, connection, immobilization, and finite placement are inherited from v0.1.
+- State separately tracks the participant to move and each participant's current color.
+- After the first Black placement, the second participant may make a normal White placement or choose the singleton `SWAP` action.
+- Swap leaves the board and placement count unchanged.
+- Swap exchanges participant-color ownership, consumes one turn, and gives the opening participant the next move as White.
+- A normal White response or a swap permanently removes the option.
+- Terminal results are detected by color and mapped back to participant identity.
+- Rendering preserves the coordinate board and adds ownership, turn, and swap status.
+- The reconstructed suite produced **45 passed**: 31 existing cases and 14 v0.2 cases.
+- `compileall` completed without error.
+- No v0.2 agent, match harness, random result, or stronger-agent result exists.
 
-## Rejected revision paths
+## Rejected shortcuts
 
-- Relay swap-only repair: does not address the 200-ply unresolved population.
-- Relay repetition-only repair: does not address the initiative advantage.
-- Span anchor changes or C2/C4 opening bans: overly tailored to the observed line and lack a principled replacement geometry.
-- Keystone arbitrary ply draw: reclassifies censorship without creating progress.
-- Keystone movement restriction or new score: changes its defining reversible-control mechanism or adds substantial bookkeeping.
-- Multiple simultaneous v0.2 projects.
+- Editing the v0.1 module in place.
+- Recoloring stones during swap.
+- Reporting balance by Black and White alone.
+- Giving a separate heuristic or budget to the swap decision.
+- Adding an opening ban, altered anchors, komi, draw rule, or second balancing device.
+- Treating passing rule tests as balance evidence.
 
 ## Next recommended work unit
 
-Implement frozen Span v0.2 under `src/templex_zero/` while separating participant identity from color ownership. Add deterministic tests for:
+Build participant-aware Span v0.2 search and match instrumentation.
 
-- swap availability only after the first Black placement;
-- normal White placement expiring the swap option;
-- unchanged board and stones after swap;
-- exchanged participant-color ownership;
-- the opening participant moving next as White;
-- swap being unavailable thereafter;
-- unchanged v0.1 expansion, merge, connection, and immobilization behavior.
+Required properties:
 
-Run the full existing test suite and compile checks. Do not run balance experiments until implementation fidelity is established.
+- one symmetric evaluation and computation budget for the opening placement, swap choice, and all later actions;
+- terminal scores from participant perspective, not fixed color perspective;
+- legal selection between normal placements and swap;
+- deterministic seeded tie-breaking;
+- explicit match records for opening placement, swap use, final ownership, participant winner, color winner, win mode, plies, and branching;
+- deterministic tests for participant-color symmetry, immediate wins, legal swap decisions, seed reproducibility, and complete match termination;
+- full existing regression and compile checks.
+
+Do not run the formal v0.2 balance screen until the instrumentation tests pass.
 
 ## Human gate
 
@@ -91,5 +96,5 @@ None.
 - Span v0.1 rules: `research/studies/001-autonomous-game-design/prototypes/span/RULES.md`
 - Span v0.1 disposition: `research/studies/001-autonomous-game-design/prototypes/span/DECISION.md`
 - Span v0.2 rules: `research/studies/001-autonomous-game-design/prototypes/span/RULES_v0_2.md`
-- Issue #3: completed prototype comparison
-- New implementation issue: Span v0.2 implementation and evaluation
+- Span v0.2 verification: `research/studies/001-autonomous-game-design/analysis/span_v0_2_implementation.md`
+- Issue #4: Span v0.2 implementation and evaluation
