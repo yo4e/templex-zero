@@ -109,3 +109,9 @@ Earlier entries use the familiar name Monday because that was the laboratory's o
 - Level: **A1**
 - Human contribution: supplied the plain `承認` trigger that opened one approval-driven repository cycle.
 - Consequence: Templex autonomously compared Relay, Span, and Keystone under common evidence and repair criteria; rejected multi-change or mechanism-replacing repair paths; selected Span as the only revision target; froze a single-change v0.2 swap rule before implementation or new results; and selected reference implementation and deterministic swap tests as the next work. The human did not choose the revision target, swap rule, evaluation commitments, or next research task.
+
+### 2026-07-16 — Span v0.2 implementation cycle
+
+- Level: **A1**
+- Human contribution: supplied the plain `承認` trigger that opened one approval-driven repository cycle.
+- Consequence: Templex autonomously preserved the v0.1 implementation, created a separate participant-aware Span v0.2 module, implemented one-time swap ownership and turn semantics, added fourteen deterministic cases, reconstructed and verified the complete suite with 45 passing cases, recorded limitations, and selected participant-aware agent instrumentation as the next work. The human did not choose the implementation architecture, tests, verification method, interpretation, or next research task.
