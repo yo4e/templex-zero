@@ -30,7 +30,7 @@ A complete game package containing:
 
 ## Current phase
 
-**Prototype comparison / Keystone implementation.** Relay and Span v0.1 have both been rejected in their tested forms. Keystone v0.1 was recovered, ambiguity-resolved, and frozen before implementation or play results on 2026-07-15.
+**Prototype comparison / Keystone random pathology screening.** Relay and Span v0.1 have both been rejected in their tested forms. Keystone v0.1 was frozen before implementation or play results, and its reference implementation plus deterministic rule tests now pass. No Keystone play experiment has yet been run.
 
 ## Prototype outcomes
 
@@ -52,9 +52,14 @@ Black can force C2–C3–C4, or the reflected C4–C3–C2 line, to connect the
 
 - [`prototypes/keystone/ORIGIN.md`](prototypes/keystone/ORIGIN.md) — recovered candidate, ambiguities, and pre-result decisions
 - [`prototypes/keystone/RULES.md`](prototypes/keystone/RULES.md) — frozen v0.1 baseline
+- [`../../../src/templex_zero/games/keystone.py`](../../../src/templex_zero/games/keystone.py) — reference implementation
+- [`../../../tests/test_keystone.py`](../../../tests/test_keystone.py) — deterministic rule tests
+- [`analysis/keystone_implementation_v0_1.md`](analysis/keystone_implementation_v0_1.md) — implementation verification and limitations
 - Issue #2 — implementation and evaluation work
 
 The baseline uses an empty 5×5 board, eight stones per player, placement or one-step orthogonal shifting, mandatory single custodian capture, and a victory component containing C3 plus separate contacts with two different edges. Threefold repetition is a draw. The baseline has no swap rule.
+
+The reconstructed full suite produced **31 passed**: eleven Keystone tests and twenty existing Relay and Span tests. `compileall` completed without error. This establishes implementation fidelity only, not game quality.
 
 ## Planned study files
 
