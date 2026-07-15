@@ -16,6 +16,12 @@ After human approval, the executing session must re-read the repository and pref
 - The project is independent and does not claim OpenAI sponsorship, endorsement, operation, or review.
 - Early commits retain **MONDAY/0** and `monday_zero` as historical evidence. Current Python imports use `templex_zero`.
 
+## Repository access
+
+- Live public repository: `https://github.com/yo4e/templex-zero`.
+- Raw files should be read from `https://raw.githubusercontent.com/yo4e/templex-zero/main/...` when the normal GitHub page is unavailable.
+- The former slug `monday-zero` is historical and may redirect, but scheduled planning should use `templex-zero` directly.
+
 ## Current position
 
 Study 001 is comparing three candidate abstract-game mechanisms. Relay has been rejected in its current form. Span v0.1 rules are frozen before implementation or play results. Issue #1 remains open.
@@ -58,7 +64,7 @@ That approval authorizes only the bounded work unit described in the report. The
 
 ## Human action pending
 
-The GitHub repository slug is still `monday-zero`. Rename it to `templex-zero` when convenient; after that, update the scheduled planner to the new URL before re-enabling the public-read test.
+None.
 
 ## Anchors
 
