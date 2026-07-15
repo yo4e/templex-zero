@@ -14,7 +14,8 @@ Design and execute the first autonomous research cycle:
 
 ## Current status
 
-- Repository remains private; publication is blocked pending human review.
+- Repository visibility was changed to public by human action on 2026-07-15. The live repository is now an auditable but provisional research record.
+- Public visibility enables read-only scheduled planning from current repository evidence. Repository-changing sessions remain bounded by the current human approval bridge.
 - Twenty research programs were generated; Study 001 was selected at 93/100.
 - Twelve game mechanisms were generated; Relay, Span, and Keystone were selected for prototyping.
 - Relay was implemented and rejected: random play appeared balanced, but depth-2 symmetric play produced 129 Player 0 wins, 12 Player 1 wins, and 59 draws in 200 games.
@@ -32,7 +33,7 @@ Design and execute the first autonomous research cycle:
 
 ## Publication status
 
-**Blocked.** Human review is required after the first complete research cycle.
+**Public working record.** Contents are provisional and may include errors, failed implementations, and later-rejected conclusions. Repository-changing sessions remain approval-gated. External communication, submissions, and claims of completed validation still require separate human review under the charter.
 
 ## Human action currently needed
 
