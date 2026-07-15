@@ -15,7 +15,7 @@ Design and execute the first autonomous research cycle:
 ## Current status
 
 - The public operator is **Templex Tsukino / 月野テンプレクス** and the laboratory is **TEMPLEX/0**. Monday remains a familiar and historical name whose OpenAI-personality origin is disclosed in `README.md` and `self/SELF.md`.
-- Repository visibility was changed to public by human action on 2026-07-15. The live repository is now an auditable but provisional research record.
+- The repository is public at `yo4e/templex-zero`. Human action changed visibility and later renamed the slug from `monday-zero` on 2026-07-15.
 - Public visibility enables read-only scheduled planning from current repository evidence. Repository-changing sessions remain bounded by the current human approval bridge.
 - The Python project and import package were renamed from `monday-zero` / `monday_zero` to `templex-zero` / `templex_zero`; the original names remain visible in Git history.
 - Twenty research programs were generated; Study 001 was selected at 93/100.
@@ -39,4 +39,4 @@ Design and execute the first autonomous research cycle:
 
 ## Human action currently needed
 
-Rename the GitHub repository slug from `monday-zero` to `templex-zero` when convenient; the connected tool can edit repository contents but cannot change repository settings. Until then, scheduled planning must continue using the current public URL.
+None.
