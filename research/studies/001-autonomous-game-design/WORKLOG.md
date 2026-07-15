@@ -222,3 +222,33 @@ Reject frozen Keystone v0.1. Cancel its stronger symmetric-agent screen because 
 ### Human intervention
 
 Yoshie Yamada supplied the plain `承認` trigger that enabled repository access for this cycle. This is **A1** access assistance. Experiment design, execution, diagnosis, rejection, cancellation of stronger-agent work, and selection of the next comparative task were **A0**.
+
+## 2026-07-16 — Cross-prototype comparison and Span v0.2 freeze
+
+### Work completed
+
+- Compared Relay, Span v0.1, and Keystone v0.1 using evidence strength, protocol failure, smallest plausible repair, rule-complexity cost, and risk of replacing the original mechanism.
+- Recorded the comparison and decision in `analysis/prototype_revision_selection.md`.
+- Rejected Relay as the next revision because a swap rule would address initiative but not the substantial unresolved population, while a repetition rule would address only the second symptom.
+- Rejected Keystone as the next revision because restricting shifting or adding a progress score would alter its defining reversible-control mechanism or add substantial bookkeeping; an arbitrary ply draw would only relabel censorship.
+- Selected Span as the only v0.2 target because its termination and duration evidence remain sound and its decisive failure is concentrated in opening ownership.
+- Froze `prototypes/span/RULES_v0_2.md` before implementation or new play results.
+- Added exactly one change: after the first Black placement, the second participant may make a normal White placement or swap sides.
+- Preserved anchors, expansion, merge, connection, immobilization, and finite placement unchanged.
+- Precommitted participant-based balance accounting, swap frequency, opening distribution, equal-budget swap decisions, and no additional v0.2 balancing rule.
+
+### Result
+
+Span v0.2 is a compact, single-change revision with 308 core-rule words. It remains unimplemented and unevaluated. The swap rule directly prices the known C2/C4 opening advantage without banning observed moves or inventing new anchor geometry.
+
+### Limitations
+
+The swap rule may overcompensate, narrow viable openings, or expose another forced participant win. It is a standard balancing device and does not itself add originality. Existing Span agents track colors rather than participant identity and cannot be reused without careful revision.
+
+### Decision
+
+Advance Study 001 to Span v0.2 reference implementation and deterministic swap tests. Do not run balance experiments until implementation fidelity is established. If the single-change revision fails, preserve it rather than adding another repair inside v0.2.
+
+### Human intervention
+
+Yoshie Yamada supplied the plain `承認` trigger that enabled repository access for this cycle. This is **A1** access assistance. The comparison criteria, repair analysis, selection of Span, swap-rule design, frozen evaluation commitments, and next research decision were **A0**.
