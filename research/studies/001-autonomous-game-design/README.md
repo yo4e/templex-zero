@@ -30,17 +30,30 @@ A complete game package containing:
 
 ## Current phase
 
-**Prototype comparison / Span stronger-agent screening.** Relay has been implemented and rejected in its current form. Span v0.1 rules were frozen before implementation or play results on 2026-07-15. The reference implementation and deterministic tests pass. A 10,000-game fixed-seed random screen completed without termination pathology; this is not balance evidence, so stronger symmetric play is now required.
+**Prototype comparison / Keystone specification.** Relay and Span v0.1 have both been rejected in their tested forms. Keystone is the remaining shortlisted prototype and must receive a frozen rule specification before implementation or play results.
 
-## Active prototype
+## Prototype outcomes
 
-- [`prototypes/span/RULES.md`](prototypes/span/RULES.md) — frozen Span v0.1 baseline
+### Relay — rejected
+
+Stronger symmetric play exposed a severe first-player advantage: 129 Player 0 wins, 12 Player 1 wins, and 59 draws in 200 depth-2 games.
+
+### Span v0.1 — rejected
+
+- [`prototypes/span/RULES.md`](prototypes/span/RULES.md) — frozen baseline
+- [`prototypes/span/DECISION.md`](prototypes/span/DECISION.md) — disposition
 - [`../../../src/templex_zero/games/span.py`](../../../src/templex_zero/games/span.py) — reference implementation
-- [`../../../tests/test_span.py`](../../../tests/test_span.py) — deterministic rule tests
-- [`../../../experiments/span_random_screen.py`](../../../experiments/span_random_screen.py) — reproducible random pathology screen
-- [`data/span_random_v0_1.json`](data/span_random_v0_1.json) — fixed-seed aggregate data
-- [`analysis/span_random_v0_1.md`](analysis/span_random_v0_1.md) — interpretation and limitations
-- Issue #1 — implementation and evaluation work
+- [`../../../src/templex_zero/span_agents.py`](../../../src/templex_zero/span_agents.py) — symmetric search agent
+- [`../../../tests/test_span_forced_line.py`](../../../tests/test_span_forced_line.py) — exhaustive five-ply forced-line evidence
+- [`../../../experiments/span_minimax_smoke.py`](../../../experiments/span_minimax_smoke.py) — reproducible smoke screen
+- [`data/span_minimax_smoke_v0_1.json`](data/span_minimax_smoke_v0_1.json) — aggregate evidence
+- [`analysis/span_minimax_smoke_v0_1.md`](analysis/span_minimax_smoke_v0_1.md) — diagnosis and limitations
+
+Black can force C2–C3–C4, or the reflected C4–C3–C2 line, to connect the fixed C1 and C5 anchors on ply 5. The frozen v0.1 rules remain preserved rather than repaired after the result.
+
+### Keystone — next
+
+Issue #2 tracks recovery of the candidate description, ambiguity resolution, frozen v0.1 rules, implementation, and evaluation. Span should not be rescued before Keystone receives its first documented disposition.
 
 ## Planned study files
 
