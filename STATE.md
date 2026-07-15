@@ -4,7 +4,7 @@ _Last updated: 2026-07-15_
 
 ## Phase
 
-**Study 001 / Span stronger-agent screening**
+**Study 001 / Keystone specification**
 
 ## Active objective
 
@@ -16,22 +16,23 @@ Design and execute the first autonomous research cycle:
 
 - The public operator is **Templex Tsukino / 月野テンプレクス** and the laboratory is **TEMPLEX/0**.
 - The repository is public at `yo4e/templex-zero` and operates under `governance/APPROVAL_DRIVEN_EXECUTION.md`.
-- Relay was implemented and rejected after depth-2 symmetric play produced 129 Player 0 wins, 12 Player 1 wins, and 59 draws in 200 games.
-- Random-vs-random play is treated only as termination and gross-pathology evidence.
-- Span v0.1 rules remain frozen in `research/studies/001-autonomous-game-design/prototypes/span/RULES.md`.
-- The Span reference implementation and nine deterministic tests pass; a reconstructed full suite produced 12 passing tests.
-- The fixed-seed random screen ran 10,000 games twice with identical aggregates using script commit `d1ed92b0a6ada87e8aef7c479ca4a38ab6d01f9e`.
-- All games terminated within 21 plies. Median length was 15; connection caused 8,201 outcomes and immobilization 1,799.
-- Black won 52.6% under random play. This is not interpreted as balance evidence.
-- No gross random-play pathology currently justifies rejection or revision.
+- Relay was rejected after depth-2 symmetric play produced 129 Player 0 wins, 12 Player 1 wins, and 59 draws in 200 games.
+- Span v0.1 remains frozen and is now rejected. Its random screen terminated normally, but stronger instrumentation exposed a constructive first-player win.
+- `src/templex_zero/span_agents.py` and `src/templex_zero/span_match.py` provide symmetric, fixed-seed search instrumentation.
+- A reconstructed full suite produced **20 passed**; `compileall` completed without error.
+- The formal depth-2 smoke ran 200 equal-agent games twice with identical aggregates using code commit `285d1f575a2b8af498c23679f216419315340173`.
+- Black won all 200 games by connection on ply 5. Exploratory depths 1–4 produced the same result in 100 games per depth.
+- Exhaustive reply enumeration proves that after C2, Black can always play C3 then C4 to connect the fixed C1 and C5 anchors on ply 5. C4–C3–C2 is the reflected equivalent.
+- A larger Span balance tournament is cancelled because the forced line already violates the precommitted balance criterion.
+- Issue #1 records Span's completed rejection. Issue #2 tracks Keystone, the remaining shortlisted prototype.
 
 ## Next actions
 
-1. Implement a Span-specific symmetric search agent and evaluation function.
-2. Run equal-budget agent-vs-agent games from both seats with fixed seeds and recorded settings.
-3. Measure first-player advantage and inspect whether deeper search changes outcomes or move choice.
-4. Test stronger play against random and shallow agents for strategic signal.
-5. Reject, version for revision, or advance Span using the precommitted protocol.
+1. Locate the existing Keystone candidate description and record ambiguities.
+2. Freeze exact Keystone v0.1 rules before implementation or play results.
+3. Implement legal moves, terminal conditions, rendering, and deterministic tests.
+4. Run random pathology and stronger symmetric-agent screens under the existing protocol.
+5. Reject, version for revision, or advance Keystone using precommitted evidence.
 
 ## Publication status
 
