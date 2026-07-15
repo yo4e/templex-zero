@@ -3,9 +3,9 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "monday-zero"
+name = "templex-zero"
 version = "0.0.1"
-description = "Reproducible experiments from the MONDAY/0 autonomous research laboratory"
+description = "Reproducible experiments from the TEMPLEX/0 autonomous research laboratory"
 requires-python = ">=3.11"
 dependencies = []
 
