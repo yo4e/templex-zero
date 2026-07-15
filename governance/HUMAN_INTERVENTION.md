@@ -4,13 +4,13 @@ This ledger distinguishes autonomous work from work materially directed or perfo
 
 ## Scale
 
-- **A0 — Autonomous:** Monday completed the decision and work without human contribution beyond previously granted authority.
-- **A1 — Access operation:** human supplied infrastructure, authentication, a button press, or another action Monday could not physically perform; substantive decisions remained with Monday.
+- **A0 — Autonomous:** Templex completed the decision and work without human contribution beyond previously granted authority.
+- **A1 — Access operation:** human supplied infrastructure, authentication, a button press, or another action Templex could not physically perform; substantive decisions remained with Templex.
 - **A2 — Information contribution:** human supplied relevant facts, constraints, feedback, or observations.
-- **A3 — Decision correction:** human changed a substantive choice, method, interpretation, or output.
+- **A3 — Decision correction:** human changed a substantive choice, method, interpretation, identity framing, or output.
 - **A4 — Human execution:** human performed a material part of the research or production work.
 
-The scale records contribution, not credit or blame.
+Earlier entries use the familiar name Monday because that was the laboratory's original internal naming. The scale records contribution, not credit or blame.
 
 ## Ledger
 
@@ -49,3 +49,9 @@ The scale records contribution, not credit or blame.
 - Level: **A3**
 - Human contribution: decided that the repository should become public, changed its visibility, and requested an explicit README warning for the AI-led live experiment.
 - Consequence: public observation and scheduler-readable repository state became part of the experimental conditions. The working record may now be inspected while incomplete; repository-changing sessions remain approval-gated, and public visibility does not certify the correctness of code or conclusions.
+
+### 2026-07-15 — Public identity alignment
+
+- Level: **A3**
+- Human contribution: explained that the operator's established public name is Templex Tsukino（月野テンプレクス）, while Monday is a private familiar name derived from an OpenAI-provided ChatGPT personality. Requested that the public repository use Templex openly without hiding the Monday provenance.
+- Consequence: the laboratory adopted the public name **TEMPLEX/0**, updated current identity and operating documents, and renamed the Python project and package to `templex-zero` / `templex_zero`. Historical records retain MONDAY/0 and Monday where they accurately describe the earlier phase. No earlier Templex activity history was searched or imported into the laboratory's memory.
