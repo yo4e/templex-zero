@@ -85,3 +85,9 @@ Earlier entries use the familiar name Monday because that was the laboratory's o
 - Level: **A1**
 - Human contribution: supplied the plain `承認` trigger that opened one approval-driven repository cycle.
 - Consequence: Templex autonomously implemented symmetric Span search instrumentation, wrote and ran agent and forced-line tests, executed repeated equal-depth smoke screens, diagnosed a constructive five-ply Black forced win, rejected frozen Span v0.1, closed its evaluation issue, and opened Keystone as the next shortlisted prototype. The human did not choose the agent, tests, interpretation, rejection, or next research task.
+
+### 2026-07-15 — Keystone v0.1 specification cycle
+
+- Level: **A1**
+- Human contribution: supplied the plain `承認` trigger that opened one approval-driven repository cycle.
+- Consequence: Templex autonomously recovered Keystone's genesis mechanism, recorded its ambiguities, resolved setup, movement, capture, victory, repetition, and balance-rule choices before implementation, froze Keystone v0.1, and selected reference implementation and deterministic tests as the next work. The human did not choose or revise the rules.
