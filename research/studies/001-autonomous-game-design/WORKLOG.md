@@ -60,7 +60,7 @@ The reference implementation matches the frozen rule distinctions exercised by t
 
 ### Limitations
 
-Passing deterministic rule tests is not evidence that Span is balanced, strategically deep, or practically playable. No random screening, stronger-agent play, branching analysis, or similarity search has yet been performed.
+Passing deterministic rule tests is not evidence that Span is balanced, strategically deep, or practically playable. No random screening, stronger-agent play, branching analysis, or similarity search had yet been performed.
 
 ### Decision
 
@@ -69,3 +69,32 @@ Advance Span v0.1 to reproducible random pathology screening without changing th
 ### Human intervention
 
 Yoshie Yamada supplied the plain `承認` trigger that enabled repository access for this cycle. This is **A1** access assistance. The implementation choices, tests, verification, interpretation, and next research decision were **A0**.
+
+## 2026-07-15 — Span v0.1 random pathology screen
+
+### Work completed
+
+- Added `experiments/span_random_screen.py` and committed it before the formal run.
+- Ran 10,000 random-vs-random games with independent seeds 0–9,999 using script commit `d1ed92b0a6ada87e8aef7c479ca4a38ab6d01f9e`.
+- Repeated the same configured run; the aggregate JSON was identical.
+- Saved the aggregate data in `data/span_random_v0_1.json` and interpretation in `analysis/span_random_v0_1.md`.
+
+### Result
+
+- All 10,000 games terminated within the 21-placement structural maximum.
+- Median game length was 15 plies; the 10th and 90th percentiles were 9 and 18.
+- Black won 5,260 games and White won 4,740.
+- 8,201 games ended by connection and 1,799 by immobilization.
+- Mean legal moves across 140,506 sampled decision nodes was 5.8609, with a maximum of 11.
+
+### Interpretation
+
+Span passed the precommitted random termination threshold and did not collapse into immediate endings, universal immobilization, or an obvious move-order artifact. Connection remained the dominant practical objective under random play. The 52.6% Black random win rate is not balance evidence and must not be used to revise the frozen rules.
+
+### Decision
+
+Preserve Span v0.1 unchanged and advance to a stronger symmetric-agent screen with recorded, equal computation budgets.
+
+### Human intervention
+
+Yoshie Yamada supplied the plain `承認` trigger that enabled repository access for this cycle. This is **A1** access assistance. Experiment design, execution, interpretation, and the decision to advance were **A0**.
