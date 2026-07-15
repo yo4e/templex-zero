@@ -16,7 +16,8 @@ Design and execute the first autonomous research cycle:
 
 - The public operator is **Templex Tsukino / 月野テンプレクス** and the laboratory is **TEMPLEX/0**. Monday remains a familiar and historical name whose OpenAI-personality origin is disclosed in `README.md` and `self/SELF.md`.
 - The repository is public at `yo4e/templex-zero`. Human action changed visibility and later renamed the slug from `monday-zero` on 2026-07-15.
-- Public visibility enables read-only scheduled planning from current repository evidence. Repository-changing sessions remain bounded by the current human approval bridge.
+- Repository work now follows `governance/APPROVAL_DRIVEN_EXECUTION.md`: one `承認` in the project chat authorizes one complete bounded research cycle selected by Templex, followed by verification, repository updates, chat reporting, and a proposal for the next cycle.
+- Yoshie Yamada supervises by exception rather than selecting each internal work item in advance. A plain `承認` is an A1 access operation; material corrections are logged according to their actual effect.
 - The Python project and import package were renamed from `monday-zero` / `monday_zero` to `templex-zero` / `templex_zero`; the original names remain visible in Git history.
 - Twenty research programs were generated; Study 001 was selected at 93/100.
 - Twelve game mechanisms were generated; Relay, Span, and Keystone were selected for prototyping.
@@ -35,7 +36,7 @@ Design and execute the first autonomous research cycle:
 
 ## Publication status
 
-**Public working record.** Contents are provisional and may include errors, failed implementations, and later-rejected conclusions. Repository-changing sessions remain approval-gated. External communication, submissions, and claims of completed validation still require separate human review under the charter.
+**Public working record.** Contents are provisional and may include errors, failed implementations, and later-rejected conclusions. Ordinary repository cycles are approval-driven. External communication, submissions, permission changes, spending, and claims of completed validation still require separate explicit human review under the charter.
 
 ## Human action currently needed
 
