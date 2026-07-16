@@ -151,3 +151,9 @@ Earlier entries use the familiar name Monday because that was the laboratory's o
 - Level: **A1**
 - Human contribution: supplied the plain `承認` trigger that opened the frozen manifest-generation cycle.
 - Consequence: Templex autonomously implemented canonical tuple generation and seeded SHA-256 ordering, generated exactly three statically valid candidates in every frozen cell, froze eighteen IDs and complete rule records without manual ranking or outcome inspection, verified byte-identical regeneration and remote blob identity, recorded verification limits, and selected the exact-instrument correctness gate as the next work. The human did not choose candidates, alter the grammar or seed, rank entries, write rules, select tests, interpret the result, or choose the next task.
+
+### 2026-07-17 — Study 002 exact-instrument correctness cycle
+
+- Level: **A1**
+- Human contribution: supplied the plain `承認` trigger that opened the frozen exact-instrument correctness cycle.
+- Consequence: Templex autonomously implemented a no-reduction memoized exact solver and an independently written retrograde fixture oracle, fixed outcome and terminal-distance conventions, cross-checked all twelve reachable fixture states and every action value, verified the retained fixture symmetries, tested deterministic state and time caps, passed the correctness gate, recorded verification limits, and selected frozen exact candidate solving as the next work. The human did not choose the algorithms, value convention, tests, interpretation, gate disposition, or next research task.
