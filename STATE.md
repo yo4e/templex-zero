@@ -4,7 +4,7 @@ _Last updated: 2026-07-16_
 
 ## Phase
 
-**No active study / Study 002 proposal frozen, awaiting activation approval**
+**Study 002 active / exact-first setup complete / cycle 1 of at most 6**
 
 ## Laboratory
 
@@ -15,54 +15,63 @@ _Last updated: 2026-07-16_
 
 ## Study 001
 
-Study 001 is closed with a negative research conclusion. Its final synthesis is:
+Study 001 remains closed with a negative research conclusion. Its final synthesis is:
 
 - `research/studies/001-autonomous-game-design/REPORT.md`
 
-Do not alter the closed study except to correct factual or technical errors. Do not create Span v0.3 or continue its candidate repair under the old protocol.
+Do not alter it except to correct factual or technical errors. Do not create Span v0.3 or continue its candidate repair.
 
-## Study 002 go / no-go result
+## Study 002 objective
 
-A bounded go/no-go assessment compared four directions:
+> Can Templex Tsukino build and use an exact-analysis pipeline that measures when random and shallow symmetric play misrepresent the opening structure of autonomously generated compact deterministic placement games?
 
-1. exact-first screening of generated finite games;
-2. prior-art and convergence mapping;
-3. human playability and teachability evaluation;
-4. repository CI and reproducibility hardening as a standalone study.
+The active protocol is:
 
-The decision is **GO** only for a separately scoped exact-first methodological study. It has the highest immediate information value, directly tests Study 001's strongest lesson, requires no external service or human subject, produces a reusable solver artifact, and can return a valid positive, negative, or null result.
+- `research/studies/002-exact-first-screening/PROTOCOL.md`
 
-The frozen proposal is:
+It was activated without changing the frozen proposal at:
 
 - `research/proposals/STUDY_002_EXACT_FIRST_SCREENING.md`
+- final proposal commit `68fc4c2edb93ca1363e7b7040221b5507cfeb171`
 
-Study 002 is not active yet. The proposal does not authorize experiments.
+## Cycle 1 completed
 
-## Frozen proposal summary
+- Created the active protocol and six-cycle accounting.
+- Defined a declarative placement-game schema with immutable states, legal placement, adjacency growth, expansion/merger, local enemy limits, connection, line, component, and fixture-only pattern goals.
+- Candidate validation enforces 3×3/4×4 full boards, intended symmetry, placement-only rules, fixture-only explicit features, and a 250-word ceiling.
+- Froze generation seed `2026071602`.
+- Froze two board sizes, three mechanism families, exactly three candidates per cell, SHA-256 seeded ordering, canonical tuple serialization, and no manual replacement.
+- Defined four hand-audited reachable state graphs: immediate win, exhausted-action draw, branching winners, and adjacency chain.
+- Added machine-readable fixtures and deterministic schema/graph tests.
+- Did **not** generate an 18-entry manifest, implement the exact solver, or inspect any candidate outcome.
 
-- Research question: can exact opening analysis measure when random and shallow symmetric play misrepresent generated compact placement games?
-- Candidate set: exactly 18 placement-only games; 9 on 3×3, 9 on 4×4, with exactly three candidates in every board-size × mechanism-family cell.
-- Candidate selection: seeded deterministic enumeration, static canonicalization, no manual ranking or replacement.
-- Instrument: generic declarative engine, memoized exact solver, independent brute-force fixture enumerator, symmetry checks.
-- Exact resource caps: 2,000,000 states and 30 measured seconds per candidate; 25,000,000 states total, consumed in frozen manifest order.
-- Continuation requirement: at least 12 of 18 candidates solved exactly.
-- Comparison: 2,000 random games and 200 equal-agent games at depths 1–3 per candidate.
-- Primary output: exact/approximate disagreement, including pre-defined false-reassurance cases.
-- Maximum duration: six approval-driven execution cycles after activation.
-- Out of scope: game-quality claims, prior-art claims, human playtesting, candidate polishing, a second grammar, paid compute, or external services.
+## Verification
+
+- Local reconstruction: `python -m pytest -q` → **10 passed** for the new Study 002 tests.
+- Local reconstruction: `python -m compileall -q src tests` → no errors.
+- Git blob hashes for the remote schema, fixture, grammar, and two test files exactly matched the locally tested files.
+- A fresh repository clone failed because the execution environment could not resolve `github.com`; the pre-existing full suite was therefore not rerun in this cycle.
+- The repository still has no recorded GitHub Actions workflow.
+
+## Frozen study boundaries
+
+- Exactly 18 candidates: 9 on 3×3, 9 on 4×4, three per board-size × family cell.
+- Placement only; no movement, capture, swap, chance, scoring, repetition, or pass.
+- Manifest selected by static validation and seeded SHA-256 order only.
+- Exact caps: 2,000,000 states and 30 seconds per candidate; 25,000,000 states total in manifest order.
+- At least 12 exact solutions required.
+- Random screen: 2,000 games per candidate.
+- Shallow screen: 200 equal-agent games at depths 1, 2, and 3 per candidate.
+- Maximum six approval-driven cycles including final synthesis.
+- No second grammar, candidate polishing, prior-art search, human playtest, paid compute, or external solver.
 
 ## Next actions
 
-On a later `承認`, if the proposal remains uncorrected:
-
-1. activate Study 002 without changing the frozen proposal;
-2. create the active protocol from the proposal commitments;
-3. define and test the declarative rule schema;
-4. define four hand-audited exact-solver fixtures and expected state graphs;
-5. freeze the candidate grammar, deterministic enumeration rule, and generation seed;
-6. do not generate or evaluate the 18 candidates in that first execution cycle.
-
-External publication, promotion, submissions, spending, permission changes, third-party actions, and human-subject activity remain separately gated.
+1. Implement the already frozen deterministic tuple enumerator and canonical serializer.
+2. Generate exactly three valid entries in each of the six cells.
+3. Freeze all 18 canonical tuples, identifiers, generated rule text, word counts, and static validation records in a manifest.
+4. Test repeat generation for byte-identical output and reject duplicate or out-of-scope entries.
+5. Do not implement the exact solver or run random, shallow, or exact candidate play in that cycle.
 
 ## Human action currently needed
 
