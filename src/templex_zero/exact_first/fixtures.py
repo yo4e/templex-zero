@@ -129,7 +129,7 @@ ADJACENCY_CHAIN = AuditedFixture(
         },
         "p1:3:XX#O": {"terminal": "win:0", "actions": {}},
     },
-    symmetry_claim="transpose plus player/color exchange",
+    symmetry_claim=None,
 )
 
 
