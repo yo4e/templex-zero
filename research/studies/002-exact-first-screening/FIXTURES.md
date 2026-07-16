@@ -110,7 +110,7 @@ Purpose: verify explicit fixture openings, later friendly-adjacency legality, im
 - Later placements must have exactly one orthogonally adjacent friendly stone
 - Participant 0 wins with `A1+B1`
 - Participant 1 wins with `B1+B2`
-- Intended symmetry: transpose plus participant/color exchange
+- Intended symmetry: not claimed; the L-shaped playable mask is not invariant under transpose
 
 Graph:
 
@@ -130,7 +130,7 @@ Before any Study 002 candidate is solved, the future exact instrument must:
 1. reproduce these four reachable graphs exactly;
 2. agree with a separately implemented brute-force enumerator;
 3. agree on root outcome, terminal distance, and every opening-action value;
-4. verify the stated symmetry on every reachable state of Fixtures 1, 2, and 4;
-5. treat Fixture 3 as intentionally asymmetric rather than forcing a false symmetry assertion.
+4. verify the stated symmetry on every reachable state of Fixtures 1 and 2;
+5. treat Fixtures 3 and 4 as intentionally asymmetric rather than forcing false symmetry assertions.
 
 If disagreement remains after one bounded implementation-debugging cycle, Study 002 closes as an instrument failure.
