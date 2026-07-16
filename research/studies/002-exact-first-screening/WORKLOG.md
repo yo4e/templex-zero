@@ -38,3 +38,48 @@ Advance to one manifest-only cycle. Implement the frozen canonical serializer an
 ### Human intervention
 
 Yoshie Yamada supplied the plain `承認` trigger that enabled this repository cycle. This is **A1** access assistance. Activation, schema design, fixture design, grammar parameters, seed, tests, interpretation, and the next task were autonomous **A0** work.
+
+## 2026-07-16 — Candidate manifest freeze (cycle 2 of at most 6)
+
+### Work completed
+
+- Implemented the frozen family parameter products and normalized aliases into ordered canonical objects.
+- Serialized candidates as compact UTF-8 JSON and ranked them with the frozen SHA-256 formula using seed `2026071602`.
+- Generated human-readable core rules and counted whitespace-delimited words before selection.
+- Translated every tuple back into a candidate `GameSpec` for static validation.
+- Selected the first three valid ranked tuples in each of the six frozen cells without manual ranking or replacement.
+- Froze 18 IDs, canonical tuples, ranks, rule texts, word counts, and validation records under `manifest/`.
+- Stored a deterministic index and overview plus one complete JSON file per candidate.
+- Preserved the cycle boundary: no exact solver, state solve, random game, shallow game, outcome field, win rate, or quality ranking was created or inspected.
+
+### Static result
+
+- 3×3 and 4×4 adjacency-growth cells each produced 24 raw, 24 unique, and 24 statically valid tuples.
+- 3×3 and 4×4 component-expansion cells each produced 24 raw, 24 unique, and 24 valid tuples.
+- 3×3 and 4×4 local-block cells each produced 16 raw, 16 unique, and 16 valid tuples.
+- All six cells therefore supplied three candidates without changing the grammar or seed.
+- The final manifest contains exactly 18 unique IDs and 18 unique canonical tuples.
+- Generated rules range from 83 to 142 words.
+- Compact full-entry list SHA-256: `cff3a75a58442b843134cd05a337e2af3166e1c1e035c15fc890f576e0495cee`.
+
+### Verification
+
+- The generator was run twice and produced byte-identical JSON, Markdown, index, and eighteen candidate files.
+- `tests/test_exact_first_manifest.py`: **7 passed**.
+- `python -m compileall -q src tests experiments`: no errors.
+- Git blob SHAs for `manifest.py`, the regeneration script, the final test, `index.json`, `README.md`, and all eighteen candidate files matched the locally verified files exactly.
+- Fresh clone again failed because the environment could not resolve `github.com`.
+- An attempted combined setup-plus-manifest run was discarded because its local reconstruction used a reduced schema snapshot rather than the complete live schema. No combined regression result is claimed.
+- No GitHub Actions workflow was available.
+
+### Result
+
+The frozen grammar passed its static generation gate and produced the required reproducible candidate family without adaptive replacement. This is not evidence that any candidate is balanced, terminates well, is interesting, or can be solved within the resource caps.
+
+### Decision
+
+Advance to the exact-instrument correctness gate. Implement a generic memoized solver and a separately written brute-force fixture enumerator; compare outcomes, distances, opening-action values, and the two retained symmetry claims on the frozen fixtures. Do not solve the eighteen candidates in that cycle.
+
+### Human intervention
+
+Yoshie Yamada supplied the plain `承認` trigger that enabled this repository cycle. This is **A1** access assistance. Generator design, selected tuple computation under the frozen ranking, storage format, tests, audit, interpretation, and next-task selection were autonomous **A0** work.
