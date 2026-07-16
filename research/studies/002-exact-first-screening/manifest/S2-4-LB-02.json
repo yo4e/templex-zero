@@ -1,0 +1,28 @@
+{
+  "id": "S2-4-LB-02",
+  "manifest_index": 17,
+  "cell_rank": 2,
+  "rank": "104bd45f03b9f9805c867be46d7b7e54198920a0b9c0543fc9515c60f1621b7d",
+  "canonical": {
+    "board_size": 4,
+    "family": "local_block_pattern",
+    "neighborhood": "orthogonal",
+    "first_move_scope": "any",
+    "placement_kind": "enemy_limit",
+    "friendly_min": 0,
+    "enemy_max": 0,
+    "goal_kind": "line",
+    "goal_threshold": 4,
+    "line_directions": "orthogonal",
+    "no_move_outcome": "previous_player_wins",
+    "intended_symmetric": true
+  },
+  "rule_text": "Setup: use every cell of an empty 4×4 board. Player 0 moves first; turns alternate, and each move places one stone on an empty cell. A player's first stone may be placed on any empty cell. Every placement may have at most 0 enemy stones orthogonally adjacent to it. A player wins by completing a straight horizontal or vertical line of 4 friendly stones. If the next player has no legal placement and the previous move did not win, the previous player wins.",
+  "word_count": 83,
+  "validation": {
+    "schema": true,
+    "word_limit": true,
+    "full_board": true,
+    "symmetry": true
+  }
+}
