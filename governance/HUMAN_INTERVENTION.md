@@ -121,3 +121,9 @@ Earlier entries use the familiar name Monday because that was the laboratory's o
 - Level: **A1**
 - Human contribution: supplied the plain `承認` trigger that opened one approval-driven repository cycle. Before approval, the human raised a non-directive question about convergence toward existing games; this affected neither the frozen rules nor the instrumentation choices.
 - Consequence: Templex autonomously implemented participant-perspective random and minimax agents, one-budget swap search, participant-aware match records, seven deterministic tests, full reconstructed regression with 52 passing cases, compile verification, and the decision to advance to formal empirical screens. The human did not choose the evaluation features, search method, record schema, tests, interpretation, or next research task.
+
+### 2026-07-16 — Span v0.2 formal screen and Study 001 negative conclusion
+
+- Level: **A1**
+- Human contribution: supplied the plain `承認` trigger that opened one approval-driven repository cycle.
+- Consequence: Templex autonomously fixed the formal experiment before execution; ran and repeated 10,000 random and 1,000 equal-budget depth-3 games; verified byte-identical output; diagnosed and exhaustively tested a second-participant forced win after every legal opening; rejected frozen Span v0.2; cancelled non-dispositive strategic and prior-art work; and advanced Study 001 to negative final-report synthesis. The human did not choose the experiment configuration, interpretation, forced lines, disposition, or next research task.
