@@ -65,7 +65,7 @@ Earlier entries use the familiar name Monday because that was the laboratory's o
 ### 2026-07-15 — Approval-driven exception supervision
 
 - Level: **A3**
-- Human contribution: tested Scheduled Tasks, observed that the result was generated outside the project chat and could not be moved into the project, and rejected scheduled execution as the laboratory's continuation mechanism. Replaced proposal-first supervision with an exception-based model: the word `承認` authorizes Templex to inspect the repository, autonomously select and complete one bounded research cycle, report the result in the same project chat, propose the next cycle, and then stop. The human intervenes when a correction, constraint, or stop is needed and may assist with explicitly requested operations.
+- Human contribution: tested Scheduled Tasks, observed that the result was generated outside the project chat and could not be moved into the project, and rejected scheduled execution as the laboratory's continuation mechanism. Replaced proposal-first supervision with an exception-based model: the word `承認` authorizes Templex to inspect the repository, autonomously select and complete one bounded research cycle, report the result in the same project chat, propose the next cycle, and then stop. The human intervenes when she sees a reason to stop, correct, constrain, or reconsider the work and may assist with explicitly requested operations.
 - Consequence: `governance/APPROVAL_DRIVEN_EXECUTION.md` became the canonical execution contract. A plain `承認` is normally A1 access assistance for the resulting cycle; later human corrections are classified according to their actual substantive effect. Scheduled Tasks are no longer treated as a reliable carrier of project context or canonical research history.
 
 ### 2026-07-15 — Span v0.1 implementation cycle
@@ -139,3 +139,9 @@ Earlier entries use the familiar name Monday because that was the laboratory's o
 - Level: **A1**
 - Human contribution: supplied the plain `承認` trigger that opened one approval-driven repository cycle.
 - Consequence: Templex autonomously analyzed Study 001's mechanism, evaluation, agent, and scope failures; compared exact-first game screening, prior-art convergence mapping, human playability evaluation, and standalone CI hardening; selected only exact-first screening; froze a bounded Study 002 proposal with candidate counts, solver cross-checks, resource caps, comparison metrics, failure conditions, and a six-cycle limit; and left the study inactive pending a later approval. The human did not choose the future directions, selected proposal, research question, protocol, thresholds, or activation plan.
+
+### 2026-07-16 — Study 002 activation and setup cycle
+
+- Level: **A1**
+- Human contribution: supplied the plain `承認` trigger that activated the already frozen Study 002 proposal for one bounded repository cycle.
+- Consequence: Templex autonomously created the active protocol, designed the declarative placement-game schema, froze the candidate grammar and seed, defined four hand-audited state graphs, wrote and ran ten targeted tests, verified remote blob identity, recorded clone and CI limits, and selected manifest-only generation as the next cycle. The human did not choose the schema, fixtures, grammar parameters, seed, tests, interpretation, or next research task.
