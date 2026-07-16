@@ -1,0 +1,198 @@
+{
+  "configuration": {
+    "board_size": 5,
+    "code_version": "edac024671aeb380472e0a6a58a8eb35a134e124",
+    "manual_exclusions": 0,
+    "maximum_action_plies": 22,
+    "maximum_placements": 21,
+    "minimax_depth": 3,
+    "minimax_games": 1000,
+    "python_version": "3.13.5",
+    "random_games": 10000,
+    "seed_start": 0
+  },
+  "determinism": {
+    "byte_identical": true,
+    "runs": 2,
+    "sha256": "93f55d3c5e9cacf86aec7bbecdf351fc661f2f5ecbfdefb1f7e05c08482e56d2"
+  },
+  "disposition": "reject Span v0.2; conclude Study 001 negatively after final report synthesis",
+  "exhaustive_opening_diagnosis": {
+    "all_openings_losing_for_first_participant": true,
+    "central_openings": {
+      "C2": {
+        "first_reply_nodes": 6,
+        "forced_finish": "C3-C4",
+        "response": "swap",
+        "second_reply_nodes": 42
+      },
+      "C4": {
+        "first_reply_nodes": 6,
+        "forced_finish": "C3-C2",
+        "response": "swap",
+        "second_reply_nodes": 42
+      }
+    },
+    "legal_openings": ["B1", "D1", "C2", "C4", "B5", "D5"],
+    "outer_openings": {
+      "B1": {
+        "first_reply_nodes": 7,
+        "forced_finish": "C3-D3",
+        "response": "B3",
+        "second_reply_nodes": 51
+      },
+      "B5": {
+        "first_reply_nodes": 7,
+        "forced_finish": "C3-D3",
+        "response": "B3",
+        "second_reply_nodes": 51
+      },
+      "D1": {
+        "first_reply_nodes": 7,
+        "forced_finish": "C3-B3",
+        "response": "D3",
+        "second_reply_nodes": 51
+      },
+      "D5": {
+        "first_reply_nodes": 7,
+        "forced_finish": "C3-B3",
+        "response": "D3",
+        "second_reply_nodes": 51
+      }
+    },
+    "regression_test": "tests/test_span_v0_2_forced_second_participant.py"
+  },
+  "experiment": "span-v0.2-formal-screen",
+  "random_screen": {
+    "branching": {
+      "decision_nodes": 141916,
+      "maximum": 11,
+      "mean": 5.932784182192282,
+      "median": 6.0,
+      "minimum": 1
+    },
+    "color_results": {
+      "black": 5260,
+      "black_rate": 0.526,
+      "white": 4740,
+      "white_rate": 0.474
+    },
+    "final_ownership": {
+      "first_black_second_white": 8590,
+      "first_white_second_black": 1410
+    },
+    "games": 10000,
+    "opening_moves": {
+      "B1": 1735,
+      "B5": 1699,
+      "C2": 1586,
+      "C4": 1648,
+      "D1": 1678,
+      "D5": 1654
+    },
+    "opening_responses": {
+      "A2": 1373,
+      "A4": 1412,
+      "B3": 1426,
+      "D3": 1467,
+      "E2": 1439,
+      "E4": 1473,
+      "swap": 1410
+    },
+    "participant_results": {
+      "first": 5198,
+      "first_rate": 0.5198,
+      "second": 4802,
+      "second_rate": 0.4802
+    },
+    "placements": {
+      "maximum": 21,
+      "mean": 14.0506,
+      "median": 15.0,
+      "minimum": 5
+    },
+    "plies": {
+      "maximum": 22,
+      "mean": 14.1916,
+      "median": 15.0,
+      "minimum": 5,
+      "p10": 9.0,
+      "p90": 18.0
+    },
+    "swap": {
+      "count": 1410,
+      "rate": 0.141
+    },
+    "win_modes": {
+      "connection": 8201,
+      "immobilization": 1799
+    },
+    "within_200_plies": 10000
+  },
+  "symmetric_minimax_screen": {
+    "branching": {
+      "decision_nodes": 6000,
+      "maximum": 9,
+      "mean": 7.3501666666666665,
+      "median": 7.0,
+      "minimum": 6
+    },
+    "color_results": {
+      "black": 0,
+      "black_rate": 0.0,
+      "white": 1000,
+      "white_rate": 1.0
+    },
+    "depth": 3,
+    "final_ownership": {
+      "first_black_second_white": 1000,
+      "first_white_second_black": 0
+    },
+    "games": 1000,
+    "opening_moves": {
+      "B1": 257,
+      "B5": 252,
+      "D1": 246,
+      "D5": 245
+    },
+    "opening_responses": {
+      "B3": 509,
+      "D3": 491
+    },
+    "participant_results": {
+      "first": 0,
+      "first_rate": 0.0,
+      "second": 1000,
+      "second_rate": 1.0
+    },
+    "placements": {
+      "maximum": 6,
+      "mean": 6,
+      "median": 6.0,
+      "minimum": 6
+    },
+    "plies": {
+      "maximum": 6,
+      "mean": 6,
+      "median": 6.0,
+      "minimum": 6,
+      "p10": 6.0,
+      "p90": 6.0
+    },
+    "swap": {
+      "count": 0,
+      "rate": 0
+    },
+    "terminal_signatures": {
+      "B1|B3|P2|W|6": 257,
+      "B5|B3|P2|W|6": 252,
+      "D1|D3|P2|W|6": 246,
+      "D5|D3|P2|W|6": 245
+    },
+    "win_modes": {
+      "connection": 1000,
+      "immobilization": 0
+    },
+    "within_200_plies": 1000
+  }
+}
