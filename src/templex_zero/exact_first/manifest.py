@@ -276,8 +276,10 @@ def generate_rule_text(candidate: Mapping[str, Any]) -> str:
             f"{relation} a friendly component and {joined}."
         )
     else:
+        enemy_max = candidate["enemy_max"]
+        enemy_noun = "stone" if enemy_max == 1 else "stones"
         placement = (
-            f"Every placement may have at most {candidate['enemy_max']} enemy stones "
+            f"Every placement may have at most {enemy_max} enemy {enemy_noun} "
             f"{relation} it."
         )
     goal = _goal_text(candidate)
@@ -392,19 +394,15 @@ def manifest_object() -> dict[str, Any]:
                 "id": item.candidate_id,
                 "manifest_index": item.manifest_index,
                 "cell_rank": item.cell_rank,
-                "board_size": candidate["board_size"],
-                "family": candidate["family"],
                 "rank": item.rank,
                 "canonical": candidate,
-                "canonical_json": item.canonical_json,
                 "rule_text": item.rule_text,
                 "word_count": item.word_count,
                 "validation": {
-                    "schema_valid": True,
-                    "word_limit_valid": item.word_count <= 250,
-                    "full_board": len(item.spec.playable_cells)
-                    == item.spec.board_size**2,
-                    "intended_symmetric": item.spec.intended_symmetric,
+                    "schema": True,
+                    "word_limit": item.word_count <= 250,
+                    "full_board": len(item.spec.playable_cells) == item.spec.board_size**2,
+                    "symmetry": item.spec.intended_symmetric,
                 },
             }
         )
@@ -414,7 +412,8 @@ def manifest_object() -> dict[str, Any]:
         selected_ids = [
             entry["id"]
             for entry in entries
-            if entry["board_size"] == board_size and entry["family"] == family.value
+            if entry["canonical"]["board_size"] == board_size
+            and entry["canonical"]["family"] == family.value
         ]
         cells.append(
             {
@@ -446,6 +445,8 @@ def manifest_object() -> dict[str, Any]:
 
 
 def manifest_json() -> str:
+    """Return one deterministic combined representation for hashing and inspection."""
+
     return json.dumps(manifest_object(), ensure_ascii=False, indent=2) + "\n"
 
 
@@ -466,24 +467,53 @@ def manifest_markdown() -> str:
         "|---:|---|---:|---|---:|---:|---|",
     ]
     for entry in manifest["entries"]:
+        canonical = entry["canonical"]
         lines.append(
-            f"| {entry['manifest_index']} | `{entry['id']}` | {entry['board_size']}×{entry['board_size']} "
-            f"| `{entry['family']}` | {entry['cell_rank']} | {entry['word_count']} "
+            f"| {entry['manifest_index']} | `{entry['id']}` | {canonical['board_size']}×{canonical['board_size']} "
+            f"| `{canonical['family']}` | {entry['cell_rank']} | {entry['word_count']} "
             f"| `{entry['rank']}` |"
         )
-    for entry in manifest["entries"]:
-        lines.extend(
-            [
-                "",
-                f"## {entry['id']}",
-                "",
-                entry["rule_text"],
-                "",
-                f"- Word count: `{entry['word_count']}`",
-                f"- Seeded rank: `{entry['rank']}`",
-                f"- Canonical JSON: `{entry['canonical_json']}`",
-                "- Static validation: schema valid, full board, intended symmetry, word limit valid",
-            ]
-        )
-    lines.append("")
+    lines.extend(
+        [
+            "",
+            "Each complete canonical tuple, generated rule text, word count, rank, and static validation record is stored in the same directory as `<ID>.json`.",
+            "",
+        ]
+    )
     return "\n".join(lines)
+
+
+def manifest_files() -> dict[str, str]:
+    """Return the complete frozen manifest as deterministic relative file contents."""
+
+    manifest = manifest_object()
+    files: dict[str, str] = {}
+    summaries = []
+    for entry in manifest["entries"]:
+        filename = f"{entry['id']}.json"
+        files[filename] = json.dumps(entry, ensure_ascii=False, indent=2) + "\n"
+        summaries.append(
+            {
+                "id": entry["id"],
+                "file": filename,
+                "manifest_index": entry["manifest_index"],
+                "cell_rank": entry["cell_rank"],
+                "rank": entry["rank"],
+                "word_count": entry["word_count"],
+                "canonical_sha256": sha256(
+                    canonical_json(entry["canonical"]).encode("utf-8")
+                ).hexdigest(),
+            }
+        )
+    index = {
+        "manifest_version": manifest["manifest_version"],
+        "generation_seed": manifest["generation_seed"],
+        "selection": manifest["selection"],
+        "entry_count": manifest["entry_count"],
+        "entries_sha256": manifest["entries_sha256"],
+        "cells": manifest["cells"],
+        "entries": summaries,
+    }
+    files["index.json"] = json.dumps(index, ensure_ascii=False, indent=2) + "\n"
+    files["README.md"] = manifest_markdown()
+    return dict(sorted(files.items()))
