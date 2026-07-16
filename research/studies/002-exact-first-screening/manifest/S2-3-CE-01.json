@@ -1,0 +1,28 @@
+{
+  "id": "S2-3-CE-01",
+  "manifest_index": 4,
+  "cell_rank": 1,
+  "rank": "01160e75f65a7cf8a6b87074e1e4ea415d5f0477c1ab1409026e207c061383ec",
+  "canonical": {
+    "board_size": 3,
+    "family": "component_expansion",
+    "neighborhood": "king",
+    "first_move_scope": "home_edge",
+    "placement_kind": "expand_or_merge",
+    "allow_expand": true,
+    "allow_merge": false,
+    "goal_kind": "component_size",
+    "goal_neighborhood": "king",
+    "goal_threshold": 3,
+    "no_move_outcome": "previous_player_wins",
+    "intended_symmetric": true
+  },
+  "rule_text": "Setup: use every cell of an empty 3×3 board. Player 0 moves first; turns alternate, and each move places one stone on an empty cell. Player 0's first stone must be on the top row; Player 1's first stone must be on the left column. After that player's first stone, a placement is legal only if it is within one king move of a friendly component and it lies outside the pre-move bounding rectangle of at least one such component. A player wins when one friendly group connected through king-move adjacency contains at least 3 stones. If the next player has no legal placement and the previous move did not win, the previous player wins.",
+  "word_count": 115,
+  "validation": {
+    "schema": true,
+    "word_limit": true,
+    "full_board": true,
+    "symmetry": true
+  }
+}
