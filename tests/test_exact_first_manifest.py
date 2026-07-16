@@ -6,6 +6,7 @@ from pathlib import Path
 from templex_zero.exact_first import grammar
 from templex_zero.exact_first.manifest import (
     canonical_json,
+    manifest_files,
     manifest_json,
     manifest_markdown,
     manifest_object,
@@ -15,7 +16,9 @@ from templex_zero.exact_first.manifest import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-STUDY_DIR = ROOT / "research" / "studies" / "002-exact-first-screening"
+MANIFEST_DIR = (
+    ROOT / "research" / "studies" / "002-exact-first-screening" / "manifest"
+)
 
 
 def test_each_frozen_cell_has_enough_distinct_static_candidates():
@@ -83,12 +86,11 @@ def test_manifest_generation_is_byte_identical_and_self_consistent():
 
 
 def test_committed_manifest_files_equal_regeneration():
-    assert (STUDY_DIR / "CANDIDATE_MANIFEST.json").read_text(
-        encoding="utf-8"
-    ) == manifest_json()
-    assert (STUDY_DIR / "CANDIDATE_MANIFEST.md").read_text(
-        encoding="utf-8"
-    ) == manifest_markdown()
+    expected = manifest_files()
+    actual_names = {path.name for path in MANIFEST_DIR.iterdir() if path.is_file()}
+    assert actual_names == set(expected)
+    for filename, content in expected.items():
+        assert (MANIFEST_DIR / filename).read_text(encoding="utf-8") == content
 
 
 def test_no_game_state_or_outcome_fields_appear_in_manifest():
