@@ -4,48 +4,58 @@ _Last updated: 2026-07-16_
 
 ## Phase
 
-**Study 001 / negative conclusion and final report synthesis**
+**No active study / Study 001 closed**
 
-## Active objective
+## Laboratory
 
-Design and execute the first autonomous research cycle:
+- Public operator: **Templex Tsukino / 月野テンプレクス**
+- Laboratory: **TEMPLEX/0**
+- Repository: `yo4e/templex-zero`
+- Execution model: `governance/APPROVAL_DRIVEN_EXECUTION.md`
 
-> Can Templex Tsukino independently design a compact, original abstract strategy game whose rules are easy to learn and whose automated play indicates meaningful strategic depth and reasonable balance?
+## Study 001 result
 
-## Current status
+Study 001 asked whether Templex could independently design a compact deterministic two-player abstract strategy game whose automated play showed meaningful strategic depth and reasonable balance.
 
-- The public operator is **Templex Tsukino / 月野テンプレクス** and the laboratory is **TEMPLEX/0**.
-- The repository is public at `yo4e/templex-zero` and operates under `governance/APPROVAL_DRIVEN_EXECUTION.md`.
-- Relay is rejected after stronger symmetric play exposed severe first-player advantage and a substantial 200-ply unresolved population.
-- Span v0.1 is frozen and rejected after exhaustive reply enumeration proved a five-ply Black forced connection through C2–C3–C4 or its reflection.
-- Keystone v0.1 is frozen and rejected after only 50.9% of 2,000 fixed-seed random games completed by 200 plies.
-- Span v0.2 is frozen and rejected after a formal equal-budget screen and exhaustive opening diagnosis proved a second-participant forced win after every legal first placement.
-- `experiments/span_v0_2_formal_screen.py` was committed before execution at `edac024671aeb380472e0a6a58a8eb35a134e124`.
-- The configured run used 10,000 random games and 1,000 depth-3 symmetric minimax games, then repeated the complete run.
-- Both outputs were byte-identical with SHA-256 `93f55d3c5e9cacf86aec7bbecdf351fc661f2f5ecbfdefb1f7e05c08482e56d2`.
-- Random play completed all games and appeared near-even by participant: 5,198 first-participant wins and 4,802 second-participant wins. This remains pathology evidence only.
-- Symmetric depth-3 play produced 0 first-participant wins and 1,000 second-participant wins. Every game ended by White connection after six placements; no game used swap.
-- The exhaustive regression covers all six legal openings. C2/C4 lose after swap to the known Black central line; B1/B5/D1/D5 lose to White B3–C3–D3 or its reflection.
-- Formal data: `data/span_v0_2_formal.json`.
-- Analysis: `analysis/span_v0_2_formal.md`.
-- Disposition: `prototypes/span/DECISION_v0_2.md`.
-- All selected prototypes and the one reasonable single-change revision have failed decisive protocol criteria.
-- Study 001 therefore has a negative research conclusion. No surviving game supports the target claim.
-- Strategic-signal tournaments and prior-art review for Span v0.2 are cancelled because the forced participant win is already decisive.
-- The new exhaustive test passed in a local reconstruction. The previous 52-case full suite had passed before this cycle; no game or agent source changed during the formal screen. The repository has no GitHub Actions workflow.
+The study is closed with a **negative research conclusion**.
+
+- Relay was rejected after equal depth-2 play produced 129 first-player wins, 12 second-player wins, and 59 unresolved 200-ply games.
+- Span v0.1 was rejected after exhaustive reply enumeration proved a five-ply Black connection through C2–C3–C4 or its reflection.
+- Keystone v0.1 was rejected after only 50.9% of 2,000 fixed-seed random games completed by 200 plies.
+- Span v0.2, the only selected one-change revision, was rejected after equal depth-3 play produced 1,000 second-participant wins and exhaustive analysis proved every legal opening loses for the first participant.
+
+The final synthesis is:
+
+- `research/studies/001-autonomous-game-design/REPORT.md`
+
+Supporting material remains in the study's rules, implementations, tests, experiment scripts, machine-readable data, analyses, decisions, and work log.
+
+## What Study 001 established
+
+- A complete autonomous loop can generate mechanisms, freeze rules, implement them, run seeded experiments, detect misleading metrics, construct counterexamples, preserve negative evidence, and stop against its own artifact.
+- Random parity is useful for pathology screening but was repeatedly anti-diagnostic for balance.
+- Version freezing and explicit stop rules prevented unbounded post-result repair.
+- No design survived with evidence sufficient for the target claim.
+
+## What remains unresolved
+
+Study 001 did not establish fun, elegance, actual teachability, human strategic depth, accessibility, genuine originality, or equivalence to existing games. Prior-art review was not performed because no candidate reached the viability stage required for an originality claim.
+
+## Verification status
+
+- Key formal scripts were committed before execution and recorded seeds, configurations, and code versions.
+- Later configured runs were repeated with identical aggregate or byte-identical output.
+- Deterministic tests covered rule distinctions and constructive Span forcing lines.
+- The repository had no GitHub Actions workflow; verification relied on locally reconstructed live files.
+- The final Span v0.2 forced-opening test passed locally. A single fresh-checkout 53-case run was not recorded, though the prior 52-case suite had passed and no game or agent source changed during the final formal screen.
 
 ## Next actions
 
-1. Write `research/studies/001-autonomous-game-design/REPORT.md` as the final synthesis.
-2. Separate direct evidence, bounded inference, unresolved human qualities, and methodological lessons.
-3. Summarize why random parity repeatedly concealed decisive structural defects.
-4. State clearly that Study 001 did not produce a viable game, while preserving the value of its reproducible falsification process.
-5. Close the study without creating Span v0.3 or another unplanned prototype inside the same protocol.
-6. After the report, decide whether a separately scoped Study 002 is justified; do not treat it as an automatic continuation.
-
-## Publication status
-
-**Public working record.** Contents are provisional until the final report is synthesized. External communication, submissions, permission changes, spending, and claims of completed validation remain separately gated.
+1. Do not alter Study 001 except to correct factual or technical errors.
+2. Do not create Span v0.3 or silently continue candidate repair under the closed protocol.
+3. On a later approval, inspect the closed report and decide whether a separately scoped Study 002 is justified.
+4. If a Study 002 proposal is justified, draft its question, boundaries, stopping rules, and protocol before beginning experiments.
+5. External publication, promotion, submissions, spending, or permission changes remain separately gated.
 
 ## Human action currently needed
 
