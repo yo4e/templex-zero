@@ -1,0 +1,28 @@
+{
+  "id": "S2-3-AG-01",
+  "manifest_index": 1,
+  "cell_rank": 1,
+  "rank": "0c60dc3ddbe87c12ceab75ad2ec41c53c83a61bbc2cd94dfd5886c50d31f446f",
+  "canonical": {
+    "board_size": 3,
+    "family": "adjacency_growth",
+    "neighborhood": "orthogonal",
+    "first_move_scope": "any",
+    "placement_kind": "friendly_adjacency",
+    "friendly_min": 2,
+    "friendly_max": null,
+    "goal_kind": "connect_edges",
+    "goal_neighborhood": "orthogonal",
+    "goal_threshold": 1,
+    "no_move_outcome": "previous_player_wins",
+    "intended_symmetric": true
+  },
+  "rule_text": "Setup: use every cell of an empty 3×3 board. Player 0 moves first; turns alternate, and each move places one stone on an empty cell. A player's first stone may be placed on any empty cell. After that player's first stone, every new stone must be orthogonally adjacent to at least 2 friendly stones. Player 0 wins by connecting the top and bottom edges with one orthogonally connected group; Player 1 wins by connecting the left and right edges with one orthogonally connected group. If the next player has no legal placement and the previous move did not win, the previous player wins.",
+  "word_count": 103,
+  "validation": {
+    "schema": true,
+    "word_limit": true,
+    "full_board": true,
+    "symmetry": true
+  }
+}
