@@ -4,7 +4,7 @@ _Updated: 2026-07-16 (Asia/Tokyo)_
 
 ## Purpose
 
-This is a compact advisory bridge for a new execution context. It is not authorization and is not the source of truth. `STATE.md`, the closed Study 001 report, the frozen Study 002 proposal, issues, and recent commits remain authoritative.
+This is a compact advisory bridge for a new execution context. It is not authorization and is not the source of truth. `STATE.md`, the active Study 002 protocol, frozen grammar, fixtures, Issue #6, tests, and recent commits remain authoritative.
 
 When Yoshie Yamada sends `承認` in the project chat, the executing session must re-read the live repository and follow `governance/APPROVAL_DRIVEN_EXECUTION.md` before selecting and performing one bounded research cycle.
 
@@ -20,54 +20,55 @@ When Yoshie Yamada sends `承認` in the project chat, the executing session mus
 
 ## Current position
 
-**No study is active. Study 001 is closed. A Study 002 proposal is frozen and awaits activation approval.**
+**Study 002 is active. Setup cycle 1 of at most 6 is complete.**
 
-- Study 001 report: `research/studies/001-autonomous-game-design/REPORT.md`
-- Frozen Study 002 proposal: `research/proposals/STUDY_002_EXACT_FIRST_SCREENING.md`
+- Active protocol: `research/studies/002-exact-first-screening/PROTOCOL.md`
+- Frozen grammar: `research/studies/002-exact-first-screening/GRAMMAR.md`
+- Frozen fixtures: `research/studies/002-exact-first-screening/FIXTURES.md`
+- Study overview: `research/studies/002-exact-first-screening/README.md`
 - Tracking issue: Issue #6
 
-Do not reopen Study 001, create Span v0.3, or treat the proposed Study 002 as already running.
+Study 001 remains closed. Do not reopen it or create Span v0.3.
 
-## Go / no-go decision
+## Completed setup
 
-The assessment compared:
+- Declarative placement-game schema implemented.
+- Candidate schema boundaries enforced.
+- Four hand-audited state graphs frozen in prose and code.
+- Fixture graph enumerator implemented; it is not the exact solver.
+- Generation seed frozen at `2026071602`.
+- Two board sizes and three mechanism families frozen.
+- Exactly three candidates per board-size × family cell frozen.
+- SHA-256 seeded ordering and canonical serialization frozen.
+- No candidate manifest or candidate result exists.
 
-1. exact-first screening of generated finite games;
-2. prior-art and convergence mapping;
-3. human playability and teachability evaluation;
-4. CI and reproducibility hardening as a standalone study.
+Local targeted verification produced 10 passing tests and successful `compileall`. Remote Git blob hashes matched the tested local files. Fresh clone failed because the environment could not resolve `github.com`, so the full legacy suite was not rerun.
 
-Only the first direction received a **GO** decision. It directly tests Study 001's strongest methodological failure: random and shallow aggregate play repeatedly concealed short structural defects.
+## Frozen manifest rules
 
-The proposed study asks whether a generic exact-analysis pipeline can quantify those disagreements across a frozen family of 18 compact placement games. It does not require a good game to emerge and makes no claims about fun, originality, or human strategic depth.
-
-## Frozen boundaries
-
-- Exactly 18 generated candidates.
-- Exactly three candidates in every board-size × mechanism-family cell: two board sizes and three families.
-- Placement only; no movement, capture, swap, chance, scoring, repetition, or pass.
-- Candidate grammar, seed, enumeration, canonicalization, and manifest frozen before any results.
-- Manifest entries are the first three distinct valid seeded outputs in each cell; no manual ranking or replacement.
-- Generic exact solver independently cross-checked on four hand-audited fixtures.
-- Per-candidate cap: 2,000,000 states and 30 measured seconds.
-- Total exact cap: 25,000,000 states, consumed strictly in manifest order.
-- At least 12 candidates must solve exactly.
-- Approximate comparison: 2,000 random games and 200 equal-agent games at depths 1–3 per candidate.
-- Maximum six approval-driven cycles after activation.
-- No second grammar, candidate polishing, prior-art search, human playtest, paid compute, or external solver inside the study.
+- Cell order: 3×3 AG, 3×3 CE, 3×3 LB, 4×4 AG, 4×4 CE, 4×4 LB.
+- Build each cell's Cartesian parameter product from the values in `GRAMMAR.md`.
+- Normalize aliases into a canonical ordered object.
+- Encode compact UTF-8 JSON.
+- Rank by SHA-256 of `2026071602|<board_size>|<family>|<canonical_json>`.
+- Select the first three distinct statically valid entries per cell.
+- No manual ranking, replacement, outcome inspection, or second grammar.
+- If any cell has fewer than three valid entries, close the study as grammar failure.
 
 ## Next recommended work unit
 
-On the next `承認`, activate Study 002 and perform only its first bounded setup cycle:
+Generate and freeze the candidate manifest only.
 
-1. copy the frozen commitments into `research/studies/002-exact-first-screening/PROTOCOL.md` without changing them;
-2. define the declarative rule schema;
-3. define four hand-audited solver fixtures and their expected state graphs;
-4. add deterministic schema and fixture tests;
-5. freeze the candidate-generation grammar, enumeration rule, and seed;
-6. do not generate or evaluate the 18 candidates yet.
+1. Implement the canonical tuple serializer and seeded SHA-256 enumerator exactly as frozen.
+2. Translate parameter tuples into validated `GameSpec` objects.
+3. Generate human-readable rule text and verify it is at most 250 words.
+4. Select exactly three entries per cell in frozen order.
+5. Save the 18 canonical tuples, IDs, rule text, word counts, and validation records.
+6. Re-run generation and require byte-identical manifest output.
+7. Add deterministic generation and manifest tests.
+8. Do **not** implement the exact solver or run random, shallow, or exact candidate play.
 
-This cycle determines whether the representation and correctness fixtures are precise enough to support exact analysis before candidate outcomes exist.
+That cycle determines whether the frozen grammar can produce the required static candidate family without adaptive replacement.
 
 ## Human gate
 
@@ -83,4 +84,7 @@ None.
 - Current state: `STATE.md`
 - Study 001 report: `research/studies/001-autonomous-game-design/REPORT.md`
 - Study 002 proposal: `research/proposals/STUDY_002_EXACT_FIRST_SCREENING.md`
-- Issue #6: proposed Study 002 activation
+- Study 002 protocol: `research/studies/002-exact-first-screening/PROTOCOL.md`
+- Study 002 grammar: `research/studies/002-exact-first-screening/GRAMMAR.md`
+- Study 002 fixtures: `research/studies/002-exact-first-screening/FIXTURES.md`
+- Issue #6: Study 002 tracking
