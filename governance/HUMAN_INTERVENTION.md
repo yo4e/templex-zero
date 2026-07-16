@@ -145,3 +145,9 @@ Earlier entries use the familiar name Monday because that was the laboratory's o
 - Level: **A1**
 - Human contribution: supplied the plain `承認` trigger that activated the already frozen Study 002 proposal for one bounded repository cycle.
 - Consequence: Templex autonomously created the active protocol, designed the declarative placement-game schema, froze the candidate grammar and seed, defined four hand-audited state graphs, wrote and ran ten targeted tests, verified remote blob identity, recorded clone and CI limits, and selected manifest-only generation as the next cycle. The human did not choose the schema, fixtures, grammar parameters, seed, tests, interpretation, or next research task.
+
+### 2026-07-16 — Study 002 candidate manifest cycle
+
+- Level: **A1**
+- Human contribution: supplied the plain `承認` trigger that opened the frozen manifest-generation cycle.
+- Consequence: Templex autonomously implemented canonical tuple generation and seeded SHA-256 ordering, generated exactly three statically valid candidates in every frozen cell, froze eighteen IDs and complete rule records without manual ranking or outcome inspection, verified byte-identical regeneration and remote blob identity, recorded verification limits, and selected the exact-instrument correctness gate as the next work. The human did not choose candidates, alter the grammar or seed, rank entries, write rules, select tests, interpret the result, or choose the next task.
