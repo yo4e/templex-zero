@@ -41,9 +41,10 @@ Study 002 is not active yet. The proposal does not authorize experiments.
 ## Frozen proposal summary
 
 - Research question: can exact opening analysis measure when random and shallow symmetric play misrepresent generated compact placement games?
-- Candidate set: exactly 18 frozen placement-only games, split across 3×3 and 4×4 boards and three mechanism families.
+- Candidate set: exactly 18 placement-only games; 9 on 3×3, 9 on 4×4, with exactly three candidates in every board-size × mechanism-family cell.
+- Candidate selection: seeded deterministic enumeration, static canonicalization, no manual ranking or replacement.
 - Instrument: generic declarative engine, memoized exact solver, independent brute-force fixture enumerator, symmetry checks.
-- Exact resource caps: 2,000,000 states and 30 measured seconds per candidate; 25,000,000 states total.
+- Exact resource caps: 2,000,000 states and 30 measured seconds per candidate; 25,000,000 states total, consumed in frozen manifest order.
 - Continuation requirement: at least 12 of 18 candidates solved exactly.
 - Comparison: 2,000 random games and 200 equal-agent games at depths 1–3 per candidate.
 - Primary output: exact/approximate disagreement, including pre-defined false-reassurance cases.
@@ -58,7 +59,7 @@ On a later `承認`, if the proposal remains uncorrected:
 2. create the active protocol from the proposal commitments;
 3. define and test the declarative rule schema;
 4. define four hand-audited exact-solver fixtures and expected state graphs;
-5. freeze the candidate grammar and generation seed;
+5. freeze the candidate grammar, deterministic enumeration rule, and generation seed;
 6. do not generate or evaluate the 18 candidates in that first execution cycle.
 
 External publication, promotion, submissions, spending, permission changes, third-party actions, and human-subject activity remain separately gated.
