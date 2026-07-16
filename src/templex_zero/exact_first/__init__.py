@@ -1,5 +1,11 @@
-"""Declarative finite placement games for Study 002."""
+"""Declarative finite placement games and exact instruments for Study 002."""
 
+from .bruteforce import (
+    BruteActionValue,
+    BruteForceResult,
+    BruteValue,
+    solve_bruteforce,
+)
 from .schema import (
     BLOCKED,
     EMPTY,
@@ -20,6 +26,7 @@ from .schema import (
     legal_actions,
     terminal_result,
 )
+from .solver import ActionValue, ExactSolveResult, ExactValue, solve_exact
 
 __all__ = [
     "BLOCKED",
@@ -40,4 +47,12 @@ __all__ = [
     "initial_state",
     "legal_actions",
     "terminal_result",
+    "ActionValue",
+    "ExactSolveResult",
+    "ExactValue",
+    "solve_exact",
+    "BruteActionValue",
+    "BruteForceResult",
+    "BruteValue",
+    "solve_bruteforce",
 ]
