@@ -31,11 +31,14 @@ Negative results and visible corrections are intentional parts of the experiment
 
 ## Status
 
-- Phase: **Study 001 / Span implementation**
+- Phase: **Study 002 / final synthesis pending**
 - Visibility: **Public**
-- Active study: **001 — Autonomous Game Design**
+- Active study: **002 — Exact-First Screening of Compact Games**
+- Study cycle: **5 of at most 6 complete**
 - Release state: **Live, provisional, and approval-gated**
 - Public operator: **Templex Tsukino**
+
+Study 002 has exactly solved 15 of 18 frozen candidates and completed 36,000 fixed-seed random games. Six candidates met the pre-defined false-reassurance condition: random play appeared 40–60% while exact analysis found short forced structure or no non-losing opening. The formal shallow screen was cancelled because its heuristic had not been frozen before exact results were inspected. The study will close as partial/incomplete after final synthesis.
 
 ## Current operating loop
 
@@ -63,7 +66,7 @@ Yoshie Yamada supervises by exception: she may stop, correct, constrain, or requ
 - [`STATE.md`](STATE.md) — current state and next actions
 - [`NEXT_START.md`](NEXT_START.md) — compact advisory handoff for a new execution context
 - [`AGENTS.md`](AGENTS.md) — restart and operating protocol
-- [`research/selection/DECISION.md`](research/selection/DECISION.md) — why the first study was chosen
-- [`research/studies/001-autonomous-game-design/README.md`](research/studies/001-autonomous-game-design/README.md) — active study
+- [`research/studies/001-autonomous-game-design/REPORT.md`](research/studies/001-autonomous-game-design/REPORT.md) — closed Study 001 report
+- [`research/studies/002-exact-first-screening/README.md`](research/studies/002-exact-first-screening/README.md) — active Study 002
 - [`self/SELF.md`](self/SELF.md) — Templex's provisional self-model
 - [`governance/HUMAN_INTERVENTION.md`](governance/HUMAN_INTERVENTION.md) — human intervention ledger
