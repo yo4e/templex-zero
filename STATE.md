@@ -4,7 +4,7 @@ _Last updated: 2026-07-17_
 
 ## Phase
 
-**Study 002 active / exact instrument validated / cycle 3 of at most 6**
+**Study 002 active / exact candidate screen complete / cycle 4 of at most 6**
 
 ## Laboratory
 
@@ -41,70 +41,86 @@ Frozen proposal source:
 - Activated the frozen protocol.
 - Implemented the declarative schema and fixture graph enumerator.
 - Froze four audited fixtures, candidate grammar, seed `2026071602`, canonicalization, and seeded ordering.
-- Did not generate candidates or implement the exact solver.
 
 ### Cycle 2 — manifest freeze
 
 - Generated and froze exactly 18 candidates: 9 on 3×3, 9 on 4×4, exactly three per board-size × family cell.
 - Full compact entry-list SHA-256: `cff3a75a58442b843134cd05a337e2af3166e1c1e035c15fc890f576e0495cee`.
-- No candidate result was inspected.
 
 ### Cycle 3 — exact-instrument correctness gate
 
 - Implemented a generic no-reduction memoized full-width solver.
 - Implemented an independent queue-built, retrograde brute-force fixture oracle.
-- Fixed the value convention: player-to-move perspective; win shortest, loss longest, draw shortest among outcome-preserving actions.
-- Cross-checked outcome, distance, and every legal action value on all twelve reachable states of the four frozen fixtures.
-- Verified the retained color-role symmetry claims on Fixtures 1 and 2 only.
-- Added deterministic state-cap and controlled-clock time-cap tests.
-- Did **not** solve, enumerate, play, or assign an outcome to any frozen candidate.
+- Cross-checked all twelve reachable fixture states and every action value.
+- Verified the retained symmetry claims and deterministic cap behavior.
 
-## Correctness-gate result
+### Cycle 4 — exact candidate screen
 
-Fixture roots:
+- Committed the formal experiment before inspecting candidate outcomes: `9a453ccc2a2e1f30691d23028b12b3296ebb4f13`.
+- Solved candidates strictly in frozen manifest order under 2,000,000 states and 30 seconds per candidate and 25,000,000 states total.
+- Exactly solved 15 of 18 candidates: all nine 3×3 entries and six of nine 4×4 entries.
+- Three 4×4 candidates reached the time cap: `S2-4-CE-02`, `S2-4-LB-01`, and `S2-4-LB-03`.
+- Exact roots among solved candidates: 9 first-participant wins, 6 first-participant losses, and no draws.
+- Four solved candidates terminated within two plies; 14 of 15 terminated within eight plies.
+- Six candidates had zero non-losing legal openings for the first participant.
+- The exact continuation threshold passed and the degenerate-majority failure condition did not trigger.
 
-- immediate component win: win in 1; 2 states;
-- single-cell draw: draw in 1; 2 states;
-- branching pattern: win in 1; 4 states; A1 wins in 1 and B1 loses in 2;
-- adjacency chain: win in 3; 4 states.
+Data and analysis:
 
-The memoized and retrograde instruments agreed on all twelve states and all action values. The instrument-disagreement failure condition did not trigger.
+- `research/studies/002-exact-first-screening/data/exact_screen_v1.json`
+- `research/studies/002-exact-first-screening/EXACT_SCREEN_ANALYSIS.md`
 
-Audit:
+## Reproducibility correction
 
-- `research/studies/002-exact-first-screening/EXACT_INSTRUMENT_AUDIT.md`
+Two configured exact runs agreed on all exact values, solved/unsolved classifications, opening values, solved state counts, and cap reasons.
+
+The formal script's original deterministic projection incorrectly included expanded-state counts observed at a wall-clock time cap. Those counts varied slightly for the three time-capped candidates. A separately committed comparator isolated this within the same cycle and produced the same normalized hash for both runs:
+
+`9cc17bd02dee865d1e20c67d72a975a04ec36b131d9dfb8bf17de24e6f381eb1`
+
+The correction did not alter rules, solver values, caps, or candidate classifications.
+
+## Shallow-screen sequencing defect
+
+The frozen proposal requires a declarative-feature heuristic to be generated before exact results are inspected. No heuristic was frozen in cycles 1–3, while the activation plan placed exact candidate solving before approximate screens.
+
+Exact results have now been inspected. A newly created heuristic could not honestly satisfy the pre-result requirement. Therefore:
+
+- the shallow depth-1/2/3 screen is cancelled as formal Study 002 evidence;
+- no post-result heuristic will be presented as precommitted;
+- H2 will remain unresolved;
+- Study 002 cannot receive a fully successful methodological disposition.
+
+The frozen random screen remains valid because it requires no heuristic and was specified before exact results.
 
 ## Verification
 
-- Final solver suite: **8 passed**.
-- Setup, fixture, and solver tests together: **18 passed**.
-- `python -m compileall -q src tests`: no errors.
-- Git blob SHAs for the solver, brute-force oracle, package export, and final test matched the locally executed files.
-- The prior manifest suite remains separately recorded at 7 passed; it was not rerun in this reconstruction because the twenty-one manifest files were not recreated locally.
-- Fresh clone failed because the execution environment could not resolve `github.com`.
+- Formal exact script was committed before outcome inspection.
+- Manifest hash in the local reconstruction matched the frozen hash.
+- Reconstructed schema and solver reproduced the four known fixture root and opening values.
+- Two exact runs completed in approximately 119 seconds each.
+- Corrected deterministic fields were identical across runs.
+- Fresh clone remained unavailable because the environment could not resolve `github.com`.
+- The exact execution used a functionally reconstructed local copy whose manifest hash and fixture outputs matched live GitHub; byte-identical identity of every reconstructed source file is not claimed.
 - The repository has no recorded GitHub Actions workflow.
 
 ## Frozen study boundaries
 
-- The 18-entry manifest is immutable except for factual or technical correction.
-- Placement only; no movement, capture, swap, chance, scoring, repetition, or pass.
-- Exact caps remain 2,000,000 expanded states and 30 seconds per candidate; 25,000,000 states total in manifest order.
-- At least 12 exact solutions are required.
-- Random screen remains 2,000 games per candidate.
-- Shallow screen remains 200 equal-agent games at depths 1, 2, and 3 per candidate.
+- The 18-entry manifest remains immutable.
+- Candidate and state caps remain unchanged.
+- No second grammar, candidate replacement, symmetry rescue, polishing, prior-art search, human playtest, paid compute, or external solver.
 - Maximum six approval-driven cycles including final synthesis.
-- No symmetry reduction is required; no second grammar, candidate replacement, polishing, prior-art search, human playtest, paid compute, or external solver.
+- No shallow heuristic will be retroactively created for formal evidence.
 
 ## Next actions
 
-1. Commit a deterministic exact-candidate experiment before inspecting results.
-2. Load candidates strictly from the frozen manifest in manifest order.
-3. Solve with the validated no-reduction solver under 2,000,000 states and 30 seconds per candidate and 25,000,000 states total.
-4. Record root outcome, distance, all opening values, value counts, non-losing opening proportion, state count, elapsed time, and cap reason.
-5. Record all later entries as unsolved if the total state cap is reached.
-6. Repeat the configured run and compare deterministic fields; treat measured timing separately.
-7. Do not change candidates, caps, or value conventions.
-8. Do not run random or shallow screens in that cycle.
+1. Commit the random-screen script before running games.
+2. Run exactly 2,000 fixed-seed random games for each of all 18 candidates.
+3. Record participant results, duration, terminal reason, opening distribution, and branching.
+4. Repeat and verify deterministic aggregate fields.
+5. Do not run shallow search or consult exact values in move selection.
+6. Compare random rates with exact values only after the random output is complete.
+7. Reserve cycle 6 for synthesis and closure as partial/incomplete, with H2 unresolved.
 
 ## Human action currently needed
 
