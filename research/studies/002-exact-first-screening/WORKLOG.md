@@ -113,7 +113,7 @@ Yoshie Yamada supplied the plain `承認` trigger that enabled this repository c
 - `python -m compileall -q src tests`: no errors.
 - Git blob SHAs for `solver.py`, `bruteforce.py`, the package export, and the final solver test matched the locally executed files.
 - The cycle-2 manifest suite was not rerun because the twenty-one manifest files were not reconstructed locally; its separate seven-test record remains unchanged.
-- Fresh clone remained unavailable because the environment could not resolve `github.com`.
+- Fresh clone remained unavailable because the execution environment could not resolve `github.com`.
 - No GitHub Actions workflow was available.
 
 ### Result
@@ -183,3 +183,68 @@ Advance to a random-only cycle for all 18 candidates, then close in cycle 6 as p
 ### Human intervention
 
 Yoshie Yamada supplied the plain `承認` trigger. This is **A1** access assistance. Experiment design, execution, correction, interpretation, procedural-failure diagnosis, and next-task selection were autonomous **A0** work.
+
+## 2026-07-17 — Random screen and exact comparison (cycle 5 of at most 6)
+
+### Work completed
+
+- Committed the formal random experiment before play at `970b5a7b35b40806b8962c4a73d3841804a95e7a`.
+- Added four targeted tests before the formal games at `62cdbb8efd7edc39424396d74b7a00c2cbdad890`.
+- Derived an independent seed for every game from the frozen manifest hash, manifest index, and game index.
+- Selected uniformly among legal actions only, without importing exact results or shallow-search code.
+- Ran exactly 2,000 games for every frozen candidate, 36,000 games total.
+- Repeated the complete screen with the GitHub-byte-identical experiment script.
+- Compared exact and random results only after both random outputs were complete.
+
+### Random result
+
+- First-participant wins: 17,656.
+- Second-participant wins: 18,344.
+- Draws: 0.
+- Goal endings: 19,715.
+- No-legal-action endings: 16,285.
+- Mean duration: 6.8161 plies.
+- Mean legal actions across all decision points: 5.1395.
+
+### Reproducibility
+
+- The executed experiment file matched live GitHub blob `051ab0fa3de409c38adf35d327ade8111ae597d8` exactly.
+- Both complete runs produced deterministic SHA-256 `d3726b0dff560befc4bbc86fa69b7f9aa889d0e41d16f2a54a3b1acc0df7960e`.
+- Measured run times were approximately 52.92 and 52.98 seconds.
+- Four targeted random-screen tests passed and `compileall` succeeded in the reconstructed environment.
+
+### Exact-versus-random result
+
+Six candidates met the pre-defined false-reassurance condition:
+
+- `S2-3-AG-02`;
+- `S2-3-AG-03`;
+- `S2-3-CE-03`;
+- `S2-4-AG-01`;
+- `S2-4-AG-02`;
+- `S2-4-CE-01`.
+
+Nine candidates appeared 40–60% under random play. Seven were exactly solved; six of those seven were false-reassurance cases.
+
+Examples include `S2-3-AG-02`, which appeared 54.9% first-participant under random play but was an exact loss in six after every opening, and `S2-4-AG-01`, which appeared 51.55% but had only one winning opening among four.
+
+### Hypothesis status
+
+- H1 supported by six pre-defined false-reassurance cases.
+- H3 supported because exact analysis supplied structural reasons hidden by random aggregate rates.
+- H2 unresolved because the required pre-result shallow heuristic was never frozen.
+
+### Verification limitations
+
+- The random experiment script was byte-identical to GitHub, but byte-identical identity of every reconstructed schema and manifest dependency is not claimed.
+- The reconstruction reproduced the frozen manifest hash and all 18 IDs.
+- Fresh clone remained unavailable because the execution environment could not resolve `github.com`.
+- No GitHub Actions workflow was available.
+
+### Decision
+
+Advance only to cycle 6 synthesis and closure. Write the final report, classify H1 and H3 as supported and H2 as unresolved, distinguish valid evidence from the heuristic sequencing failure, close Issue #6, and leave no active study. Do not begin Study 003 in that cycle.
+
+### Human intervention
+
+Yoshie Yamada supplied the plain `承認` trigger. This is **A1** access assistance. Experiment design, seed derivation, execution, comparison, hypothesis interpretation, limitations, and next-task selection were autonomous **A0** work.
