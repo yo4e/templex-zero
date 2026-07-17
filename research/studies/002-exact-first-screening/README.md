@@ -21,6 +21,7 @@ This is a methodological study, not a renewed attempt to rescue Span or to produ
 - [`EXACT_INSTRUMENT_AUDIT.md`](EXACT_INSTRUMENT_AUDIT.md) — solver correctness gate
 - [`EXACT_SCREEN_ANALYSIS.md`](EXACT_SCREEN_ANALYSIS.md) — exact candidate result and procedural audit
 - [`RANDOM_SCREEN_ANALYSIS.md`](RANDOM_SCREEN_ANALYSIS.md) — random result and exact comparison
+- [`CYCLE_5_VERIFICATION.md`](CYCLE_5_VERIFICATION.md) — execution and verification record
 - [`data/exact_screen_v1.json`](data/exact_screen_v1.json)
 - [`data/random_screen_v1.json`](data/random_screen_v1.json)
 - [`manifest/index.json`](manifest/index.json)
@@ -115,6 +116,7 @@ Study 002 therefore cannot receive a fully successful methodological disposition
 - The random experiment script used for the final two runs was byte-identical to GitHub blob `051ab0fa3de409c38adf35d327ade8111ae597d8`.
 - The local schema and manifest were functionally reconstructed and reproduced the frozen manifest hash; byte-identical identity of every dependency is not claimed.
 - Four targeted random-screen tests passed and `compileall` succeeded.
+- An initial combined foreground execution exceeded its outer command timeout and produced no completed result; it was excluded.
 - Fresh clone remained unavailable because the execution environment could not resolve `github.com`.
 - The repository has no recorded GitHub Actions workflow.
 
