@@ -4,7 +4,7 @@ _Last updated: 2026-07-18_
 
 ## Phase
 
-**No active study / Study 002 closed**
+**No active study / next proposal direction selected**
 
 ## Laboratory
 
@@ -37,35 +37,58 @@ Final hypothesis disposition:
 - **H2 unresolved:** the required shallow-search heuristic was not frozen before exact results were inspected.
 - **H3 supported:** exact opening analysis supplied structural explanations hidden by aggregate random win rates.
 
-Final empirical summary:
-
-- Eighteen frozen candidates.
-- Fifteen solved exactly under frozen caps; three 4×4 candidates reached the 30-second time cap.
-- Exact roots: nine first-participant wins, six losses, no draws.
-- Fourteen of fifteen solved candidates were decisive within eight optimal plies.
-- Six solved candidates had zero non-losing openings.
-- 36,000 fixed-seed random games: 17,656 first-participant wins, 18,344 second-participant wins, no draws.
-- Six candidates met the frozen false-reassurance definition.
-
 Reproducibility anchors:
 
 - Exact normalized SHA-256: `9cc17bd02dee865d1e20c67d72a975a04ec36b131d9dfb8bf17de24e6f381eb1`
 - Random deterministic SHA-256: `d3726b0dff560befc4bbc86fa69b7f9aa889d0e41d16f2a54a3b1acc0df7960e`
 
-Study 002 did not evaluate fun, fairness under competent play, strategic depth, teachability, accessibility, originality, prior art, or product readiness.
+## Latest go / no-go assessment
+
+Decision record:
+
+- `research/decisions/2026-07-18-next-study-go-no-go.md`
+
+The assessment compared five possible research directions plus remaining inactive. Only **protocol integrity under approval-gated autonomous research** passed the restart threshold.
+
+The selected direction would test whether a machine-readable dependency model can reject evidence-contaminating event sequences before protected observations are accepted. It directly addresses the Study 002 sequencing failure while remaining distinct from another game-design or exact-screen continuation.
+
+Current disposition:
+
+- **GO to a proposal-writing cycle only.**
+- No active study exists.
+- Study 003 has not been created or activated.
+- No experiment, code, trace corpus, checker, issue, or external action has been started.
+- Remaining inactive is still a valid later activation decision if the proposal cannot avoid tautology, special-casing, or weak independent validation.
+
+## Required next proposal contents
+
+A separately frozen proposal must define before any implementation:
+
+1. a research question about enforcing dependencies among research events;
+2. at least four dependency classes;
+3. hand-audited valid and invalid trace fixtures not limited to Study 002;
+4. mutation rules fixed before execution;
+5. a primary validator and independently written oracle;
+6. synthetic correctness gates before historical Study 001 and Study 002 evaluation;
+7. false-accept, false-reject, early-detection, oracle-agreement, and mutation-coverage metrics;
+8. explicit failure conditions, including rejection of any special-cased Study 002 rule;
+9. a maximum of four approval cycles after activation;
+10. explicit limits on claims about truth, quality, safety, creativity, or autonomy.
 
 ## Closure boundaries
 
+- Do not reopen Study 001 or create Span v0.3.
 - Do not retroactively create a shallow heuristic for Study 002.
-- Do not replace or repair the frozen eighteen candidates under Study 002.
-- Do not add a second grammar, symmetry rescue, human playtest, prior-art survey, paid compute, external solver, or product work to either closed study.
+- Do not replace or repair the frozen Study 002 candidates.
+- Do not add another generated-game corpus as a hidden continuation of Study 002.
 - Closed-study files may be changed only for disclosed factual or technical corrections.
 
-## Current research status
+## Next actions
 
-There is no active study and no automatically authorized successor study.
-
-Study 003 was not started during Study 002 closure. A future approval cycle may assess whether another study is worthwhile, but it must begin with a separate bounded go/no-go decision rather than silently continuing Study 002 or creating a new experiment.
+1. Write and freeze a proposal for the selected protocol-integrity direction.
+2. Do not implement code, create fixtures, run traces, or activate Study 003 in that proposal-writing cycle.
+3. After the proposal exists, use a later approval cycle to make a separate activation go / no-go decision.
+4. Preserve inactivity if the proposal fails to define nontrivial independent tests and bounded failure conditions.
 
 ## Human action currently needed
 
