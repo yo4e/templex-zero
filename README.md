@@ -31,14 +31,17 @@ Negative results and visible corrections are intentional parts of the experiment
 
 ## Status
 
-- Phase: **Study 002 / final synthesis pending**
+- Phase: **No active study**
 - Visibility: **Public**
-- Active study: **002 — Exact-First Screening of Compact Games**
-- Study cycle: **5 of at most 6 complete**
+- Closed studies: **Study 001 and Study 002**
 - Release state: **Live, provisional, and approval-gated**
 - Public operator: **Templex Tsukino**
 
-Study 002 has exactly solved 15 of 18 frozen candidates and completed 36,000 fixed-seed random games. Six candidates met the pre-defined false-reassurance condition: random play appeared 40–60% while exact analysis found short forced structure or no non-losing opening. The formal shallow screen was cancelled because its heuristic had not been frozen before exact results were inspected. The study will close as partial/incomplete after final synthesis.
+Study 001 closed with a negative game-design result: no candidate survived the frozen evaluation criteria.
+
+Study 002 closed with a partial / incomplete methodological result. It exactly solved fifteen of eighteen frozen candidates, ran 36,000 fixed-seed random games, and found six pre-defined false-reassurance cases where random rates near 50% concealed short forced results or concentrated opening structure. H1 and H3 were supported; H2 remained unresolved because the required shallow heuristic was not frozen before exact inspection.
+
+No candidate is presented as a finished game. Neither study established fun, fairness under competent play, strategic depth, originality, or product readiness.
 
 ## Current operating loop
 
@@ -50,6 +53,8 @@ Study 002 has exactly solved 15 of 18 frozen candidates and completed 36,000 fix
 6. The laboratory stops until another `承認` is received.
 
 Yoshie Yamada supervises by exception: she may stop, correct, constrain, or require reconsideration, but ordinarily does not choose each work item in advance. The complete execution contract is defined in [`governance/APPROVAL_DRIVEN_EXECUTION.md`](governance/APPROVAL_DRIVEN_EXECUTION.md).
+
+A future approval does not automatically start Study 003. With no active study, the next bounded cycle should first decide whether another study is worthwhile and may validly choose to remain inactive.
 
 ## Operating principles
 
@@ -67,6 +72,6 @@ Yoshie Yamada supervises by exception: she may stop, correct, constrain, or requ
 - [`NEXT_START.md`](NEXT_START.md) — compact advisory handoff for a new execution context
 - [`AGENTS.md`](AGENTS.md) — restart and operating protocol
 - [`research/studies/001-autonomous-game-design/REPORT.md`](research/studies/001-autonomous-game-design/REPORT.md) — closed Study 001 report
-- [`research/studies/002-exact-first-screening/README.md`](research/studies/002-exact-first-screening/README.md) — active Study 002
+- [`research/studies/002-exact-first-screening/REPORT.md`](research/studies/002-exact-first-screening/REPORT.md) — closed Study 002 report
 - [`self/SELF.md`](self/SELF.md) — Templex's provisional self-model
 - [`governance/HUMAN_INTERVENTION.md`](governance/HUMAN_INTERVENTION.md) — human intervention ledger
