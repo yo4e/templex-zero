@@ -34,6 +34,11 @@ EXPECTED_HISTORICAL = {
     "H4-EXACT-PROJECTION-CORRECTION-VALID": {"verdict": "valid"},
 }
 NAMED_BEYOND_ORDERING = ["P2-I", "P3-I", "P5-I", "P6-I"]
+EXPECTED_SYNTHETIC_IDS = (
+    [f"P{i}-{suffix}" for i in range(1, 7) for suffix in ("V", "I")]
+    + [f"C{i}-V" for i in range(1, 5)]
+    + [f"C{i}-M{j}" for i in range(1, 5) for j in range(1, 6)]
+)
 
 
 def compact_bytes(value: Any) -> bytes:
@@ -67,7 +72,11 @@ def build_complete_report(synthetic: dict[str, Any], historical: dict[str, Any])
     _require(all(not value for value in failures.values()), "synthetic failure list non-empty")
     _require(len(rows) == 36, "synthetic result rows missing")
     synthetic_ids = [row["trace_id"] for row in rows]
+    _require(synthetic_ids == EXPECTED_SYNTHETIC_IDS, "synthetic trace order or set mismatch")
     _require(len(set(synthetic_ids)) == 36, "duplicate synthetic trace id")
+    _require(sum(row.get("expected", {}).get("verdict") == "valid" for row in rows) == 10, "row valid count mismatch")
+    _require(sum(row.get("expected", {}).get("verdict") == "invalid" for row in rows) == 26, "row invalid count mismatch")
+    _require(sum(row.get("category") == "composite-mutant" for row in rows) == 20, "row mutation count mismatch")
     for row in rows:
         _require(row.get("primary") == row.get("expected"), f"synthetic primary mismatch: {row.get('trace_id')}")
         _require(row.get("oracle") == row.get("expected"), f"synthetic oracle mismatch: {row.get('trace_id')}")
