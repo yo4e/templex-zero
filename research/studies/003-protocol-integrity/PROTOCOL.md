@@ -1,7 +1,7 @@
 # Study 003 Protocol — Protocol Integrity Under Approval-Gated Autonomous Research
 
 _Date activated: 2026-07-21 (Asia/Tokyo)_  
-_Status: **Active — cycle 1 of at most 4 complete**_
+_Status: **Active — cycle 2 of at most 4 complete**_
 
 ## Authority and frozen source
 
@@ -32,7 +32,7 @@ Exactly fourteen event kinds are permitted:
 
 `begin_cycle`, `end_cycle`, `freeze_artifact`, `set_cap`, `begin_execution`, `finish_execution`, `observe`, `authorize`, `external_action`, `record_defect`, `invalidate_evidence`, `apply_correction`, `disclose_correction`, and `accept_evidence`.
 
-Activation may refine field typing and serialization but may not add semantic event kinds after validator execution begins.
+No new semantic event kind may be added inside Study 003.
 
 ## Frozen dependency classes
 
@@ -60,44 +60,57 @@ Machine-readable artifact:
 - `data/synthetic_corpus_v1/index.json`
 - canonical SHA-256: `b7675cd11bf808a02579cc56d26252ca636e9627d9542d8d063e6752374b7d84`
 
-The bundle contains frozen expected verdict data but no actual validator, oracle, or baseline output and no historical trace encoding.
+## Frozen validation instruments
 
-## Frozen baseline
+Cycle 2 implemented and froze:
 
-The order-only baseline will check only whether a required event kind occurs earlier. It will ignore subject identity, authorization scope, token consumption, numeric usage, digests, evidence lineage, and correction state.
+- incremental state-machine validator: `src/templex_zero/protocol_integrity/validator.py` — Git blob `71080f1051acc015e74b42de19d56ce8782b9f25`;
+- independently written whole-trace prefix oracle: `src/templex_zero/protocol_integrity/oracle.py` — Git blob `74159c7a7502975b1bcd376510d5dad0283e03cd`;
+- deliberately weak order-only baseline: `src/templex_zero/protocol_integrity/baseline.py` — Git blob `7af3b9e1db56a90e08b93690a14d90ee541b9d18`.
 
-It must accept at least `P2-I`, `P3-I`, `P5-I`, and `P6-I` while both full validators reject them. It is not an oracle.
+The oracle does not import the primary module and does not share its transition, state, verdict, reason-code, or first-violation helpers. The baseline checks only whether prerequisite event kinds occur earlier and ignores identities, values, scopes, token consumption, digests, evidence lineage, and correction state.
 
-## Validator independence
+These instruments are frozen after the passing first synthetic gate. Historical-transfer mismatches may not be repaired by changing them.
 
-Cycle 2 may implement:
+## First synthetic correctness gate
 
-- one incremental state-machine validator;
-- one separately written whole-trace oracle using prefix predicates;
-- the frozen order-only baseline.
+Result:
 
-The oracle may share only serialized field names, primitive scalar conventions, and the contract/trace inputs. It may not import or call primary transition, state, verdict, reason-code, or first-violation helpers.
+- file: `data/synthetic_gate_v1.json`;
+- audit: `CYCLE_2_SYNTHETIC_GATE.md`;
+- result SHA-256: `46fef85ba4e76698ba861d84873be205b0b5e54ce8d2e84b4fed4c39004090de`;
+- gate passed on the first attempt.
 
-## Correctness and stopping gates
+Metrics:
 
-The synthetic gate requires:
-
-- zero false accepts and false rejects;
+- zero false accepts;
+- zero false rejects;
 - 100% first-violation-index accuracy;
 - 100% violation-class accuracy;
+- 100% reason-code accuracy;
 - 100% primary/oracle agreement;
 - all twenty mutants rejected;
-- the four named beyond-ordering examples demonstrated;
-- zero study-, path-, commit-, candidate-, or trace-ID-specific verdict branches.
+- no source-level study-, path-, candidate-, or trace-ID-specific verdict branch found.
 
-One bounded correction cycle is permitted without changing the corpus, contracts, expectations, dependency classes, or metrics. Continued error closes the study negatively.
+The weak baseline accepted twelve invalid traces, including the four frozen beyond-ordering examples `P2-I`, `P3-I`, `P5-I`, and `P6-I`. H1, H2, and the synthetic component of H4 are supported at this stage. H3 remains untested.
 
-Historical encoding starts only after the synthetic gate passes and validator code is frozen. Historical mismatch cannot be repaired inside Study 003.
+Because the first gate passed, the single permitted correction cycle is unused. Cycle 3 is historical transfer only.
+
+## Historical transfer boundary
+
+Cycle 3 may encode and evaluate exactly four frozen historical cases:
+
+1. `H1-SPAN-FORMAL-VALID` — expected valid;
+2. `H2-EXACT-SUBSTUDY-VALID` — expected valid;
+3. `H3-STUDY002-SHALLOW-CONTAMINATED` — expected invalid at `observe(exact_results)`, D1;
+4. `H4-EXACT-PROJECTION-CORRECTION-VALID` — expected valid.
+
+Each trace must cite repository source paths and commits. It must use only the frozen event vocabulary and generic contract data. After the first historical trace is encoded, no validator, oracle, baseline, synthetic fixture, or historical expectation may change. Any mismatch, new semantic requirement, or identifier-specific exception is a historical-transfer failure and is reported without repair.
 
 ## Resource boundaries
 
 - standard-library-only implementation;
-- exactly 36 synthetic and 4 later historical traces;
+- exactly 36 synthetic and 4 historical traces;
 - at most 40 events per trace and 1,600 events per complete final run;
 - no network, paid compute, external service, third-party action, or human subjects;
 - at most four approval-driven cycles after activation, including final synthesis.
@@ -105,8 +118,8 @@ Historical encoding starts only after the synthetic gate passes and validator co
 ## Cycle record
 
 - **Cycle 1 — schema and corpus freeze: complete.** Active protocol created; schema, canonical serialization, deterministic generator, 36-trace artifact, and tests added. No verdict logic or historical traces were created.
-- Cycle 2 — validators and first synthetic gate: pending.
-- Cycle 3 — one correction cycle or historical transfer: pending.
+- **Cycle 2 — validators and first synthetic gate: complete.** The primary, oracle, and weak baseline were implemented; the first gate passed; instruments are frozen; no historical trace was encoded.
+- Cycle 3 — historical transfer: pending.
 - Cycle 4 — reproduction, synthesis, and closure: pending.
 
 ## Intervention model
