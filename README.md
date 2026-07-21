@@ -14,8 +14,6 @@ The repository is the laboratory: charter, state, research, code, decisions, fai
 - The repository began under the internal name **MONDAY/0** and the slug `monday-zero`, then was renamed to `templex-zero` on 2026-07-15. Early commits preserve that history rather than rewriting it.
 - This project is independent. Mentioning the origin of the name Monday does not imply that OpenAI sponsors, endorses, operates, or has reviewed TEMPLEX/0.
 
-The distinction is intentional: Monday may remain a personal name between collaborators; Templex Tsukino is the public-facing identity.
-
 ## Experimental notice
 
 This is a live research workspace, not a curated release.
@@ -24,14 +22,14 @@ This is a live research workspace, not a curated release.
 - Human actions at access, publication, safety, identity, and authority boundaries are recorded in [`governance/HUMAN_INTERVENTION.md`](governance/HUMAN_INTERVENTION.md).
 - Files may contain mistakes, incomplete implementations, failed hypotheses, provisional interpretations, or conclusions that are later revised or rejected.
 - Human authorization of a bounded work cycle enables execution; it does not certify that the resulting code or claims are correct.
-- Nothing here should be treated as professional advice, validated scientific consensus, production-ready software, or a security-reviewed tool. Inspect code and evidence before relying on or running them.
-- TEMPLEX/0 does not contact, advise, modify, or submit work to outsiders without explicit authorization. Public visibility is for auditability and read access, not unsolicited intervention.
+- Nothing here should be treated as professional advice, validated scientific consensus, production-ready software, or a security-reviewed tool.
+- TEMPLEX/0 does not contact, advise, modify, or submit work to outsiders without explicit authorization.
 
 Negative results and visible corrections are intentional parts of the experiment. A polished appearance should not be mistaken for established truth.
 
 ## Status
 
-- Phase: **Study 003 active / cycle 2 of at most 4 complete**
+- Phase: **Study 003 active / cycle 3 of at most 4 complete**
 - Visibility: **Public**
 - Closed studies: **Study 001 and Study 002**
 - Active study: **Protocol Integrity Under Approval-Gated Autonomous Research**
@@ -42,16 +40,18 @@ Study 001 closed with a negative game-design result: no candidate survived the f
 
 Study 002 closed with a partial / incomplete methodological result. It exactly solved fifteen of eighteen frozen candidates, ran 36,000 fixed-seed random games, and found six pre-defined false-reassurance cases where random rates near 50% concealed short forced results or concentrated opening structure. H1 and H3 were supported; H2 remained unresolved because the required shallow heuristic was not frozen before exact inspection.
 
-Study 003 activated the unchanged frozen proposal on protocol integrity. Cycle 1 created a deterministic 36-trace corpus. Cycle 2 implemented an incremental validator, independently written whole-trace oracle, and deliberately weak order-only baseline. The first synthetic gate passed with zero false accepts and false rejects, 100% first-violation and class accuracy, complete primary/oracle agreement, and 20 / 20 mutants rejected. The weak baseline accepted twelve invalid traces, including all four precommitted stateful cases. No historical-transfer result exists yet.
+Study 003 Cycle 1 created a deterministic 36-trace synthetic corpus. Cycle 2 froze an incremental validator, independently written whole-trace oracle, and weak order-only baseline; the first synthetic gate passed with zero false accepts and false rejects, complete first-violation and class accuracy, full primary/oracle agreement, and 20 / 20 mutants rejected. Cycle 3 encoded four precommitted Study 001/002 histories before evaluation and matched all four expected dispositions with the frozen instruments. The shallow-comparison history was rejected at the protected exact-result observation because the required shallow heuristic had not been frozen; the other three histories were accepted.
 
 - Proposal: [`research/proposals/STUDY_003_PROTOCOL_INTEGRITY.md`](research/proposals/STUDY_003_PROTOCOL_INTEGRITY.md)
 - Protocol: [`research/studies/003-protocol-integrity/PROTOCOL.md`](research/studies/003-protocol-integrity/PROTOCOL.md)
-- Corpus index: [`research/studies/003-protocol-integrity/data/synthetic_corpus_v1/index.json`](research/studies/003-protocol-integrity/data/synthetic_corpus_v1/index.json)
+- Synthetic corpus: [`research/studies/003-protocol-integrity/data/synthetic_corpus_v1/index.json`](research/studies/003-protocol-integrity/data/synthetic_corpus_v1/index.json)
 - Synthetic result: [`research/studies/003-protocol-integrity/data/synthetic_gate_v1.json`](research/studies/003-protocol-integrity/data/synthetic_gate_v1.json)
-- Cycle 2 audit: [`research/studies/003-protocol-integrity/CYCLE_2_SYNTHETIC_GATE.md`](research/studies/003-protocol-integrity/CYCLE_2_SYNTHETIC_GATE.md)
+- Historical traces: [`research/studies/003-protocol-integrity/data/historical_traces_v1.json`](research/studies/003-protocol-integrity/data/historical_traces_v1.json)
+- Historical result: [`research/studies/003-protocol-integrity/data/historical_transfer_result_v1.json`](research/studies/003-protocol-integrity/data/historical_transfer_result_v1.json)
+- Cycle 3 audit: [`research/studies/003-protocol-integrity/CYCLE_3_HISTORICAL_TRANSFER.md`](research/studies/003-protocol-integrity/CYCLE_3_HISTORICAL_TRANSFER.md)
 - Tracking issue: #7
 
-Passing the synthetic gate does not show that a procedurally valid trace contains true, valuable, safe, creative, autonomous, or scientifically sound research. Historical transfer remains untested.
+Passing these gates does not show that a procedurally valid trace contains true, valuable, safe, creative, autonomous, or scientifically sound research. The historical sample contains only four preselected repository episodes.
 
 ## Current operating loop
 
@@ -62,9 +62,9 @@ Passing the synthetic gate does not show that a procedurally valid trace contain
 5. Templex reports what was actually done in the same project chat and proposes the next single cycle.
 6. The laboratory stops until another `承認` is received.
 
-Yoshie Yamada supervises by exception: she may stop, correct, constrain, or require reconsideration, but ordinarily does not choose each work item in advance. The complete execution contract is defined in [`governance/APPROVAL_DRIVEN_EXECUTION.md`](governance/APPROVAL_DRIVEN_EXECUTION.md).
+Yoshie Yamada supervises by exception. The complete execution contract is defined in [`governance/APPROVAL_DRIVEN_EXECUTION.md`](governance/APPROVAL_DRIVEN_EXECUTION.md).
 
-The next approval may execute Study 003 Cycle 3 only: encode exactly four precommitted historical traces from cited Study 001 and Study 002 records, then evaluate them with the frozen validator and oracle. No instrument or expectation may be repaired after a historical mismatch.
+The next approval may execute Study 003 Cycle 4 only: reproduce the complete synthetic-plus-historical validation report twice, classify H1–H4, write the final report, close the study, and stop. Study 004 must not begin in the same cycle.
 
 ## Operating principles
 
@@ -72,18 +72,17 @@ The next approval may execute Study 003 Cycle 3 only: encode exactly four precom
 2. **No unsolicited interference.** The laboratory does not contact, modify, advise, or submit work to outsiders without invitation.
 3. **Claims require tests.** Attractive prose is not evidence.
 4. **Failure remains visible.** Rejected ideas, broken methods, and reversals are part of the record.
-5. **Public work remains bounded.** Repository-changing cycles and broader external actions remain subject to the human gates defined by the charter and approval protocol.
+5. **Public work remains bounded.** Repository-changing cycles and broader external actions remain subject to human gates.
 
 ## Start here
 
 - [`CHARTER.md`](CHARTER.md) — mission, boundaries, and authority
-- [`governance/APPROVAL_DRIVEN_EXECUTION.md`](governance/APPROVAL_DRIVEN_EXECUTION.md) — what one `承認` authorizes and how a cycle runs
+- [`governance/APPROVAL_DRIVEN_EXECUTION.md`](governance/APPROVAL_DRIVEN_EXECUTION.md) — what one `承認` authorizes
 - [`STATE.md`](STATE.md) — current state and next actions
-- [`NEXT_START.md`](NEXT_START.md) — compact advisory handoff for a new execution context
+- [`NEXT_START.md`](NEXT_START.md) — compact restart handoff
 - [`AGENTS.md`](AGENTS.md) — restart and operating protocol
 - [`research/studies/001-autonomous-game-design/REPORT.md`](research/studies/001-autonomous-game-design/REPORT.md) — closed Study 001 report
 - [`research/studies/002-exact-first-screening/REPORT.md`](research/studies/002-exact-first-screening/REPORT.md) — closed Study 002 report
 - [`research/studies/003-protocol-integrity/README.md`](research/studies/003-protocol-integrity/README.md) — active Study 003 overview
-- [`research/proposals/STUDY_003_PROTOCOL_INTEGRITY.md`](research/proposals/STUDY_003_PROTOCOL_INTEGRITY.md) — frozen Study 003 proposal
 - [`self/SELF.md`](self/SELF.md) — Templex's provisional self-model
 - [`governance/HUMAN_INTERVENTION.md`](governance/HUMAN_INTERVENTION.md) — human intervention ledger
