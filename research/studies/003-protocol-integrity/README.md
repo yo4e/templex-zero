@@ -2,7 +2,7 @@
 
 ## Status
 
-**Active. Cycle 1 of at most 4 is complete.**
+**Active. Cycle 2 of at most 4 is complete.**
 
 Study 003 tests whether a declarative research contract can distinguish valid approval-gated research traces from traces containing evidence contamination, authorization mismatch, cap violations, undisclosed correction, silent artifact mutation, or approval-token reuse.
 
@@ -13,7 +13,7 @@ Study 003 tests whether a declarative research contract can distinguish valid ap
 - Active protocol: `PROTOCOL.md`
 - Tracking issue: #7
 
-## Cycle 1 artifacts
+## Cycle 1 — schema and corpus
 
 - Schema and canonical serialization: `src/templex_zero/protocol_integrity/schema.py`
 - Deterministic corpus generator: `src/templex_zero/protocol_integrity/corpus.py`
@@ -31,8 +31,32 @@ Corpus summary:
 - 528 events total;
 - canonical SHA-256 `b7675cd11bf808a02579cc56d26252ca636e9627d9542d8d063e6752374b7d84`.
 
-No validator verdict logic, oracle, baseline execution, historical encoding, or experimental result exists yet.
+## Cycle 2 — synthetic correctness gate
+
+- Incremental primary validator: `src/templex_zero/protocol_integrity/validator.py`
+- Independent whole-trace oracle: `src/templex_zero/protocol_integrity/oracle.py`
+- Deliberately weak order-only baseline: `src/templex_zero/protocol_integrity/baseline.py`
+- Gate aggregation: `src/templex_zero/protocol_integrity/synthetic_gate.py`
+- Formal runner: `experiments/run_protocol_integrity_synthetic_gate.py`
+- Tests: `tests/test_protocol_integrity_validators.py`
+- Full result: `data/synthetic_gate_v1.json`
+- Audit: `CYCLE_2_SYNTHETIC_GATE.md`
+
+The first gate passed:
+
+- false accepts: 0;
+- false rejects: 0;
+- first-violation-index accuracy: 100%;
+- violation-class accuracy: 100%;
+- reason-code accuracy: 100%;
+- primary/oracle agreement: 100%;
+- mutants rejected: 20 / 20;
+- named beyond-ordering cases accepted by the weak baseline: `P2-I`, `P3-I`, `P5-I`, and `P6-I`.
+
+Formal result SHA-256: `46fef85ba4e76698ba861d84873be205b0b5e54ce8d2e84b4fed4c39004090de`.
+
+The validator, oracle, and baseline are now frozen. No historical trace has yet been encoded or evaluated.
 
 ## Next bounded unit
 
-Cycle 2 may implement the primary validator, independent oracle, and frozen order-only baseline, then run the first synthetic correctness gate. Historical traces remain forbidden until that gate passes and validator code is frozen.
+Cycle 3 may encode exactly the four precommitted historical traces from cited Study 001 and Study 002 records, then evaluate them using the frozen validator and oracle without code changes or repair. Any mismatch is a historical-transfer failure and must remain visible.
