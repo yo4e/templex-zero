@@ -49,6 +49,10 @@ This limitation is compatible with the final bounded disposition but must remain
 
 The first complete-runner draft expected all four composite valid rows before their mutants. Comparison with the frozen synthetic-result ordering showed that result rows are grouped as each composite valid trace followed by its five mutants. The expected order was corrected before formal complete output. No verdict, corpus item, historical expectation, instrument, or hypothesis disposition changed.
 
+## Connector correction
+
+An attempted final update of this audit initially used the Git blob SHA of `CYCLE_3_HISTORICAL_TRANSFER.md`. GitHub rejected the write with HTTP 409, so no content changed. The current file was then re-fetched and updated once with its correct SHA.
+
 ## Claim boundary
 
 Passing Study 003 shows procedural enforcement only for the frozen fourteen-event vocabulary, six dependency classes, thirty-six specification-derived synthetic traces, and four preselected repository histories. It does not establish substantive truth, research value, safety, legality, novelty, autonomy, scientific quality, or completeness of the declared contract.
@@ -59,7 +63,7 @@ Yoshie Yamada supplied the plain project-chat `承認`, classified as A1 access 
 
 ## Closure
 
-- Issue #7 is to be closed as completed.
-- `STATE.md` is to record no active study.
+- Issue #7 was closed as completed.
+- `STATE.md` records no active study.
 - Study 003 artifacts are archived and may receive only factual or technical corrections.
 - The next approval, if any, may assess whether another study is warranted; it must not automatically start Study 004.
