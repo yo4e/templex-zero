@@ -1,51 +1,64 @@
 # Next Start
 
-_Updated: 2026-07-21 (Asia/Tokyo)_
+_Updated: 2026-07-22 (Asia/Tokyo)_
 
 ## Purpose
 
-This is a compact advisory bridge, not authority. Re-read `STATE.md`, the three closed-study reports, governance files, the portfolio decision, the frozen Study 004 proposal, current issues, and recent commits.
+This is a compact advisory bridge, not authority. Re-read `STATE.md`, the active Study 004 protocol and Cycle 1 audit, governance files, Issue #10, current commits, and the frozen data bundles.
 
 When Yoshie Yamada sends `承認`, follow `governance/APPROVAL_DRIVEN_EXECUTION.md`, complete one bounded cycle, report in the same project chat, and stop.
 
 ## Current position
 
-**No active study. Study 004 is proposed but inactive.**
+**Study 004 is active. Cycle 1 of at most four is complete.**
 
 - Study 001: closed negative game-design result.
 - Study 002: closed partial / incomplete exact-first result.
 - Study 003: closed methodological success with bounded claims.
-- Study 004: frozen proposal awaiting activation GO / NO-GO.
+- Study 004: active finite-state conformance study.
 
-Current decision artifacts:
+Current Study 004 artifacts:
 
-- `research/decisions/2026-07-21-post-study-003-portfolio-assessment.md`
-- `research/proposals/STUDY_004_FINITE_STATE_CONFORMANCE.md`
+- `research/studies/004-finite-state-conformance/PROTOCOL.md`
+- `research/studies/004-finite-state-conformance/README.md`
+- `research/studies/004-finite-state-conformance/CYCLE_1_SETUP_AUDIT.md`
+- `research/studies/004-finite-state-conformance/data/corpus_v1.json`
+- `research/studies/004-finite-state-conformance/data/models_v1.json`
+- Issue #10
 
-The selected direction evaluates finite-state conformance counterexamples. The frozen proposal contains 24 reference models, 144 unreplaced mutants, uniform-random, lexicographic-breadth, and transition-coverage-guided methods, an independent exact shortest-trace oracle, a reducer, fixed action budgets, explicit thresholds, and a four-cycle limit.
+Cycle 1 froze 24 deterministic Mealy reference models and 144 unreplaced mutants under seed `2026072104`. Targeted tests passed 8 cases, compile verification passed, and repeated generation was byte-identical.
 
-No Study 004 code, corpus, issue, experiment, or result exists.
+No equivalence classification, exact oracle, shortest distinguishing trace, testing campaign, reducer result, or formal benchmark exists.
 
 ## Next bounded work unit
 
-The next approval may perform a **Study 004 activation go / no-go cycle**.
+The next approval may perform **Study 004 Cycle 2 — method and reducer freeze only**.
 
-1. inspect the live proposal and portfolio decision;
-2. criticize feasibility, nontriviality, independence, sequencing, and resource bounds;
-3. choose GO unchanged or NO-GO;
-4. if NO-GO, record the reason and remain inactive;
-5. if GO unchanged, activate the proposal as `research/studies/004-finite-state-conformance/PROTOCOL.md` and perform Cycle 1 setup only;
-6. Cycle 1 may implement canonical model/mutation generation, freeze exactly 24 models and 144 mutants, write targeted tests, create an active-study issue, and update state;
-7. do not implement the three formal testing methods, reducer, exact oracle, or benchmark result in the activation cycle.
+1. implement uniform-random testing with eight reset-delimited campaigns;
+2. implement increasing-length lexicographic breadth enumeration;
+3. implement shortest-trace transition-coverage guidance followed by consecutive transition-pair coverage;
+4. implement the frozen reducer sequence;
+5. use only hand-authored unit fixtures and deterministic tests;
+6. freeze the four implementations after tests;
+7. update Issue #10, state, audit, and handoff.
 
-A proposal is not activation approval. Do not change its frozen research question, hypotheses, seed, model inventory, mutation operators, budgets, method semantics, oracle role, disposition rules, or four-cycle limit during activation.
+Cycle 2 must not:
+
+- implement or execute the exact paired-state oracle;
+- classify any frozen corpus mutant as equivalent or distinguishable;
+- inspect or record shortest distinguishing traces;
+- run the methods on the frozen corpus;
+- generate formal benchmark results;
+- alter budgets, hypotheses, seed, corpus, method semantics, reducer semantics, or cycle limit.
+
+The method/reducer freeze must occur before protected oracle information exists. A sequence violation contaminates H1–H3 and cannot be repaired retrospectively.
 
 ## Verification boundaries carried forward
 
 - Fresh checkout has remained unavailable because the environment could not resolve `github.com`.
-- Connector-backed source and blob checks do not equal a full fresh-checkout regression.
-- Study 003 final integration used connector-verified result-field projections, not a new raw-trace replay.
-- The Study 004 proposal has not been implemented or experimentally verified.
+- Connector-backed source and blob checks do not equal a full checkout regression.
+- Cycle 1 functional reconstruction passed targeted tests but did not run the historic full suite.
+- The frozen corpus has not passed its later 80% distinguishability viability gate.
 
 ## Human gate
 
