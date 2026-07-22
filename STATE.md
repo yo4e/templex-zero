@@ -1,10 +1,10 @@
 # State
 
-_Last updated: 2026-07-21_
+_Last updated: 2026-07-22_
 
 ## Phase
 
-**No active study / frozen Study 004 proposal awaiting activation go / no-go**
+**Active Study 004 / Cycle 1 corpus freeze complete**
 
 ## Laboratory
 
@@ -15,51 +15,60 @@ _Last updated: 2026-07-21_
 
 ## Closed studies
 
-- **Study 001:** negative autonomous-game-design conclusion; no candidate survived the frozen viability criteria. Do not reopen or create Span v0.3.
-- **Study 002:** partial / incomplete exact-first result; H1 and H3 supported, H2 unresolved. Do not add the missing shallow heuristic or replace frozen candidates.
-- **Study 003:** methodological success with bounded claims. H1–H4 supported for the frozen protocol-integrity corpus and four historical traces.
+- **Study 001:** negative autonomous-game-design conclusion; do not reopen or create Span v0.3.
+- **Study 002:** partial / incomplete exact-first result; H1 and H3 supported, H2 unresolved; do not add a retroactive heuristic.
+- **Study 003:** methodological success with bounded procedural claims; archived and closed.
 
-## Study 003 final record
+## Active study
 
-- Final report: `research/studies/003-protocol-integrity/REPORT.md`
-- Archived protocol: `research/studies/003-protocol-integrity/PROTOCOL.md`
-- Complete result: `research/studies/003-protocol-integrity/data/complete_validation_v1.json`
-- Complete result Git blob: `62b0836a3abc2ce96fa74f045b8fbf5628916e55`
-- Internal deterministic SHA-256: `a52d00e08e00855ad9f43b3988e8f64bf9dc03d3d81f87c7c090f52247ec60a4`
-- File SHA-256: `5f8d1e6d399957745b233f4807406a01ea0ae98af580cd3adba77becf4265904`
-- Coverage: 40 traces and 572 events.
-- Synthetic result: zero false accepts and false rejects, 20 / 20 mutants rejected, full primary/oracle agreement.
-- Historical result: 4 / 4 expected verdicts and first violations matched.
-- Issue #7: closed as completed.
+**Study 004 — Finite-State Conformance Counterexamples**
 
-## Claim boundary
+- Protocol: `research/studies/004-finite-state-conformance/PROTOCOL.md`
+- Overview: `research/studies/004-finite-state-conformance/README.md`
+- Cycle 1 audit: `research/studies/004-finite-state-conformance/CYCLE_1_SETUP_AUDIT.md`
+- Active Issue: #10
+- Cycle count: **1 of maximum 4 complete**
 
-Study 003 validates declared procedural dependencies only within its frozen language and small corpus. It does not validate substantive truth, value, safety, legality, novelty, autonomy, or scientific quality. Its artifacts are not production authorization or security tools.
+The frozen question asks whether model-guided black-box testing detects observable divergences between small deterministic Mealy specifications and mutated implementations better than equal-budget random testing, and whether failures can be reduced to exact shortest counterexamples.
 
-## Portfolio decision
+## Cycle 1 frozen record
 
-A portfolio assessment compared finite-state conformance testing, contract-omission sensitivity, open-data replication, project-selection calibration, and remaining inactive.
+- Activation: **GO unchanged** from the frozen proposal.
+- Seed: `2026072104`.
+- Reference models: **24** across 2 state sizes × 3 families × 4 variants.
+- Mutation operators: **6**.
+- Frozen unreplaced mutants: **144**.
+- Manifest: `research/studies/004-finite-state-conformance/data/corpus_v1.json`.
+- Manifest payload SHA-256: `c9897631050b937d31a3273ba8cdabc55b79be1d66a0f4ca2e5c6df9f7c79fdb`.
+- Manifest file SHA-256: `82fcd584661e4860167ff114041868b923adb6861395a249564af4ff771b8fa2`.
+- Reference-model bundle: `research/studies/004-finite-state-conformance/data/models_v1.json`.
+- Reference-model payload SHA-256: `7925911d9f834d71a360defc862d8d67262989eb2e957cf334b94a1b3a58202b`.
+- Reference-model file SHA-256: `bf3eab9884381a634d90803d3367c4700c8553ac43ec112355b2881dc4aaa902`.
+- Targeted tests: **8 passed**.
+- Compile verification: passed.
+- Repeated generation: byte-identical.
 
-- Decision: **GO to one frozen proposal only**.
-- Selected direction: finite-state conformance counterexamples.
-- Decision record: `research/decisions/2026-07-21-post-study-003-portfolio-assessment.md`
-- Frozen proposal: `research/proposals/STUDY_004_FINITE_STATE_CONFORMANCE.md`
+## Protected boundary
 
-## Current work
+No observational-equivalence classification, exact oracle, shortest distinguishing trace, testing-method result, reducer result, or formal benchmark exists.
 
-No research study is active. Study 004 is proposed but not activated.
-
-The frozen proposal precommits a 24-model deterministic Mealy-machine family, 144 unreplaced mutants, three equal-budget black-box testing methods, an independent exact shortest-counterexample oracle, explicit detection and reduction thresholds, contamination controls, and a four-cycle activation-to-closure limit.
-
-No Study 004 code, generated corpus, experiment, result, or active-study issue exists.
+The three testing methods and reducer must be implemented and frozen before any protected oracle classification is produced. Violating this order contaminates H1–H3 and requires invalid closure rather than retrospective repair.
 
 ## Next bounded work
 
-A future plain `承認` may perform one activation go / no-go cycle for the frozen Study 004 proposal.
+Cycle 2 may implement and freeze only:
 
-- If **NO-GO**, record the reason and remain inactive.
-- If **GO unchanged**, activate the proposal as the protocol and perform Cycle 1 setup only: generator, canonical serialization, frozen 24-model / 144-mutant corpus, targeted tests, and state synchronization.
-- Do not implement the competing testing methods, exact oracle, or formal benchmark in the activation cycle.
+- uniform-random testing;
+- lexicographic breadth enumeration;
+- transition-coverage-guided testing;
+- the frozen counterexample reducer;
+- hand-authored fixtures and deterministic tests.
+
+Cycle 2 must not implement or run the exact oracle, classify the 144 mutants, inspect shortest distinguishing traces, or run the formal benchmark.
+
+## Verification limitation
+
+Fresh checkout failed because the environment could not resolve `github.com`. Cycle 1 testing used a functional reconstruction of the live files; no full live-repository regression or GitHub Actions run was performed.
 
 ## Human action currently needed
 
