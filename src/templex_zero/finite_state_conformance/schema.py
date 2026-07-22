@@ -149,7 +149,48 @@ class Corpus:
         if len({record.mutant_id for record in self.mutants}) != len(self.mutants):
             raise ValueError("mutant ids must be unique")
 
+    def model_payload_dict(self) -> dict[str, Any]:
+        return {
+            "schema_version": self.schema_version,
+            "seed": self.seed,
+            "actions": list(ACTIONS),
+            "outputs": list(OUTPUTS),
+            "models": [
+                {
+                    "model_id": model.model_id,
+                    "family": model.family,
+                    "state_count": model.state_count,
+                    "variant": model.variant,
+                    "reset_state": model.reset_state,
+                    "transitions": [
+                        [[transition.target, transition.output] for transition in row]
+                        for row in model.transitions
+                    ],
+                    "model_digest": model.digest,
+                }
+                for model in self.models
+            ],
+        }
+
+    @property
+    def model_payload_sha256(self) -> str:
+        return sha256_hex(canonical_bytes(self.model_payload_dict()))
+
+    def models_to_dict(self) -> dict[str, Any]:
+        result = self.model_payload_dict()
+        result["payload_sha256"] = self.model_payload_sha256
+        return result
+
+    def models_to_bytes(self) -> bytes:
+        return canonical_bytes(self.models_to_dict())
+
     def payload_dict(self) -> dict[str, Any]:
+        by_source = {
+            model.model_id: [
+                record for record in self.mutants if record.source_model_id == model.model_id
+            ]
+            for model in self.models
+        }
         return {
             "schema_version": self.schema_version,
             "proposal_path": self.proposal_path,
@@ -160,13 +201,29 @@ class Corpus:
             "families": list(FAMILIES),
             "state_sizes": list(STATE_SIZES),
             "mutation_operators": list(MUTATION_OPERATORS),
+            "models_bundle": {
+                "path": "data/models_v1.json",
+                "payload_sha256": self.model_payload_sha256,
+            },
             "counts": {
                 "models": len(self.models),
                 "mutants": len(self.mutants),
                 "mutants_per_model": len(MUTATION_OPERATORS),
             },
-            "models": [model.to_dict() for model in self.models],
-            "mutants": [record.to_dict() for record in self.mutants],
+            "models": [
+                {
+                    "model_id": model.model_id,
+                    "family": model.family,
+                    "state_count": model.state_count,
+                    "variant": model.variant,
+                    "model_digest": model.digest,
+                    "mutants": [
+                        [record.mutant_id, record.model.digest]
+                        for record in by_source[model.model_id]
+                    ],
+                }
+                for model in self.models
+            ],
         }
 
     @property
