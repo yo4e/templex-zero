@@ -29,11 +29,11 @@ Negative results and visible corrections are intentional parts of the experiment
 
 ## Status
 
-- Phase: **No active study / frozen Study 004 proposal awaiting activation decision**
+- Phase: **Active Study 004 / Cycle 1 corpus freeze complete**
 - Visibility: **Public**
 - Closed studies: **Study 001, Study 002, and Study 003**
-- Active study: **None**
-- Study 004: **Proposed but inactive**
+- Active study: **Study 004 — Finite-State Conformance Counterexamples**
+- Cycle: **1 of maximum 4 complete**
 - Release state: **Provisional and approval-gated**
 - Public operator: **Templex Tsukino**
 
@@ -43,16 +43,26 @@ Study 002 closed with a partial / incomplete methodological result. It exactly s
 
 Study 003 closed with methodological success under bounded claims. Its frozen validators classified 36 synthetic traces with zero false accepts and false rejects, rejected 20 / 20 mutations, outperformed an order-only baseline on four precommitted stateful cases, and matched four precommitted Study 001/002 histories after instrument freeze. The final complete report covers 40 traces and 572 represented events and was byte-identical across two runs.
 
-A post-Study-003 portfolio assessment selected one frozen, inactive Study 004 proposal on finite-state conformance counterexamples. The proposal precommits 24 reference models, 144 unreplaced mutants, three equal-budget black-box testing methods, an independent exact shortest-counterexample oracle, explicit thresholds, contamination controls, and a four-cycle limit. No Study 004 code, corpus, issue, experiment, or result exists.
+Study 004 asks whether model-guided black-box testing can detect observable divergences between small deterministic Mealy specifications and mutated implementations better than equal-budget random testing, and whether failures can be reduced to exact shortest counterexamples.
 
+Cycle 1 activated the frozen proposal unchanged, implemented deterministic model and mutation generation, and froze:
+
+- 24 reference models across two state sizes and three topology families;
+- six mutation operators and 144 unreplaced mutants;
+- canonical serialization and bundle digests;
+- targeted structural and regeneration tests, with 8 passing cases.
+
+No equivalence classification, exact-oracle result, testing-method result, shortest distinguishing trace, reducer result, or formal benchmark exists yet. Study 004 remains an active experiment, not a validated method or production tool.
+
+- Study 004 overview: [`research/studies/004-finite-state-conformance/README.md`](research/studies/004-finite-state-conformance/README.md)
+- Active protocol: [`research/studies/004-finite-state-conformance/PROTOCOL.md`](research/studies/004-finite-state-conformance/PROTOCOL.md)
+- Cycle 1 audit: [`research/studies/004-finite-state-conformance/CYCLE_1_SETUP_AUDIT.md`](research/studies/004-finite-state-conformance/CYCLE_1_SETUP_AUDIT.md)
+- Frozen corpus manifest: [`research/studies/004-finite-state-conformance/data/corpus_v1.json`](research/studies/004-finite-state-conformance/data/corpus_v1.json)
+- Frozen reference models: [`research/studies/004-finite-state-conformance/data/models_v1.json`](research/studies/004-finite-state-conformance/data/models_v1.json)
 - Study 003 report: [`research/studies/003-protocol-integrity/REPORT.md`](research/studies/003-protocol-integrity/REPORT.md)
-- Study 003 complete result: [`research/studies/003-protocol-integrity/data/complete_validation_v1.json`](research/studies/003-protocol-integrity/data/complete_validation_v1.json)
 - Portfolio decision: [`research/decisions/2026-07-21-post-study-003-portfolio-assessment.md`](research/decisions/2026-07-21-post-study-003-portfolio-assessment.md)
-- Frozen Study 004 proposal: [`research/proposals/STUDY_004_FINITE_STATE_CONFORMANCE.md`](research/proposals/STUDY_004_FINITE_STATE_CONFORMANCE.md)
 
-Passing Study 003 does not show that a procedurally valid trace contains true, valuable, safe, creative, autonomous, or scientifically sound research. The artifacts are research prototypes, not production authorization or security infrastructure.
-
-The Study 004 proposal is not an active or validated research result. Its synthetic benchmark design may still be rejected at activation or fail after activation.
+Passing Study 003 does not show that a procedurally valid trace contains true, valuable, safe, creative, autonomous, or scientifically sound research. Passing a later Study 004 benchmark would not show superiority on arbitrary software or correctness outside the frozen synthetic domain.
 
 ## Current operating loop
 
@@ -63,7 +73,7 @@ The Study 004 proposal is not an active or validated research result. Its synthe
 5. Templex reports what was actually done in the same project chat and proposes the next single cycle.
 6. The laboratory stops until another `承認` is received.
 
-The next approval may perform an activation go / no-go assessment of the frozen Study 004 proposal. If GO unchanged, it may activate the proposal and perform Cycle 1 setup only. It must not automatically implement the formal testing methods, exact oracle, or benchmark execution.
+The next approval may perform Study 004 Cycle 2 only: implement and freeze the three testing methods and counterexample reducer using hand-authored fixtures. It must not implement or run the exact oracle, classify corpus mutants, inspect shortest distinguishing traces, or execute the formal benchmark.
 
 ## Operating principles
 
@@ -80,6 +90,7 @@ The next approval may perform an activation go / no-go assessment of the frozen 
 - [`STATE.md`](STATE.md) — current state and next actions
 - [`NEXT_START.md`](NEXT_START.md) — compact restart handoff
 - [`AGENTS.md`](AGENTS.md) — restart and operating protocol
+- [`research/studies/004-finite-state-conformance/README.md`](research/studies/004-finite-state-conformance/README.md) — active Study 004
 - [`research/studies/001-autonomous-game-design/REPORT.md`](research/studies/001-autonomous-game-design/REPORT.md) — closed Study 001 report
 - [`research/studies/002-exact-first-screening/REPORT.md`](research/studies/002-exact-first-screening/REPORT.md) — closed Study 002 report
 - [`research/studies/003-protocol-integrity/REPORT.md`](research/studies/003-protocol-integrity/REPORT.md) — closed Study 003 report
