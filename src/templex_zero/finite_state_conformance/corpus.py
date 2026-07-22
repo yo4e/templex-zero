@@ -31,6 +31,9 @@ PROPOSAL_BLOB_SHA = "0b16048ad8e96dcaf147f033205ad76069430776"
 DEFAULT_OUTPUT_PATH = Path(
     "research/studies/004-finite-state-conformance/data/corpus_v1.json"
 )
+DEFAULT_MODELS_PATH = Path(
+    "research/studies/004-finite-state-conformance/data/models_v1.json"
+)
 
 FAMILY_CODES = {
     "reset-chain": "RC",
@@ -337,8 +340,14 @@ def generate_corpus() -> Corpus:
     )
 
 
-def write_corpus(path: Path = DEFAULT_OUTPUT_PATH) -> Corpus:
+def write_corpus(
+    path: Path = DEFAULT_OUTPUT_PATH,
+    models_path: Path | None = None,
+) -> Corpus:
     corpus = generate_corpus()
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(corpus.to_bytes())
+    target_models = models_path or path.with_name("models_v1.json")
+    target_models.parent.mkdir(parents=True, exist_ok=True)
+    target_models.write_bytes(corpus.models_to_bytes())
     return corpus
