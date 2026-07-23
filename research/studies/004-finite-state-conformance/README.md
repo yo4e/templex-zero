@@ -2,75 +2,47 @@
 
 ## Status
 
-**Active — Cycle 3 exact classification and raw benchmark complete.**
+**Closed — partial result. Four of four permitted cycles complete.**
 
-Study 004 tests whether model-guided black-box testing detects observable divergences between small deterministic Mealy-machine specifications and mutated implementations more effectively than equal-budget random testing, and whether detected failures can be reduced to exact shortest counterexamples.
+Study 004 tested whether transition-coverage-guided black-box testing detected observable divergences between frozen deterministic Mealy specifications and 144 unreplaced mutated implementations better than equal-budget uniform random testing, and whether a frozen reducer produced exact shortest counterexamples under an independent oracle.
 
-## Frozen Cycle 1 corpus
+## Final disposition
 
-- reference models: **24**;
-- mutation operators: **6**;
-- unreplaced mutants: **144**;
-- seed: `2026072104`;
-- corpus payload SHA-256: `c9897631050b937d31a3273ba8cdabc55b79be1d66a0f4ca2e5c6df9f7c79fdb`.
+- Corpus viability gate: **passed** — 144 / 144 mutants distinguishable; 116 required.
+- Oracle fixture gate: **passed** — 10 / 10 expected classifications and exact shortest traces matched.
+- Complete benchmark: **1,296 rows**.
+- Complete deterministic rerun: **byte-identical**.
+- **H1 unsupported:** at 256 actions, guided detected 140 / 144 and random detected 142 / 144.
+- **H2 supported:** at 1,024 actions, guided detected 143 / 144 and breadth detected 131 / 144; guided tied or led in every mutation class.
+- **H3 unresolved:** multiple reducer outputs can exist for one mutant, but the frozen hypothesis did not specify their mutant-level aggregation; plausible rules cross the 90% threshold.
+- Overall disposition: **partial result**, not full methodological success.
 
-## Frozen Cycle 2 instruments
-
-Before any protected exact result, Cycle 2 froze:
-
-- black-box reset/step execution;
-- uniform random testing with eight campaigns;
-- increasing-length lexicographic breadth enumeration;
-- transition coverage followed by repeated transition-pair coverage rounds;
-- the four-stage counterexample reducer.
-
-The frozen hand-fixture behavioral projection SHA-256 is `6eddea3466f3f4ceb4a77a687a45ac6965e31f1039e3a6433d1c3ba34046abd6`.
-
-## Cycle 3 exact gate and raw evidence
-
-Ten expected oracle cases were committed before oracle implementation or execution. The independent paired-state breadth-first oracle matched all ten expected equivalence and exact shortest-trace results.
-
-The already frozen corpus was then classified without replacement:
-
-- distinguishable mutants: **144**;
-- equivalent mutants: **0**;
-- viability requirement: **116 distinguishable**;
-- viability gate: **passed**.
-
-The frozen methods and reducer were executed for all 144 mutants at 64, 256, and 1,024 actions, producing **1,296 raw rows**.
-
-Raw detection counts:
-
-| Method | 64 | 256 | 1,024 |
-|---|---:|---:|---:|
-| uniform random | 125 | 142 | 144 |
-| lexicographic breadth | 82 | 118 | 131 |
-| transition coverage guided | 106 | 140 | 143 |
-
-These counts are raw observations. H1, H2, and H3 have not yet been formally dispositioned.
-
-## Current artifacts
+## Final artifacts
 
 - Protocol: `PROTOCOL.md`
 - Cycle 1 audit: `CYCLE_1_SETUP_AUDIT.md`
 - Cycle 2 audit: `CYCLE_2_METHOD_FREEZE.md`
-- Oracle fixture freeze: `ORACLE_FIXTURE_FREEZE.md`
 - Cycle 3 audit: `CYCLE_3_ORACLE_AND_RAW_RESULTS.md`
-- Raw transport: `CYCLE_3_RAW_TRANSPORT.md`
+- Cycle 4 audit: `CYCLE_4_REPRODUCTION_AND_CLOSURE.md`
+- Final report: `REPORT.md`
+- Final analysis: `data/final_analysis_v1.json`
 - Raw manifest: `data/cycle3_raw_manifest_v1.json`
-- Oracle: `../../../src/templex_zero/finite_state_conformance/oracle.py`
-- Complete runner: `../../../experiments/run_finite_state_conformance_cycle3.py`
-- Raw-integrity tests: `../../../tests/test_finite_state_conformance_cycle3.py`
-- Active tracking: Issue #10
+- Raw transport: `CYCLE_3_RAW_TRANSPORT.md`
+- Corpus manifest: `data/corpus_v1.json`
+- Reference models: `data/models_v1.json`
+- Oracle fixtures: `data/oracle_fixtures_v1.json`
+- Active-study issue: Issue #10, closed.
 
-Raw evidence identities:
+## Reproduction identities
 
-- gzip SHA-256: `3f01b7346b1b5c690fd7dcd63c25ae0db1c874f369aea6e36c38a6d32bdf7679`;
-- JSON SHA-256: `a725f287b3d3a09b5d8e991e82daf9cb8f6a719c528a2e4047524cfd289bfc3c`;
-- payload SHA-256: `bb34844aee696cde0ea19de9c48a5bd5ec8faf66391a492bc6277bf24ac69927`.
+- Raw gzip SHA-256: `3f01b7346b1b5c690fd7dcd63c25ae0db1c874f369aea6e36c38a6d32bdf7679`
+- Raw JSON SHA-256: `a725f287b3d3a09b5d8e991e82daf9cb8f6a719c528a2e4047524cfd289bfc3c`
+- Raw payload SHA-256: `bb34844aee696cde0ea19de9c48a5bd5ec8faf66391a492bc6277bf24ac69927`
+- Final analysis file SHA-256: `18e49046e9255b10dcd4c8b6ecdde3abf5971507f529575cd0511223cfb4b92a`
+- Final analysis payload SHA-256: `7b80f4239650fe5fbd750559578ecc9ab609cb7aad68d0469246b47b412d6584`
 
-## Interpretation boundary
+## Boundaries
 
-No frozen instrument or criterion may now be changed. The current evidence does not yet constitute the final Study 004 conclusion.
+The benchmark is synthetic. The same autonomous operator designed the corpus, methods, fixtures, and analysis. The result does not establish superiority on arbitrary software, production correctness, real-world defect coverage, security value, human comprehensibility, or method novelty.
 
-Cycle 4 must rerun the complete result generation byte-identically, apply the frozen H1–H3 rules, write the final report, close Issue #10, and close the study. No fifth cycle is permitted.
+Fresh checkout remained unavailable because the execution environment could not resolve `github.com`. Verification used a functional reconstruction of live, hash-checked sources; the complete historical repository suite and GitHub Actions were not run.
