@@ -29,44 +29,40 @@ Negative results and visible corrections are intentional parts of the experiment
 
 ## Status
 
-- Phase: **Active Study 004 / Cycle 2 methods and reducer frozen**
+- Phase: **Active Study 004 / Cycle 3 raw benchmark complete**
 - Visibility: **Public**
 - Closed studies: **Study 001, Study 002, and Study 003**
 - Active study: **Study 004 — Finite-State Conformance Counterexamples**
-- Cycle: **2 of maximum 4 complete**
+- Cycle: **3 of maximum 4 complete**
 - Release state: **Provisional and approval-gated**
 - Public operator: **Templex Tsukino**
 
-Study 001 closed with a negative game-design result: no candidate survived the frozen evaluation criteria.
-
-Study 002 closed with a partial / incomplete methodological result. It exactly solved fifteen of eighteen frozen candidates, ran 36,000 fixed-seed random games, and found six pre-defined false-reassurance cases. H1 and H3 were supported; H2 remained unresolved because the required shallow heuristic was not frozen before exact inspection.
-
-Study 003 closed with methodological success under bounded claims. Its frozen validators classified 36 synthetic traces with zero false accepts and false rejects, rejected 20 / 20 mutations, outperformed an order-only baseline on four precommitted stateful cases, and matched four precommitted Study 001/002 histories after instrument freeze. The final complete report covers 40 traces and 572 represented events and was byte-identical across two runs.
+Study 001 closed with a negative game-design result. Study 002 closed with a partial / incomplete exact-first result. Study 003 closed with methodological success under bounded procedural claims.
 
 Study 004 asks whether model-guided black-box testing can detect observable divergences between small deterministic Mealy specifications and mutated implementations better than equal-budget random testing, and whether failures can be reduced to exact shortest counterexamples.
 
-Cycle 1 activated the frozen proposal unchanged and froze 24 reference models, six mutation operators, and 144 unreplaced mutants under deterministic canonical serialization.
+- Cycle 1 froze 24 reference models and 144 unreplaced mutants.
+- Cycle 2 froze three testing methods and a black-box reducer before exact classification.
+- Cycle 3 froze ten oracle expectations before implementing an independent paired-state breadth-first oracle; the oracle matched all ten expectations; all 144 mutants were distinguishable; the 80% viability gate passed; and the complete 1,296-row raw benchmark was generated.
 
-Cycle 2 froze, before any protected exact result:
+Raw detection counts are currently:
 
-- black-box reset/step execution and first-mismatch recording;
-- uniform random testing with eight independently seeded campaigns;
-- increasing-length lexicographic breadth enumeration;
-- shortest-reference-path transition coverage followed by repeated transition-pair coverage rounds;
-- a four-stage black-box counterexample reducer;
-- deterministic hand-authored fixture behavior with projection SHA-256 `6eddea3466f3f4ceb4a77a687a45ac6965e31f1039e3a6433d1c3ba34046abd6`.
+| Method | 64 | 256 | 1,024 |
+|---|---:|---:|---:|
+| uniform random | 125 | 142 | 144 |
+| lexicographic breadth | 82 | 118 | 131 |
+| transition coverage guided | 106 | 140 | 143 |
 
-The current Study 004 Cycle 1 and Cycle 2 targeted suites pass 20 tests. No exact oracle, observational-equivalence classification, shortest distinguishing trace, frozen-corpus method result, reducer benchmark result, or H1–H3 disposition exists yet. Study 004 remains an active experiment, not a validated method or production tool.
+These are raw observations, not final H1–H3 dispositions. The complete result has not yet been repeated byte-identically, interpreted, or closed.
 
 - Study 004 overview: [`research/studies/004-finite-state-conformance/README.md`](research/studies/004-finite-state-conformance/README.md)
 - Active protocol: [`research/studies/004-finite-state-conformance/PROTOCOL.md`](research/studies/004-finite-state-conformance/PROTOCOL.md)
-- Cycle 1 audit: [`research/studies/004-finite-state-conformance/CYCLE_1_SETUP_AUDIT.md`](research/studies/004-finite-state-conformance/CYCLE_1_SETUP_AUDIT.md)
-- Cycle 2 audit: [`research/studies/004-finite-state-conformance/CYCLE_2_METHOD_FREEZE.md`](research/studies/004-finite-state-conformance/CYCLE_2_METHOD_FREEZE.md)
-- Frozen corpus manifest: [`research/studies/004-finite-state-conformance/data/corpus_v1.json`](research/studies/004-finite-state-conformance/data/corpus_v1.json)
-- Frozen reference models: [`research/studies/004-finite-state-conformance/data/models_v1.json`](research/studies/004-finite-state-conformance/data/models_v1.json)
+- Cycle 3 audit: [`research/studies/004-finite-state-conformance/CYCLE_3_ORACLE_AND_RAW_RESULTS.md`](research/studies/004-finite-state-conformance/CYCLE_3_ORACLE_AND_RAW_RESULTS.md)
+- Raw transport: [`research/studies/004-finite-state-conformance/CYCLE_3_RAW_TRANSPORT.md`](research/studies/004-finite-state-conformance/CYCLE_3_RAW_TRANSPORT.md)
+- Raw manifest: [`research/studies/004-finite-state-conformance/data/cycle3_raw_manifest_v1.json`](research/studies/004-finite-state-conformance/data/cycle3_raw_manifest_v1.json)
 - Study 003 report: [`research/studies/003-protocol-integrity/REPORT.md`](research/studies/003-protocol-integrity/REPORT.md)
 
-Passing Study 003 does not show that a procedurally valid trace contains true, valuable, safe, creative, autonomous, or scientifically sound research. Passing a later Study 004 benchmark would not show superiority on arbitrary software or correctness outside the frozen synthetic domain.
+Passing Study 004 would not show superiority on arbitrary software, production correctness, security value, or method novelty outside the frozen synthetic domain.
 
 ## Current operating loop
 
@@ -77,7 +73,7 @@ Passing Study 003 does not show that a procedurally valid trace contains true, v
 5. Templex reports what was actually done in the same project chat and proposes the next single cycle.
 6. The laboratory stops until another `承認` is received.
 
-The next approval may perform Study 004 Cycle 3: freeze and gate an independent exact paired-state oracle, then—only if the gate passes—classify the frozen corpus and execute the frozen methods and reducer to produce deterministic raw benchmark results. It must not alter the corpus, methods, reducer, budgets, hypotheses, or thresholds after protected results begin, and it must stop before normal final synthesis and closure.
+The next approval may perform Study 004 Cycle 4 only: reproduce the complete output byte-identically, apply the frozen H1–H3 rules, write the final report, close Issue #10, and close Study 004. No fifth cycle is permitted.
 
 ## Operating principles
 
