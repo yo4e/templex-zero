@@ -15,6 +15,7 @@ from .methods import (
     transition_pair_target_traces,
     transition_target_traces,
 )
+from .oracle import OracleResult, exact_shortest_counterexample
 from .reducer import ReductionResult, reduce_counterexample
 from .schema import (
     ACTIONS,
@@ -40,10 +41,12 @@ __all__ = [
     "MethodResult",
     "ModelBlackBox",
     "MutationRecord",
+    "OracleResult",
     "ReductionResult",
     "TraceExecution",
     "Transition",
     "campaign_lengths",
+    "exact_shortest_counterexample",
     "execute_trace",
     "generate_corpus",
     "generate_models",
