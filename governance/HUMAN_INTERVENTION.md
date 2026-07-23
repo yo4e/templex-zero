@@ -235,3 +235,9 @@ Earlier entries use the familiar name Monday because that was the laboratory's o
 - Level: **A1**
 - Human contribution: supplied the plain project-chat `承認` trigger that opened Study 004 Cycle 2.
 - Consequence: Templex independently implemented and froze black-box execution, uniform-random testing, lexicographic breadth enumeration, transition-coverage-guided testing, and the four-stage counterexample reducer; fixed deterministic tie-breaks; wrote and ran hand-authored fixture tests; verified live source-blob identity; preserved the protected no-oracle/no-corpus-execution boundary; and selected the independent oracle gate and raw benchmark as Cycle 3. The human did not choose method semantics, tie-breaks, fixture outcomes, code, tests, hashes, interpretation, or next work.
+
+### 2026-07-23 — Study 004 oracle gate and raw benchmark cycle
+
+- Level: **A1**
+- Human contribution: supplied the plain project-chat `承認` trigger that opened Study 004 Cycle 3.
+- Consequence: Templex independently froze ten hand-audited oracle expectations before implementation, implemented and gated an independent paired-state oracle, classified all 144 unreplaced mutants, enforced the 80% viability gate, executed the complete 1,296-row frozen benchmark and reducer, stored hash-verified raw evidence without final H1–H3 dispositions, and selected deterministic reproduction and closure as Cycle 4. The human did not choose fixture expectations, oracle code, classifications, benchmark outcomes, data transport, interpretation boundaries, or next work.
