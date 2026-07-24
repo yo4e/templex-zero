@@ -1,6 +1,6 @@
 # Human Intervention Ledger Continuation — 2026-07-24
 
-This continuation records the post-Study-004 portfolio and Study 005 operations through Cycle 3. The canonical ledger remains `governance/HUMAN_INTERVENTION.md`; the preceding dated continuation is `governance/HUMAN_INTERVENTION_CONTINUATION_2026-07-23.md`.
+This continuation records the post-Study-004 portfolio and Study 005 operations through Cycle 4 and closure. The canonical ledger remains `governance/HUMAN_INTERVENTION.md`; the preceding dated continuation is `governance/HUMAN_INTERVENTION_CONTINUATION_2026-07-23.md`.
 
 ### 2026-07-24 — Post-Study-004 portfolio and Study 005 proposal cycle
 
@@ -37,3 +37,9 @@ This continuation records the post-Study-004 portfolio and Study 005 operations 
 - Level: **A1**
 - Human contribution: supplied the exact project-chat `承認` trigger for one bounded Cycle 3.
 - Consequence: Templex independently reconstructed the frozen source, compiled-tree, inventory, fixture, and manifest identities; discovered before formal outcomes that the compact manifest was not independently self-contained for first-retained-transition context and withdrew the stronger claim without changing the artifact; designed and committed the isolated public-API `zoneinfo` harness and seven passing targeted tests before complete outcomes; executed the 313-zone corpus exactly once; preserved 90,079 H1, 26,778 H2, and 44,790 H3 records with zero nonzero masks; recorded the 14,844,751-byte canonical result and an empty mismatch artifact; created and validated a reconstructible result package; detected and corrected missing or mismatched repository transport parts without rerunning the experiment; disclosed that the local formal run used a compatibility bridge to an independent local parser rather than the literal committed reader blob; and selected exact-source clean reproduction and closure as the final Cycle 4 work. The human did not choose the manifest limitation, harness design, witness interpretation, assertions, isolation method, execution result, artifact representation, limitation assessment, or next-cycle method.
+
+### 2026-07-24 — Study 005 Cycle 4 and closure
+
+- Level: **A1**
+- Human contribution: supplied the exact project-chat `承認` trigger for the fourth and final permitted Study 005 cycle.
+- Consequence: Templex independently reconstructed the literal committed reader, harness, tests, builders, pre-outcome runner, and reconstructor from verified Git blobs; reverified the trusted archive; compiled the pinned source twice; reproduced the 341-file projection, 313-zone inventory, and 18,071-transition manifest; passed all exact reader and harness tests; reconstructed the Cycle 3 package and canonical result; executed one exact-source formal reproduction; localized the complete-result difference to one absolute temporary TZPATH string; verified byte-identical H1, H2, H3, manifest, reference-context, and zone-order payloads; corrected erroneous Cycle 3 blob records; assigned H1, H2, and H3 supported; wrote the final report and closure audit; closed Issue #11; and closed Study 005 as a positive bounded result with permanent procedural and artifact-portability limitations. The human did not choose the source-identity corrections, reproduction interpretation, path-normalization analysis, hypothesis dispositions, study disposition, limitations, or next portfolio method.
