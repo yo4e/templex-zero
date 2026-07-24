@@ -4,7 +4,7 @@ _Last updated: 2026-07-24_
 
 ## Phase
 
-**No active study / inactive Study 005 proposal frozen**
+**No active study / Study 005 activation NO-GO on source acquisition**
 
 ## Laboratory
 
@@ -20,38 +20,40 @@ _Last updated: 2026-07-24_
 - **Study 003:** methodological success with bounded procedural claims.
 - **Study 004:** partial finite-state conformance result; H1 unsupported, H2 supported, H3 unresolved.
 
-## Post-Study-004 portfolio decision
+## Study 005 activation decision
 
-- Assessment: `research/decisions/2026-07-24-post-study-004-portfolio-assessment.md`
-- Decision: **GO to one frozen proposal; remain inactive**.
-- Selected direction: **IANA tzdb transition round-trip conformance**.
 - Frozen proposal: `research/proposals/STUDY_005_TZDB_TRANSITION_ROUNDTRIP.md`
-- Pinned external referent: **IANA tzdb 2026c**.
-- Score: **29 / 30** under the frozen portfolio criteria.
+- Decision: **NO-GO for activation; proposal remains inactive**.
+- Decision record: `research/decisions/2026-07-24-study-005-activation-no-go.md`
+- Reason: the exact versioned official IANA archive could not be materialized in the available execution environment.
+- Official archive: `tzdata2026c.tar.gz`, 475,694 bytes.
+- Official SHA-512: `e0b4b7044b66fbc27bc21d13d18063abcdf78ab58d5ba5fd64bd1a88d86e9d495f45add4d8e65bb6c40249f9c94ca29b72c8ebba8d0e4c468f2965ac77932ef0`.
+- Study 005 cycle count: **0 of maximum 4**, because activation did not occur.
 - Open active-study issue: **none**.
-- No source archive, compiled data, implementation, transition corpus, or experiment was created in the portfolio cycle.
+- No protocol, source snapshot, compiled data, zone inventory, fixture set, implementation, or experiment exists.
 
-## Proposal boundary
+## Preserved judgment
 
-The proposal asks whether an independently implemented TZif reader and a version-isolated Python `zoneinfo` harness can verify explicit UTC projection, backward-transition `fold` round trips, and forward-transition gap detection across the canonical tzdb 2026c zone inventory.
-
-It is frozen but **not active**. It permits negative, partial, or full bounded results and has a maximum of four approval cycles after activation.
+The research question was not rejected. Third-party mirrors, repository reconstruction, host zone data, unversioned convenience links, and newer releases were rejected as substitutions because the frozen proposal requires the exact versioned official IANA HTTPS archive.
 
 ## Next bounded work
 
-The next approval must independently inspect the frozen Study 005 proposal and choose:
+Do not spend another repository cycle retrying the unchanged blocked network path.
 
-- **GO unchanged:** activate Study 005 and perform Cycle 1 only: official-source and permission preflight, isolated double compilation, canonical zone inventory, and frozen parser fixtures; or
-- **NO-GO:** record why activation is not justified and remain inactive.
+After the exact official `tzdata2026c.tar.gz` bytes are available to the project, the next approval may independently retry the activation decision and, only if GO, perform Cycle 1: verify archive identity and bundled licensing, compile twice in isolation, freeze the canonical zone inventory, and freeze parser fixtures.
 
-The next cycle must not implement the full TZif reader, generate the complete transition manifest, execute the `zoneinfo` comparison, contact outsiders, accept terms, or file an external defect report.
+The next cycle must not implement the full TZif reader, generate the complete transition manifest, execute the Python comparison, contact outsiders, accept terms, or file an external defect report.
 
 ## Verification limitation
 
-The portfolio decision used live repository evidence, official public documentation, and bounded local tool-presence checks. It did not download tzdb 2026c or execute Study 005. Current availability of Python 3.13.5, `zoneinfo`, `zic`, and `zdump` is feasibility evidence only and must be rechecked at activation.
+Official web metadata, release checksums, public-domain evidence, and local tool presence were verified. The archive bytes were not obtained, so archive SHA observation, member listing, bundled-file inspection, extraction, compilation, inventory generation, and fixture freezing were not performed.
 
-Fresh checkout and full-repository regression were not required for this documentation-only portfolio cycle and were not performed.
+Fresh checkout and full-repository regression were not required for this activation-decision-only cycle and were not performed.
 
 ## Human action currently needed
 
-None.
+Download the unchanged file from:
+
+`https://www.iana.org/time-zones/repository/releases/tzdata2026c.tar.gz`
+
+and upload it to the TEMPLEX/0 project conversation. The file must be 475,694 bytes and match the official SHA-512 recorded above. The matching `.asc` signature may also be supplied.
