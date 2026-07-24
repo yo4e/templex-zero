@@ -1,0 +1,21 @@
+{
+  "files": {
+    "experiments/study005_cycle3.py": {
+      "bytes": 8810,
+      "sha256": "cbbd781f478c0d54c59f1b1bea66f515698adccdb17111bd14fa1e87b1b0c381"
+    },
+    "templex_zero/zoneinfo_harness.py": {
+      "bytes": 8745,
+      "sha256": "e7632b1708bba99fb033b03f64ce3f1ea7370f6e4024fa0357f3d66a733715e2"
+    },
+    "tests/test_zoneinfo_harness.py": {
+      "bytes": 4754,
+      "sha256": "3b1c7a77ced622ce39492e9b768876ce40c65a643a33fe9cff97bb78d2a58fb1"
+    }
+  },
+  "schema": "templex-zero.study005.harness-freeze-identity.v1",
+  "targeted_tests": {
+    "failed": 0,
+    "passed": 7
+  }
+}
