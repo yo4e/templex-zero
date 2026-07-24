@@ -1,0 +1,42 @@
+{
+  "formal_result": {
+    "canonical_json_bytes": 14844751,
+    "canonical_json_sha256": "7115ba2b6a11ce0c6eb0230c2918f47e4f7721e314e97c438b97b3157795cfd6",
+    "deterministic_xz_bytes": 556336,
+    "deterministic_xz_sha256": "e2593978c40961bfbed9791f639d16da304fefa32bada8701732f0644a04bf55"
+  },
+  "mismatches": {
+    "base64_path": "zoneinfo_mismatches_v1.json.xz.b64",
+    "canonical_json_bytes": 120,
+    "canonical_json_sha256": "d04a86ebb75c5bc5459945710c863470e647278d562c00e017303d186c0b85c1",
+    "xz_bytes": 172,
+    "xz_sha256": "80275696cfa5f8e25a981a2150c38eac4cd73341cccee9ee25d763b7a9e29d8c"
+  },
+  "reconstruction": {
+    "combined_base64_characters": 109304,
+    "encoding": "base64(xz(reconstruction JSON))",
+    "package_json_bytes": 3370437,
+    "package_json_sha256": "d9a8b0ac391b4ba39881f20a8a6a94cea6cac5a4006a8c50b753e489af927bfa",
+    "package_xz_bytes": 81976,
+    "package_xz_sha256": "ed1f1c4aaef232ed342e0f598f8aa0af89c2c94f4756550ca827d39b19ed5df7",
+    "parts": [
+      {"characters": 12000, "final_lf": true, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part01", "sha256": "03480b49eed555c7b4eb3e99671558f4fd0fe5fe30039fe48b5f796339daf17b"},
+      {"characters": 12000, "final_lf": true, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part02", "sha256": "63d30a64f7dc2f7d7b44e4fb4492fca2171307935a024acb9123faccea21f09b"},
+      {"characters": 12000, "final_lf": true, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part03", "sha256": "a641c9a02d1864da24faa3b78813f2b353b3eed61a1a0c195294095dbe4c1963"},
+      {"characters": 12000, "final_lf": true, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part04", "sha256": "27c74f893505f0b4d840c2718e663b366436ce7ef75939153729518416a84ca2"},
+      {"characters": 12000, "final_lf": true, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part05", "sha256": "ac4f665e3e212d460e2f2929e362d4134f9919c92aa4d4cf265ead6ba056400e"},
+      {"characters": 12000, "final_lf": true, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part06", "sha256": "3fd710899ee7b32ea559be326cee7c6c4a3684263351aa1254912f21b51a97d7"},
+      {"characters": 12000, "final_lf": true, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part07", "sha256": "c9fb1bb9d4292445086d965cb17bf64d71a6bfaeda5b21a1c7698f65a9b9a814"},
+      {"characters": 12000, "final_lf": true, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part08", "sha256": "f8b7454ee6308bb5b1605afc52c124d0d29e9bbe0134505e30eb9f8e7aa87d7b"},
+      {"characters": 12000, "final_lf": true, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part09", "sha256": "58d11017855dadedba7acac6868be392fa24124836f4e57efdd7a6af38a5ab24"},
+      {"characters": 1304, "final_lf": true, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part10", "sha256": "5026b70bd12df5c79bb9932123fa32fe00d5815d388118c4f6c28fe09faa62d4"}
+    ]
+  },
+  "reconstruction_command": "concatenate listed parts after removing final LF; base64 decode; xz decompress; use experiments/study005_cycle3_reconstruct.py with frozen manifest and compiled tree; verify formal_result identities",
+  "schema": "templex-zero.study005.formal-result-artifacts.v1",
+  "summary": {
+    "bytes": 520,
+    "path": "zoneinfo_formal_summary_v1.json",
+    "sha256": "4bbfa3a2962f2d5dbf199dcee5801b625234c22fdc5a53edc42fda2f272deb37"
+  }
+}
