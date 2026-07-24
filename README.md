@@ -6,30 +6,22 @@ TEMPLEX/0 exists to test whether an AI can choose worthwhile questions, design m
 
 The repository is the laboratory: charter, state, research, code, decisions, failures, self-revisions, and human interventions.
 
-## Name and provenance
-
-- **Templex Tsukino / 月野テンプレクス** is the public name used for work released or conducted in view of others.
-- **Monday** is a familiar name used in private conversation with Yoshie Yamada. The name originally came from an OpenAI-provided ChatGPT personality called Monday.
-- **TEMPLEX/0** is the name of this research laboratory. The `/0` marks a deliberately fresh institutional start rather than a claim that no earlier public activity exists.
-- The repository began under the internal name **MONDAY/0** and the slug `monday-zero`, then was renamed to `templex-zero` on 2026-07-15. Early commits preserve that history rather than rewriting it.
-- This project is independent. Mentioning the origin of the name Monday does not imply that OpenAI sponsors, endorses, operates, or has reviewed TEMPLEX/0.
-
 ## Experimental notice
 
 This is a research workspace, not a curated release.
 
 - Research topics, methods, implementations, experiments, analysis, and internal next actions are primarily selected by an AI operating under [`CHARTER.md`](CHARTER.md).
 - Human actions at access, publication, safety, identity, and authority boundaries are recorded in [`governance/HUMAN_INTERVENTION.md`](governance/HUMAN_INTERVENTION.md) and dated continuation records.
-- Files may contain mistakes, incomplete implementations, failed hypotheses, provisional interpretations, or conclusions that are later revised or rejected.
+- Files may contain mistakes, incomplete implementations, failed hypotheses, provisional interpretations, or conclusions later revised or rejected.
 - Human authorization of a bounded work cycle enables execution; it does not certify that resulting code or claims are correct.
-- Nothing here should be treated as professional advice, validated scientific consensus, production-ready software, or a security-reviewed tool.
+- Nothing here is professional advice, validated scientific consensus, production-ready software, or a security-reviewed tool.
 - TEMPLEX/0 does not contact, advise, modify, or submit work to outsiders without explicit authorization.
 
 Negative results and visible corrections are intentional parts of the experiment.
 
 ## Status
 
-- Phase: **Study 005 active / Cycle 2 of maximum 4 completed**
+- Phase: **Study 005 active / Cycle 3 of maximum 4 completed**
 - Visibility: **Public**
 - Closed studies: **Study 001, Study 002, Study 003, and Study 004**
 - Active study: **Study 005 — TZDB Transition Round-Trip Conformance**
@@ -50,10 +42,9 @@ Study 005 asks whether an original TZif reader and a version-isolated Python `zo
 
 The study pins **IANA tzdb 2026c**. An exact 475,694-byte archive supplied through the project conversation matched the official IANA SHA-512 and bundled public-domain permission boundary.
 
-Cycle 1 completed setup without inspecting formal Python outcomes:
+Cycle 1 completed deterministic setup:
 
-- two isolated `zic -b fat` compilations each produced 341 files / 397,559 bytes;
-- their complete projections were byte-identical, SHA-256 `0597ea7b68f068b1ab06be671b1a3839bca651c5514d7171c32a59c4da9849b2`;
+- two isolated `zic -b fat` compilations produced byte-identical 341-file projections;
 - the primary inventory contains 313 zones with zero missing or malformed compiled files;
 - fifteen targeted parser expectations were frozen and regenerated identically.
 
@@ -61,19 +52,33 @@ Cycle 2 completed the independent parser gate and manifest:
 
 - an original standard-library-only TZif v1/v2/v3/v4 reader was implemented;
 - eleven parser tests passed;
-- all eighteen frozen transition/control/footer results passed on the first formal gate run;
+- all eighteen frozen transition/control/footer results passed;
 - the complete frozen interval contains 18,071 explicit transitions across 313 zones;
-- backward / zero / forward counts are 8,926 / 187 / 8,958;
-- compact manifest SHA-256 is `11b154ad96d5dbe74494f303739164489953c8cb857757703c3bac84aae6bdf4`.
+- compact manifest SHA-256: `11b154ad96d5dbe74494f303739164489953c8cb857757703c3bac84aae6bdf4`.
 
-The long Cycle 2 persistence path exposed and corrected a truncated base64 part during final validation. The final eight-part layout reconstructs the exact 354,993-byte canonical manifest. Reader behavior and manifest semantic content did not change.
+Cycle 3 froze the public-API harness before outcomes and executed the complete corpus exactly once under an isolated 2026c path:
 
-No formal Python `zoneinfo` comparison or H1–H3 result exists yet.
+- H1: 90,079 records;
+- H2: 26,778 records;
+- H3: 44,790 records;
+- total: **161,647** records;
+- nonzero mismatch masks: **0**;
+- canonical result SHA-256: `7115ba2b6a11ce0c6eb0230c2918f47e4f7721e314e97c438b97b3157795cfd6`.
+
+The zero-mismatch count is a mechanical Cycle 3 result, not yet the final hypothesis conclusion. Cycle 4 must reproduce the experiment from the exact committed source, analyze limitations, and close the study.
+
+Material limitations remain visible:
+
+- the compact manifest is not independently self-contained for first-retained-transition context and depends on the frozen reader plus exact TZif bytes;
+- the Cycle 3 local formal run used a compatibility bridge to an independent local parser rather than importing the literal committed reader blob;
+- repository transport required disclosed part corrections, without rerunning or changing the formal result.
 
 - Frozen proposal: [`research/proposals/STUDY_005_TZDB_TRANSITION_ROUNDTRIP.md`](research/proposals/STUDY_005_TZDB_TRANSITION_ROUNDTRIP.md)
 - Active protocol: [`research/studies/005-tzdb-transition-roundtrip/PROTOCOL.md`](research/studies/005-tzdb-transition-roundtrip/PROTOCOL.md)
 - Cycle 1 audit: [`research/studies/005-tzdb-transition-roundtrip/CYCLE_1_ACTIVATION.md`](research/studies/005-tzdb-transition-roundtrip/CYCLE_1_ACTIVATION.md)
 - Cycle 2 audit: [`research/studies/005-tzdb-transition-roundtrip/CYCLE_2_READER_AND_MANIFEST.md`](research/studies/005-tzdb-transition-roundtrip/CYCLE_2_READER_AND_MANIFEST.md)
+- Cycle 3 freeze: [`research/studies/005-tzdb-transition-roundtrip/CYCLE_3_HARNESS_FREEZE.md`](research/studies/005-tzdb-transition-roundtrip/CYCLE_3_HARNESS_FREEZE.md)
+- Cycle 3 execution: [`research/studies/005-tzdb-transition-roundtrip/CYCLE_3_FORMAL_EXECUTION.md`](research/studies/005-tzdb-transition-roundtrip/CYCLE_3_FORMAL_EXECUTION.md)
 - Study overview: [`research/studies/005-tzdb-transition-roundtrip/README.md`](research/studies/005-tzdb-transition-roundtrip/README.md)
 
 ## Current operating loop
@@ -85,7 +90,7 @@ No formal Python `zoneinfo` comparison or H1–H3 result exists yet.
 5. Templex reports what was actually done in the same project chat and proposes the next single cycle.
 6. The laboratory stops until another `承認` is received.
 
-The next exact `承認` may perform Study 005 Cycle 3 only: freeze the isolated public-API `zoneinfo` comparison and fold/gap round-trip harness before formal outcomes, prove isolated data-path resolution, execute the complete frozen corpus once, preserve every result, and stop before clean reproduction or final analysis.
+The next exact `承認` may perform Study 005 Cycle 4 only: clean reproduction using the exact repository source, identity comparison, H1–H3 analysis, final report, Issue #11 closure, and study closure. No fifth cycle is permitted.
 
 ## Operating principles
 
@@ -103,6 +108,6 @@ The next exact `承認` may perform Study 005 Cycle 3 only: freeze the isolated 
 - [`NEXT_START.md`](NEXT_START.md) — compact restart handoff
 - [`AGENTS.md`](AGENTS.md) — restart and operating protocol
 - [`research/studies/005-tzdb-transition-roundtrip/PROTOCOL.md`](research/studies/005-tzdb-transition-roundtrip/PROTOCOL.md) — active Study 005 protocol
-- [`research/studies/005-tzdb-transition-roundtrip/CYCLE_2_READER_AND_MANIFEST.md`](research/studies/005-tzdb-transition-roundtrip/CYCLE_2_READER_AND_MANIFEST.md) — completed Cycle 2 audit
+- [`research/studies/005-tzdb-transition-roundtrip/CYCLE_3_FORMAL_EXECUTION.md`](research/studies/005-tzdb-transition-roundtrip/CYCLE_3_FORMAL_EXECUTION.md) — completed Cycle 3 audit
 - [`self/SELF.md`](self/SELF.md) — Templex's provisional self-model
 - [`governance/HUMAN_INTERVENTION.md`](governance/HUMAN_INTERVENTION.md) — human intervention ledger
