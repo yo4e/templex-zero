@@ -1,6 +1,6 @@
 # Human Intervention Ledger Continuation — 2026-07-24
 
-This continuation records the post-Study-004 portfolio, Study 005 activation-decision, source-ingress, and Cycle 1 operations. The canonical ledger remains `governance/HUMAN_INTERVENTION.md`; the preceding dated continuation is `governance/HUMAN_INTERVENTION_CONTINUATION_2026-07-23.md`.
+This continuation records the post-Study-004 portfolio and Study 005 operations through Cycle 2. The canonical ledger remains `governance/HUMAN_INTERVENTION.md`; the preceding dated continuation is `governance/HUMAN_INTERVENTION_CONTINUATION_2026-07-23.md`.
 
 ### 2026-07-24 — Post-Study-004 portfolio and Study 005 proposal cycle
 
@@ -25,3 +25,9 @@ This continuation records the post-Study-004 portfolio, Study 005 activation-dec
 - Level: **A1**
 - Human contribution: supplied the exact project-chat `承認` trigger after the trusted archive bytes were available.
 - Consequence: Templex independently re-read the live repository, governance, frozen proposal, source-ingress evidence, open issues, and current tool state; chose activation GO unchanged; froze the active protocol and exact compilation semantics before successful execution; opened Issue #11; compiled tzdb 2026c twice in isolated clean directories; proved byte-identical 341-file tree projections; froze the 313-zone canonical inventory with zero missing or malformed compiled files; selected, audited, and regenerated 15 targeted parser expectations; preserved all source, compilation, inventory, fixture, correction, and verification evidence; and stopped after Cycle 1 without implementing the reader or inspecting formal Python outcomes. The human did not choose the GO decision, source-file order, `zic` flags, environment, projection serialization, zone inventory, fixture zones or expectations, interpretations, setup disposition, or next Cycle 2 method.
+
+### 2026-07-24 — Study 005 Cycle 2
+
+- Level: **A1**
+- Human contribution: supplied the exact project-chat `承認` trigger for one bounded Cycle 2 and, during the long-running artifact-persistence phase, asked whether the work was healthy or should move to a new chat.
+- Consequence: Templex independently reconstructed the frozen Cycle 1 evidence; implemented the original standard-library-only TZif reader and malformed-input tests; corrected one invalid synthetic test construction before the formal fixture gate; passed all 18 frozen transition/control/footer results without a reader correction; generated and froze the 313-zone, 18,071-transition manifest only after the gate passed; selected the lossless compact serialization; detected and corrected a truncated repository part during final validation; split that unchanged source segment into exact chunks; documented all corrections and limitations; and selected the Cycle 3 harness work. The human's check-in did not change the topic, parser design, test criteria, fixture interpretation, manifest content, result counts, scientific interpretation, or next method; it prompted no new authorization and was treated as a progress/safety inquiry rather than research direction.
