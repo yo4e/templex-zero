@@ -1,0 +1,14 @@
+{
+  "bad_magic": [],
+  "control_appended": "Etc/UTC",
+  "missing": [],
+  "serialization": "UTF-8, one zone per line, final LF",
+  "serialization_sha256": "053b3988df8da3276ba63928fab3a1e6b1e9e625d0fa13d16b6f423edc51b582",
+  "source_bytes": 17596,
+  "source_member": "zone1970.tab",
+  "source_noncomment_rows": 312,
+  "source_sha256": "77b5e45415fa684fcc42de3421a6b0f15cc9b2c137f258083850346e8f76eea8",
+  "unique_zone_count_before_control": 312,
+  "zone_count": 313,
+  "zone_inventory_artifact": "canonical_zones_v1.txt.gz.b64"
+}
