@@ -30,7 +30,7 @@
       "stage": "before any zic execution"
     }
   ],
-  "output_inventory_artifact": "compiled_tree_projection_v1.tsv.gz.b64",
+  "output_inventory_artifact": "compiled_tree_projection_v1.parts.json plus the listed .tsv.gz.b64 parts",
   "output_inventory_uncompressed_bytes": 29170,
   "output_inventory_uncompressed_sha256": "0597ea7b68f068b1ab06be671b1a3839bca651c5514d7171c32a59c4da9849b2",
   "projection_serialization": "relative path TAB decimal byte length TAB lowercase SHA-256 LF; paths sorted by UTF-8 byte order",
