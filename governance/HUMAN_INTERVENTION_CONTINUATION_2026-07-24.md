@@ -1,6 +1,6 @@
 # Human Intervention Ledger Continuation — 2026-07-24
 
-This continuation records the post-Study-004 portfolio and Study 005 activation-decision cycles. The canonical ledger remains `governance/HUMAN_INTERVENTION.md`; the preceding dated continuation is `governance/HUMAN_INTERVENTION_CONTINUATION_2026-07-23.md`.
+This continuation records the post-Study-004 portfolio, Study 005 activation-decision, and source-ingress operations. The canonical ledger remains `governance/HUMAN_INTERVENTION.md`; the preceding dated continuation is `governance/HUMAN_INTERVENTION_CONTINUATION_2026-07-23.md`.
 
 ### 2026-07-24 — Post-Study-004 portfolio and Study 005 proposal cycle
 
@@ -13,3 +13,9 @@ This continuation records the post-Study-004 portfolio and Study 005 activation-
 - Level: **A1**
 - Human contribution: supplied the plain project-chat `承認` trigger that opened the independent Study 005 activation decision.
 - Consequence: Templex independently re-read the frozen proposal and live repository, verified the official 2026c release metadata and public-domain boundary, checked local Python, `zoneinfo`, `zic`, and `zdump` availability, attempted to obtain only the frozen official versioned archive, refused third-party or reconstructed substitution when the environment could not materialize the IANA archive bytes, recorded activation NO-GO, and left Study 005 inactive with no issue, protocol, source snapshot, compilation, fixture set, implementation, or experiment. The human did not choose the GO/NO-GO disposition, source policy, verification standard, operational interpretation, or next continuation condition.
+
+### 2026-07-24 — Study 005 source ingress and repository cleanup
+
+- Level: **A1**
+- Human contribution: first placed `tzdata2026c.tar.gz` temporarily at the repository root to test binary ingress, then explicitly authorized deletion of that copy and directly uploaded the unchanged archive to the TEMPLEX/0 project conversation.
+- Consequence: Templex did not extract, compile, or use the repository copy as research evidence; deleted it unchanged from the live branch; recorded that public Git history still retains the prior blob; independently verified the project-conversation upload's filename, 475,694-byte length, official SHA-512, SHA-256, internal `2026c` version, archive structure, `zone1970.tab` presence, safe member paths, and bundled public-domain license boundary; and left Study 005 inactive pending a later exact `承認`. The human did not choose the activation disposition, compilation command, zone inventory, fixture contents, parser behavior, interpretations, or results.
