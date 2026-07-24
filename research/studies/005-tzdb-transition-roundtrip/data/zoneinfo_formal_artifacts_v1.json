@@ -21,7 +21,9 @@
     "package_xz_sha256": "ed1f1c4aaef232ed342e0f598f8aa0af89c2c94f4756550ca827d39b19ed5df7",
     "parts": [
       {"characters": 12000, "final_lf": true, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part01", "sha256": "03480b49eed555c7b4eb3e99671558f4fd0fe5fe30039fe48b5f796339daf17b"},
-      {"characters": 12000, "final_lf": true, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part02", "sha256": "63d30a64f7dc2f7d7b44e4fb4492fca2171307935a024acb9123faccea21f09b"},
+      {"characters": 4000, "final_lf": false, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part02a", "sha256": "d9f4a34cc892d0bb45b1b2a87d333c01d3ea66c9ddfa99a1185f820098c62094"},
+      {"characters": 4000, "final_lf": false, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part02b", "sha256": "9489e6a0168995c5891329a3a08246a3d33d49d672aa8b5d49bc5e3213d1bba1"},
+      {"characters": 4000, "final_lf": false, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part02c", "sha256": "709214abdf210a9138f9e994d2d145687306636bb8ca0b407149c0a8ffaf2a0b"},
       {"characters": 12000, "final_lf": true, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part03", "sha256": "a641c9a02d1864da24faa3b78813f2b353b3eed61a1a0c195294095dbe4c1963"},
       {"characters": 12000, "final_lf": true, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part04", "sha256": "27c74f893505f0b4d840c2718e663b366436ce7ef75939153729518416a84ca2"},
       {"characters": 12000, "final_lf": true, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part05", "sha256": "ac4f665e3e212d460e2f2929e362d4134f9919c92aa4d4cf265ead6ba056400e"},
@@ -30,10 +32,11 @@
       {"characters": 12000, "final_lf": true, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part08", "sha256": "f8b7454ee6308bb5b1605afc52c124d0d29e9bbe0134505e30eb9f8e7aa87d7b"},
       {"characters": 12000, "final_lf": true, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part09", "sha256": "58d11017855dadedba7acac6868be392fa24124836f4e57efdd7a6af38a5ab24"},
       {"characters": 1304, "final_lf": true, "path": "zoneinfo_result_reconstruction_v1.json.xz.b64.part10", "sha256": "5026b70bd12df5c79bb9932123fa32fe00d5815d388118c4f6c28fe09faa62d4"}
-    ]
+    ],
+    "transport_corrections": "The first part02 write was absent from the live branch; a replacement existed but failed blob-identity validation. It was deleted and replaced by three exact 4,000-character chunks. Formal result bytes were not rerun or changed."
   },
-  "reconstruction_command": "concatenate listed parts after removing final LF; base64 decode; xz decompress; use experiments/study005_cycle3_reconstruct.py with frozen manifest and compiled tree; verify formal_result identities",
-  "schema": "templex-zero.study005.formal-result-artifacts.v1",
+  "reconstruction_command": "concatenate listed parts in order after removing one final LF only where final_lf is true; base64 decode; xz decompress; use experiments/study005_cycle3_reconstruct.py with the frozen manifest and compiled tree; verify formal_result identities",
+  "schema": "templex-zero.study005.formal-result-artifacts.v2",
   "summary": {
     "bytes": 520,
     "path": "zoneinfo_formal_summary_v1.json",
