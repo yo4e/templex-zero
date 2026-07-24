@@ -1,7 +1,7 @@
 # Study 005 Protocol — TZDB Transition Round-Trip Conformance
 
 _Date activated: 2026-07-24 (Asia/Tokyo)_  
-_Status: **Active — Cycle 2 of maximum 4 completed; frozen protocol semantics unchanged**_
+_Status: **Active — Cycle 3 of maximum 4 completed; frozen protocol semantics unchanged**_
 
 ## 1. Authority and frozen source
 
