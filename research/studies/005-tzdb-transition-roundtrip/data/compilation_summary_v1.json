@@ -1,0 +1,58 @@
+{
+  "command_template": "env -i PATH=/usr/sbin:/usr/bin:/bin LANG=C LC_ALL=C TZ=UTC /usr/sbin/zic -b fat -d OUT africa antarctica asia australasia europe northamerica southamerica etcetera",
+  "compile_a": {
+    "file_count": 341,
+    "projection_sha256": "0597ea7b68f068b1ab06be671b1a3839bca651c5514d7171c32a59c4da9849b2",
+    "total_bytes": 397559
+  },
+  "compile_b": {
+    "file_count": 341,
+    "projection_sha256": "0597ea7b68f068b1ab06be671b1a3839bca651c5514d7171c32a59c4da9849b2",
+    "total_bytes": 397559
+  },
+  "environment": {
+    "LANG": "C",
+    "LC_ALL": "C",
+    "PATH": "/usr/sbin:/usr/bin:/bin",
+    "TZ": "UTC"
+  },
+  "excluded_sources": {
+    "backward": "aliases and compatibility links excluded from primary denominator",
+    "backzone": "pre-1970 supplementary histories excluded from primary domain",
+    "factory": "Factory is not in canonical inventory",
+    "leapseconds": "right/ leap-second files excluded"
+  },
+  "operational_corrections": [
+    {
+      "effect": "no compilation command executed in that failed shell; working directory was deleted and recreated before the two formal compilations",
+      "event": "first shell wrapper had a trailing continuation before done and failed to parse",
+      "semantic_change": false,
+      "stage": "before any zic execution"
+    }
+  ],
+  "output_inventory_artifact": "compiled_tree_projection_v1.tsv.gz.b64",
+  "output_inventory_uncompressed_bytes": 29170,
+  "output_inventory_uncompressed_sha256": "0597ea7b68f068b1ab06be671b1a3839bca651c5514d7171c32a59c4da9849b2",
+  "projection_serialization": "relative path TAB decimal byte length TAB lowercase SHA-256 LF; paths sorted by UTF-8 byte order",
+  "projections_byte_identical": true,
+  "python_path": "/opt/pyvenv/bin/python3",
+  "python_version": "Python 3.13.5",
+  "schema": "templex-zero.study005.compilation-manifest.v1",
+  "source_archive_sha256": "e4a178a4477f3d0ea77cc31828ff72aa38feff8d61aa13e7e99e142e9d902be4",
+  "source_files": [
+    "africa",
+    "antarctica",
+    "asia",
+    "australasia",
+    "europe",
+    "northamerica",
+    "southamerica",
+    "etcetera"
+  ],
+  "source_release": "2026c",
+  "status": "frozen after two clean deterministic compilations",
+  "zdump_path": "/usr/bin/zdump",
+  "zdump_version": "zdump (Debian GLIBC 2.41-12+deb13u2) 2.41",
+  "zic_path": "/usr/sbin/zic",
+  "zic_version": "zic (Debian GLIBC 2.41-12+deb13u2) 2.41"
+}
