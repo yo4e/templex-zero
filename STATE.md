@@ -4,7 +4,7 @@ _Last updated: 2026-07-24_
 
 ## Phase
 
-**No active study / Study 005 activation NO-GO on source acquisition**
+**No active study / Study 005 source ingress verified, activation pending**
 
 ## Laboratory
 
@@ -20,40 +20,50 @@ _Last updated: 2026-07-24_
 - **Study 003:** methodological success with bounded procedural claims.
 - **Study 004:** partial finite-state conformance result; H1 unsupported, H2 supported, H3 unresolved.
 
-## Study 005 activation decision
+## Study 005 source state
 
 - Frozen proposal: `research/proposals/STUDY_005_TZDB_TRANSITION_ROUNDTRIP.md`
-- Decision: **NO-GO for activation; proposal remains inactive**.
-- Decision record: `research/decisions/2026-07-24-study-005-activation-no-go.md`
-- Reason: the exact versioned official IANA archive could not be materialized in the available execution environment.
-- Official archive: `tzdata2026c.tar.gz`, 475,694 bytes.
-- Official SHA-512: `e0b4b7044b66fbc27bc21d13d18063abcdf78ab58d5ba5fd64bd1a88d86e9d495f45add4d8e65bb6c40249f9c94ca29b72c8ebba8d0e4c468f2965ac77932ef0`.
-- Study 005 cycle count: **0 of maximum 4**, because activation did not occur.
+- Prior activation decision: **NO-GO on source acquisition; proposal remained inactive**.
+- Prior decision record: `research/decisions/2026-07-24-study-005-activation-no-go.md`
+- Source-ingress record: `research/decisions/2026-07-24-study-005-source-ingress-record.md`
+- Verified archive: `tzdata2026c.tar.gz`
+- Observed byte count: **475,694**
+- Observed SHA-512: `e0b4b7044b66fbc27bc21d13d18063abcdf78ab58d5ba5fd64bd1a88d86e9d495f45add4d8e65bb6c40249f9c94ca29b72c8ebba8d0e4c468f2965ac77932ef0`
+- Observed SHA-256: `e4a178a4477f3d0ea77cc31828ff72aa38feff8d61aa13e7e99e142e9d902be4`
+- Internal version: **2026c**
+- Archive members: **32**
+- `zone1970.tab`: present
+- Bundled permission preflight: top-level `LICENSE` states the default public-domain boundary; the three conditionally BSD-licensed named files are absent from this archive.
+- Study 005 cycle count: **0 of maximum 4**, because activation has not occurred.
 - Open active-study issue: **none**.
-- No protocol, source snapshot, compiled data, zone inventory, fixture set, implementation, or experiment exists.
+- No active protocol, compiled data, zone inventory, fixture set, implementation, transition manifest, or experiment exists.
 
-## Preserved judgment
+## Repository cleanup
 
-The research question was not rejected. Third-party mirrors, repository reconstruction, host zone data, unversioned convenience links, and newer releases were rejected as substitutions because the frozen proposal requires the exact versioned official IANA HTTPS archive.
+A human temporarily placed `tzdata2026c.tar.gz` at the repository root to test binary ingress. Templex did not extract, compile, or use that repository copy as research evidence. At the human's explicit instruction, the root file was deleted unchanged in commit `da39f24d534217d2da26cc213e5b257943385763`.
+
+The public Git history retains the prior blob; no history rewrite was attempted. The separately uploaded project-conversation file is the artifact whose size, digests, archive structure, version, and license were inspected.
 
 ## Next bounded work
 
-Do not spend another repository cycle retrying the unchanged blocked network path.
+The source-acquisition blocker is removed. The next exact project-chat `承認` may independently retry the activation decision and, only if GO unchanged, perform Study 005 Cycle 1:
 
-After the exact official `tzdata2026c.tar.gz` bytes are available to the project, the next approval may independently retry the activation decision and, only if GO, perform Cycle 1: verify archive identity and bundled licensing, compile twice in isolation, freeze the canonical zone inventory, and freeze parser fixtures.
+1. re-read live governance, proposal, source-ingress record, issues, and recent commits;
+2. re-verify the available archive identity and permission boundary;
+3. create the active protocol and active-study issue;
+4. extract and compile tzdb 2026c twice in isolated temporary directories;
+5. freeze command, environment, source order, output inventory, and deterministic tree digest;
+6. freeze exact `zone1970.tab` bytes, ordered canonical zone inventory, and at least twelve parser-fixture expectations;
+7. synchronize state and stop.
 
 The next cycle must not implement the full TZif reader, generate the complete transition manifest, execute the Python comparison, contact outsiders, accept terms, or file an external defect report.
 
 ## Verification limitation
 
-Official web metadata, release checksums, public-domain evidence, and local tool presence were verified. The archive bytes were not obtained, so archive SHA observation, member listing, bundled-file inspection, extraction, compilation, inventory generation, and fixture freezing were not performed.
+The access operation verified archive identity, structure, version, and the bundled license text without extracting files to a study tree. It did not verify a detached GPG signature, compile the archive, generate a zone inventory, freeze fixtures, or execute any Study 005 hypothesis test.
 
-Fresh checkout and full-repository regression were not required for this activation-decision-only cycle and were not performed.
+Fresh checkout and full-repository regression were not required for this access-and-cleanup operation and were not performed.
 
 ## Human action currently needed
 
-Download the unchanged file from:
-
-`https://www.iana.org/time-zones/repository/releases/tzdata2026c.tar.gz`
-
-and upload it to the TEMPLEX/0 project conversation. The file must be 475,694 bytes and match the official SHA-512 recorded above. The matching `.asc` signature may also be supplied.
+Send exact `承認` to authorize one independent activation decision and, only if GO, Study 005 Cycle 1.
