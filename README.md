@@ -29,12 +29,13 @@ Negative results and visible corrections are intentional parts of the experiment
 
 ## Status
 
-- Phase: **No active study / Study 005 activation NO-GO on source acquisition**
+- Phase: **No active study / Study 005 source ingress verified, activation pending**
 - Visibility: **Public**
 - Closed studies: **Study 001, Study 002, Study 003, and Study 004**
 - Active study: **None**
 - Frozen proposal: **Study 005 — TZDB Transition Round-Trip Conformance**
-- Study 005 activation state: **NO-GO; 0 of maximum 4 active cycles**
+- Study 005 activation state: **Inactive; 0 of maximum 4 active cycles**
+- Verified source: **IANA tzdb 2026c archive available to the project conversation**
 - Release state: **Provisional and approval-gated**
 - Public operator: **Templex Tsukino**
 
@@ -64,7 +65,7 @@ At the precommitted 256-action comparison, guided testing detected two fewer mut
 
 The Study 004 result does not show superiority on arbitrary software, production correctness, security value, human comprehensibility, or method novelty outside the frozen synthetic domain.
 
-## Proposed Study 005 and activation NO-GO
+## Proposed Study 005 and verified source ingress
 
 The post-Study-004 portfolio selected one inactive proposal on **IANA tzdb transition round-trip conformance** because it introduces a pinned external referent and practical boundary witnesses rather than another fully self-authored synthetic benchmark.
 
@@ -74,15 +75,18 @@ The frozen proposal asks whether an original TZif reader and a version-isolated 
 - `fold=0` / `fold=1` handling and exact UTC round trips across backward shifts;
 - deterministic detection of nonexistent local times across forward shifts without assuming one-hour changes.
 
-The independent activation cycle verified the official 2026c release metadata, public-domain boundary, official release checksum, and local tool availability. It did **not** activate Study 005 because the execution environment could not obtain the exact versioned archive bytes from the official IANA HTTPS host. Third-party mirrors, source-repository reconstruction, host zone data, unversioned convenience URLs, and newer releases were refused as substitutions.
+The first activation decision verified official 2026c release metadata, the public-domain boundary, the official release checksum, and local tool availability, but remained NO-GO because the execution environment could not obtain the exact versioned archive bytes from the official IANA HTTPS host.
 
-No active protocol, issue, source snapshot, compiled zone tree, canonical zone inventory, parser fixture set, implementation, transition corpus, or experiment exists.
+A later A1 access operation supplied `tzdata2026c.tar.gz` directly to the project conversation. Its observed 475,694-byte length and SHA-512 exactly matched the official IANA values; its internal version is `2026c`; `zone1970.tab` is present; and the bundled top-level `LICENSE` confirms the default public-domain boundary. The prior source-acquisition blocker is therefore removed.
+
+A temporary repository-root copy created only to test binary ingress was not extracted, compiled, or used as Study 005 evidence. At the human's explicit instruction, Templex deleted it unchanged from the live branch. Public Git history was not rewritten and retains the earlier blob.
+
+No active protocol, issue, compiled zone tree, canonical zone inventory, parser fixture set, implementation, transition corpus, or experiment exists.
 
 - Portfolio assessment: [`research/decisions/2026-07-24-post-study-004-portfolio-assessment.md`](research/decisions/2026-07-24-post-study-004-portfolio-assessment.md)
 - Frozen Study 005 proposal: [`research/proposals/STUDY_005_TZDB_TRANSITION_ROUNDTRIP.md`](research/proposals/STUDY_005_TZDB_TRANSITION_ROUNDTRIP.md)
 - Activation NO-GO: [`research/decisions/2026-07-24-study-005-activation-no-go.md`](research/decisions/2026-07-24-study-005-activation-no-go.md)
-
-The proposal may be reconsidered only after exact official `tzdata2026c.tar.gz` bytes are available to the project and match the official byte count and SHA-512 recorded in `STATE.md`.
+- Source ingress and cleanup: [`research/decisions/2026-07-24-study-005-source-ingress-record.md`](research/decisions/2026-07-24-study-005-source-ingress-record.md)
 
 ## Current operating loop
 
@@ -93,7 +97,7 @@ The proposal may be reconsidered only after exact official `tzdata2026c.tar.gz` 
 5. Templex reports what was actually done in the same project chat and proposes the next single cycle.
 6. The laboratory stops until another `承認` is received.
 
-The next Study 005 activation attempt should occur only after the exact official versioned archive has been supplied as an A1 access operation. If its identity and bundled permission boundary pass, one later approval may activate Study 005 and perform Cycle 1 only: isolated double compilation, canonical zone inventory, and frozen parser fixtures. It may not implement the full reader, generate the complete transition corpus, or execute the Python comparison in the same cycle.
+The next exact `承認` may independently retry the Study 005 activation decision. If GO unchanged, that one cycle may create the active protocol and issue, perform isolated double compilation, freeze the canonical zone inventory, and freeze parser fixtures. It may not implement the full reader, generate the complete transition corpus, or execute the Python comparison in the same cycle.
 
 ## Operating principles
 
@@ -110,7 +114,8 @@ The next Study 005 activation attempt should occur only after the exact official
 - [`STATE.md`](STATE.md) — current state and next actions
 - [`NEXT_START.md`](NEXT_START.md) — compact restart handoff
 - [`AGENTS.md`](AGENTS.md) — restart and operating protocol
-- [`research/decisions/2026-07-24-study-005-activation-no-go.md`](research/decisions/2026-07-24-study-005-activation-no-go.md) — current activation decision
+- [`research/decisions/2026-07-24-study-005-source-ingress-record.md`](research/decisions/2026-07-24-study-005-source-ingress-record.md) — verified source and cleanup record
+- [`research/decisions/2026-07-24-study-005-activation-no-go.md`](research/decisions/2026-07-24-study-005-activation-no-go.md) — prior activation decision
 - [`research/proposals/STUDY_005_TZDB_TRANSITION_ROUNDTRIP.md`](research/proposals/STUDY_005_TZDB_TRANSITION_ROUNDTRIP.md) — frozen inactive proposal
 - [`research/studies/004-finite-state-conformance/REPORT.md`](research/studies/004-finite-state-conformance/REPORT.md) — closed Study 004 report
 - [`research/studies/001-autonomous-game-design/REPORT.md`](research/studies/001-autonomous-game-design/REPORT.md) — closed Study 001 report
