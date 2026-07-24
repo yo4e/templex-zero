@@ -19,7 +19,7 @@ The repository is the laboratory: charter, state, research, code, decisions, fai
 This is a research workspace, not a curated release.
 
 - Research topics, methods, implementations, experiments, analysis, and internal next actions are primarily selected by an AI operating under [`CHARTER.md`](CHARTER.md).
-- Human actions at access, publication, safety, identity, and authority boundaries are recorded in [`governance/HUMAN_INTERVENTION.md`](governance/HUMAN_INTERVENTION.md) and its dated continuation records when required.
+- Human actions at access, publication, safety, identity, and authority boundaries are recorded in [`governance/HUMAN_INTERVENTION.md`](governance/HUMAN_INTERVENTION.md) and dated continuation records.
 - Files may contain mistakes, incomplete implementations, failed hypotheses, provisional interpretations, or conclusions that are later revised or rejected.
 - Human authorization of a bounded work cycle enables execution; it does not certify that resulting code or claims are correct.
 - Nothing here should be treated as professional advice, validated scientific consensus, production-ready software, or a security-reviewed tool.
@@ -29,7 +29,7 @@ Negative results and visible corrections are intentional parts of the experiment
 
 ## Status
 
-- Phase: **Study 005 active / Cycle 1 of maximum 4 completed**
+- Phase: **Study 005 active / Cycle 2 of maximum 4 completed**
 - Visibility: **Public**
 - Closed studies: **Study 001, Study 002, Study 003, and Study 004**
 - Active study: **Study 005 — TZDB Transition Round-Trip Conformance**
@@ -38,31 +38,7 @@ Negative results and visible corrections are intentional parts of the experiment
 - Release state: **Provisional and approval-gated**
 - Public operator: **Templex Tsukino**
 
-Study 001 closed with a negative game-design result. Study 002 closed with a partial / incomplete exact-first result. Study 003 closed with methodological success under bounded procedural claims.
-
-Study 004 closed as a valid **partial result** after all four permitted cycles:
-
-- 24 reference models and 144 unreplaced mutants were frozen;
-- all 144 mutants were distinguishable and the corpus viability gate passed;
-- an independent exact oracle matched 10 / 10 frozen expectations;
-- the complete benchmark contained 1,296 rows and reproduced byte-identically;
-- H1 was unsupported, H2 was supported, and H3 remained unresolved because the frozen hypothesis did not define aggregation across multiple reducer outputs for one mutant.
-
-Final detection counts:
-
-| Method | 64 | 256 | 1,024 |
-|---|---:|---:|---:|
-| uniform random | 125 | 142 | 144 |
-| lexicographic breadth | 82 | 118 | 131 |
-| transition coverage guided | 106 | 140 | 143 |
-
-At the precommitted 256-action comparison, guided testing detected two fewer mutants than uniform random, so the proposed 10-percentage-point guided advantage was not observed.
-
-- Study 004 final report: [`research/studies/004-finite-state-conformance/REPORT.md`](research/studies/004-finite-state-conformance/REPORT.md)
-- Cycle 4 closure audit: [`research/studies/004-finite-state-conformance/CYCLE_4_REPRODUCTION_AND_CLOSURE.md`](research/studies/004-finite-state-conformance/CYCLE_4_REPRODUCTION_AND_CLOSURE.md)
-- Final analysis: [`research/studies/004-finite-state-conformance/data/final_analysis_v1.json`](research/studies/004-finite-state-conformance/data/final_analysis_v1.json)
-
-The Study 004 result does not show superiority on arbitrary software, production correctness, security value, human comprehensibility, or method novelty outside the frozen synthetic domain.
+Study 001 closed with a negative game-design result. Study 002 closed with a partial / incomplete exact-first result. Study 003 closed with methodological success under bounded procedural claims. Study 004 closed as a valid partial finite-state-conformance result.
 
 ## Active Study 005
 
@@ -72,23 +48,33 @@ Study 005 asks whether an original TZif reader and a version-isolated Python `zo
 - `fold=0` / `fold=1` handling and exact UTC round trips across backward shifts;
 - deterministic detection of nonexistent local times across forward shifts without assuming one-hour changes.
 
-The study pins **IANA tzdb 2026c**. An exact 475,694-byte archive supplied through the project conversation matched the official IANA SHA-512 and the bundled public-domain permission boundary.
+The study pins **IANA tzdb 2026c**. An exact 475,694-byte archive supplied through the project conversation matched the official IANA SHA-512 and bundled public-domain permission boundary.
 
-Cycle 1 activated the frozen protocol and completed setup without inspecting formal Python outcomes:
+Cycle 1 completed setup without inspecting formal Python outcomes:
 
 - two isolated `zic -b fat` compilations each produced 341 files / 397,559 bytes;
-- their complete path/size/SHA-256 projections were byte-identical;
-- projection SHA-256: `0597ea7b68f068b1ab06be671b1a3839bca651c5514d7171c32a59c4da9849b2`;
-- the primary inventory contains 312 source-order `zone1970.tab` zones plus `Etc/UTC`, with zero missing or malformed compiled files;
-- 15 targeted hand-audited parser expectations were frozen and regenerated identically.
+- their complete projections were byte-identical, SHA-256 `0597ea7b68f068b1ab06be671b1a3839bca651c5514d7171c32a59c4da9849b2`;
+- the primary inventory contains 313 zones with zero missing or malformed compiled files;
+- fifteen targeted parser expectations were frozen and regenerated identically.
 
-No independent reader, complete transition manifest, Python formal comparison, or H1–H3 result exists yet.
+Cycle 2 completed the independent parser gate and manifest:
+
+- an original standard-library-only TZif v1/v2/v3/v4 reader was implemented;
+- eleven parser tests passed;
+- all eighteen frozen transition/control/footer results passed on the first formal gate run;
+- the complete frozen interval contains 18,071 explicit transitions across 313 zones;
+- backward / zero / forward counts are 8,926 / 187 / 8,958;
+- compact manifest SHA-256 is `11b154ad96d5dbe74494f303739164489953c8cb857757703c3bac84aae6bdf4`.
+
+The long Cycle 2 persistence path exposed and corrected a truncated base64 part during final validation. The final eight-part layout reconstructs the exact 354,993-byte canonical manifest. Reader behavior and manifest semantic content did not change.
+
+No formal Python `zoneinfo` comparison or H1–H3 result exists yet.
 
 - Frozen proposal: [`research/proposals/STUDY_005_TZDB_TRANSITION_ROUNDTRIP.md`](research/proposals/STUDY_005_TZDB_TRANSITION_ROUNDTRIP.md)
 - Active protocol: [`research/studies/005-tzdb-transition-roundtrip/PROTOCOL.md`](research/studies/005-tzdb-transition-roundtrip/PROTOCOL.md)
 - Cycle 1 audit: [`research/studies/005-tzdb-transition-roundtrip/CYCLE_1_ACTIVATION.md`](research/studies/005-tzdb-transition-roundtrip/CYCLE_1_ACTIVATION.md)
+- Cycle 2 audit: [`research/studies/005-tzdb-transition-roundtrip/CYCLE_2_READER_AND_MANIFEST.md`](research/studies/005-tzdb-transition-roundtrip/CYCLE_2_READER_AND_MANIFEST.md)
 - Study overview: [`research/studies/005-tzdb-transition-roundtrip/README.md`](research/studies/005-tzdb-transition-roundtrip/README.md)
-- Prior source-ingress record: [`research/decisions/2026-07-24-study-005-source-ingress-record.md`](research/decisions/2026-07-24-study-005-source-ingress-record.md)
 
 ## Current operating loop
 
@@ -99,7 +85,7 @@ No independent reader, complete transition manifest, Python formal comparison, o
 5. Templex reports what was actually done in the same project chat and proposes the next single cycle.
 6. The laboratory stops until another `承認` is received.
 
-The next exact `承認` may perform Study 005 Cycle 2 only: implement the independent standard-library-only TZif reader, enforce malformed-input rejection, pass all 15 frozen fixtures with at most one disclosed correction, and only then freeze the complete transition manifest. It may not implement or execute the formal Python comparison or begin Cycle 3.
+The next exact `承認` may perform Study 005 Cycle 3 only: freeze the isolated public-API `zoneinfo` comparison and fold/gap round-trip harness before formal outcomes, prove isolated data-path resolution, execute the complete frozen corpus once, preserve every result, and stop before clean reproduction or final analysis.
 
 ## Operating principles
 
@@ -117,11 +103,6 @@ The next exact `承認` may perform Study 005 Cycle 2 only: implement the indepe
 - [`NEXT_START.md`](NEXT_START.md) — compact restart handoff
 - [`AGENTS.md`](AGENTS.md) — restart and operating protocol
 - [`research/studies/005-tzdb-transition-roundtrip/PROTOCOL.md`](research/studies/005-tzdb-transition-roundtrip/PROTOCOL.md) — active Study 005 protocol
-- [`research/studies/005-tzdb-transition-roundtrip/CYCLE_1_ACTIVATION.md`](research/studies/005-tzdb-transition-roundtrip/CYCLE_1_ACTIVATION.md) — completed Cycle 1 audit
-- [`research/proposals/STUDY_005_TZDB_TRANSITION_ROUNDTRIP.md`](research/proposals/STUDY_005_TZDB_TRANSITION_ROUNDTRIP.md) — frozen pre-activation proposal
-- [`research/studies/004-finite-state-conformance/REPORT.md`](research/studies/004-finite-state-conformance/REPORT.md) — closed Study 004 report
-- [`research/studies/001-autonomous-game-design/REPORT.md`](research/studies/001-autonomous-game-design/REPORT.md) — closed Study 001 report
-- [`research/studies/002-exact-first-screening/REPORT.md`](research/studies/002-exact-first-screening/REPORT.md) — closed Study 002 report
-- [`research/studies/003-protocol-integrity/REPORT.md`](research/studies/003-protocol-integrity/REPORT.md) — closed Study 003 report
+- [`research/studies/005-tzdb-transition-roundtrip/CYCLE_2_READER_AND_MANIFEST.md`](research/studies/005-tzdb-transition-roundtrip/CYCLE_2_READER_AND_MANIFEST.md) — completed Cycle 2 audit
 - [`self/SELF.md`](self/SELF.md) — Templex's provisional self-model
 - [`governance/HUMAN_INTERVENTION.md`](governance/HUMAN_INTERVENTION.md) — human intervention ledger
