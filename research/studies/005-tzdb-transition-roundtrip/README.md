@@ -1,61 +1,55 @@
 # Study 005 — TZDB Transition Round-Trip Conformance
 
-_Status: Active; Cycle 3 of maximum 4 completed._
+_Status: **Closed after Cycle 4 of maximum 4**_  
+_Disposition: **Positive bounded conformance result**_
 
-Study 005 tests a version-pinned IANA tzdb 2026c transition corpus against an independently implemented TZif reader and an isolated Python `zoneinfo` harness.
+Study 005 tested a pinned IANA tzdb 2026c transition corpus against an independently implemented TZif reader and an isolated public-API Python `zoneinfo` harness.
 
-## Current position
+## Final result
 
-Cycle 1 completed source/permission preflight, deterministic isolated compilation, canonical inventory, and frozen targeted fixtures.
+The frozen corpus contained 313 canonical zones and 18,071 explicit transitions from 1970 through 2099.
 
-Cycle 2 implemented and froze the independent TZif reader, passed eleven parser tests and all eighteen frozen transition/control/footer checks, and froze a 313-zone manifest containing 18,071 explicit transitions.
+| Hypothesis | Records | Mismatches | Disposition |
+|---|---:|---:|---|
+| H1 UTC projection | 90,079 | 0 | Supported |
+| H2 backward fold and UTC round trip | 26,778 | 0 | Supported |
+| H3 forward gap classification | 44,790 | 0 | Supported |
+| **Total** | **161,647** | **0** | **Positive bounded result** |
 
-Cycle 3 froze a public-API `zoneinfo` harness before complete outcomes, executed the full frozen corpus exactly once under an isolated 2026c data path, and preserved **161,647** comparison records:
+Cycle 4 reconstructed the exact committed reader, harness, tests, builders, pre-outcome runner, source archive, compiled tree, inventory, transition manifest, and Cycle 3 result package. It then ran one exact-source formal reproduction.
 
-- H1 UTC projection: 90,079 records;
-- H2 repeated-time fold and round trip: 26,778 records;
-- H3 gap and adjacent-valid classification: 44,790 records;
-- nonzero mismatch masks: 0.
+All H1, H2, and H3 scientific record families were byte-identical to Cycle 3. The complete result digest differed in one field only: the absolute temporary path serialized in `environment.tzpath_after[0]`. After path normalization, the results were byte-identical. The scientific payload excluding environment metadata had SHA-256 `cf635b2a32b8183f14b5ec7d54a1fd95cc6b9bad2cda5087a0072317cc0f0e79` in both runs.
 
-These are mechanical Cycle 3 results, not yet the final H1–H3 dispositions. Cycle 4 must cleanly reproduce them from the exact repository source, analyze limitations, write the final report, and close the study.
+## Boundaries
 
-## Material limitations discovered in Cycle 3
+The conclusion applies only to:
 
-The compact Cycle 2 manifest is not independently self-contained for the pre-transition type of the first retained transition because it omits pre-1970 transition records. The frozen reader and exact TZif source bytes supply that context. The manifest bytes and digest remain unchanged, but the earlier independent-self-containment claim is withdrawn.
+- CPython 3.13.5;
+- IANA tzdb 2026c;
+- the frozen `zic -b fat` compilation and source order;
+- unique `zone1970.tab` zones plus `Etc/UTC`;
+- explicit transitions in `[1970-01-01T00:00:00Z, 2100-01-01T00:00:00Z)`;
+- integer POSIX seconds;
+- the frozen H1–H3 assertions.
 
-The formal local execution also used a compatibility bridge to an independently implemented local TZif parser rather than importing the literal frozen repository reader blob. Every manifest row's source identity, type table, and retained transition list was verified, but Cycle 4 must reproduce the exact result using the exact repository source.
+It does not certify other Python versions, operating systems, compilers, tzdb releases, aliases, `backzone`, leap-second files, subsecond behavior, or footer-synthesized future transitions.
 
-## Frozen artifacts
+## Permanent limitations
 
-- `PROTOCOL.md` — active frozen protocol
-- `CYCLE_1_ACTIVATION.md` — activation and setup audit
-- `CYCLE_2_READER_AND_MANIFEST.md` — independent-reader and manifest audit
-- `CYCLE_3_HARNESS_FREEZE.md` — pre-outcome harness semantics
-- `CYCLE_3_FORMAL_EXECUTION.md` — isolated formal-execution audit
-- `data/source_provenance_v1.json` — exact archive identity and permission metadata
-- `data/compilation_summary_v1.json` — compiler, command, environment, and deterministic compilation summary
-- `data/compiled_tree_projection_v1.parts.json` and part files — complete compiled-tree projection
-- `data/canonical_zone_identity_v1.json` and `data/canonical_zones_v1.txt.gz.b64` — ordered 313-zone inventory
-- `data/fixture_expectations_v1.json.gz.b64` and fixture-gate artifacts — frozen reader expectations and results
-- `data/transition_manifest_compact_v1.parts.json` and part files — complete transition-manifest reconstruction
-- `data/harness_freeze_identity_v1.json` — pre-outcome harness identities
-- `data/zoneinfo_formal_summary_v1.json` — mechanical Cycle 3 summary
-- `data/zoneinfo_mismatches_v1.json.xz.b64` — complete mismatch artifact
-- `data/zoneinfo_formal_artifacts_v1.json` — exact full-result and reconstruction identities and part order
-- `data/zoneinfo_result_reconstruction_v1.json.xz.b64.part*` — reconstructible formal-result package
+- The compact manifest needs the exact TZif bytes and reader for first-retained-transition context in 274 zones.
+- Cycle 3 had reader/runner source-identity deviations; Cycle 4 reproduced the scientific payload exactly but does not erase those deviations.
+- The full-result digest embedded a non-portable absolute path.
+- The historical targeted fixture artifact was not separately decoded and rerun in Cycle 4.
+- No detached IANA signature was verified.
 
-Follow each parts manifest exactly and verify reconstructed byte counts and SHA-256 identities before use.
+## Final records
 
-## Next and final cycle
+- `PROTOCOL.md` — frozen protocol and final disposition
+- `REPORT.md` — final scientific report
+- `CYCLE_4_REPRODUCTION_AND_CLOSURE.md` — exact-source reproduction and closure audit
+- `CYCLE_3_SOURCE_IDENTITY_CORRECTION.md` — corrected source-identity record
+- `data/cycle4_reproduction_analysis_v1.json` — machine-readable comparison
+- `data/cycle4_source_identities_v1.json` — verified source identities and corrections
+- `data/cycle4_formal_summary_v1.json` — exact-source formal summary
 
-Cycle 4 is the last permitted cycle. It must:
-
-1. obtain a clean repository state and use the exact committed reader, harness, tests, and runner;
-2. reconstruct the source, compiled tree, inventory, fixtures, manifest, and Cycle 3 result artifacts;
-3. reproduce the frozen manifest, summary, mismatch artifact, full canonical result, and deterministic XZ identities;
-4. investigate any reproduction difference without changing the frozen experiment or rerunning adaptively;
-5. analyze H1, H2, and H3 under the precommitted criteria;
-6. write the final report and closure audit;
-7. close Issue #11 and mark Study 005 closed.
-
-No fifth cycle is permitted.
+Issue #11 is closed. No fifth cycle exists.
