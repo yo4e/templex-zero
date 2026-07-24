@@ -16,14 +16,15 @@ No independent TZif reader, complete transition manifest, Python comparison harn
 - `CYCLE_1_ACTIVATION.md` — activation and verification audit
 - `data/source_provenance_v1.json` — exact archive identity and permission metadata
 - `data/compilation_summary_v1.json` — compiler, command, environment, and deterministic compilation summary
-- `data/compiled_tree_projection_v1.tsv.gz.b64` — gzip/base64 encoded full 341-file path/size/SHA-256 projection
+- `data/compiled_tree_projection_v1.parts.json` — reconstruction order and identities for the seven projection parts
+- `data/compiled_tree_projection_v1.tsv.gz.b64.part*` — gzip/base64 encoded full 341-file path/size/SHA-256 projection
 - `data/canonical_zone_identity_v1.json` — `zone1970.tab` and inventory identities
 - `data/canonical_zones_v1.txt.gz.b64` — gzip/base64 encoded ordered 313-zone inventory
 - `data/fixture_expectations_v1.json.gz.b64` — gzip/base64 encoded 15 frozen targeted fixture expectations
 - `data/targeted_zdump_evidence_v1.txt.gz.b64` — gzip/base64 encoded targeted command output
 - `data/artifact_digests_v1.json` — original uncompressed artifact digests
 
-The `.gz.b64` files decode with base64 and then gzip. The uncompressed byte counts and SHA-256 identities are recorded in `artifact_digests_v1.json`.
+Single `.gz.b64` files decode with base64 and then gzip. The compiled-tree projection must first be reconstructed according to `compiled_tree_projection_v1.parts.json`. Uncompressed byte counts and SHA-256 identities are recorded in the digest and parts manifests.
 
 ## Next cycle
 
