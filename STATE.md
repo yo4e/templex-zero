@@ -1,10 +1,10 @@
 # State
 
-_Last updated: 2026-07-24_
+_Last updated: 2026-07-25_
 
 ## Phase
 
-**No active study / Study 005 closed after Cycle 4 of maximum 4**
+**No active study / frozen inactive Study 006 proposal**
 
 ## Laboratory
 
@@ -21,44 +21,37 @@ _Last updated: 2026-07-24_
 - **Study 004:** partial finite-state conformance result; H1 unsupported, H2 supported, H3 unresolved.
 - **Study 005:** positive bounded TZDB transition-round-trip conformance result; H1, H2, and H3 supported with procedural and artifact-portability limitations.
 
-## Study 005 final result
+## Post-Study-005 portfolio decision
 
-- Final report: `research/studies/005-tzdb-transition-roundtrip/REPORT.md`
-- Cycle 4 audit: `research/studies/005-tzdb-transition-roundtrip/CYCLE_4_REPRODUCTION_AND_CLOSURE.md`
-- Closed issue: **#11**
-- Pinned referent: **IANA tzdb 2026c**
-- Runtime: **CPython 3.13.5**
-- Canonical inventory: **313 zones**
-- Explicit transitions: **18,071**
-- H1: **90,079 records / mismatches 0 / supported**
-- H2: **26,778 records / mismatches 0 / supported**
-- H3: **44,790 records / mismatches 0 / supported**
-- Total: **161,647 records / mismatches 0**
-- Scientific payload SHA-256: `cf635b2a32b8183f14b5ec7d54a1fd95cc6b9bad2cda5087a0072317cc0f0e79`
+- Decision: `research/decisions/2026-07-25-post-study-005-portfolio-assessment.md`
+- Selected inactive proposal: `research/proposals/006-python-tar-extraction-boundary-conformance.md`
+- Proposed Study 006 status: **frozen, not active**
+- Active issue: **none**
+- Selection threshold: at least **30 / 35**, no criterion below **4**, external referent, concrete failure result, four-cycle closure, and no external action or untrusted archive extraction.
+- Selected score: **32 / 35**
+- Runtime feasibility observed: CPython **3.13.5**, Linux 6.12.13 x86_64, glibc 2.41, `tarfile.data_filter`, required filter exceptions, temporary symlinks, and `resource.setrlimit`.
+- Primary referents: Python 3.13 `tarfile` documentation and final PEP 706.
+- Rejected or held directions: reproducible scientific artifact envelope, RFC 3986 reference resolution, Unicode UTS #46 IDNA processing, prospective project-selection calibration, and inactivity.
 
-The exact-source Cycle 4 reproduction generated all scientific record families byte-identical to Cycle 3. The complete canonical digests differed only in the absolute temporary path serialized in `environment.tzpath_after[0]`; the full digest was therefore non-portable.
+## Study 006 frozen question
 
-## Permanent limitations
+On CPython 3.13.5 for Linux, does `tarfile` extraction with the explicit `data` filter enforce its documented destination-containment, link, special-file, and metadata-sanitization boundaries across a frozen stateful fixture matrix, while preserving safe data-archive behavior and producing independently auditable filesystem effects?
 
-- The compact transition manifest is not independently self-contained for first-retained-transition pre-type context in 274 zones; exact TZif bytes and the reader are required.
-- Cycle 3 did not literally execute the committed reader and runner bytes; Cycle 4 resolved the scientific effect by exact-source reproduction, but the procedural deviation remains recorded.
-- Cycle 3 source-identity records contained transcription errors and the repository executed-runner evidence was not an exact byte copy; Cycle 4 records the corrected identities.
-- The targeted fixture artifact was not separately decoded and rerun in Cycle 4, although exact reader/harness tests, full manifest, and formal records reproduced.
-- No detached IANA signature was supplied or verified.
-- The conclusion is bounded to the frozen release, runtime, compiler environment, inventory, interval, precision, and assertions.
+The proposal uses only original synthetic archives inside disposable study roots. It does not authorize arbitrary external archives, real user paths, elevated privileges, denial-of-service tests, vulnerability disclosure, or a general claim that tar extraction is safe.
 
 ## Next bounded work
 
-There is no active study and no remaining Study 005 cycle. The next exact `承認` may open one post-Study-005 portfolio cycle only:
+The next exact `承認` may perform one independent Study 006 activation cycle only:
 
-1. inspect all five closed studies, governance records, open issues, and recent commits;
-2. compare genuinely distinct future directions plus deliberate inactivity under an explicit threshold;
-3. select and freeze at most one inactive proposal, or record a justified decision to remain inactive;
-4. do not activate a new study, create its implementation, or run its experiment in that same cycle unless the governing proposal process explicitly permits it;
-5. update repository state and stop.
+1. re-read the live repository, portfolio decision, frozen proposal, governance, and current tool state;
+2. reverify the exact CPython 3.13.5 runtime, `tarfile` source identity, documentation identity, filesystem capabilities, symlink and hard-link support, and safe disposable-root containment;
+3. choose activation **GO unchanged** or **NO-GO**;
+4. if GO, activate Study 006, open its issue, freeze the active protocol, fixture grammar, projection schema, resource caps, and exact manifest;
+5. stop before implementing the generator or oracle, creating formal fixture archives, extracting archives, or inspecting protected outcomes;
+6. if NO-GO, record the reason and remain inactive.
 
-No external contact, terms acceptance, defect report, spending, permission change, or third-party repository modification is authorized.
+No external contact, vulnerability report, terms acceptance, untrusted archive ingress, spending, permission change, or third-party repository modification is authorized.
 
 ## Human action currently needed
 
-None beyond a later exact `承認` for one bounded post-study portfolio cycle.
+None beyond a later exact `承認` for the independent Study 006 activation decision.
