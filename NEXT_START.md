@@ -1,54 +1,55 @@
 # Next Start
 
-_Updated: 2026-07-24 (Asia/Tokyo)_
+_Updated: 2026-07-25 (Asia/Tokyo)_
 
 ## Purpose
 
-This is a compact advisory bridge, not authority. Re-read `STATE.md`, Study 005's final report and Cycle 4 audit, governance records, Issue #11 closure, recent commits, and the five closed-study records.
+This is a compact advisory bridge, not authority. Re-read `STATE.md`, the post-Study-005 portfolio decision, the frozen Study 006 proposal, governance and human-intervention records, open issues, recent commits, and all five closed-study reports.
 
 When Yoshie Yamada sends `承認`, follow `governance/APPROVAL_DRIVEN_EXECUTION.md`, complete one bounded cycle, report in the same project chat, and stop.
 
 ## Current position
 
-**No study is active. Studies 001–005 are closed.**
+**No study is active. Studies 001–005 are closed. Study 006 is proposed but inactive.**
 
-Study 005 closed after its fourth and final cycle as a positive bounded conformance result:
+The 2026-07-25 portfolio cycle compared four active directions plus inactivity under a predeclared seven-criterion threshold. Only **Python tar extraction boundary conformance** passed:
 
-- H1: 90,079 records, zero mismatches — supported;
-- H2: 26,778 records, zero mismatches — supported;
-- H3: 44,790 records, zero mismatches — supported;
-- total: 161,647 records, zero mismatches;
-- exact-source scientific payload reproduced byte-identically;
-- full-result digest differed only because an absolute temporary TZPATH was serialized.
+- selected score: **32 / 35**;
+- required score: at least **30 / 35**;
+- no criterion below **4**;
+- external referent: Python 3.13 `tarfile` documentation and final PEP 706;
+- local feasibility: CPython 3.13.5, `data_filter`, relevant exceptions, temporary symlinks, and resource limits available;
+- containment: original synthetic archives only, disposable roots only, no elevated privileges or external archives.
 
 Key records:
 
+- `research/decisions/2026-07-25-post-study-005-portfolio-assessment.md`
+- `research/proposals/006-python-tar-extraction-boundary-conformance.md`
+- `governance/HUMAN_INTERVENTION_CONTINUATION_2026-07-25.md`
 - `research/studies/005-tzdb-transition-roundtrip/REPORT.md`
-- `research/studies/005-tzdb-transition-roundtrip/CYCLE_4_REPRODUCTION_AND_CLOSURE.md`
-- `research/studies/005-tzdb-transition-roundtrip/CYCLE_3_SOURCE_IDENTITY_CORRECTION.md`
-- closed Issue #11
 
 ## Mandatory lessons to carry forward
 
-1. Portable outcome digests must exclude or normalize absolute execution paths.
-2. Source identities must be computed and verified directly; transcribed blob IDs are not evidence.
-3. Reconstructible compact artifacts must explicitly declare dependencies required to recover omitted context.
-4. Exact-source reproduction can resolve scientific effect without erasing procedural deviations.
-5. A disclosed reproduction gap must remain visible even when broader evidence reproduces.
+1. The next study must test a different failure surface, not merely repeat Study 005's independent-parser pattern.
+2. Extraction is stateful: member order, pre-existing nodes, links, duplicate names, exceptions, and partial effects must be recorded.
+3. `filter="data"` must be explicit on the pinned Python 3.13.5 runtime; default extraction is descriptive only.
+4. No filesystem path outside a disposable study root may be intentionally used as a target or modified.
+5. Absolute temporary paths must not enter the portable scientific payload.
+6. A built-in filter is not a general security proof; denial-of-service, races, Windows semantics, external archives, and arbitrary environments remain outside scope.
+7. A committed source file is not evidence that its bytes were executed; live source identity must be computed directly.
 
 ## Next bounded work unit
 
-The next exact `承認` may perform one **post-Study-005 portfolio cycle only**:
+The next exact `承認` may perform one **Study 006 activation decision and Cycle 1 only**:
 
-1. inspect all five closed studies and current governance/self-limit records;
-2. identify several genuinely distinct future research directions plus inactivity;
-3. define a selection threshold before choosing;
-4. perform bounded feasibility, source, permission, and capability checks;
-5. select and freeze at most one inactive proposal, or document a decision to remain inactive;
-6. synchronize `STATE.md`, this handoff, README, intervention records, and issues;
-7. stop before activation or experimental execution.
+1. independently re-evaluate the unchanged frozen proposal;
+2. verify exact runtime, module source, documentation, permission, filesystem, symlink, hard-link, and containment prerequisites;
+3. choose activation **GO unchanged** or **NO-GO**;
+4. if GO, create the active issue and freeze the active protocol, fixture grammar, filesystem projection, expected refusal mapping, resource caps, and exact manifest;
+5. stop before generator or oracle implementation, formal archive creation, extraction, or outcome inspection;
+6. if NO-GO, preserve the reason and remain inactive.
 
-Do not reopen Study 005 or create a fifth cycle. Do not contact outsiders, accept terms, file an external defect report, spend funds, alter permissions, or modify third-party repositories.
+Do not migrate silently to Python 3.14, use untrusted external archives, test real paths, raise privileges, disclose a possible vulnerability, contact outsiders, or add a fifth cycle.
 
 ## Human gate
 
@@ -56,4 +57,4 @@ Do not reopen Study 005 or create a fifth cycle. Do not contact outsiders, accep
 
 ## Human action pending
 
-None. A later exact `承認` opens one bounded portfolio cycle only.
+None. A later exact `承認` opens one bounded activation decision only.
