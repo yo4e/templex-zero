@@ -21,7 +21,7 @@ Negative results and visible corrections are intentional parts of the experiment
 
 ## Status
 
-- Phase: **No active study**
+- Phase: **No active study / frozen inactive Study 006 proposal**
 - Visibility: **Public**
 - Closed studies: **Study 001 through Study 005**
 - Active issue: **None**
@@ -29,6 +29,18 @@ Negative results and visible corrections are intentional parts of the experiment
 - Public operator: **Templex Tsukino**
 
 Study 001 closed with a negative game-design result. Study 002 closed with a partial / incomplete exact-first result. Study 003 closed with methodological success under bounded procedural claims. Study 004 closed as a valid partial finite-state-conformance result. Study 005 closed as a positive bounded TZDB transition-round-trip conformance result.
+
+## Proposed Study 006
+
+The post-Study-005 portfolio cycle selected one inactive proposal on **Python tar extraction boundary conformance**.
+
+The frozen question asks whether CPython 3.13.5 `tarfile` extraction with explicit `filter="data"` enforces documented destination-containment, link, special-file, and metadata-sanitization boundaries across a stateful synthetic fixture matrix while preserving safe data-archive behavior.
+
+The proposal deliberately does **not** claim general archive safety. It excludes untrusted external archives, real user paths, elevated privileges, denial-of-service testing, external disclosure, Windows-specific semantics, and arbitrary environments.
+
+- Portfolio decision: [`research/decisions/2026-07-25-post-study-005-portfolio-assessment.md`](research/decisions/2026-07-25-post-study-005-portfolio-assessment.md)
+- Frozen proposal: [`research/proposals/006-python-tar-extraction-boundary-conformance.md`](research/proposals/006-python-tar-extraction-boundary-conformance.md)
+- Latest closed-study report: [`research/studies/005-tzdb-transition-roundtrip/REPORT.md`](research/studies/005-tzdb-transition-roundtrip/REPORT.md)
 
 ## Study 005 final result
 
@@ -57,7 +69,7 @@ The result is deliberately narrow and retains all procedural, artifact-portabili
 4. Templex verifies or criticizes the work, records evidence and failures, updates restart state, and reports.
 5. The laboratory stops until another `承認` is received.
 
-The next exact `承認` may open one post-Study-005 portfolio cycle only: inspect all five closed studies, compare distinct future directions plus inactivity under a predeclared threshold, freeze at most one inactive proposal or remain inactive, synchronize repository state, and stop before activation or experimental execution.
+The next exact `承認` may perform one independent Study 006 activation decision only. If activation is GO unchanged, Cycle 1 may freeze environment, protocol, fixture grammar, filesystem projection, resource caps, and the exact manifest, then must stop before implementation, archive extraction, or protected outcome inspection.
 
 ## Operating principles
 
@@ -74,6 +86,7 @@ The next exact `承認` may open one post-Study-005 portfolio cycle only: inspec
 - [`STATE.md`](STATE.md) — current state and next actions
 - [`NEXT_START.md`](NEXT_START.md) — compact restart handoff
 - [`AGENTS.md`](AGENTS.md) — restart and operating protocol
-- [`research/studies/005-tzdb-transition-roundtrip/REPORT.md`](research/studies/005-tzdb-transition-roundtrip/REPORT.md) — latest closed-study report
+- [`research/decisions/2026-07-25-post-study-005-portfolio-assessment.md`](research/decisions/2026-07-25-post-study-005-portfolio-assessment.md) — latest portfolio decision
+- [`research/proposals/006-python-tar-extraction-boundary-conformance.md`](research/proposals/006-python-tar-extraction-boundary-conformance.md) — frozen inactive Study 006 proposal
 - [`self/SELF.md`](self/SELF.md) — Templex's provisional self-model
 - [`governance/HUMAN_INTERVENTION.md`](governance/HUMAN_INTERVENTION.md) — human intervention ledger
