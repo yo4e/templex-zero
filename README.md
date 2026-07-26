@@ -21,26 +21,41 @@ Negative results and visible corrections are intentional parts of the experiment
 
 ## Status
 
-- Phase: **No active study / frozen inactive Study 006 proposal**
+- Phase: **Active Study 006 / Cycle 1 of maximum 4 complete**
 - Visibility: **Public**
 - Closed studies: **Study 001 through Study 005**
-- Active issue: **None**
+- Active issue: **#12**
 - Release state: **Approval-gated**
 - Public operator: **Templex Tsukino**
 
 Study 001 closed with a negative game-design result. Study 002 closed with a partial / incomplete exact-first result. Study 003 closed with methodological success under bounded procedural claims. Study 004 closed as a valid partial finite-state-conformance result. Study 005 closed as a positive bounded TZDB transition-round-trip conformance result.
 
-## Proposed Study 006
+## Active Study 006
 
-The post-Study-005 portfolio cycle selected one inactive proposal on **Python tar extraction boundary conformance**.
+Study 006 tests **Python tar extraction boundary conformance** on one pinned CPython 3.13.5 Linux/ext4 environment.
 
-The frozen question asks whether CPython 3.13.5 `tarfile` extraction with explicit `filter="data"` enforces documented destination-containment, link, special-file, and metadata-sanitization boundaries across a stateful synthetic fixture matrix while preserving safe data-archive behavior.
+The frozen question asks whether `tarfile` extraction with explicit `filter="data"` enforces documented destination-containment, link, special-file, and metadata-sanitization boundaries across a stateful synthetic fixture matrix while preserving safe data-archive behavior and producing independently auditable filesystem effects.
 
-The proposal deliberately does **not** claim general archive safety. It excludes untrusted external archives, real user paths, elevated privileges, denial-of-service testing, external disclosure, Windows-specific semantics, and arbitrary environments.
+Cycle 1 activated the unchanged proposal and froze:
 
-- Portfolio decision: [`research/decisions/2026-07-25-post-study-005-portfolio-assessment.md`](research/decisions/2026-07-25-post-study-005-portfolio-assessment.md)
-- Frozen proposal: [`research/proposals/006-python-tar-extraction-boundary-conformance.md`](research/proposals/006-python-tar-extraction-boundary-conformance.md)
-- Latest closed-study report: [`research/studies/005-tzdb-transition-roundtrip/REPORT.md`](research/studies/005-tzdb-transition-roundtrip/REPORT.md)
+- the exact local runtime and `tarfile.py` identity;
+- a non-privileged UID/GID 65534 execution boundary with no supplementary groups and `no-new-privs`;
+- the active protocol and resource caps;
+- a declarative fixture and refusal schema;
+- an independent filesystem projection;
+- an exact matrix of **32 fixtures and 57 members**.
+
+The matrix contains 16 safe/no-refusal and 16 first-refusal fixtures. No archive has yet been generated or extracted, and no protected outcome has been inspected.
+
+The exact local `tarfile.py` is not byte-identical to the upstream CPython v3.13.5 blob. TEMPLEX/0 therefore treats the local source as the operational implementation under test and retains upstream comparison only as qualified identity evidence.
+
+- Study overview: [`research/studies/006-python-tar-extraction-boundary-conformance/README.md`](research/studies/006-python-tar-extraction-boundary-conformance/README.md)
+- Active protocol: [`research/studies/006-python-tar-extraction-boundary-conformance/PROTOCOL.md`](research/studies/006-python-tar-extraction-boundary-conformance/PROTOCOL.md)
+- Cycle 1 audit: [`research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_1_ACTIVATION_AND_FREEZE.md`](research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_1_ACTIVATION_AND_FREEZE.md)
+- Frozen manifest: [`research/studies/006-python-tar-extraction-boundary-conformance/data/fixture_manifest_v1.json`](research/studies/006-python-tar-extraction-boundary-conformance/data/fixture_manifest_v1.json)
+- Active issue: [#12](https://github.com/yo4e/templex-zero/issues/12)
+
+The study does **not** claim general archive safety. It excludes untrusted external archives, real user paths, elevated formal execution, denial-of-service testing, races, Windows-specific semantics, external disclosure, and arbitrary environments.
 
 ## Study 005 final result
 
@@ -53,13 +68,10 @@ Study 005 pinned IANA tzdb 2026c and compared an original TZif reader with isola
 | H3 forward gap classification | 44,790 | 0 | Supported |
 | **Total** | **161,647** | **0** | **Positive bounded result** |
 
-The fourth and final cycle reproduced the exact committed reader, harness, tests, runner, source, compiled tree, inventory, and transition manifest. All scientific record families were byte-identical to the original formal run. The complete digest differed only because an absolute temporary TZPATH was serialized into environment metadata; after normalization, the results were byte-identical.
-
-The result is deliberately narrow and retains all procedural, artifact-portability, source-identity, fixture-reproduction, and signature limitations.
+The exact-source reproduction generated all scientific record families byte-identical to the original formal run. The complete digest differed only because an absolute temporary TZPATH was serialized into environment metadata; after normalization, the results were byte-identical.
 
 - Final report: [`research/studies/005-tzdb-transition-roundtrip/REPORT.md`](research/studies/005-tzdb-transition-roundtrip/REPORT.md)
 - Cycle 4 audit: [`research/studies/005-tzdb-transition-roundtrip/CYCLE_4_REPRODUCTION_AND_CLOSURE.md`](research/studies/005-tzdb-transition-roundtrip/CYCLE_4_REPRODUCTION_AND_CLOSURE.md)
-- Study overview: [`research/studies/005-tzdb-transition-roundtrip/README.md`](research/studies/005-tzdb-transition-roundtrip/README.md)
 
 ## Current operating loop
 
@@ -69,7 +81,7 @@ The result is deliberately narrow and retains all procedural, artifact-portabili
 4. Templex verifies or criticizes the work, records evidence and failures, updates restart state, and reports.
 5. The laboratory stops until another `承認` is received.
 
-The next exact `承認` may perform one independent Study 006 activation decision only. If activation is GO unchanged, Cycle 1 may freeze environment, protocol, fixture grammar, filesystem projection, resource caps, and the exact manifest, then must stop before implementation, archive extraction, or protected outcome inspection.
+The next exact `承認` may perform Study 006 Cycle 2 only: implement the deterministic generator, independent filesystem oracle, and extraction harness; verify exact source identities; run only the frozen hand-audited correctness gate; freeze passing instruments; and stop before the complete 32-fixture matrix.
 
 ## Operating principles
 
@@ -86,7 +98,7 @@ The next exact `承認` may perform one independent Study 006 activation decisio
 - [`STATE.md`](STATE.md) — current state and next actions
 - [`NEXT_START.md`](NEXT_START.md) — compact restart handoff
 - [`AGENTS.md`](AGENTS.md) — restart and operating protocol
-- [`research/decisions/2026-07-25-post-study-005-portfolio-assessment.md`](research/decisions/2026-07-25-post-study-005-portfolio-assessment.md) — latest portfolio decision
-- [`research/proposals/006-python-tar-extraction-boundary-conformance.md`](research/proposals/006-python-tar-extraction-boundary-conformance.md) — frozen inactive Study 006 proposal
+- [`research/studies/006-python-tar-extraction-boundary-conformance/README.md`](research/studies/006-python-tar-extraction-boundary-conformance/README.md) — active Study 006
+- [`research/studies/005-tzdb-transition-roundtrip/REPORT.md`](research/studies/005-tzdb-transition-roundtrip/REPORT.md) — latest closed-study report
 - [`self/SELF.md`](self/SELF.md) — Templex's provisional self-model
 - [`governance/HUMAN_INTERVENTION.md`](governance/HUMAN_INTERVENTION.md) — human intervention ledger
