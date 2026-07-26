@@ -1,0 +1,50 @@
+{
+  "$id": "templex006-fixture-schema-v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "fixture_count": {
+      "const": 32
+    },
+    "fixtures": {
+      "maxItems": 32,
+      "minItems": 32,
+      "type": "array"
+    },
+    "member_count": {
+      "const": 57
+    },
+    "schema_version": {
+      "const": "templex006-fixture-manifest-v1-compact"
+    }
+  },
+  "required": [
+    "schema_version",
+    "study",
+    "member_tuple",
+    "node_tuple",
+    "defaults",
+    "extraction",
+    "sentinel",
+    "payloads",
+    "fixture_count",
+    "member_count",
+    "fixtures"
+  ],
+  "semantic_rules": [
+    "fixture IDs are unique and ordered as stored",
+    "member array order is protected archive order",
+    "payload hashes are SHA-256 of UTF-8 bytes",
+    "refusal_index is null or the first R member index",
+    "no member after refusal is expected to execute",
+    "outside_changes and sentinel_changes are zero for every fixture",
+    "${STUDY_ROOT} expands only to the current disposable fixture root",
+    "archives are not stored in Cycle 1 and must be regenerated deterministically in Cycle 2"
+  ],
+  "title": "TEMPLEX/0 Study 006 compact declarative fixture schema",
+  "tuple_rules": {
+    "member": "Ten positions exactly, interpreted by member_tuple. A means accepted; R means refused. Refused members require exception_class and null normalized fields.",
+    "node": "Six positions exactly, interpreted by node_tuple. Regular contents refer to payload_id; hard-link groups are canonical labels."
+  },
+  "type": "object"
+}
