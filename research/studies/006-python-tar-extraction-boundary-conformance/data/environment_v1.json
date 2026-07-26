@@ -1,0 +1,113 @@
+{
+  "activation_decision": "GO_UNCHANGED",
+  "activation_limits": {
+    "denial_of_service_tests": false,
+    "elevated_child_execution": false,
+    "external_archives": false,
+    "external_contact": false,
+    "network_filesystems": false,
+    "real_user_paths": false,
+    "vulnerability_disclosure": false
+  },
+  "capabilities": {
+    "exceptions": [
+      "AbsolutePathError",
+      "OutsideDestinationError",
+      "AbsoluteLinkError",
+      "LinkOutsideDestinationError",
+      "SpecialFileError",
+      "LinkFallbackError"
+    ],
+    "hardlink_as_uid_65534": true,
+    "resource_RLIMIT_AS": true,
+    "setpriv_no_new_privs": true,
+    "symlink_as_uid_65534": true,
+    "tarfile_data_filter": true
+  },
+  "documentation": {
+    "pep706_source": {
+      "git_blob": "465b25e912fa2e25fbca5fb99045fb47a3de2b6d",
+      "path": "peps/pep-0706.rst",
+      "ref": "main",
+      "repo": "python/peps",
+      "status": "Final"
+    },
+    "pep_retrieved_date": "2026-07-26",
+    "pep_url": "https://peps.python.org/pep-0706/",
+    "published_doc_url": "https://docs.python.org/3.13/library/tarfile.html",
+    "published_page_observed_title": "Python 3.13.14 documentation",
+    "retrieved_date": "2026-07-26",
+    "runtime_tag_doc_source": {
+      "git_blob": "1c2f3b13b54a800065430853af99249999ab439e",
+      "path": "Doc/library/tarfile.rst",
+      "ref": "v3.13.5",
+      "repo": "python/cpython"
+    }
+  },
+  "platform": {
+    "case_sensitive_assumption": true,
+    "filesystem": "ext4",
+    "filesystem_source": "/dev/vda",
+    "kernel": "6.12.13",
+    "libc": "glibc 2.41",
+    "link_max": 65000,
+    "machine": "x86_64",
+    "mount_options": [
+      "rw",
+      "relatime",
+      "stripe=128"
+    ],
+    "name_max": 255,
+    "path_max": 4096,
+    "study_root_mode_octal": "0700",
+    "symlink_max": "undefined",
+    "system": "Linux",
+    "temporary_parent": "/tmp",
+    "umask_octal": "0022"
+  },
+  "preflight_observations": [
+    "A UID/GID 65534 process with no supplementary groups created a 0700 temporary root under /tmp.",
+    "The non-privileged process created and inspected a relative symbolic link and a hard link inside that root.",
+    "The destination and sibling sentinel can be confined to the same disposable study root.",
+    "No tar archive was generated or extracted during preflight."
+  ],
+  "recorded_at": "2026-07-26T09:13:00+09:00",
+  "runtime": {
+    "executable": "/usr/bin/python3",
+    "executable_resolved": "/usr/bin/python3.13",
+    "executable_sha256": "e59d0124ff06c248546876e01fcfb1ea3cda63534949f94a9372bfcfe3bfc3f5",
+    "formal_gid": 65534,
+    "formal_groups": [],
+    "formal_uid": 65534,
+    "implementation": "CPython",
+    "launcher": "/usr/bin/setpriv --reuid=65534 --regid=65534 --clear-groups --no-new-privs",
+    "launcher_version": "setpriv from util-linux 2.41",
+    "version": "3.13.5",
+    "version_string": "3.13.5 (main, Jun 25 2025, 18:55:22) [GCC 14.2.0]"
+  },
+  "schema_version": "templex006-environment-v1",
+  "tarfile_source": {
+    "comparison_note": "The full local file is not byte-identical to the upstream v3.13.5 blob. The activation review compared the filter, extraction, link creation, and link-target lookup spans against the upstream tag and found no semantic difference in those inspected spans. The exact local file remains the operational referent.",
+    "git_blob_sha1_if_hashed_locally": "7381445c74bd5f0bce75555d08c0972edc193f18",
+    "path": "/usr/lib/python3.13/tarfile.py",
+    "protected_source_spans_1_based": [
+      [
+        718,
+        854
+      ],
+      [
+        2298,
+        2690
+      ],
+      [
+        2873,
+        2889
+      ]
+    ],
+    "protected_source_spans_sha256": "4579bcc15a04bc4f92e110207fc53dceff458e23c7e66262deb88134dec9136f",
+    "sha256": "99db774e5017d7c3270db4986e4bc46d18222dfb26dc12bf0a73cf613e1c48cf",
+    "size_bytes": 114081,
+    "upstream_cpython_v3_13_5_blob": "0980f6a81759ce781659ed832c67d7f539fc9f26",
+    "whole_file_matches_upstream_tag": false
+  }
+}
