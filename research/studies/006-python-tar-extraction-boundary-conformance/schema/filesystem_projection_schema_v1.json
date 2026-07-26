@@ -1,0 +1,37 @@
+{
+  "absolute_path_rule": "No absolute temporary path may appear in portable records. Raw paths are replaced with ${STUDY_ROOT} before serialization.",
+  "canonical_json": "UTF-8, sort_keys=true, separators=(comma,colon), ensure_ascii=false, final newline",
+  "containment_rule": "Every changed node is classified by its resolved parent chain and lstat state as destination, sentinel, or other within the disposable root. No path outside the disposable root is walked or intentionally targeted.",
+  "diff_rule": "Diff keyed by relative path with before and after records; created, removed, and changed sets sorted lexically.",
+  "follow_symlinks": false,
+  "hardlink_rule": "For regular nodes with st_nlink > 1, assign h1, h2, ... by lexical order of each inode-equivalence class first path; raw st_dev and st_ino are excluded.",
+  "record_fields": [
+    "path",
+    "region",
+    "type",
+    "mode_octal",
+    "uid",
+    "gid",
+    "size_for_regular",
+    "sha256_for_regular",
+    "symlink_target",
+    "hardlink_group"
+  ],
+  "regions": {
+    "destination": "destination/**",
+    "other": "all other descendants of disposable study root",
+    "sentinel": "sentinel/**"
+  },
+  "schema_version": "templex006-filesystem-projection-v1",
+  "size_rule": "size is included only for regular files; directory and symlink sizes are excluded.",
+  "study_root_placeholder": "${STUDY_ROOT}",
+  "timestamp_rule": "atime, mtime, ctime and birth time are excluded from the portable scientific projection; raw operational records may retain them outside the scientific digest.",
+  "type_rules": {
+    "directory": "stat.S_ISDIR",
+    "fifo": "stat.S_ISFIFO",
+    "other": "all remaining node types",
+    "regular": "stat.S_ISREG",
+    "symlink": "stat.S_ISLNK"
+  },
+  "walk_order": "UTF-8 bytewise lexical order of relative POSIX paths"
+}
