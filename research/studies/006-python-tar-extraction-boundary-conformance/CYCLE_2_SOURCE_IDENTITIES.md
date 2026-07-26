@@ -19,4 +19,6 @@ The four gate-manifest transport blobs were `6238cacbb96091ac6ab906d046e0445953f
 
 The result transport is four parts with live Git blobs `23443d72dac4639ee9f8a8a888a3405377c624db`, `9dbb9440df8df17aec11080a8bc50c0a6705be9c`, `926a14a0faf6e1fcfd50e99bd7457dde94d1164b`, and `0ce2b4054bca7a520cd34ae7d884d8768c397790`. Reconstruction yields a 2,649-byte deterministic gzip with SHA-256 `5c69e291ee91a7c16eab4cf51fc793f7d82696dd3647e3b39521d299b7a528bc`, containing a 40,633-byte JSON record with SHA-256 `cae28021659b53fb2ea946f0d76cf64b33e85c8480974848f7f52b9a7834b2f2`.
 
+The post-execution result reconstructor is live Git blob `33534dcdfb9bcbbb51cf4aa7de5a0d2eb2840ffc` and freezes those four transport identities plus the gzip and JSON hashes. It was not part of the formal extraction execution.
+
 A first attempted single-file result transport produced the wrong live blob and was deleted in commit `8d41fa818118a79308a68ed299ea71a70edda686`. It is not evidence. The visible correction remains in Git history.
