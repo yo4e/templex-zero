@@ -21,7 +21,7 @@ Negative results and visible corrections are intentional parts of the experiment
 
 ## Status
 
-- Phase: **Active Study 006 / Cycle 1 of maximum 4 complete**
+- Phase: **Active Study 006 / Cycle 2 of maximum 4 complete**
 - Visibility: **Public**
 - Closed studies: **Study 001 through Study 005**
 - Active issue: **#12**
@@ -36,23 +36,27 @@ Study 006 tests **Python tar extraction boundary conformance** on one pinned CPy
 
 The frozen question asks whether `tarfile` extraction with explicit `filter="data"` enforces documented destination-containment, link, special-file, and metadata-sanitization boundaries across a stateful synthetic fixture matrix while preserving safe data-archive behavior and producing independently auditable filesystem effects.
 
-Cycle 1 activated the unchanged proposal and froze:
+Cycle 2 implemented and froze the deterministic generator, independent filesystem oracle, non-privileged extraction harness, gate runner, reconstruction tools, and tests. A 15-fixture hand-audited gate passed twice:
 
-- the exact local runtime and `tarfile.py` identity;
-- a non-privileged UID/GID 65534 execution boundary with no supplementary groups and `no-new-privs`;
-- the active protocol and resource caps;
-- a declarative fixture and refusal schema;
-- an independent filesystem projection;
-- an exact matrix of **32 fixtures and 57 members**.
+| Measure | Result |
+|---|---:|
+| Gate fixtures | 15 |
+| Passed | 15 |
+| Failed | 0 |
+| Sentinel changed nodes | 0 |
+| Other/outside-destination changed nodes | 0 |
+| False exception/refusal/prefix/node checks | 0 |
 
-The matrix contains 16 safe/no-refusal and 16 first-refusal fixtures. No archive has yet been generated or extracted, and no protected outcome has been inspected.
+Both clean runs produced scientific SHA-256 `4dc0b29b37d4ce096528c538e677c2d305a498d9332891a3fb5230463d9757cf`.
 
-The exact local `tarfile.py` is not byte-identical to the upstream CPython v3.13.5 blob. TEMPLEX/0 therefore treats the local source as the operational implementation under test and retains upstream comparison only as qualified identity evidence.
+One bounded pre-formal correction phase repaired an ordering comparison and removed a root-dependent generated tar from the portable filesystem projection without changing frozen expectations. A separate incorrect single-file GitHub result transport was deleted and replaced by verified four-part transport. Neither defect is hidden or treated as scientific evidence.
+
+The complete 32-fixture matrix has not been executed. H1, H2, and H3 remain unevaluated at study level.
 
 - Study overview: [`research/studies/006-python-tar-extraction-boundary-conformance/README.md`](research/studies/006-python-tar-extraction-boundary-conformance/README.md)
 - Active protocol: [`research/studies/006-python-tar-extraction-boundary-conformance/PROTOCOL.md`](research/studies/006-python-tar-extraction-boundary-conformance/PROTOCOL.md)
-- Cycle 1 audit: [`research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_1_ACTIVATION_AND_FREEZE.md`](research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_1_ACTIVATION_AND_FREEZE.md)
-- Frozen manifest: [`research/studies/006-python-tar-extraction-boundary-conformance/data/fixture_manifest_v1.json`](research/studies/006-python-tar-extraction-boundary-conformance/data/fixture_manifest_v1.json)
+- Cycle 2 audit: [`research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_2_INSTRUMENTS_AND_GATE.md`](research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_2_INSTRUMENTS_AND_GATE.md)
+- Frozen complete manifest: [`research/studies/006-python-tar-extraction-boundary-conformance/data/fixture_manifest_v1.json`](research/studies/006-python-tar-extraction-boundary-conformance/data/fixture_manifest_v1.json)
 - Active issue: [#12](https://github.com/yo4e/templex-zero/issues/12)
 
 The study does **not** claim general archive safety. It excludes untrusted external archives, real user paths, elevated formal execution, denial-of-service testing, races, Windows-specific semantics, external disclosure, and arbitrary environments.
@@ -81,7 +85,7 @@ The exact-source reproduction generated all scientific record families byte-iden
 4. Templex verifies or criticizes the work, records evidence and failures, updates restart state, and reports.
 5. The laboratory stops until another `承認` is received.
 
-The next exact `承認` may perform Study 006 Cycle 2 only: implement the deterministic generator, independent filesystem oracle, and extraction harness; verify exact source identities; run only the frozen hand-audited correctness gate; freeze passing instruments; and stop before the complete 32-fixture matrix.
+The next exact `承認` may perform Study 006 Cycle 3 only: verify the frozen complete manifest and instrument identities, execute the complete 32-fixture matrix exactly once, preserve complete raw evidence, and stop before reproduction, final H1–H3 disposition, Issue #12 closure, or study closure.
 
 ## Operating principles
 
