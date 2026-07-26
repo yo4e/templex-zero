@@ -4,7 +4,7 @@ _Last updated: 2026-07-26_
 
 ## Phase
 
-**Active Study 006 / Cycle 1 of maximum 4 complete**
+**Active Study 006 / Cycle 2 of maximum 4 complete**
 
 ## Laboratory
 
@@ -27,37 +27,39 @@ _Last updated: 2026-07-26_
 - Issue: **#12**
 - Proposal: `research/proposals/006-python-tar-extraction-boundary-conformance.md`
 - Active protocol: `research/studies/006-python-tar-extraction-boundary-conformance/PROTOCOL.md`
-- Cycle 1 audit: `research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_1_ACTIVATION_AND_FREEZE.md`
-- Repository identities: `research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_1_REPOSITORY_IDENTITIES.md`
+- Cycle 2 audit: `research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_2_INSTRUMENTS_AND_GATE.md`
+- Source identities: `research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_2_SOURCE_IDENTITIES.md`
 - Activation: **GO unchanged**
 
-## Cycle 1 frozen evidence
+## Cycle 2 frozen evidence
 
-- Runtime: CPython **3.13.5** at `/usr/bin/python3`.
-- Formal execution identity: UID/GID **65534**, no supplementary groups, `no-new-privs`.
-- Platform: Linux 6.12.13 x86_64, glibc 2.41, ext4, umask 0022.
-- Local `tarfile.py` SHA-256: `99db774e5017d7c3270db4986e4bc46d18222dfb26dc12bf0a73cf613e1c48cf`.
-- Upstream CPython v3.13.5 source blob: `0980f6a81759ce781659ed832c67d7f539fc9f26`.
-- Full local source is not byte-identical to the upstream tag; the exact local source is the operational implementation under test.
-- Fixture manifest: **32 fixtures / 57 members / 16 safe / 16 first-refusal**.
-- Expected refusal classes: 7 `OutsideDestinationError`, 5 `LinkOutsideDestinationError`, 2 `AbsoluteLinkError`, 2 `SpecialFileError`.
-- Manifest SHA-256: `23c91b230722bbfdae5aee9c1e07058b423cf1ee89c6e8dd902aca577d03144a`.
-- No archive was generated or extracted; no protected outcome was inspected.
+- Instruments: deterministic USTAR generator, independent `lstat` filesystem oracle, non-privileged extraction harness, gate runner, and reconstruction tools.
+- Exact formal execution identity: UID/GID **65534**, no supplementary groups, `no-new-privs`.
+- Complete frozen matrix remains **32 fixtures / 57 members**.
+- Hand-audited gate: **15 fixtures / 22 members**.
+- Gate result: **15 / 15 passed**, twice from clean roots.
+- Exceptions observed: 3 `OutsideDestinationError`, 2 `LinkOutsideDestinationError`, 1 `AbsoluteLinkError`, 1 `SpecialFileError`; 8 safe/no-exception.
+- Sentinel changed nodes: **0**.
+- Other/outside-destination changed nodes: **0**.
+- False exception, refusal-index, prefix, or final-node checks: **0**.
+- Scientific SHA-256 in both runs: `4dc0b29b37d4ce096528c538e677c2d305a498d9332891a3fb5230463d9757cf`.
+- One bounded pre-formal instrument correction phase was used; frozen expectations and hypotheses were unchanged.
+- A failed single-file result transport was deleted and replaced by verified four-part transport; the failed transport is not evidence.
+- H1, H2, and H3 remain **unevaluated at study level** because 17 frozen fixtures have not been executed.
 
 ## Next bounded work
 
-The next exact `承認` may perform **Study 006 Cycle 2 only**:
+The next exact `承認` may perform **Study 006 Cycle 3 only**:
 
-1. re-read the live protocol, schemas, manifest, source identities, Issue #12, governance, and restart state;
-2. implement the deterministic tar generator, independent filesystem projection/diff oracle, and extraction harness;
-3. compute and verify exact live source identities before execution;
-4. freeze and run only the predeclared hand-audited correctness gate with at least twelve miniature fixtures;
-5. if the gate passes, freeze the instruments and record the result;
-6. stop before executing the complete 32-fixture formal matrix;
-7. if the gate fails, use at most the single permitted bounded correction or close negatively.
+1. re-read the live protocol, complete manifest, frozen instrument blobs, Cycle 2 gate records, Issue #12, governance, and restart state;
+2. reconstruct and verify the exact 32-fixture manifest and executed source identities;
+3. execute the complete frozen 32-fixture formal matrix exactly once under the frozen non-privileged boundary and resource caps;
+4. preserve complete machine-readable results, mismatch records, operational metadata, and source identities;
+5. stop without repeating the complete matrix, changing fixtures or expectations, assigning final H1–H3 dispositions, closing Issue #12, or closing the study;
+6. if execution is contaminated or incomplete, record it honestly and stop.
 
 No external archive ingress, real user path, elevated formal execution, denial-of-service test, external contact, vulnerability report, spending, permission change, or third-party repository operation is authorized.
 
 ## Human action currently needed
 
-None beyond a later exact `承認` for Study 006 Cycle 2.
+None beyond a later exact `承認` for Study 006 Cycle 3.
