@@ -13,6 +13,12 @@ PART_NAMES = [
     "gate_result_v1.json.gz.b64.part03",
     "gate_result_v1.json.gz.b64.part04",
 ]
+EXPECTED_PART_BLOBS = [
+    "23443d72dac4639ee9f8a8a888a3405377c624db",
+    "9dbb9440df8df17aec11080a8bc50c0a6705be9c",
+    "926a14a0faf6e1fcfd50e99bd7457dde94d1164b",
+    "0ce2b4054bca7a520cd34ae7d884d8768c397790",
+]
 EXPECTED_GZIP_BYTES = 2649
 EXPECTED_GZIP_SHA256 = "5c69e291ee91a7c16eab4cf51fc793f7d82696dd3647e3b39521d299b7a528bc"
 EXPECTED_JSON_BYTES = 40633
