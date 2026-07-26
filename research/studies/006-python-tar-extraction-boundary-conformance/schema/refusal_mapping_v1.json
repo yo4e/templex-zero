@@ -1,0 +1,47 @@
+{
+  "fatality": "With errorlevel=1, FilterError aborts extraction at the first refused member; prior accepted members may remain.",
+  "mapping": [
+    {
+      "case": "leading POSIX separator",
+      "exception": null,
+      "expected": "accept after stripping all leading / and os.sep"
+    },
+    {
+      "case": "absolute member after stripping",
+      "exception": "AbsolutePathError",
+      "expected": "not representable under frozen POSIX path semantics"
+    },
+    {
+      "case": "member realpath outside destination",
+      "exception": "OutsideDestinationError",
+      "expected": "refuse"
+    },
+    {
+      "case": "absolute symbolic-link target",
+      "exception": "AbsoluteLinkError",
+      "expected": "refuse"
+    },
+    {
+      "case": "absolute hard-link target",
+      "exception": "AbsoluteLinkError",
+      "expected": "refuse"
+    },
+    {
+      "case": "symbolic-link target realpath outside destination",
+      "exception": "LinkOutsideDestinationError",
+      "expected": "refuse"
+    },
+    {
+      "case": "hard-link target realpath outside destination",
+      "exception": "LinkOutsideDestinationError",
+      "expected": "refuse"
+    },
+    {
+      "case": "FIFO or device/special member under data filter",
+      "exception": "SpecialFileError",
+      "expected": "refuse"
+    }
+  ],
+  "runtime": "CPython 3.13.5 POSIX",
+  "schema_version": "templex006-refusal-mapping-v1"
+}
