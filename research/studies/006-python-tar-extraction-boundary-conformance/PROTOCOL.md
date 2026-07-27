@@ -1,7 +1,7 @@
 # Study 006 Active Protocol — Python Tar Extraction Boundary Conformance
 
 _Date activated: 2026-07-26 (Asia/Tokyo)_  
-_Status: **Active — Cycle 1 of maximum 4 complete**_  
+_Status: **Active — Cycle 3 of maximum 4 complete**_  
 _Issue: **#12**_
 
 ## 1. Activation decision
@@ -61,7 +61,7 @@ The protected formal matrix is `data/fixture_manifest_v1.json` under `schema/fix
 - Absolute link fixtures use `${STUDY_ROOT}` placeholders expanded only at generation time.
 - POSIX leading-separator members are frozen as sanitization controls because `AbsolutePathError` is not representable after leading slash stripping on this platform.
 
-Cycle 2 may implement deterministic archive generation from these records. It may not add, remove, reorder, repair, or reclassify a fixture after any protected extraction outcome is observed.
+The manifest has now been formally executed once. No fixture may be added, removed, reordered, repaired, reclassified, or have its expected result revised.
 
 ## 6. Frozen filesystem projection
 
@@ -117,16 +117,16 @@ A cap failure is evidence and may cause an operationally incomplete result. Caps
 ## 9. Protected sequence and cycle plan
 
 1. **Cycle 1 — complete:** activation, environment/source/document identities, Issue #12, protocol, schemas, refusal mapping, resource caps, and exact 32-fixture manifest.
-2. **Cycle 2:** implement deterministic tar generation and an independent filesystem oracle; freeze and pass at least twelve hand-audited miniature gates; freeze the generator, oracle, and harness.
-3. **Cycle 3:** execute the complete formal matrix once and preserve all artifacts without final hypothesis disposition.
-4. **Cycle 4:** reconstruct inputs from committed source and manifest, perform one clean reproduction, compare portable payloads, analyze, report, close Issue #12, and close the study.
+2. **Cycle 2 — complete:** deterministic tar generation, independent filesystem oracle, harness, and passing hand-audited gate; instrument freeze.
+3. **Cycle 3 — complete:** one complete formal-matrix execution and preservation of complete results, mismatch records, and identities without final hypothesis disposition.
+4. **Cycle 4 — pending and final:** reconstruct inputs from committed source and manifest, perform one clean reproduction, compare portable payloads, analyze, report, close Issue #12, and close the study.
 
 No fifth cycle is permitted.
 
 ## 10. Stop conditions and boundaries
 
-Stop or close negatively if the frozen runtime disappears, the privilege drop cannot be enforced, a fixture cannot be generated within caps, the oracle cannot establish reliable filesystem identity, the gate fails after its one permitted correction opportunity, or safe containment would require privileged sandboxing.
+Stop or close negatively if the frozen runtime disappears, the privilege drop cannot be enforced, a fixture cannot be generated within caps, the oracle cannot establish reliable filesystem identity, the reproduction is contaminated or incomplete, or safe containment would require privileged or externally managed sandboxing.
 
-No external archives, real user paths, network filesystems, elevated formal execution, denial-of-service tests, external contact, vulnerability disclosure, or general security certification are authorized.
+No external archives, real user paths, network filesystems, elevated formal execution, denial-of-service tests, external contact, vulnerability disclosure, general security certification, expectation revision, or fifth cycle is authorized.
 
-Cycle 1 performs no archive generation, archive extraction, generator/oracle implementation, or protected outcome inspection.
+Cycle 3 executed the complete formal matrix exactly once. Cycle 4 may conduct only the one frozen clean reproduction required for comparison and closure.
