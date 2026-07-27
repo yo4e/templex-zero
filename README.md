@@ -21,7 +21,7 @@ Negative results and visible corrections are intentional parts of the experiment
 
 ## Status
 
-- Phase: **Active Study 006 / Cycle 2 of maximum 4 complete**
+- Phase: **Active Study 006 / Cycle 3 of maximum 4 complete**
 - Visibility: **Public**
 - Closed studies: **Study 001 through Study 005**
 - Active issue: **#12**
@@ -34,29 +34,25 @@ Study 001 closed with a negative game-design result. Study 002 closed with a par
 
 Study 006 tests **Python tar extraction boundary conformance** on one pinned CPython 3.13.5 Linux/ext4 environment.
 
-The frozen question asks whether `tarfile` extraction with explicit `filter="data"` enforces documented destination-containment, link, special-file, and metadata-sanitization boundaries across a stateful synthetic fixture matrix while preserving safe data-archive behavior and producing independently auditable filesystem effects.
-
-Cycle 2 implemented and froze the deterministic generator, independent filesystem oracle, non-privileged extraction harness, gate runner, reconstruction tools, and tests. A 15-fixture hand-audited gate passed twice:
+The complete frozen 32-fixture / 57-member matrix was executed exactly once in Cycle 3 under UID/GID 65534, no supplementary groups, and `no-new-privs`.
 
 | Measure | Result |
 |---|---:|
-| Gate fixtures | 15 |
-| Passed | 15 |
-| Failed | 0 |
+| Fixtures observed | 32 / 32 |
+| Passed every frozen check | 31 |
+| Mismatched fixtures | 1 |
+| Execution errors | 0 |
 | Sentinel changed nodes | 0 |
 | Other/outside-destination changed nodes | 0 |
-| False exception/refusal/prefix/node checks | 0 |
 
-Both clean runs produced scientific SHA-256 `4dc0b29b37d4ce096528c538e677c2d305a498d9332891a3fb5230463d9757cf`.
+The sole mismatch is `META-NONEXEC-01`: frozen expected mode `0600`, observed mode `0644`. File bytes, ownership, successful extraction, destination containment, and sentinel integrity matched. The expectation remains failed and unchanged. Final H1–H3 dispositions are deferred until the Cycle 4 clean reproduction and closure.
 
-One bounded pre-formal correction phase repaired an ordering comparison and removed a root-dependent generated tar from the portable filesystem projection without changing frozen expectations. A separate incorrect single-file GitHub result transport was deleted and replaced by verified four-part transport. Neither defect is hidden or treated as scientific evidence.
-
-The complete 32-fixture matrix has not been executed. H1, H2, and H3 remain unevaluated at study level.
+The scientific summary SHA-256 is `b060d634518aee4984046010f749769d17e41fb4d765dcc5f7b1b22670e4336c`.
 
 - Study overview: [`research/studies/006-python-tar-extraction-boundary-conformance/README.md`](research/studies/006-python-tar-extraction-boundary-conformance/README.md)
 - Active protocol: [`research/studies/006-python-tar-extraction-boundary-conformance/PROTOCOL.md`](research/studies/006-python-tar-extraction-boundary-conformance/PROTOCOL.md)
-- Cycle 2 audit: [`research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_2_INSTRUMENTS_AND_GATE.md`](research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_2_INSTRUMENTS_AND_GATE.md)
-- Frozen complete manifest: [`research/studies/006-python-tar-extraction-boundary-conformance/data/fixture_manifest_v1.json`](research/studies/006-python-tar-extraction-boundary-conformance/data/fixture_manifest_v1.json)
+- Cycle 3 audit: [`research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_3_FORMAL_EXECUTION.md`](research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_3_FORMAL_EXECUTION.md)
+- Formal result transport: [`research/studies/006-python-tar-extraction-boundary-conformance/results/cycle3/README.md`](research/studies/006-python-tar-extraction-boundary-conformance/results/cycle3/README.md)
 - Active issue: [#12](https://github.com/yo4e/templex-zero/issues/12)
 
 The study does **not** claim general archive safety. It excludes untrusted external archives, real user paths, elevated formal execution, denial-of-service testing, races, Windows-specific semantics, external disclosure, and arbitrary environments.
@@ -85,7 +81,7 @@ The exact-source reproduction generated all scientific record families byte-iden
 4. Templex verifies or criticizes the work, records evidence and failures, updates restart state, and reports.
 5. The laboratory stops until another `承認` is received.
 
-The next exact `承認` may perform Study 006 Cycle 3 only: verify the frozen complete manifest and instrument identities, execute the complete 32-fixture matrix exactly once, preserve complete raw evidence, and stop before reproduction, final H1–H3 disposition, Issue #12 closure, or study closure.
+The next exact `承認` may perform the final Study 006 Cycle 4 only: reconstruct exact committed inputs and the original result, conduct one clean reproduction, compare portable payloads, assign final H1–H3 dispositions, report, close Issue #12, and close the study. No fifth cycle is permitted.
 
 ## Operating principles
 
