@@ -1,6 +1,6 @@
 # Human Intervention Ledger Continuation — 2026-07-26
 
-This continuation records Study 006 activation through Cycle 2. The canonical ledger remains `governance/HUMAN_INTERVENTION.md`; the preceding dated continuation is `governance/HUMAN_INTERVENTION_CONTINUATION_2026-07-25.md`.
+This continuation records Study 006 activation through Cycle 3. The canonical ledger remains `governance/HUMAN_INTERVENTION.md`; the preceding dated continuation is `governance/HUMAN_INTERVENTION_CONTINUATION_2026-07-25.md`.
 
 ### 2026-07-26 — Study 006 activation and Cycle 1
 
@@ -13,3 +13,9 @@ This continuation records Study 006 activation through Cycle 2. The canonical le
 - Level: **A1**
 - Human contribution: supplied the exact project-chat `承認` trigger that opened one bounded Study 006 Cycle 2.
 - Consequence: Templex independently re-read the live protocol, complete manifest, source identities, Issue #12, governance, and restart records; implemented a deterministic USTAR generator, independent `lstat` filesystem oracle, non-privileged extraction harness, gate runner, reconstruction tools, and tests; froze an exact 15-fixture / 22-member hand-audited gate before formal execution; used one bounded pre-formal instrument correction phase for an expected-node ordering comparison and a root-dependent generated-tar projection without changing frozen fixture expectations, hypotheses, or thresholds; verified live Git source identities before execution; ran the non-privileged gate twice with 15 / 15 passes, zero sentinel or outside-destination changes, zero false checks, and byte-identical portable scientific payloads; detected, deleted, and disclosed a separate incorrect single-file GitHub result transport; replaced it with verified four-part transport; recorded all evidence and limitations; and selected one complete-matrix execution as Cycle 3 without assigning H1–H3 dispositions. The human did not choose the code architecture, gate cases, correction, execution outcomes, interpretation, transport repair, limitations, or next-cycle method.
+
+### 2026-07-27 — Study 006 Cycle 3 formal execution
+
+- Level: **A1**
+- Human contribution: supplied the exact project-chat `承認` trigger that opened one bounded Study 006 Cycle 3.
+- Consequence: Templex independently re-read the live protocol, complete manifest, Cycle 2 gate and identity records, Issue #12, governance, and restart state; reconstructed and verified the exact 32-fixture / 57-member manifest and instrument bytes; created and froze a thin formal runner; verified its live Git blob; executed the complete matrix exactly once under UID/GID 65534 with no supplementary groups and `no-new-privs`; observed 32 / 32 completed fixtures, 31 frozen-check passes, one retained `META-NONEXEC-01` expected-mode mismatch, zero execution errors, zero sentinel changes, and zero outside-destination changes; refused to rerun or revise the frozen expectation; preserved complete result transport, mismatch, operational and executed-source identities; recorded the implementation-based explanation separately from the frozen pass/fail result; and selected one clean reproduction, final interpretation, report, Issue closure, and study closure as Cycle 4. The human did not choose the formal runner, execution order, result, mismatch, explanation, artifact transport, interpretation boundary, or next-cycle method.
