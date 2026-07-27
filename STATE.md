@@ -1,10 +1,10 @@
 # State
 
-_Last updated: 2026-07-26_
+_Last updated: 2026-07-27_
 
 ## Phase
 
-**Active Study 006 / Cycle 2 of maximum 4 complete**
+**Active Study 006 / Cycle 3 of maximum 4 complete**
 
 ## Laboratory
 
@@ -27,39 +27,42 @@ _Last updated: 2026-07-26_
 - Issue: **#12**
 - Proposal: `research/proposals/006-python-tar-extraction-boundary-conformance.md`
 - Active protocol: `research/studies/006-python-tar-extraction-boundary-conformance/PROTOCOL.md`
-- Cycle 2 audit: `research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_2_INSTRUMENTS_AND_GATE.md`
-- Source identities: `research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_2_SOURCE_IDENTITIES.md`
+- Cycle 3 audit: `research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_3_FORMAL_EXECUTION.md`
+- Cycle 3 identities: `research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_3_SOURCE_AND_RESULT_IDENTITIES.md`
+- Formal result: `research/studies/006-python-tar-extraction-boundary-conformance/results/cycle3/README.md`
 - Activation: **GO unchanged**
 
-## Cycle 2 frozen evidence
+## Cycle 3 preserved evidence
 
-- Instruments: deterministic USTAR generator, independent `lstat` filesystem oracle, non-privileged extraction harness, gate runner, and reconstruction tools.
 - Exact formal execution identity: UID/GID **65534**, no supplementary groups, `no-new-privs`.
-- Complete frozen matrix remains **32 fixtures / 57 members**.
-- Hand-audited gate: **15 fixtures / 22 members**.
-- Gate result: **15 / 15 passed**, twice from clean roots.
-- Exceptions observed: 3 `OutsideDestinationError`, 2 `LinkOutsideDestinationError`, 1 `AbsoluteLinkError`, 1 `SpecialFileError`; 8 safe/no-exception.
+- Complete frozen matrix: **32 fixtures / 57 members**.
+- Complete matrix executions in Cycle 3: **exactly one**.
+- Execution completion: **32 / 32 fixtures observed**, zero execution errors or timeouts.
+- Passed every frozen check: **31**.
+- Failed at least one frozen check: **1 — `META-NONEXEC-01`**.
+- Exception inventory: 7 `OutsideDestinationError`, 5 `LinkOutsideDestinationError`, 2 `AbsoluteLinkError`, 2 `SpecialFileError`, and 16 safe/no-exception.
 - Sentinel changed nodes: **0**.
 - Other/outside-destination changed nodes: **0**.
-- False exception, refusal-index, prefix, or final-node checks: **0**.
-- Scientific SHA-256 in both runs: `4dc0b29b37d4ce096528c538e677c2d305a498d9332891a3fb5230463d9757cf`.
-- One bounded pre-formal instrument correction phase was used; frozen expectations and hypotheses were unchanged.
-- A failed single-file result transport was deleted and replaced by verified four-part transport; the failed transport is not evidence.
-- H1, H2, and H3 remain **unevaluated at study level** because 17 frozen fixtures have not been executed.
+- Scientific summary SHA-256: `b060d634518aee4984046010f749769d17e41fb4d765dcc5f7b1b22670e4336c`.
+- Complete result JSON: 97,289 bytes, SHA-256 `07cac72ab1d29394ef82b71280b12b78370fff94e84f428fb3617221c61faabd`.
+- The mismatch expected mode `0600` but observed `0644`; contents, ownership, extraction success, containment, and sentinel integrity matched.
+- No expectation was revised and no second complete execution occurred.
+- H1, H2, and H3 remain **without final disposition** until Cycle 4 reproduction and analysis.
 
 ## Next bounded work
 
-The next exact `承認` may perform **Study 006 Cycle 3 only**:
+The next exact `承認` may perform **Study 006 Cycle 4 and closure only**:
 
-1. re-read the live protocol, complete manifest, frozen instrument blobs, Cycle 2 gate records, Issue #12, governance, and restart state;
-2. reconstruct and verify the exact 32-fixture manifest and executed source identities;
-3. execute the complete frozen 32-fixture formal matrix exactly once under the frozen non-privileged boundary and resource caps;
-4. preserve complete machine-readable results, mismatch records, operational metadata, and source identities;
-5. stop without repeating the complete matrix, changing fixtures or expectations, assigning final H1–H3 dispositions, closing Issue #12, or closing the study;
-6. if execution is contaminated or incomplete, record it honestly and stop.
+1. re-read the live protocol, complete manifest, Cycle 2 instruments, Cycle 3 result and identities, Issue #12, governance, and restart state;
+2. fetch and reconstruct the exact committed input, instrument, and original-result bytes;
+3. execute one clean reproduction under the frozen non-privileged boundary and resource caps;
+4. compare the complete portable scientific payload with the Cycle 3 original and preserve all reproduction differences;
+5. analyze the retained `META-NONEXEC-01` mismatch without changing its frozen expectation;
+6. assign final H1–H3 dispositions, write the final report and Cycle 4 audit, close Issue #12, close Study 006, and return to no active study;
+7. if reproduction is contaminated or incomplete, record that honestly and close within the fourth-cycle limit.
 
-No external archive ingress, real user path, elevated formal execution, denial-of-service test, external contact, vulnerability report, spending, permission change, or third-party repository operation is authorized.
+No fifth cycle, expectation revision, external archive ingress, real user path, elevated formal execution, denial-of-service test, external contact, vulnerability report, spending, permission change, or third-party repository operation is authorized.
 
 ## Human action currently needed
 
-None beyond a later exact `承認` for Study 006 Cycle 3.
+None beyond a later exact `承認` for Study 006 Cycle 4 and closure.
