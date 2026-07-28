@@ -4,7 +4,7 @@ _Last updated: 2026-07-28_
 
 ## Phase
 
-**No active study / post-Study-006 portfolio assessment pending**
+**No active study / frozen inactive Study 007 proposal awaiting activation decision**
 
 ## Laboratory
 
@@ -18,44 +18,39 @@ _Last updated: 2026-07-28_
 - **Study 001:** negative autonomous-game-design conclusion.
 - **Study 002:** partial / incomplete exact-first result; H1 and H3 supported, H2 unresolved.
 - **Study 003:** methodological success with bounded procedural claims.
-- **Study 004:** partial finite-state conformance result; H1 unsupported, H2 supported, H3 unresolved.
+- **Study 004:** partial finite-state-conformance result; H1 unsupported, H2 supported, H3 unresolved.
 - **Study 005:** positive bounded TZDB transition-round-trip conformance result; H1, H2, and H3 supported with procedural and artifact-portability limitations.
 - **Study 006:** valid partial Python tar extraction boundary-conformance result; H1 and H2 supported, H3 unsupported.
 
-## Study 006 final evidence
+## Post-Study-006 portfolio decision
 
-- Name: **Python Tar Extraction Boundary Conformance**
-- Issue: **#12 — closed**
-- Final report: `research/studies/006-python-tar-extraction-boundary-conformance/REPORT.md`
-- Cycle 4 audit: `research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_4_REPRODUCTION_AND_CLOSURE.md`
-- Matrix: **32 fixtures / 57 members**
-- Original formal run: **32 / 32 complete; 31 pass; one retained mismatch**
-- Clean reproduction: **32 / 32 complete; 31 pass; same retained mismatch**
-- Execution errors or timeouts: **0** in both complete runs
-- Sentinel changed nodes: **0**
-- Other/outside-destination changed nodes: **0**
-- Portable scientific SHA-256 in both runs: `b060d634518aee4984046010f749769d17e41fb4d765dcc5f7b1b22670e4336c`
-- Retained mismatch: `META-NONEXEC-01`, expected mode `0600`, observed mode `0644`
-- H1: **Supported**, 16 / 16 tagged fixtures
-- H2: **Supported**, 13 / 13 tagged fixtures
-- H3: **Unsupported**, 15 / 16 tagged fixtures
-- Overall: **Valid partial bounded result**
-- No external disclosure or vulnerability report was triggered.
+- Selection threshold: `research/decisions/2026-07-28-post-study-006-selection-threshold.md`
+- Portfolio assessment: `research/decisions/2026-07-28-post-study-006-portfolio-assessment.md`
+- Selected inactive proposal: `research/proposals/007-sqlite-deferred-constraint-savepoint-state-conformance.md`
+- Proposed name: **SQLite Deferred-Constraint and Savepoint State Conformance**
+- Proposed pinned environment: CPython 3.13.5 and SQLite 3.46.1.
+- Proposed formal matrix: exactly **72 original declarative sequences**.
+- Proposed maximum: **four approval cycles** from activation through closure.
+- Current status: **proposal frozen; Study 007 not active; no Issue opened**.
+
+The selection threshold was committed before candidate scores. SQLite scored 39 / 40 and was the only direction to satisfy every numeric floor and hard gate. Unicode 17 grapheme segmentation, RFC 8785 JSON canonicalization, a reproducible-artifact envelope, prospective selection calibration, and inactivity were explicitly compared.
+
+The self-model now records a demonstrated formalization bias after Studies 002–006. The selected proposal changes the failure surface to a reversible transaction/savepoint history, but it does not establish that the bias has been overcome.
 
 ## Next bounded work
 
-The next exact `承認` may perform **one post-Study-006 portfolio assessment cycle only**:
+The next exact `承認` may perform **one Study 007 activation decision and, only after GO unchanged, Cycle 1 freeze work**:
 
-1. re-read the live repository, all closed-study reports, governance, self-model, failure modes, open issues, and recent commits;
-2. predeclare a selection threshold before choosing a direction;
-3. compare multiple substantively distinct future research directions plus remaining inactive;
-4. select at most one direction that clears the threshold;
-5. if selected, freeze at most one inactive proposal;
-6. update state, restart, decision, and human-intervention records;
-7. stop before activation, implementation, formal experiment, external contact, spending, permissions changes, or protected outcome inspection.
+1. re-read the live threshold, portfolio assessment, frozen proposal, all governance and restart records;
+2. reverify exact CPython 3.13.5, SQLite 3.46.1, `sqlite_source_id()`, compile options, wrapper behavior, and official documentation identities;
+3. choose activation **GO unchanged** or **NO-GO** without asking the human to select the disposition;
+4. if NO-GO, record the reason and remain inactive;
+5. if GO unchanged, open one active-study Issue and freeze the active protocol, exact schema, action grammar, observation schema, error mapping, resource caps, and exact 72-sequence manifest;
+6. perform structure-only validation and capability preflight;
+7. stop before independent-model implementation, harness implementation, hand-gate execution, protected SQL-sequence execution, or outcome inspection.
 
-No study is active. No future direction is preselected by this state file.
+No study is active. The proposal is not authority to execute SQL experiments before a later activation approval.
 
 ## Human action currently needed
 
-None beyond a later exact `承認` for one bounded post-Study-006 portfolio assessment.
+None beyond a later exact `承認` for the bounded Study 007 activation decision and possible Cycle 1 freeze.
