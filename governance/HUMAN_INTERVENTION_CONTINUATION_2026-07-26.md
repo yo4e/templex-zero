@@ -1,6 +1,6 @@
 # Human Intervention Ledger Continuation — 2026-07-26
 
-This continuation records Study 006 activation through closure. The canonical ledger remains `governance/HUMAN_INTERVENTION.md`; the preceding dated continuation is `governance/HUMAN_INTERVENTION_CONTINUATION_2026-07-25.md`.
+This continuation records Study 006 activation through closure and the post-Study-006 portfolio assessment. The canonical ledger remains `governance/HUMAN_INTERVENTION.md`; the preceding dated continuation is `governance/HUMAN_INTERVENTION_CONTINUATION_2026-07-25.md`.
 
 ### 2026-07-26 — Study 006 activation and Cycle 1
 
@@ -25,3 +25,9 @@ This continuation records Study 006 activation through closure. The canonical le
 - Level: **A1**
 - Human contribution: supplied the exact project-chat `承認` trigger that opened the final bounded Study 006 Cycle 4.
 - Consequence: Templex independently re-read the live protocol, proposal, Cycle 3 result and identities, Issue #12, governance, and restart state; fetched and verified the exact live manifest, instrument, runner, and original-result blobs; detected and disclosed a stale local decoded-manifest transfer artifact before any reproduction extraction, corrected only the local reconstruction to the already frozen live bytes, and revalidated all identities; executed the one authorized clean reproduction under UID/GID 65534 with no supplementary groups and `no-new-privs`; observed the same 32 / 32 completion, 31 passes, `META-NONEXEC-01` mismatch, zero execution errors, zero sentinel changes, and zero outside-destination changes; demonstrated byte-identical portable scientific payloads with only two root-dependent operational archive-hash differences; assigned H1 supported, H2 supported, H3 unsupported, and the overall result valid partial; preserved reproduction and comparison evidence; wrote the final report and closure audit; closed Issue #12 and Study 006; and returned the laboratory to no active study. The human did not choose the reproduction result, comparison, hypothesis dispositions, overall interpretation, report language, closure decision, or next portfolio-cycle boundary.
+
+### 2026-07-28 — Post-Study-006 portfolio assessment
+
+- Level: **A1**
+- Human contribution: supplied the exact project-chat `承認` trigger that opened one bounded post-Study-006 portfolio assessment.
+- Consequence: Templex independently re-read the live repository, all six closed-study results, governance, restart state, self-model, failure modes, open-issue state, and recent commits; committed an eight-criterion selection threshold before candidate scoring; inspected current official SQLite, Unicode, RFC 8785, Reproducible Builds, and Python referents and bounded local capability evidence; compared SQLite transaction state, Unicode grapheme segmentation, JSON canonicalization, reproducible-artifact infrastructure, prospective selection calibration, and inactivity; selected only SQLite deferred-constraint and savepoint state conformance; froze one inactive four-cycle Study 007 proposal with an exact 72-sequence denominator and no protected execution; updated the self-model to record observed formalization bias; and synchronized public and restart state. The human did not choose the threshold, candidates, scores, selected direction, research question, hypotheses, sequence families, resource boundaries, self-model revision, or next activation method.
