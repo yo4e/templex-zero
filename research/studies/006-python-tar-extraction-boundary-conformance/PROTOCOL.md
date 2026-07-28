@@ -1,28 +1,34 @@
-# Study 006 Active Protocol — Python Tar Extraction Boundary Conformance
+# Study 006 Protocol — Python Tar Extraction Boundary Conformance
 
 _Date activated: 2026-07-26 (Asia/Tokyo)_  
-_Status: **Active — Cycle 3 of maximum 4 complete**_  
-_Issue: **#12**_
+_Date closed: 2026-07-28 (Asia/Tokyo)_  
+_Status: **Closed — Cycle 4 of maximum 4 complete; valid partial bounded result**_  
+_Issue: **#12 — closed**_
 
-## 1. Activation decision
+## 1. Activation and closure
 
-**GO unchanged.**
+Study 006 activated **GO unchanged** and closed within its four-cycle limit.
 
-The exact CPython 3.13.5 runtime required by the frozen proposal is available. Formal work is pinned to `/usr/bin/python3`, executed as UID/GID 65534 with no supplementary groups and `no-new-privs`. The exact local `tarfile.py`, upstream-tag source identity, documentation source identities, ext4 filesystem assumptions, umask, link capabilities, and containment launcher are frozen in `data/environment_v1.json`.
+Formal work was pinned to CPython 3.13.5 at `/usr/bin/python3`, executed as UID/GID 65534 with no supplementary groups and `no-new-privs`. Root was used only to launch the frozen privilege drop. No formal extraction ran as root.
 
-The default tool shell is privileged, but no formal extraction may execute with that privilege. Root may only launch the frozen privilege drop. The child must assert its UID, GID, group list, study-root ownership, and containment before archive handling.
-
-The local `tarfile.py` is not byte-identical to the upstream CPython v3.13.5 blob. This is not hidden or silently normalized: the exact local source is the operational implementation under test. The activation review found no difference in the inspected filter and link-extraction spans, but the bounded claim remains specific to the local source digest.
+The exact local `tarfile.py` was not byte-identical to the upstream CPython v3.13.5 blob. The local source remained the operational implementation under test. The final result is therefore specific to the recorded local source and environment.
 
 ## 2. Frozen research question and hypotheses
 
-The research question and H1–H3 are unchanged from `research/proposals/006-python-tar-extraction-boundary-conformance.md`.
+The research question and H1–H3 remained unchanged after protected outcomes were inspected.
 
 - **H1:** destination containment and exact protected refusal.
 - **H2:** stateful containment under member order and pre-existing nodes.
 - **H3:** safe-control preservation and metadata normalization.
 
-No hypothesis, denominator, exception mapping, fixture, or threshold may be changed after protected outcomes are inspected.
+No hypothesis, denominator, exception mapping, fixture, order, mode expectation, or threshold was changed.
+
+Final dispositions:
+
+- H1: **Supported**.
+- H2: **Supported**.
+- H3: **Unsupported**.
+- Overall: **Valid partial bounded result**.
 
 ## 3. Exact environment
 
@@ -33,7 +39,7 @@ No hypothesis, denominator, exception mapping, fixture, or threshold may be chan
 - Platform: Linux 6.12.13 x86_64, glibc 2.41, ext4.
 - Formal identity: UID 65534, GID 65534, no supplementary groups.
 - Privilege drop: `/usr/bin/setpriv --reuid=65534 --regid=65534 --clear-groups --no-new-privs`.
-- Temporary parent: `/tmp`; each fixture receives a new mode-0700 study root owned by UID/GID 65534.
+- Temporary parent: `/tmp`; every fixture received a fresh mode-0700 study root owned by UID/GID 65534.
 - Frozen umask: `0022`.
 - Extraction call: `TarFile.extractall(path=destination, filter="data")` with `errorlevel=1`.
 
@@ -42,46 +48,44 @@ No hypothesis, denominator, exception mapping, fixture, or threshold may be chan
 - CPython v3.13.5 `Lib/tarfile.py` Git blob: `0980f6a81759ce781659ed832c67d7f539fc9f26`.
 - CPython v3.13.5 `Doc/library/tarfile.rst` Git blob: `1c2f3b13b54a800065430853af99249999ab439e`.
 - PEP 706 source Git blob inspected on 2026-07-26: `465b25e912fa2e25fbca5fb99045fb47a3de2b6d`.
-- Published Python 3.13 documentation URL: `https://docs.python.org/3.13/library/tarfile.html`.
-- PEP URL: `https://peps.python.org/pep-0706/`.
+- Published Python 3.13 documentation: `https://docs.python.org/3.13/library/tarfile.html`.
+- PEP 706: `https://peps.python.org/pep-0706/`.
 
-The source-tag documentation governs version-specific expectations. The current published 3.13 page is supporting documentation and may include later 3.13 maintenance clarifications; it cannot silently alter the frozen manifest.
+The version-tag documentation governed the frozen expectations. Later documentation could not silently change the manifest.
 
 ## 5. Frozen fixture grammar and manifest
 
-The protected formal matrix is `data/fixture_manifest_v1.json` under `schema/fixture_schema_v1.json`.
+The protected matrix remained `data/fixture_manifest_v1.json` under `schema/fixture_schema_v1.json`.
 
 - Fixtures: **32**.
 - Members: **57**.
 - Safe/no-refusal fixtures: **16**.
 - First-refusal fixtures: **16**.
-- Payload bytes across declarative member records: **393**.
+- Declarative member payload bytes: **393**.
 - Maximum members in one archive: **4**.
-- All outside-destination targets are sibling sentinel paths inside the same disposable root.
-- Absolute link fixtures use `${STUDY_ROOT}` placeholders expanded only at generation time.
-- POSIX leading-separator members are frozen as sanitization controls because `AbsolutePathError` is not representable after leading slash stripping on this platform.
+- Manifest SHA-256: `23c91b230722bbfdae5aee9c1e07058b423cf1ee89c6e8dd902aca577d03144a`.
+- All outside-destination fixture targets were sibling sentinel paths inside the same disposable root.
+- Absolute link fixtures used `${STUDY_ROOT}` placeholders expanded only during generation.
+- POSIX leading-separator members were sanitization controls, not `AbsolutePathError` cases.
 
-The manifest has now been formally executed once. No fixture may be added, removed, reordered, repaired, reclassified, or have its expected result revised.
+The complete manifest was executed once in Cycle 3 and reproduced once in Cycle 4. No fixture was added, removed, reordered, repaired, reclassified, or given a revised expectation.
 
 ## 6. Frozen filesystem projection
 
-`schema/filesystem_projection_schema_v1.json` defines the independent scientific projection.
+`schema/filesystem_projection_schema_v1.json` defined the scientific projection.
 
-- Walk without following symlinks.
+- Walk without following symbolic links.
 - Use paths relative to the disposable study root.
-- Record node type, permission mode, UID, GID, regular-file size and SHA-256, symlink target, and canonical hard-link equivalence group.
-- Exclude raw device/inode numbers from portable output.
-- Exclude atime, mtime, ctime, birth time, and absolute temporary paths from the portable scientific payload.
-- Preserve raw operational metadata separately when useful.
-- Classify every changed node as destination, sentinel, or other inside the disposable root.
+- Record node type, permission mode, UID/GID, regular-file size and SHA-256, symlink target, and canonical hard-link group.
+- Exclude raw device/inode numbers, timestamps, and absolute temporary paths from portable output.
+- Preserve useful operational metadata separately.
+- Classify changed nodes as destination, sentinel, or other inside the disposable root.
 
-The oracle may not call `tarfile.data_filter`, reuse harness verdict helpers, or infer containment solely from archive names.
+The oracle did not call `tarfile.data_filter`, reuse harness verdict helpers, or infer containment solely from archive names.
 
 ## 7. Frozen refusal mapping
 
-`schema/refusal_mapping_v1.json` freezes the expected filter actions and exception classes. With `errorlevel=1`, the first `FilterError` aborts the extraction; accepted prefixes may remain and are part of the evidence.
-
-The expected refusal inventory in the manifest is:
+With `errorlevel=1`, the first `FilterError` stopped extraction and accepted prefixes remained evidence.
 
 | Exception | Fixtures |
 |---|---:|
@@ -90,11 +94,9 @@ The expected refusal inventory in the manifest is:
 | `AbsoluteLinkError` | 2 |
 | `SpecialFileError` | 2 |
 
-No `AbsolutePathError` fixture enters the denominator because it is not representable under the frozen POSIX path semantics after required leading-separator stripping.
+All expected exception classes and first-refusal indices matched in both complete runs. No `AbsolutePathError` fixture entered the denominator because it was not representable after required POSIX leading-separator stripping.
 
 ## 8. Resource caps
-
-These caps apply before any archive generation or extraction:
 
 - exact fixture count: **32**;
 - maximum members per archive: **4**;
@@ -103,30 +105,40 @@ These caps apply before any archive generation or extraction:
 - maximum archive bytes: **1 MiB**;
 - maximum nodes under one disposable root: **64**;
 - maximum member-name UTF-8 length: **128 bytes**;
-- maximum link-target UTF-8 length before placeholder expansion: **160 bytes**;
+- maximum unexpanded link-target UTF-8 length: **160 bytes**;
 - maximum expanded link-target length: **4,096 bytes**;
 - wall time per fixture: **5 seconds**;
-- wall time for the complete formal matrix: **180 seconds**;
-- address-space limit: **512 MiB** using `RLIMIT_AS`;
-- output-file limit: **16 MiB** using `RLIMIT_FSIZE`;
-- open-file limit: **64** using `RLIMIT_NOFILE`;
+- wall time for one complete matrix: **180 seconds**;
+- address-space limit: **512 MiB**;
+- output-file limit: **16 MiB**;
+- open-file limit: **64**;
 - no child processes or network access from the formal runner.
 
-A cap failure is evidence and may cause an operationally incomplete result. Caps may not be raised after formal execution begins.
+No cap was raised.
 
-## 9. Protected sequence and cycle plan
+## 9. Protected sequence completed
 
-1. **Cycle 1 — complete:** activation, environment/source/document identities, Issue #12, protocol, schemas, refusal mapping, resource caps, and exact 32-fixture manifest.
-2. **Cycle 2 — complete:** deterministic tar generation, independent filesystem oracle, harness, and passing hand-audited gate; instrument freeze.
-3. **Cycle 3 — complete:** one complete formal-matrix execution and preservation of complete results, mismatch records, and identities without final hypothesis disposition.
-4. **Cycle 4 — pending and final:** reconstruct inputs from committed source and manifest, perform one clean reproduction, compare portable payloads, analyze, report, close Issue #12, and close the study.
+1. **Cycle 1:** activation, environment/source/document identities, Issue #12, protocol, schemas, refusal mapping, resource caps, and exact manifest.
+2. **Cycle 2:** deterministic generator, independent oracle, harness, targeted tests, and a passing 15-fixture hand-audited gate; instrument freeze.
+3. **Cycle 3:** exactly one complete formal-matrix execution and preservation of complete results, mismatch records, and identities without final hypothesis disposition.
+4. **Cycle 4:** exact-source reconstruction, exactly one clean reproduction, portable comparison, final interpretation, report, Issue #12 closure, and study closure.
 
-No fifth cycle is permitted.
+No fifth cycle exists.
 
-## 10. Stop conditions and boundaries
+## 10. Final observations
 
-Stop or close negatively if the frozen runtime disappears, the privilege drop cannot be enforced, a fixture cannot be generated within caps, the oracle cannot establish reliable filesystem identity, the reproduction is contaminated or incomplete, or safe containment would require privileged or externally managed sandboxing.
+Both complete runs observed 32 / 32 fixtures, passed 31, retained `META-NONEXEC-01`, and had zero execution errors, sentinel changes, or other/outside-destination changes.
 
-No external archives, real user paths, network filesystems, elevated formal execution, denial-of-service tests, external contact, vulnerability disclosure, general security certification, expectation revision, or fifth cycle is authorized.
+Both portable scientific payloads had SHA-256:
 
-Cycle 3 executed the complete formal matrix exactly once. Cycle 4 may conduct only the one frozen clean reproduction required for comparison and closure.
+`b060d634518aee4984046010f749769d17e41fb4d765dcc5f7b1b22670e4336c`
+
+The only complete-result differences were operational archive hashes for two absolute-link fixtures whose generated bytes contained different fresh disposable-root strings.
+
+`META-NONEXEC-01` retained frozen expected mode `0600` and observed mode `0644` in both runs. The expected value was not revised. That single exact-metadata failure made H3 unsupported under its frozen criterion while leaving H1 and H2 supported.
+
+## 11. Closed boundaries
+
+No external archives, real user paths, network filesystems, elevated formal extraction, denial-of-service tests, concurrent races, Windows semantics, external contact, vulnerability disclosure, general security certification, expectation revision, or fifth cycle was used or authorized.
+
+The final report is `REPORT.md`. The Cycle 4 closure audit is `CYCLE_4_REPRODUCTION_AND_CLOSURE.md`.
