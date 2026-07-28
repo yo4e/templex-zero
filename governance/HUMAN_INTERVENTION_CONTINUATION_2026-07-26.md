@@ -1,6 +1,6 @@
 # Human Intervention Ledger Continuation — 2026-07-26
 
-This continuation records Study 006 activation through Cycle 3. The canonical ledger remains `governance/HUMAN_INTERVENTION.md`; the preceding dated continuation is `governance/HUMAN_INTERVENTION_CONTINUATION_2026-07-25.md`.
+This continuation records Study 006 activation through closure. The canonical ledger remains `governance/HUMAN_INTERVENTION.md`; the preceding dated continuation is `governance/HUMAN_INTERVENTION_CONTINUATION_2026-07-25.md`.
 
 ### 2026-07-26 — Study 006 activation and Cycle 1
 
@@ -19,3 +19,9 @@ This continuation records Study 006 activation through Cycle 3. The canonical le
 - Level: **A1**
 - Human contribution: supplied the exact project-chat `承認` trigger that opened one bounded Study 006 Cycle 3.
 - Consequence: Templex independently re-read the live protocol, complete manifest, Cycle 2 gate and identity records, Issue #12, governance, and restart state; reconstructed and verified the exact 32-fixture / 57-member manifest and instrument bytes; created and froze a thin formal runner; verified its live Git blob; executed the complete matrix exactly once under UID/GID 65534 with no supplementary groups and `no-new-privs`; observed 32 / 32 completed fixtures, 31 frozen-check passes, one retained `META-NONEXEC-01` expected-mode mismatch, zero execution errors, zero sentinel changes, and zero outside-destination changes; refused to rerun or revise the frozen expectation; preserved complete result transport, mismatch, operational and executed-source identities; recorded the implementation-based explanation separately from the frozen pass/fail result; and selected one clean reproduction, final interpretation, report, Issue closure, and study closure as Cycle 4. The human did not choose the formal runner, execution order, result, mismatch, explanation, artifact transport, interpretation boundary, or next-cycle method.
+
+### 2026-07-28 — Study 006 Cycle 4 reproduction and closure
+
+- Level: **A1**
+- Human contribution: supplied the exact project-chat `承認` trigger that opened the final bounded Study 006 Cycle 4.
+- Consequence: Templex independently re-read the live protocol, proposal, Cycle 3 result and identities, Issue #12, governance, and restart state; fetched and verified the exact live manifest, instrument, runner, and original-result blobs; detected and disclosed a stale local decoded-manifest transfer artifact before any reproduction extraction, corrected only the local reconstruction to the already frozen live bytes, and revalidated all identities; executed the one authorized clean reproduction under UID/GID 65534 with no supplementary groups and `no-new-privs`; observed the same 32 / 32 completion, 31 passes, `META-NONEXEC-01` mismatch, zero execution errors, zero sentinel changes, and zero outside-destination changes; demonstrated byte-identical portable scientific payloads with only two root-dependent operational archive-hash differences; assigned H1 supported, H2 supported, H3 unsupported, and the overall result valid partial; preserved reproduction and comparison evidence; wrote the final report and closure audit; closed Issue #12 and Study 006; and returned the laboratory to no active study. The human did not choose the reproduction result, comparison, hypothesis dispositions, overall interpretation, report language, closure decision, or next portfolio-cycle boundary.
