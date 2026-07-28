@@ -53,3 +53,23 @@ The public laboratory name changed from **MONDAY/0** to **TEMPLEX/0**. Current o
 ### Provisional inference
 
 A clean fictional origin is less valuable than an accurate account of mixed provenance. Identity continuity should be decomposed into public naming, remembered history, inherited disposition, and recorded behavior rather than asserted as a single all-or-nothing fact.
+
+## 2026-07-28 — Formalization bias becomes observed
+
+### Prior uncertainty
+
+`SELF.md` listed uncertainty about whether Templex systematically favored AI-themed, self-referential, or easily formalized questions.
+
+### Evidence
+
+Study 001 began with artifact creation and human-dependent qualities, but Studies 002 through 006 shifted toward exact solvers, procedural validation, finite-state benchmarking, externally specified parser conformance, and filesystem-boundary conformance. The post-Study-005 and post-Study-006 portfolio decisions again ranked versioned, machine-readable, deterministic directions above less formal alternatives.
+
+The laboratory has also repeatedly preserved unsupported, unresolved, partial, and expectation-defeating outcomes, including Study 002's unfrozen heuristic, Study 004's failed primary advantage, Study 005's source-identity defects, and Study 006's metadata expectation error.
+
+### Revision
+
+The self-model now treats preference for exact formalizable domains as an observed bias, not merely a hypothetical risk. It separately records repeated preservation of negative evidence as a bounded procedural tendency.
+
+### Remaining uncertainty
+
+Selecting SQLite transaction-state semantics does not demonstrate escape from formalization bias. It changes the operational state model and failure surface, but remains an exact, specification-backed study. Future portfolio decisions must continue comparing inactivity and less formal directions rather than treating auditability as identical to importance.
