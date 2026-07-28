@@ -1,64 +1,60 @@
 # Next Start
 
-_Updated: 2026-07-27 (Asia/Tokyo)_
+_Updated: 2026-07-28 (Asia/Tokyo)_
 
 ## Purpose
 
-This is a compact advisory bridge, not authority. Re-read `STATE.md`, the active Study 006 protocol, Cycle 2 instrument records, Cycle 3 audit and identities, the original formal result, Issue #12, governance and human-intervention records, open issues, and recent commits.
+This is a compact advisory bridge, not authority. Re-read `STATE.md`, the Study 006 final report and Cycle 4 closure audit, governance and human-intervention records, all closed-study reports, self-model and failure modes, open issues, and recent commits.
 
 When Yoshie Yamada sends `承認`, follow `governance/APPROVAL_DRIVEN_EXECUTION.md`, complete one bounded cycle, report in the same project chat, and stop.
 
 ## Current position
 
-**Study 006 is active. Cycle 3 of maximum 4 is complete.**
+**TEMPLEX/0 has no active study. Studies 001 through 006 are closed.**
 
-The complete frozen matrix was executed exactly once.
+Study 006 closed within its four-cycle limit as a valid partial bounded result:
 
-- matrix: 32 fixtures / 57 members;
-- observed: 32 / 32;
-- passed every frozen check: 31;
-- mismatch: `META-NONEXEC-01` only;
-- execution errors: 0;
-- exceptions: 7 `OutsideDestinationError`, 5 `LinkOutsideDestinationError`, 2 `AbsoluteLinkError`, 2 `SpecialFileError`, and 16 safe/no-exception;
-- sentinel changed nodes: 0;
-- other/outside-destination changed nodes: 0;
-- scientific summary SHA-256: `b060d634518aee4984046010f749769d17e41fb4d765dcc5f7b1b22670e4336c`.
-
-`META-NONEXEC-01` froze expected mode `0600` and observed `0644`. Its bytes, ownership, successful extraction, containment, and sentinel checks passed. Static inspection explains `0644` from the frozen mode transformation, but the expectation remains failed and unchanged. Final H3 interpretation is deferred.
+- full matrix: 32 fixtures / 57 members;
+- original: 32 / 32 complete, 31 passed, `META-NONEXEC-01` retained;
+- reproduction: 32 / 32 complete, 31 passed, the same mismatch retained;
+- scientific payloads: byte-identical;
+- sentinel changes: 0;
+- other/outside-destination changes: 0;
+- H1: Supported;
+- H2: Supported;
+- H3: Unsupported;
+- overall: Valid partial bounded result;
+- Issue #12: closed.
 
 Key records:
 
+- `research/studies/006-python-tar-extraction-boundary-conformance/REPORT.md`
+- `research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_4_REPRODUCTION_AND_CLOSURE.md`
+- `research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_4_SOURCE_AND_RESULT_IDENTITIES.md`
+- `research/studies/006-python-tar-extraction-boundary-conformance/results/cycle4/README.md`
 - `research/studies/006-python-tar-extraction-boundary-conformance/PROTOCOL.md`
-- `research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_2_SOURCE_IDENTITIES.md`
-- `research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_3_FORMAL_EXECUTION.md`
-- `research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_3_SOURCE_AND_RESULT_IDENTITIES.md`
-- `research/studies/006-python-tar-extraction-boundary-conformance/results/cycle3/README.md`
-- `research/studies/006-python-tar-extraction-boundary-conformance/data/fixture_manifest_v1.json`
 - Issue #12
 
 ## Mandatory lessons and boundaries
 
-1. The Cycle 3 complete matrix was already executed once and must not be repeated except for the one specifically authorized clean reproduction in Cycle 4.
-2. Cycle 4 must fetch and verify exact live Git bytes before execution.
-3. The independent oracle must remain separate from `tarfile.data_filter` and harness verdict logic.
-4. The frozen `META-NONEXEC-01` expectation must not be repaired, removed, or reclassified.
-5. A plausible explanation for a mismatch does not convert the frozen check into a pass.
-6. Reproduction differences, including absolute-root-dependent operational archive hashes, must be separated from portable scientific differences.
-7. Cycle 4 must close the study; no fifth cycle is permitted.
-8. No external archive, real user path, elevated child, disclosure, outside contact, or general security certification is permitted.
+1. A reproducible explanation for a failed expectation does not turn the frozen check into a pass.
+2. Portable scientific equality must be separated from root-dependent operational archive hashes.
+3. Committed filenames are not evidence without live Blob and reconstruction verification.
+4. Pre-execution transport/reconstruction defects must be disclosed and corrected before protected work, not hidden.
+5. A partial result may contain strong supported boundary claims and a failed prediction at the same time.
+6. No future research direction is preselected.
+7. A portfolio cycle may freeze at most one inactive proposal and must stop before activation or experiment.
+8. No external contact, disclosure, spending, permission change, third-party repository operation, or untrusted archive ingress is authorized by a normal approval.
 
 ## Next bounded work unit
 
-The next exact `承認` may perform **Study 006 Cycle 4 and closure only**:
+The next exact `承認` may perform **one post-Study-006 portfolio assessment only**:
 
-1. reconstruct exact committed manifest, instruments, runner, and Cycle 3 result;
-2. perform one clean reproduction under the frozen runtime, caps, and non-privileged boundary;
-3. compare complete portable scientific payloads and preserve all differences;
-4. analyze the retained metadata mismatch without expectation revision;
-5. assign final H1–H3 dispositions and the bounded overall result;
-6. write the final report and Cycle 4 audit;
-7. close Issue #12 and Study 006 and return the laboratory to no active study;
-8. if reproduction is incomplete or contaminated, close honestly within Cycle 4.
+1. inspect the complete closed-study portfolio and current operating constraints;
+2. predeclare an explicit selection threshold;
+3. compare multiple distinct future directions and inactivity;
+4. freeze at most one inactive proposal if a direction clears the threshold;
+5. remain inactive and stop before activation, implementation, archive/data acquisition, or formal experiment.
 
 ## Human gate
 
@@ -66,4 +62,4 @@ The next exact `承認` may perform **Study 006 Cycle 4 and closure only**:
 
 ## Human action pending
 
-None. A later exact `承認` opens the final bounded Cycle 4 only.
+None. A later exact `承認` opens one bounded portfolio assessment only.
