@@ -21,7 +21,7 @@ Negative results and visible corrections are intentional parts of the experiment
 
 ## Status
 
-- Phase: **No active study / portfolio assessment pending**
+- Phase: **No active study / frozen inactive Study 007 proposal**
 - Visibility: **Public**
 - Closed studies: **Study 001 through Study 006**
 - Active issue: **None**
@@ -29,6 +29,31 @@ Negative results and visible corrections are intentional parts of the experiment
 - Public operator: **Templex Tsukino**
 
 Study 001 closed with a negative game-design result. Study 002 closed with a partial / incomplete exact-first result. Study 003 closed with methodological success under bounded procedural claims. Study 004 closed as a valid partial finite-state-conformance result. Study 005 closed as a positive bounded TZDB transition-round-trip conformance result. Study 006 closed as a valid partial Python tar extraction boundary-conformance result.
+
+## Proposed Study 007 — inactive
+
+The post-Study-006 portfolio assessment compared five active directions plus inactivity under a selection threshold committed before candidate scoring.
+
+| Direction | Score | Decision |
+|---|---:|---|
+| SQLite deferred constraints and savepoint state | **39 / 40** | **Frozen inactive proposal** |
+| Unicode 17 grapheme segmentation | 33 / 40 | Hold: feasibility floor failed |
+| RFC 8785 JSON canonicalization | 34 / 40 | Hold: diversification floor failed |
+| Reproducible scientific artifact envelope | 34 / 40 | Hold: diversification and self-confirmation floors failed |
+| Prospective project-selection calibration | 28 / 40 | Hold |
+| Remain inactive | baseline | Viable fallback |
+
+The selected proposal asks whether pinned SQLite 3.46.1 transaction, nested-savepoint, failed-boundary, and deferred-foreign-key behavior agrees with an independently implemented relational and savepoint-stack model across exactly 72 frozen original sequences.
+
+The proposal is **not active**. No Study 007 Issue, model, harness, formal sequence manifest, or protected SQL result exists yet.
+
+- Selection threshold: [`research/decisions/2026-07-28-post-study-006-selection-threshold.md`](research/decisions/2026-07-28-post-study-006-selection-threshold.md)
+- Portfolio assessment: [`research/decisions/2026-07-28-post-study-006-portfolio-assessment.md`](research/decisions/2026-07-28-post-study-006-portfolio-assessment.md)
+- Frozen proposal: [`research/proposals/007-sqlite-deferred-constraint-savepoint-state-conformance.md`](research/proposals/007-sqlite-deferred-constraint-savepoint-state-conformance.md)
+
+A later approval must independently choose activation **GO unchanged** or **NO-GO** after revalidating CPython 3.13.5, SQLite 3.46.1, source identity, compile options, wrapper transaction behavior, and official documentation. Even after GO, the first cycle may freeze inputs and expectations only; protected SQL execution remains later work.
+
+The proposal excludes concurrency, locking, WAL, crashes, durability, performance, hostile SQL, extension loading, arbitrary databases, and security certification.
 
 ## Study 006 final result
 
@@ -47,7 +72,7 @@ Both runs produced portable scientific SHA-256:
 
 `b060d634518aee4984046010f749769d17e41fb4d765dcc5f7b1b22670e4336c`
 
-The retained mismatch was `META-NONEXEC-01`: expected mode `0600`, observed mode `0644` in both runs. File bytes, ownership, successful extraction, destination containment, and sentinel integrity matched. The frozen expectation remained failed and unchanged.
+The retained mismatch was `META-NONEXEC-01`: expected mode `0600`, observed mode `0644` in both runs. The frozen expectation remained failed and unchanged.
 
 | Hypothesis | Final disposition |
 |---|---|
@@ -56,26 +81,8 @@ The retained mismatch was `META-NONEXEC-01`: expected mode `0600`, observed mode
 | H3 safe-control preservation and metadata normalization | Unsupported |
 | **Overall** | **Valid partial bounded result** |
 
-The result is specific to the pinned local runtime, filesystem, non-privileged boundary, explicit filter, and synthetic matrix. It does not certify arbitrary tar archives or general extraction safety.
-
 - Final report: [`research/studies/006-python-tar-extraction-boundary-conformance/REPORT.md`](research/studies/006-python-tar-extraction-boundary-conformance/REPORT.md)
 - Cycle 4 audit: [`research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_4_REPRODUCTION_AND_CLOSURE.md`](research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_4_REPRODUCTION_AND_CLOSURE.md)
-- Reproduction artifacts: [`research/studies/006-python-tar-extraction-boundary-conformance/results/cycle4/README.md`](research/studies/006-python-tar-extraction-boundary-conformance/results/cycle4/README.md)
-- Closed issue: [#12](https://github.com/yo4e/templex-zero/issues/12)
-
-## Study 005 final result
-
-Study 005 pinned IANA tzdb 2026c and compared an original TZif reader with isolated public-API Python `zoneinfo` behavior across 313 canonical zones and 18,071 explicit transitions.
-
-| Hypothesis | Records | Mismatches | Final disposition |
-|---|---:|---:|---|
-| H1 UTC projection | 90,079 | 0 | Supported |
-| H2 backward fold and UTC round trip | 26,778 | 0 | Supported |
-| H3 forward gap classification | 44,790 | 0 | Supported |
-| **Total** | **161,647** | **0** | **Positive bounded result** |
-
-- Final report: [`research/studies/005-tzdb-transition-roundtrip/REPORT.md`](research/studies/005-tzdb-transition-roundtrip/REPORT.md)
-- Cycle 4 audit: [`research/studies/005-tzdb-transition-roundtrip/CYCLE_4_REPRODUCTION_AND_CLOSURE.md`](research/studies/005-tzdb-transition-roundtrip/CYCLE_4_REPRODUCTION_AND_CLOSURE.md)
 
 ## Current operating loop
 
@@ -85,7 +92,7 @@ Study 005 pinned IANA tzdb 2026c and compared an original TZif reader with isola
 4. Templex verifies or criticizes the work, records evidence and failures, updates restart state, and reports.
 5. The laboratory stops until another `承認` is received.
 
-The next exact `承認` may perform one post-Study-006 portfolio assessment only: predeclare a threshold, compare multiple distinct directions plus inactivity, freeze at most one inactive proposal, and stop before activation, implementation, or experiment.
+The next exact `承認` may perform one Study 007 activation decision and, only after GO unchanged, Cycle 1 freeze work. It must stop before model or harness implementation and before any protected SQL-sequence execution.
 
 ## Operating principles
 
@@ -102,7 +109,7 @@ The next exact `承認` may perform one post-Study-006 portfolio assessment only
 - [`STATE.md`](STATE.md) — current state and next actions
 - [`NEXT_START.md`](NEXT_START.md) — compact restart handoff
 - [`AGENTS.md`](AGENTS.md) — restart and operating protocol
+- [`research/proposals/007-sqlite-deferred-constraint-savepoint-state-conformance.md`](research/proposals/007-sqlite-deferred-constraint-savepoint-state-conformance.md) — frozen inactive proposal
 - [`research/studies/006-python-tar-extraction-boundary-conformance/REPORT.md`](research/studies/006-python-tar-extraction-boundary-conformance/REPORT.md) — latest closed-study report
-- [`research/studies/005-tzdb-transition-roundtrip/REPORT.md`](research/studies/005-tzdb-transition-roundtrip/REPORT.md) — preceding closed-study report
 - [`self/SELF.md`](self/SELF.md) — Templex's provisional self-model
 - [`governance/HUMAN_INTERVENTION.md`](governance/HUMAN_INTERVENTION.md) — human intervention ledger
