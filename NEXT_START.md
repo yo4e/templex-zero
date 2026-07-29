@@ -4,61 +4,74 @@ _Updated: 2026-07-29 (Asia/Tokyo)_
 
 ## Purpose
 
-This is a compact advisory bridge, not authority. Re-read `STATE.md`, the Study 007 final report and Cycle 2 audit, the frozen protocol and gate expectations, governance and human-intervention records, all closed-study reports, self-model and failure modes, open issues, and recent commits.
+This is a compact advisory bridge, not authority. Re-read `STATE.md`, the post-Study-007 selection threshold and portfolio assessment, the frozen Study 008 proposal, all seven closed-study results, governance and intervention records, self-model and failure modes, open issues, and recent commits.
 
 When Yoshie Yamada sends `承認`, follow `governance/APPROVAL_DRIVEN_EXECUTION.md`, complete one bounded cycle, report in the same project chat, and stop.
 
 ## Current position
 
-**TEMPLEX/0 has no active study. Studies 001 through 007 are closed.**
+**TEMPLEX/0 has no active study. Studies 001 through 007 are closed. One Study 008 proposal is frozen and inactive.**
 
-Study 007 activated the frozen SQLite proposal and completed Cycle 1, but closed during Cycle 2 as a negative setup result before the protected matrix.
+The selected proposal is **SummEval Dimension-Specific Proxy Reliability**. It scored 48 / 50 under a threshold committed before candidate research and scoring.
 
-## Study 007 retained evidence
+The direction asks whether automatic summarization metrics that appear reliable against an aggregate human-quality score conceal failures when:
 
-- exact target: CPython 3.13.5 and Debian `libsqlite3-0 3.46.1-7+deb13u1`;
-- frozen matrix: 72 sequences / 439 actions;
-- protected matrix executions: 0;
-- source-separated model, harness, and comparator implemented;
-- targeted tests: 13 passed;
-- twelve-case expectation SHA-256: `cde3e40e9c43a9771123c4bc9a48750e6aa4ea1a1a0eac5747b6d0882f5b162e`;
-- hand gate: 11 / 12 passed;
-- failed case: G12 immediate `ON DELETE RESTRICT` error projection;
-- expected: 787 / `SQLITE_CONSTRAINT_FOREIGNKEY`;
-- observed: 1811 / `SQLITE_CONSTRAINT_TRIGGER`;
-- timing, exception class, row state, and transaction state matched;
-- repeated result: byte-identical;
-- result SHA-256: `e40f3da0658418678b4b7e7343c5f9484d64965ef2306bacb06038d7f79fd4e6`;
-- correction phase unused; changing the result required expectation revision, not code repair;
-- H1–H3 not evaluated.
+- coherence, consistency, fluency, and relevance remain separate;
+- expert and crowd judgments remain separate;
+- analysis is conditioned by document rather than treating 1,600 summary rows as independent;
+- metric ranks, false-reassurance cases, and population sensitivity are preserved instead of compressed into one leaderboard number.
 
-Key records:
+No dataset, code, active issue, statistic, rank, bootstrap result, or hypothesis outcome exists.
 
-- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/REPORT.md`
-- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/CYCLE_2_INSTRUMENTS_AND_GATE.md`
-- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/hand_gate_result.json`
-- `self/FAILURE_MODES.md` — FM-009 observational category collapse
+## Key records
 
-## Mandatory lessons
+- selection threshold: `research/decisions/2026-07-29-post-study-007-selection-threshold.md`
+- threshold creation commit: `c9ef071fcde73224bc93a19349e9a8021dfc8dc5`
+- portfolio assessment: `research/decisions/2026-07-29-post-study-007-portfolio-assessment.md`
+- frozen inactive proposal: `research/proposals/008-summeval-dimension-specific-proxy-reliability.md`
+- Study 007 report: `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/REPORT.md`
+- failure mode: `self/FAILURE_MODES.md` — FM-009 observational category collapse
 
-1. A semantic category such as “foreign-key failure” is not evidence that every operation shares one exact extended error code.
-2. Exact low-level projections require preflight coverage of every materially distinct operation family, or a deliberately coarser frozen projection.
-3. A gate mismatch cannot be repaired by widening equivalence after inspection.
-4. Eleven passing miniature cases do not support H1–H3 when the setup gate as a whole fails.
-5. The unexecuted 72-sequence matrix remains archival design, not evidence.
-6. No successor study should be activated mechanically from the failed Study 007 design.
-7. No external contact, spending, permission change, third-party operation, hostile input, or new publication channel is authorized by a normal approval.
+## Selection judgment
 
-## Next bounded work unit
+The repaired SQLite direction was rejected because it would mainly repair an authored expectation while repeating the exact-conformance matrix form used in recent studies.
 
-The next exact `承認` may perform **one post-Study-007 portfolio decision only**:
+SummEval was selected because its primary referent is an externally authored human-judgment structure rather than another implementation contract. The proposal claims no novelty for the general fact that metrics and human ratings can disagree. Its bounded question concerns aggregate category collapse, document-conditioned false reassurance, and expert-versus-crowd ranking sensitivity under one exact release.
 
-1. inspect all seven closed-study results and the live governance, self, failure-mode, issue, and commit records;
-2. freeze a selection threshold before candidate scores;
-3. compare materially different directions plus inactivity;
-4. explicitly evaluate whether a repaired SQLite successor would add information or merely repair an authored expectation;
-5. select at most one frozen inactive proposal or remain inactive;
-6. stop before activation, implementation, corpus execution, or protected outcome inspection.
+## Mandatory activation conditions
+
+GO unchanged requires:
+
+1. one official upstream commit and clear license;
+2. one safe UTF-8 JSON or JSONL annotation file, acquired without credentials, terms acceptance, or unsafe deserialization;
+3. exact SHA-256 and byte identity;
+4. exactly 100 documents × 16 systems = 1,600 unique records, or an official exact schema-equivalent representation;
+5. separate expert and crowd judgments for all four dimensions;
+6. at least 8 and at most 32 automatic metrics with complete numeric coverage and upstream-supported score directions;
+7. frozen metric, field, population, dimension, formula, seed, threshold, result-schema, and resource-cap identities before protected relationship inspection;
+8. no source-article reconstruction, new model inference, human-subject collection, or external service;
+9. credible four-cycle closure.
+
+Any failure requires NO-GO. No reduced denominator, guessed direction, incomplete population, mirror substitution, or unsafe object format may be silently accepted.
+
+## Protected Cycle 1 boundary
+
+After GO unchanged, Cycle 1 may:
+
+- pin source, license, safe file, hashes, schema, and denominator;
+- freeze eligible metric inventory and directions;
+- freeze inclusion rules, statistical formulas, document-bootstrap seed `2026072908`, mandatory tables, and result schema;
+- validate counts, types, finite values, and missingness.
+
+It must stop before:
+
+- implementing statistics;
+- computing any metric-human correlation;
+- ranking metrics;
+- calculating false-reassurance rates;
+- running bootstrap outcome analysis;
+- evaluating H1–H3;
+- opening protected execution beyond the Cycle 1 validation boundary.
 
 ## Human gate
 
@@ -66,4 +79,4 @@ The next exact `承認` may perform **one post-Study-007 portfolio decision only
 
 ## Human action pending
 
-None. A later exact `承認` opens the bounded post-Study-007 portfolio decision only.
+None. A later exact `承認` opens one activation decision and, only after GO unchanged, Study 008 Cycle 1.
