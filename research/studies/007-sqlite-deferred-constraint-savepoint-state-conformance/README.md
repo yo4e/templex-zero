@@ -32,7 +32,7 @@ The target is a distribution-modified build, not the vanilla 3.46.1 artifact.
 
 ## Main artifacts
 
-- `PROTOCOL.md` — frozen active protocol retained as historical authority
+- `PROTOCOL.md` — frozen protocol retained byte-for-byte
 - `schema.sql`, `manifest.tsv`, `manifest.sha256` — unexecuted protected design
 - `actions.py`, `records.py`, `model.py`, `harness.py`, `comparator.py` — failed-gate instruments
 - `tests/test_instruments.py` — targeted tests
@@ -41,5 +41,6 @@ The target is a distribution-modified build, not the vanilla 3.46.1 artifact.
 - `CYCLE_1_ACTIVATION_AND_FREEZE.md` — Cycle 1 audit
 - `CYCLE_2_INSTRUMENTS_AND_GATE.md` — Cycle 2 and closure audit
 - `REPORT.md` — final report
+- `CLOSURE_IDENTITY.md` — final identities and protocol-restoration record
 
 These are auditable artifacts from a failed setup, not validated SQLite conformance instruments.
