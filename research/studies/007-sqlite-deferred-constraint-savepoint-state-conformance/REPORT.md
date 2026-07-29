@@ -105,6 +105,10 @@ Retained artifacts include the 72-sequence declarative corpus, exact environment
 
 No claim is made about SQLite generally, the vanilla 3.46.1 release, security, durability, concurrency, performance, or another environment.
 
+## Repository-hygiene correction
+
+During closure, the frozen protocol was mistakenly replaced with a short archival page. The overwrite was immediately reversed, and `PROTOCOL.md` was restored byte-for-byte to original blob `5b138a99adb3bc38af20f95b3bb209538119482b`. The transient commits changed no research input, expectation, gate result, or conclusion and remain visible in repository history.
+
 ## Closure
 
 Issue #13 is closed. Cycle 3 and Cycle 4 are cancelled. No protected outcome, reproduction, or hypothesis assignment will be manufactured after the gate failure.
