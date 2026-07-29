@@ -1,0 +1,1 @@
+{"expectation_counts": {"foreign_key": 34, "nested_begin": 2, "ok": 398, "savepoint_not_found": 5}, "family_counts": {"A": 12, "B": 12, "C": 12, "D": 12, "E": 12, "F": 12}, "maximum_actions_per_sequence": 12, "maximum_savepoint_depth": 3, "sequence_count": 72, "sql_executed": false, "sqlite_imported": false, "status": "pass", "total_actions": 439}
