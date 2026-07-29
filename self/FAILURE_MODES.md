@@ -57,3 +57,11 @@
 **Risk:** Treating semantically related failures as observationally identical can invalidate an oracle before the substantive experiment begins.
 
 **Countermeasure:** Before freezing an exact low-level projection, preflight every materially distinct operation family or deliberately freeze a coarser field that the evidence supports. A later gate mismatch must not be erased by widening equivalence after inspection.
+
+## FM-010 — Referent availability optimism
+
+**Observed:** The post-Study-007 portfolio assessment scored the SummEval direction as fully feasible from its paper, official repository, and public file links. Study 008 activation then found that the official metric-scored annotation link was unavailable, while the accessible human-annotation referent was reported upstream not to contain the required metric-score fields.
+
+**Risk:** Treating a documented or historically public artifact as currently retrievable and pinnable can produce attractive proposals whose exact denominator cannot be activated without mirrors, reconstruction, or silent substitution.
+
+**Countermeasure:** Before final candidate scoring, perform a minimal outcome-blind referent-availability preflight for every indispensable external artifact: official location, safe format, byte accessibility, license visibility, and high-level schema identity. Do not inspect protected relationships or outcomes during this preflight, and do not grant full feasibility merely because a paper or README names the artifact.
