@@ -1,10 +1,10 @@
 # State
 
-_Last updated: 2026-07-28_
+_Last updated: 2026-07-29_
 
 ## Phase
 
-**No active study / frozen inactive Study 007 proposal awaiting activation decision**
+**Active Study 007 / Cycle 1 complete / instruments not implemented**
 
 ## Laboratory
 
@@ -12,45 +12,44 @@ _Last updated: 2026-07-28_
 - Laboratory: **TEMPLEX/0**
 - Repository: `yo4e/templex-zero`
 - Execution model: `governance/APPROVAL_DRIVEN_EXECUTION.md`
+- Active issue: **#13**
 
 ## Closed studies
 
-- **Study 001:** negative autonomous-game-design conclusion.
-- **Study 002:** partial / incomplete exact-first result; H1 and H3 supported, H2 unresolved.
-- **Study 003:** methodological success with bounded procedural claims.
-- **Study 004:** partial finite-state-conformance result; H1 unsupported, H2 supported, H3 unresolved.
-- **Study 005:** positive bounded TZDB transition-round-trip conformance result; H1, H2, and H3 supported with procedural and artifact-portability limitations.
-- **Study 006:** valid partial Python tar extraction boundary-conformance result; H1 and H2 supported, H3 unsupported.
+Studies 001 through 006 are closed. Study 006 ended as a valid partial Python tar extraction boundary-conformance result: H1 and H2 supported, H3 unsupported.
 
-## Post-Study-006 portfolio decision
+## Study 007 activation
 
-- Selection threshold: `research/decisions/2026-07-28-post-study-006-selection-threshold.md`
-- Portfolio assessment: `research/decisions/2026-07-28-post-study-006-portfolio-assessment.md`
-- Selected inactive proposal: `research/proposals/007-sqlite-deferred-constraint-savepoint-state-conformance.md`
-- Proposed name: **SQLite Deferred-Constraint and Savepoint State Conformance**
-- Proposed pinned environment: CPython 3.13.5 and SQLite 3.46.1.
-- Proposed formal matrix: exactly **72 original declarative sequences**.
-- Proposed maximum: **four approval cycles** from activation through closure.
-- Current status: **proposal frozen; Study 007 not active; no Issue opened**.
+- Active name: **SQLite Deferred-Constraint and Savepoint State Conformance**
+- Activation decision: `research/decisions/2026-07-29-study-007-activation.md`
+- Active protocol: `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/PROTOCOL.md`
+- Exact runtime: CPython 3.13.5 at `/usr/bin/python3.13`
+- Exact SQLite package: `libsqlite3-0 3.46.1-7+deb13u1`
+- Local source ID suffix: `alt1`; not the vanilla 3.46.1 suffix `1e33`
+- Scope consequence: all claims are limited to the exact pinned local binary
+- Frozen matrix: **72 sequences / 439 actions / six families of 12**
+- Manifest SHA-256: `16a01c109b196a1127d7783f110e492e4609713f8f527e50e95d7ef254678b4c`
+- Structure validation: pass; maximum 12 actions and depth 3
+- Capability preflight: pass
+- Protected sequence executions: **0**
 
-The selection threshold was committed before candidate scores. SQLite scored 39 / 40 and was the only direction to satisfy every numeric floor and hard gate. Unicode 17 grapheme segmentation, RFC 8785 JSON canonicalization, a reproducible-artifact envelope, prospective selection calibration, and inactivity were explicitly compared.
-
-The self-model now records a demonstrated formalization bias after Studies 002–006. The selected proposal changes the failure surface to a reversible transaction/savepoint history, but it does not establish that the bias has been overcome.
+The portfolio assessment's earlier statement that the local source ID matched the published vanilla release ID was corrected during activation. The proposal remained unchanged because it already required pinning the exact local library at activation.
 
 ## Next bounded work
 
-The next exact `承認` may perform **one Study 007 activation decision and, only after GO unchanged, Cycle 1 freeze work**:
+The next exact `承認` may perform **Study 007 Cycle 2 only**:
 
-1. re-read the live threshold, portfolio assessment, frozen proposal, all governance and restart records;
-2. reverify exact CPython 3.13.5, SQLite 3.46.1, `sqlite_source_id()`, compile options, wrapper behavior, and official documentation identities;
-3. choose activation **GO unchanged** or **NO-GO** without asking the human to select the disposition;
-4. if NO-GO, record the reason and remain inactive;
-5. if GO unchanged, open one active-study Issue and freeze the active protocol, exact schema, action grammar, observation schema, error mapping, resource caps, and exact 72-sequence manifest;
-6. perform structure-only validation and capability preflight;
-7. stop before independent-model implementation, harness implementation, hand-gate execution, protected SQL-sequence execution, or outcome inspection.
+1. re-read the live protocol, manifest, Cycle 1 audit, environment, Issue #13, governance, and restart state;
+2. implement a SQLite-independent relational/savepoint-stack model;
+3. implement a separate SQLite harness and immutable-record comparator;
+4. write targeted unit tests without executing the protected 72-sequence matrix;
+5. freeze twelve hand-audited miniature traces and expected per-step records before running them;
+6. run the hand gate, allowing at most one bounded implementation-correction phase;
+7. freeze passing instruments or close negatively if the gate cannot pass;
+8. stop before complete-matrix execution.
 
-No study is active. The proposal is not authority to execute SQL experiments before a later activation approval.
+No Study 007 protected matrix outcome may be inspected in Cycle 2.
 
 ## Human action currently needed
 
-None beyond a later exact `承認` for the bounded Study 007 activation decision and possible Cycle 1 freeze.
+None beyond a later exact `承認` for Cycle 2.
