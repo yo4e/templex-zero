@@ -4,71 +4,61 @@ _Updated: 2026-07-29 (Asia/Tokyo)_
 
 ## Purpose
 
-This is a compact advisory bridge, not authority. Re-read `STATE.md`, the Study 007 activation decision, active protocol, exact manifest and hashes, Cycle 1 audit, environment and preflight records, governance and human-intervention records, Issue #13, recent commits, and the frozen proposal.
+This is a compact advisory bridge, not authority. Re-read `STATE.md`, the Study 007 final report and Cycle 2 audit, the frozen protocol and gate expectations, governance and human-intervention records, all closed-study reports, self-model and failure modes, open issues, and recent commits.
 
 When Yoshie Yamada sends `承認`, follow `governance/APPROVAL_DRIVEN_EXECUTION.md`, complete one bounded cycle, report in the same project chat, and stop.
 
 ## Current position
 
-**Study 007 is active. Cycle 1 is complete.**
+**TEMPLEX/0 has no active study. Studies 001 through 007 are closed.**
 
-Activation chose **GO unchanged** and opened Issue #13. The exact local target is:
+Study 007 activated the frozen SQLite proposal and completed Cycle 1, but closed during Cycle 2 as a negative setup result before the protected matrix.
 
-- `/usr/bin/python3.13`, CPython 3.13.5;
-- Debian `python3.13 3.13.5-2`;
-- SQLite API 3.46.1;
-- Debian `libsqlite3-0 3.46.1-7+deb13u1`;
-- source ID ending `f69aalt1`;
-- linked-library SHA-256 `14c4418a06c5c2e30f5fb57bc8add93762236ae17898c6708984cf15e680ca71`.
+## Study 007 retained evidence
 
-The vanilla release source ID ends `f69a1e33`. The prior portfolio feasibility claim of an exact source-ID match was wrong and is now corrected. The study remains unchanged because the frozen proposal required exact local build identity at activation. Later claims must not silently generalize to vanilla SQLite or SQLite generally.
+- exact target: CPython 3.13.5 and Debian `libsqlite3-0 3.46.1-7+deb13u1`;
+- frozen matrix: 72 sequences / 439 actions;
+- protected matrix executions: 0;
+- source-separated model, harness, and comparator implemented;
+- targeted tests: 13 passed;
+- twelve-case expectation SHA-256: `cde3e40e9c43a9771123c4bc9a48750e6aa4ea1a1a0eac5747b6d0882f5b162e`;
+- hand gate: 11 / 12 passed;
+- failed case: G12 immediate `ON DELETE RESTRICT` error projection;
+- expected: 787 / `SQLITE_CONSTRAINT_FOREIGNKEY`;
+- observed: 1811 / `SQLITE_CONSTRAINT_TRIGGER`;
+- timing, exception class, row state, and transaction state matched;
+- repeated result: byte-identical;
+- result SHA-256: `e40f3da0658418678b4b7e7343c5f9484d64965ef2306bacb06038d7f79fd4e6`;
+- correction phase unused; changing the result required expectation revision, not code repair;
+- H1–H3 not evaluated.
 
-## Frozen Cycle 1 artifacts
+Key records:
 
-- `research/decisions/2026-07-29-study-007-activation.md`
-- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/README.md`
-- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/PROTOCOL.md`
-- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/schema.sql`
-- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/manifest.tsv`
-- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/manifest.sha256`
-- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/environment.json`
-- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/preflight.py`
-- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/cycle1_preflight.json`
-- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/validate_manifest.py`
-- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/cycle1_structure_validation.json`
-- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/CYCLE_1_ACTIVATION_AND_FREEZE.md`
+- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/REPORT.md`
+- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/CYCLE_2_INSTRUMENTS_AND_GATE.md`
+- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/hand_gate_result.json`
+- `self/FAILURE_MODES.md` — FM-009 observational category collapse
 
-Manifest identity:
+## Mandatory lessons
 
-`16a01c109b196a1127d7783f110e492e4609713f8f527e50e95d7ef254678b4c`
-
-Inventory: exactly 72 sequences, 12 in each family, 439 actions, maximum 12 actions per sequence, maximum structural savepoint depth 3. Protected execution count is zero.
-
-## Mandatory boundaries
-
-1. The independent model must not import or call SQLite and must not reuse harness verdict logic.
-2. The harness must translate only the frozen declarative grammar through fixed SQL templates.
-3. The comparator must compare immutable records and mutate neither instrument.
-4. Twelve hand-audited traces and expected per-step records must be committed before gate execution.
-5. At most one bounded instrument-correction phase is permitted after gate inspection.
-6. No proposal, protocol, manifest, denominator, error mapping, or inspected gate expectation may be changed merely to obtain a pass.
-7. The complete 72-sequence matrix must not run in Cycle 2.
-8. The exact runtime, source ID, compile options, paths, packages, and digests must be rechecked before any later protected execution.
-9. Study 007 has four cycles total. No fifth cycle.
-10. No external contact, disclosure, spending, permission change, third-party operation, hostile SQL, extension loading, external database, concurrency, WAL, crash, durability, performance, or security-certification work is authorized.
+1. A semantic category such as “foreign-key failure” is not evidence that every operation shares one exact extended error code.
+2. Exact low-level projections require preflight coverage of every materially distinct operation family, or a deliberately coarser frozen projection.
+3. A gate mismatch cannot be repaired by widening equivalence after inspection.
+4. Eleven passing miniature cases do not support H1–H3 when the setup gate as a whole fails.
+5. The unexecuted 72-sequence matrix remains archival design, not evidence.
+6. No successor study should be activated mechanically from the failed Study 007 design.
+7. No external contact, spending, permission change, third-party operation, hostile input, or new publication channel is authorized by a normal approval.
 
 ## Next bounded work unit
 
-The next exact `承認` may perform **Cycle 2 — instruments and correctness gate only**:
+The next exact `承認` may perform **one post-Study-007 portfolio decision only**:
 
-1. implement the independent finite state model;
-2. implement the separate SQLite harness and comparator;
-3. add targeted tests for stack semantics, constraint timing, error projection, and immutable records;
-4. freeze twelve miniature hand-audited traces and all expected step records before execution;
-5. run the gate;
-6. use no more than one bounded implementation correction if needed;
-7. freeze passing instruments or close negatively;
-8. stop before the protected 72-sequence matrix.
+1. inspect all seven closed-study results and the live governance, self, failure-mode, issue, and commit records;
+2. freeze a selection threshold before candidate scores;
+3. compare materially different directions plus inactivity;
+4. explicitly evaluate whether a repaired SQLite successor would add information or merely repair an authored expectation;
+5. select at most one frozen inactive proposal or remain inactive;
+6. stop before activation, implementation, corpus execution, or protected outcome inspection.
 
 ## Human gate
 
@@ -76,4 +66,4 @@ The next exact `承認` may perform **Cycle 2 — instruments and correctness ga
 
 ## Human action pending
 
-None. A later exact `承認` opens Cycle 2 only.
+None. A later exact `承認` opens the bounded post-Study-007 portfolio decision only.
