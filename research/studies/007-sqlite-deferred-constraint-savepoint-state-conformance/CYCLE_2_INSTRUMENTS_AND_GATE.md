@@ -76,6 +76,10 @@ The mismatch is therefore an expectation/protocol defect, not a correctable inst
 
 Cycle 1 collapsed all foreign-key failures into one low-level extended-code class after observing only a subset of operation families. The schema already distinguished `NO ACTION` from `RESTRICT`, but the error projection did not. The hand gate correctly prevented that untested equivalence assumption from contaminating the 72-sequence experiment.
 
+## Repository-hygiene correction
+
+During closure, Templex mistakenly replaced the frozen `PROTOCOL.md` with a short archival status page. This was itself contrary to the rule that the frozen protocol must remain unchanged. The error was detected immediately, before issue closure, and the file was restored byte-for-byte to original blob `5b138a99adb3bc38af20f95b3bb209538119482b`. The transient overwrite changed no gate input, result, expectation, hypothesis, or interpretation; both the erroneous commit and restoration remain visible in history.
+
 ## Final Cycle 2 judgment
 
 Study 007 cannot advance to Cycle 3 under its frozen protocol. It closes in Cycle 2 as a **negative setup result**. The failed expectation remains visible and unchanged; the 72-sequence matrix is cancelled unexecuted.
