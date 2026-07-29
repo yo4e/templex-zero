@@ -1,0 +1,73 @@
+id	family	hypotheses	title	actions
+A01	A	H1	BEGIN insert and COMMIT	begin;insert_parent(10);commit
+A02	A	H1	Outermost savepoint commits by RELEASE	savepoint(a);insert_parent(10);release(a)
+A03	A	H1	Inner RELEASE remains reversible by outer ROLLBACK	begin;savepoint(a);insert_parent(10);release(a);rollback
+A04	A	H1	ROLLBACK TO retains matched mark	begin;savepoint(a);insert_parent(10);rollback_to(a);release(a);commit
+A05	A	H1	ROLLBACK TO preserves pre-mark work	begin;insert_parent(10);savepoint(a);insert_parent(11);rollback_to(a);release(a);commit
+A06	A	H1	RELEASE inner then ROLLBACK TO outer	begin;savepoint(a);insert_parent(10);savepoint(b);insert_parent(11);release(b);rollback_to(a);release(a);commit
+A07	A	H1	ROLLBACK TO inner preserves outer work	begin;savepoint(a);insert_parent(10);savepoint(b);insert_parent(11);rollback_to(b);release(b);release(a);commit
+A08	A	H1	RELEASE outer name removes inner marks but not BEGIN	begin;savepoint(a);insert_parent(10);savepoint(b);insert_parent(11);release(a);commit
+A09	A	H1	Nested outer-savepoint transaction commits by final RELEASE	savepoint(a);insert_parent(10);savepoint(b);insert_parent(11);release(b);release(a)
+A10	A	H1	COMMIT clears all savepoints	begin;savepoint(a);insert_parent(10);commit
+A11	A	H1	Plain ROLLBACK clears all savepoints	begin;savepoint(a);insert_parent(10);rollback
+A12	A	H1	Work after ROLLBACK TO can commit	begin;insert_parent(10);savepoint(a);insert_parent(11);rollback_to(a);insert_parent(12);release(a);commit
+B01	B	H1	Duplicate name rollback targets most recent mark	begin;savepoint(a);insert_parent(10);savepoint(a);insert_parent(11);rollback_to(a);release(a);release(a);commit
+B02	B	H1	Duplicate name release then outer rollback-to	begin;savepoint(a);insert_parent(10);savepoint(a);insert_parent(11);release(a);rollback_to(a);release(a);commit
+B03	B	H1	Duplicate names in transaction savepoint commit	savepoint(a);insert_parent(10);savepoint(a);insert_parent(11);release(a);release(a)
+B04	B	H1	Interleaved duplicate name and distinct name	begin;savepoint(a);savepoint(b);insert_parent(10);savepoint(a);insert_parent(11);rollback_to(a);release(a);rollback_to(b);release(b);release(a);commit
+B05	B	H1	Missing RELEASE inside BEGIN is non-destructive	begin;release(z)!savepoint_not_found;commit
+B06	B	H1	Missing ROLLBACK TO inside BEGIN is non-destructive	begin;rollback_to(z)!savepoint_not_found;commit
+B07	B	H1	Missing RELEASE inside outer savepoint is non-destructive	savepoint(a);release(z)!savepoint_not_found;release(a)
+B08	B	H1	Missing ROLLBACK TO inside outer savepoint is non-destructive	savepoint(a);rollback_to(z)!savepoint_not_found;release(a)
+B09	B	H1	Nested BEGIN fails inside BEGIN	begin;begin!nested_begin;commit
+B10	B	H1	BEGIN fails with outer savepoint active	savepoint(a);begin!nested_begin;release(a)
+B11	B	H1	Released name becomes missing	begin;savepoint(a);release(a);release(a)!savepoint_not_found;commit
+B12	B	H1	Matched mark survives repeated ROLLBACK TO	begin;savepoint(a);insert_parent(10);rollback_to(a);rollback_to(a);release(a);commit
+C01	C	H2	Immediate violating insert fails at statement	begin;insert_child(immediate,101,99)!foreign_key;commit
+C02	C	H2	Deferred violation repaired before COMMIT	begin;insert_child(deferred,201,99);insert_parent(99);commit
+C03	C	H2	Deferred violation may be rolled back	begin;insert_child(deferred,201,99);rollback
+C04	C	H2	Deferred violation repaired before transaction-savepoint RELEASE	savepoint(a);insert_child(deferred,201,99);insert_parent(99);release(a)
+C05	C	H2	Immediate violation fails inside transaction savepoint	savepoint(a);insert_child(immediate,101,99)!foreign_key;release(a)
+C06	C	H2	Immediate nonviolating insert commits	begin;insert_child(immediate,101,1);commit
+C07	C	H2	Deferred nonviolating insert commits	begin;insert_child(deferred,201,1);commit
+C08	C	H2	Deferred violating row deleted before COMMIT	begin;insert_child(deferred,201,99);delete_child(deferred,201);commit
+C09	C	H2	Immediate parent delete fails until child removed	begin;insert_parent(99);insert_child(immediate,101,99);delete_parent(99)!foreign_key;delete_child(immediate,101);delete_parent(99);commit
+C10	C	H2	Deferred parent delete repaired before COMMIT	begin;insert_parent(99);insert_child(deferred,201,99);delete_parent(99);insert_parent(99);commit
+C11	C	H2	RESTRICT delete fails immediately under deferred declaration	begin;insert_parent(99);insert_child(deferred_restrict,301,99);delete_parent(99)!foreign_key;delete_child(deferred_restrict,301);delete_parent(99);commit
+C12	C	H2	Deferred insert outside explicit transaction fails at implicit boundary	insert_child(deferred,201,99)!foreign_key
+D01	D	H2,H3	Failed COMMIT then parent repair and successful COMMIT	begin;insert_child(deferred,201,99);commit!foreign_key;insert_parent(99);commit
+D02	D	H2,H3	Failed COMMIT then full ROLLBACK	begin;insert_child(deferred,201,99);commit!foreign_key;rollback
+D03	D	H2,H3	Failed COMMIT then ROLLBACK TO pre-violation mark	begin;savepoint(a);insert_child(deferred,201,99);commit!foreign_key;rollback_to(a);release(a);commit
+D04	D	H2,H3	Failed COMMIT then repair beneath surviving savepoint	begin;savepoint(a);insert_child(deferred,201,99);commit!foreign_key;insert_parent(99);release(a);commit
+D05	D	H2,H3	Failed COMMIT then delete violating child	begin;insert_child(deferred,201,99);commit!foreign_key;delete_child(deferred,201);commit
+D06	D	H2,H3	Repair before COMMIT clears surviving savepoint stack	begin;insert_child(deferred,201,99);savepoint(a);insert_parent(99);commit
+D07	D	H2,H3	Nested RELEASE remains allowed after failed COMMIT	begin;savepoint(a);insert_child(deferred,201,99);commit!foreign_key;release(a);insert_parent(99);commit
+D08	D	H2,H3	ROLLBACK TO after failed COMMIT removes violation	begin;savepoint(a);insert_child(deferred,201,99);commit!foreign_key;rollback_to(a);insert_parent(99);release(a);commit
+D09	D	H2,H3	Failed outer RELEASE then repair and retry	savepoint(a);insert_child(deferred,201,99);release(a)!foreign_key;insert_parent(99);release(a)
+D10	D	H2,H3	Failed outer RELEASE then rollback-to and release	savepoint(a);insert_child(deferred,201,99);release(a)!foreign_key;rollback_to(a);release(a)
+D11	D	H2,H3	Failed outer RELEASE after nested release then repair	savepoint(a);savepoint(b);insert_child(deferred,201,99);release(b);release(a)!foreign_key;insert_parent(99);release(a)
+D12	D	H2,H3	Nested mark survives failed outer RELEASE	savepoint(a);savepoint(b);insert_child(deferred,201,99);release(a)!foreign_key;rollback_to(b);release(b);rollback_to(a);release(a)
+E01	E	H2,H3	Nested savepoint release allowed with deferred violation	begin;insert_child(deferred,201,99);savepoint(a);release(a);commit!foreign_key;rollback
+E02	E	H2,H3	Nested release then failed COMMIT and repair	begin;savepoint(a);insert_child(deferred,201,99);release(a);commit!foreign_key;insert_parent(99);commit
+E03	E	H2,H3	Nested release allowed but outer transaction-savepoint release fails	savepoint(a);insert_child(deferred,201,99);savepoint(b);release(b);release(a)!foreign_key;rollback_to(a);release(a)
+E04	E	H2,H3	Failed outer RELEASE preserves nested mark for repair	savepoint(a);savepoint(b);insert_child(deferred,201,99);release(a)!foreign_key;insert_parent(99);release(a)
+E05	E	H2,H3	Failed COMMIT with two nested marks then rollback to outer	begin;savepoint(a);insert_child(deferred,201,99);savepoint(b);release(b);commit!foreign_key;rollback_to(a);release(a);commit
+E06	E	H2,H3	Failed COMMIT with two nested marks then repair and unwind	begin;savepoint(a);insert_child(deferred,201,99);savepoint(b);commit!foreign_key;insert_parent(99);release(b);release(a);commit
+E07	E	H2,H3	Rollback nested mark does not repair earlier deferred violation	savepoint(a);insert_child(deferred,201,99);savepoint(b);rollback_to(b);release(b);release(a)!foreign_key;rollback_to(a);release(a)
+E08	E	H2,H3	Rollback nested mark removes later violation before outer release	savepoint(a);savepoint(b);insert_child(deferred,201,99);rollback_to(b);release(b);release(a)
+E09	E	H2,H3	Repair after nested mark can be undone before failed COMMIT	begin;insert_child(deferred,201,99);savepoint(a);insert_parent(99);rollback_to(a);release(a);commit!foreign_key;rollback
+E10	E	H2,H3	Repair merged by nested RELEASE allows COMMIT	begin;insert_child(deferred,201,99);savepoint(a);insert_parent(99);release(a);commit
+E11	E	H2,H3	Repair undone by nested rollback leaves outer RELEASE failing	savepoint(a);insert_child(deferred,201,99);savepoint(b);insert_parent(99);rollback_to(b);release(b);release(a)!foreign_key;rollback_to(a);release(a)
+E12	E	H2,H3	Repair merged by nested release allows transaction-savepoint release	savepoint(a);insert_child(deferred,201,99);savepoint(b);insert_parent(99);release(b);release(a)
+F01	F	H3	Innermost mark operable after failed COMMIT	begin;savepoint(a);insert_child(deferred,201,99);savepoint(b);commit!foreign_key;rollback_to(b);release(b);insert_parent(99);release(a);commit
+F02	F	H3	Innermost RELEASE operable after failed COMMIT	begin;savepoint(a);insert_child(deferred,201,99);savepoint(b);commit!foreign_key;release(b);insert_parent(99);release(a);commit
+F03	F	H3	Outer nested mark operable after failed COMMIT	begin;savepoint(a);insert_child(deferred,201,99);savepoint(b);commit!foreign_key;rollback_to(a);release(a);commit
+F04	F	H3	Innermost mark operable after failed outer RELEASE	savepoint(a);savepoint(b);insert_child(deferred,201,99);savepoint(c);release(a)!foreign_key;rollback_to(c);release(c);insert_parent(99);release(a)
+F05	F	H3	Innermost RELEASE operable after failed outer RELEASE	savepoint(a);savepoint(b);insert_child(deferred,201,99);savepoint(c);release(a)!foreign_key;release(c);insert_parent(99);release(a)
+F06	F	H3	Intermediate mark operable after failed outer RELEASE	savepoint(a);savepoint(b);insert_child(deferred,201,99);savepoint(c);release(a)!foreign_key;rollback_to(b);release(b);release(a)
+F07	F	H3	RESTRICT failure inside BEGIN is immediate	begin;insert_parent(99);insert_child(deferred_restrict,301,99);delete_parent(99)!foreign_key;rollback
+F08	F	H3	RESTRICT failure inside nested savepoint is immediate	begin;insert_parent(99);insert_child(deferred_restrict,301,99);savepoint(a);delete_parent(99)!foreign_key;release(a);delete_child(deferred_restrict,301);delete_parent(99);commit
+F09	F	H3	RESTRICT failure inside transaction savepoint is immediate	savepoint(a);insert_parent(99);insert_child(deferred_restrict,301,99);delete_parent(99)!foreign_key;delete_child(deferred_restrict,301);delete_parent(99);release(a)
+F10	F	H3	Rollback restores RESTRICT-protected rows after temporary deletion	begin;insert_parent(99);insert_child(deferred_restrict,301,99);savepoint(a);delete_child(deferred_restrict,301);delete_parent(99);rollback_to(a);release(a);commit
+F11	F	H3	RESTRICT nonviolating control after child removal	begin;insert_parent(99);insert_child(deferred_restrict,301,99);delete_child(deferred_restrict,301);delete_parent(99);commit
+F12	F	H3	Deferred NO ACTION control permits temporary parent deletion	begin;insert_parent(99);insert_child(deferred,201,99);delete_parent(99);insert_parent(99);commit
