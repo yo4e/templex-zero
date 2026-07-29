@@ -1,72 +1,74 @@
 # Next Start
 
-_Updated: 2026-07-28 (Asia/Tokyo)_
+_Updated: 2026-07-29 (Asia/Tokyo)_
 
 ## Purpose
 
-This is a compact advisory bridge, not authority. Re-read `STATE.md`, the post-Study-006 selection threshold and portfolio assessment, the frozen Study 007 proposal, all governance and human-intervention records, the closed-study reports, self-model and failure modes, open issues, and recent commits.
+This is a compact advisory bridge, not authority. Re-read `STATE.md`, the Study 007 activation decision, active protocol, exact manifest and hashes, Cycle 1 audit, environment and preflight records, governance and human-intervention records, Issue #13, recent commits, and the frozen proposal.
 
 When Yoshie Yamada sends `承認`, follow `governance/APPROVAL_DRIVEN_EXECUTION.md`, complete one bounded cycle, report in the same project chat, and stop.
 
 ## Current position
 
-**TEMPLEX/0 has no active study. Studies 001 through 006 are closed.**
+**Study 007 is active. Cycle 1 is complete.**
 
-A post-Study-006 portfolio assessment was completed under a threshold committed before candidate scoring.
+Activation chose **GO unchanged** and opened Issue #13. The exact local target is:
 
-- threshold: at least 34 / 40, no criterion below 4, plus external-referent, diversification, anti-repetition, four-cycle, and authority gates;
-- compared: SQLite transaction state, Unicode 17 grapheme segmentation, RFC 8785 JSON canonicalization, reproducible-artifact infrastructure, prospective selection calibration, and inactivity;
-- selected: SQLite deferred-constraint and savepoint state conformance;
-- score: 39 / 40;
-- status: one frozen inactive proposal; no Study 007 activation and no active Issue.
+- `/usr/bin/python3.13`, CPython 3.13.5;
+- Debian `python3.13 3.13.5-2`;
+- SQLite API 3.46.1;
+- Debian `libsqlite3-0 3.46.1-7+deb13u1`;
+- source ID ending `f69aalt1`;
+- linked-library SHA-256 `14c4418a06c5c2e30f5fb57bc8add93762236ae17898c6708984cf15e680ca71`.
 
-Key records:
+The vanilla release source ID ends `f69a1e33`. The prior portfolio feasibility claim of an exact source-ID match was wrong and is now corrected. The study remains unchanged because the frozen proposal required exact local build identity at activation. Later claims must not silently generalize to vanilla SQLite or SQLite generally.
 
-- `research/decisions/2026-07-28-post-study-006-selection-threshold.md`
-- `research/decisions/2026-07-28-post-study-006-portfolio-assessment.md`
-- `research/proposals/007-sqlite-deferred-constraint-savepoint-state-conformance.md`
-- `self/SELF.md`
-- `self/CHANGES.md`
-- Study 006 final report and closure audit
+## Frozen Cycle 1 artifacts
 
-## Frozen proposal summary
+- `research/decisions/2026-07-29-study-007-activation.md`
+- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/README.md`
+- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/PROTOCOL.md`
+- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/schema.sql`
+- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/manifest.tsv`
+- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/manifest.sha256`
+- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/environment.json`
+- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/preflight.py`
+- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/cycle1_preflight.json`
+- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/validate_manifest.py`
+- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/cycle1_structure_validation.json`
+- `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/CYCLE_1_ACTIVATION_AND_FREEZE.md`
 
-The proposed Study 007 would test pinned SQLite 3.46.1 through CPython 3.13.5 against an independently implemented relational and savepoint-stack model.
+Manifest identity:
 
-It would freeze exactly 72 original declarative sequences covering:
+`16a01c109b196a1127d7783f110e492e4609713f8f527e50e95d7ef254678b4c`
 
-- basic and nested savepoints;
-- duplicate and missing names;
-- `ROLLBACK TO`, `RELEASE`, `COMMIT`, and full rollback;
-- immediate and deferred foreign-key timing;
-- failed commit and failed outer-release recovery;
-- nested savepoint survival;
-- immediate `RESTRICT` timing under a deferred declaration.
+Inventory: exactly 72 sequences, 12 in each family, 439 actions, maximum 12 actions per sequence, maximum structural savepoint depth 3. Protected execution count is zero.
 
-The proposal excludes concurrency, locking, WAL, crashes, durability, hostile SQL, extensions, external databases, performance, and security certification.
+## Mandatory boundaries
 
-## Mandatory lessons and boundaries
-
-1. The proposal is inactive and cannot be treated as an activated protocol.
-2. Runtime and SQLite version must be reverified; silent migration is forbidden.
-3. The selection threshold was frozen before scores and must not be retrospectively weakened.
-4. The exact 72-sequence denominator, schemas, expectations, error mapping, and caps must be frozen before protected execution.
-5. The independent model may not call SQLite or reuse harness verdict logic.
-6. A plausible explanation for a later mismatch cannot convert a frozen failure into a pass.
-7. Study 007, if activated, has a maximum of four cycles and no fifth cycle.
-8. The observed preference for formalizable domains is now recorded as a bias; SQLite changes the state model but does not prove that the bias is solved.
-9. No external contact, disclosure, spending, permission change, third-party repository operation, extension loading, hostile SQL, or external database ingestion is authorized by a normal approval.
+1. The independent model must not import or call SQLite and must not reuse harness verdict logic.
+2. The harness must translate only the frozen declarative grammar through fixed SQL templates.
+3. The comparator must compare immutable records and mutate neither instrument.
+4. Twelve hand-audited traces and expected per-step records must be committed before gate execution.
+5. At most one bounded instrument-correction phase is permitted after gate inspection.
+6. No proposal, protocol, manifest, denominator, error mapping, or inspected gate expectation may be changed merely to obtain a pass.
+7. The complete 72-sequence matrix must not run in Cycle 2.
+8. The exact runtime, source ID, compile options, paths, packages, and digests must be rechecked before any later protected execution.
+9. Study 007 has four cycles total. No fifth cycle.
+10. No external contact, disclosure, spending, permission change, third-party operation, hostile SQL, extension loading, external database, concurrency, WAL, crash, durability, performance, or security-certification work is authorized.
 
 ## Next bounded work unit
 
-The next exact `承認` may perform **one activation decision and possible Study 007 Cycle 1 only**:
+The next exact `承認` may perform **Cycle 2 — instruments and correctness gate only**:
 
-1. inspect the live proposal, decisions, governance, state, and environment;
-2. reverify CPython 3.13.5, SQLite 3.46.1, source ID, compile options, wrapper transaction mode, and documentation identities;
-3. choose activation GO unchanged or NO-GO;
-4. if GO unchanged, open the active Issue and freeze the active protocol, schemas, exact 72-sequence manifest, observation rules, expected errors, and caps;
-5. perform no protected SQL sequence and no model or harness implementation;
-6. stop.
+1. implement the independent finite state model;
+2. implement the separate SQLite harness and comparator;
+3. add targeted tests for stack semantics, constraint timing, error projection, and immutable records;
+4. freeze twelve miniature hand-audited traces and all expected step records before execution;
+5. run the gate;
+6. use no more than one bounded implementation correction if needed;
+7. freeze passing instruments or close negatively;
+8. stop before the protected 72-sequence matrix.
 
 ## Human gate
 
@@ -74,4 +76,4 @@ The next exact `承認` may perform **one activation decision and possible Study
 
 ## Human action pending
 
-None. A later exact `承認` opens the bounded activation decision and possible Cycle 1 freeze only.
+None. A later exact `承認` opens Cycle 2 only.
