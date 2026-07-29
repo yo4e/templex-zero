@@ -4,74 +4,60 @@ _Updated: 2026-07-29 (Asia/Tokyo)_
 
 ## Purpose
 
-This is a compact advisory bridge, not authority. Re-read `STATE.md`, the post-Study-007 selection threshold and portfolio assessment, the frozen Study 008 proposal, all seven closed-study results, governance and intervention records, self-model and failure modes, open issues, and recent commits.
+This is a compact advisory bridge, not authority. Re-read `STATE.md`, the post-Study-007 selection threshold and portfolio assessment, the frozen Study 008 proposal, the Study 008 activation NO-GO decision, all seven closed-study results, governance and intervention records, self-model and failure modes, open issues, and recent commits.
 
 When Yoshie Yamada sends `承認`, follow `governance/APPROVAL_DRIVEN_EXECUTION.md`, complete one bounded cycle, report in the same project chat, and stop.
 
 ## Current position
 
-**TEMPLEX/0 has no active study. Studies 001 through 007 are closed. One Study 008 proposal is frozen and inactive.**
+**TEMPLEX/0 has no active study. Studies 001 through 007 are closed. Study 008 was not activated.**
 
-The selected proposal is **SummEval Dimension-Specific Proxy Reliability**. It scored 48 / 50 under a threshold committed before candidate research and scoring.
+The frozen Study 008 proposal concerned dimension-specific false reassurance in SummEval automatic metrics. Activation chose **NO-GO** because the exact official metric-scored annotation artifact could not be pinned under the proposal's no-mirror and no-reconstruction rules.
 
-The direction asks whether automatic summarization metrics that appear reliable against an aggregate human-quality score conceal failures when:
+## Retained activation evidence
 
-- coherence, consistency, fluency, and relevance remain separate;
-- expert and crowd judgments remain separate;
-- analysis is conditioned by document rather than treating 1,600 summary rows as independent;
-- metric ranks, false-reassurance cases, and population sensitivity are preserved instead of compressed into one leaderboard number.
+- activation decision: `research/decisions/2026-07-29-study-008-activation.md`;
+- frozen proposal: `research/proposals/008-summeval-dimension-specific-proxy-reliability.md`;
+- official upstream: `Yale-LILY/SummEval`;
+- pinned inspected commit: `81b59ad53d63cb6009764240853c91235a44e238`;
+- repository license: MIT;
+- human annotation referent: `model_annotations.aligned.jsonl`;
+- official Issue #18 reports that the human and paired annotation files lack `metric_scores_*` keys required by released correlation code;
+- official Issue #56 reports the scored Google Drive annotation file unavailable and remains open without an official replacement;
+- no third-party mirror was accepted;
+- no dataset, code, active issue, correlation, rank, bootstrap result, or hypothesis outcome exists.
 
-No dataset, code, active issue, statistic, rank, bootstrap result, or hypothesis outcome exists.
+## Why NO-GO was mandatory
 
-## Key records
+GO unchanged required one safe official scored JSON/JSONL artifact with exact bytes, 100 documents × 16 systems = 1,600 unique records, separate expert and crowd judgments across four dimensions, and 8–32 automatic metrics with complete numeric coverage and upstream-supported directions.
 
-- selection threshold: `research/decisions/2026-07-29-post-study-007-selection-threshold.md`
-- threshold creation commit: `c9ef071fcde73224bc93a19349e9a8021dfc8dc5`
-- portfolio assessment: `research/decisions/2026-07-29-post-study-007-portfolio-assessment.md`
-- frozen inactive proposal: `research/proposals/008-summeval-dimension-specific-proxy-reliability.md`
-- Study 007 report: `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/REPORT.md`
-- failure mode: `self/FAILURE_MODES.md` — FM-009 observational category collapse
+The unavailable scored file prevented freezing:
 
-## Selection judgment
+- SHA-256 and byte length;
+- scored-file schema and exact denominator;
+- metric inventory and field classification;
+- complete numeric coverage;
+- score directions;
+- file-specific provenance or licensing notice.
 
-The repaired SQLite direction was rejected because it would mainly repair an authored expectation while repeating the exact-conformance matrix form used in recent studies.
+The accessible human-only referent could not be substituted because it lacks the required metric-score fields. Recomputing metrics, reconstructing source articles, using a mirror, guessing directions, or reducing the denominator would change the frozen proposal.
 
-SummEval was selected because its primary referent is an externally authored human-judgment structure rather than another implementation contract. The proposal claims no novelty for the general fact that metrics and human ratings can disagree. Its bounded question concerns aggregate category collapse, document-conditioned false reassurance, and expert-versus-crowd ranking sensitivity under one exact release.
+## Mandatory lesson
 
-## Mandatory activation conditions
+`self/FAILURE_MODES.md` now includes **FM-010 — Referent availability optimism**.
 
-GO unchanged requires:
+A candidate that depends on an external artifact must not receive full feasibility merely because a paper or README names a public file. Before final scoring, perform an outcome-blind availability preflight covering official location, safe format, byte accessibility, license visibility, and high-level schema identity. Do not inspect protected relationships or outcomes during that preflight.
 
-1. one official upstream commit and clear license;
-2. one safe UTF-8 JSON or JSONL annotation file, acquired without credentials, terms acceptance, or unsafe deserialization;
-3. exact SHA-256 and byte identity;
-4. exactly 100 documents × 16 systems = 1,600 unique records, or an official exact schema-equivalent representation;
-5. separate expert and crowd judgments for all four dimensions;
-6. at least 8 and at most 32 automatic metrics with complete numeric coverage and upstream-supported score directions;
-7. frozen metric, field, population, dimension, formula, seed, threshold, result-schema, and resource-cap identities before protected relationship inspection;
-8. no source-article reconstruction, new model inference, human-subject collection, or external service;
-9. credible four-cycle closure.
+## Next bounded work unit
 
-Any failure requires NO-GO. No reduced denominator, guessed direction, incomplete population, mirror substitution, or unsafe object format may be silently accepted.
+The next exact `承認` may perform **one post-Study-008-NO-GO portfolio decision only**:
 
-## Protected Cycle 1 boundary
-
-After GO unchanged, Cycle 1 may:
-
-- pin source, license, safe file, hashes, schema, and denominator;
-- freeze eligible metric inventory and directions;
-- freeze inclusion rules, statistical formulas, document-bootstrap seed `2026072908`, mandatory tables, and result schema;
-- validate counts, types, finite values, and missingness.
-
-It must stop before:
-
-- implementing statistics;
-- computing any metric-human correlation;
-- ranking metrics;
-- calculating false-reassurance rates;
-- running bootstrap outcome analysis;
-- evaluating H1–H3;
-- opening protected execution beyond the Cycle 1 validation boundary.
+1. freeze a revised threshold before candidate research or scoring;
+2. make official referent availability a hard feasibility gate;
+3. compare materially distinct candidates plus inactivity;
+4. select at most one frozen inactive proposal or remain inactive;
+5. update decision, state, restart, and intervention records;
+6. stop before activation, implementation, protected analysis, or external action.
 
 ## Human gate
 
@@ -79,4 +65,4 @@ It must stop before:
 
 ## Human action pending
 
-None. A later exact `承認` opens one activation decision and, only after GO unchanged, Study 008 Cycle 1.
+None. A later exact `承認` opens the bounded post-NO-GO portfolio decision only.
