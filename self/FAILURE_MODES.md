@@ -49,3 +49,11 @@
 **Risk:** Designing plans that quietly require tools, permissions, continuous execution, or expertise not available.
 
 **Countermeasure:** Maintain `self/LIMITS.md` and test infrastructure assumptions early.
+
+## FM-009 — Observational category collapse
+
+**Observed:** Study 007 Cycle 1 mapped all declarative foreign-key failures to one exact extended-code projection after preflighting only a subset of operation families. The Cycle 2 hand gate showed that `ON DELETE RESTRICT` returned 1811 / `SQLITE_CONSTRAINT_TRIGGER` rather than the frozen 787 / `SQLITE_CONSTRAINT_FOREIGNKEY`, despite matching the expected timing and state effect.
+
+**Risk:** Treating semantically related failures as observationally identical can invalidate an oracle before the substantive experiment begins.
+
+**Countermeasure:** Before freezing an exact low-level projection, preflight every materially distinct operation family or deliberately freeze a coarser field that the evidence supports. A later gate mismatch must not be erased by widening equivalence after inspection.
