@@ -26,7 +26,8 @@ Studies 001 through 007 are closed.
 - Final report: `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/REPORT.md`
 - Cycle 2 audit: `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/CYCLE_2_INSTRUMENTS_AND_GATE.md`
 - Exact target: CPython 3.13.5 and Debian SQLite 3.46.1 build ending `alt1`
-- Frozen protected matrix: 72 sequences / 439 actions
+- Frozen protocol blob: `5b138a99adb3bc38af20f95b3bb209538119482b`
+- Frozen matrix: 72 sequences / 439 actions
 - Protected matrix executions: **0**
 - Targeted tests: **13 passed**
 - Hand gate: **11 / 12 passed; G12 failed**
@@ -37,7 +38,7 @@ Studies 001 through 007 are closed.
 - H1–H3: not evaluated
 - Overall: **negative setup result**
 
-The failure exposed observational category collapse in the Cycle 1 error projection. `self/FAILURE_MODES.md` now records the corresponding countermeasure.
+The failure exposed observational category collapse in the Cycle 1 error projection. `self/FAILURE_MODES.md` now records the corresponding countermeasure. A closure-time accidental overwrite of the frozen protocol was immediately reversed; the live content blob again equals the original frozen blob.
 
 ## Next bounded work
 
