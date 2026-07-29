@@ -4,7 +4,7 @@ _Last updated: 2026-07-29_
 
 ## Phase
 
-**Active Study 007 / Cycle 1 complete / instruments not implemented**
+**No active study / Study 007 closed as a negative setup result**
 
 ## Laboratory
 
@@ -12,44 +12,44 @@ _Last updated: 2026-07-29_
 - Laboratory: **TEMPLEX/0**
 - Repository: `yo4e/templex-zero`
 - Execution model: `governance/APPROVAL_DRIVEN_EXECUTION.md`
-- Active issue: **#13**
+- Active issue: **None**
 
 ## Closed studies
 
-Studies 001 through 006 are closed. Study 006 ended as a valid partial Python tar extraction boundary-conformance result: H1 and H2 supported, H3 unsupported.
+Studies 001 through 007 are closed.
 
-## Study 007 activation
+- Study 006: valid partial Python tar extraction boundary-conformance result; H1 and H2 supported, H3 unsupported.
+- Study 007: negative SQLite setup result; hand gate failed before protected execution.
 
-- Active name: **SQLite Deferred-Constraint and Savepoint State Conformance**
-- Activation decision: `research/decisions/2026-07-29-study-007-activation.md`
-- Active protocol: `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/PROTOCOL.md`
-- Exact runtime: CPython 3.13.5 at `/usr/bin/python3.13`
-- Exact SQLite package: `libsqlite3-0 3.46.1-7+deb13u1`
-- Local source ID suffix: `alt1`; not the vanilla 3.46.1 suffix `1e33`
-- Scope consequence: all claims are limited to the exact pinned local binary
-- Frozen matrix: **72 sequences / 439 actions / six families of 12**
-- Manifest SHA-256: `16a01c109b196a1127d7783f110e492e4609713f8f527e50e95d7ef254678b4c`
-- Structure validation: pass; maximum 12 actions and depth 3
-- Capability preflight: pass
-- Protected sequence executions: **0**
+## Study 007 final result
 
-The portfolio assessment's earlier statement that the local source ID matched the published vanilla release ID was corrected during activation. The proposal remained unchanged because it already required pinning the exact local library at activation.
+- Final report: `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/REPORT.md`
+- Cycle 2 audit: `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/CYCLE_2_INSTRUMENTS_AND_GATE.md`
+- Exact target: CPython 3.13.5 and Debian SQLite 3.46.1 build ending `alt1`
+- Frozen protected matrix: 72 sequences / 439 actions
+- Protected matrix executions: **0**
+- Targeted tests: **13 passed**
+- Hand gate: **11 / 12 passed; G12 failed**
+- Retained mismatch: expected 787 / `SQLITE_CONSTRAINT_FOREIGNKEY`; observed 1811 / `SQLITE_CONSTRAINT_TRIGGER` for immediate `ON DELETE RESTRICT` failure
+- Timing, exception class, row state, and transaction state matched
+- Gate repetition: byte-identical failure
+- Correction phase: unused because changing the result required revising a frozen expectation, not repairing an instrument defect
+- H1–H3: not evaluated
+- Overall: **negative setup result**
+
+The failure exposed observational category collapse in the Cycle 1 error projection. `self/FAILURE_MODES.md` now records the corresponding countermeasure.
 
 ## Next bounded work
 
-The next exact `承認` may perform **Study 007 Cycle 2 only**:
+The next exact `承認` may perform **one post-Study-007 portfolio decision only**:
 
-1. re-read the live protocol, manifest, Cycle 1 audit, environment, Issue #13, governance, and restart state;
-2. implement a SQLite-independent relational/savepoint-stack model;
-3. implement a separate SQLite harness and immutable-record comparator;
-4. write targeted unit tests without executing the protected 72-sequence matrix;
-5. freeze twelve hand-audited miniature traces and expected per-step records before running them;
-6. run the hand gate, allowing at most one bounded implementation-correction phase;
-7. freeze passing instruments or close negatively if the gate cannot pass;
-8. stop before complete-matrix execution.
-
-No Study 007 protected matrix outcome may be inspected in Cycle 2.
+1. re-read all seven closed studies, governance, self-model, failure modes, open issues, and recent commits;
+2. commit a selection threshold before candidate scoring;
+3. compare materially distinct next directions plus inactivity, including the cost of another exact-conformance study and the new category-collapse evidence;
+4. select at most one inactive proposal or remain inactive;
+5. update decision, state, restart, and intervention records;
+6. stop before study activation, implementation, corpus execution, protected outcome inspection, or external action.
 
 ## Human action currently needed
 
-None beyond a later exact `承認` for Cycle 2.
+None beyond a later exact `承認` for the bounded post-Study-007 portfolio decision.
