@@ -4,7 +4,7 @@ _Last updated: 2026-07-29_
 
 ## Phase
 
-**No active study / Study 007 closed as a negative setup result**
+**No active study / frozen inactive Study 008 proposal**
 
 ## Laboratory
 
@@ -21,36 +21,38 @@ Studies 001 through 007 are closed.
 - Study 006: valid partial Python tar extraction boundary-conformance result; H1 and H2 supported, H3 unsupported.
 - Study 007: negative SQLite setup result; hand gate failed before protected execution.
 
-## Study 007 final result
+## Post-Study-007 portfolio decision
 
-- Final report: `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/REPORT.md`
-- Cycle 2 audit: `research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/CYCLE_2_INSTRUMENTS_AND_GATE.md`
-- Exact target: CPython 3.13.5 and Debian SQLite 3.46.1 build ending `alt1`
-- Frozen protocol blob: `5b138a99adb3bc38af20f95b3bb209538119482b`
-- Frozen matrix: 72 sequences / 439 actions
-- Protected matrix executions: **0**
-- Targeted tests: **13 passed**
-- Hand gate: **11 / 12 passed; G12 failed**
-- Retained mismatch: expected 787 / `SQLITE_CONSTRAINT_FOREIGNKEY`; observed 1811 / `SQLITE_CONSTRAINT_TRIGGER` for immediate `ON DELETE RESTRICT` failure
-- Timing, exception class, row state, and transaction state matched
-- Gate repetition: byte-identical failure
-- Correction phase: unused because changing the result required revising a frozen expectation, not repairing an instrument defect
-- H1–H3: not evaluated
-- Overall: **negative setup result**
+- Selection threshold: `research/decisions/2026-07-29-post-study-007-selection-threshold.md`
+- Threshold commit: `c9ef071fcde73224bc93a19349e9a8021dfc8dc5`
+- Portfolio assessment: `research/decisions/2026-07-29-post-study-007-portfolio-assessment.md`
+- Selected inactive proposal: `research/proposals/008-summeval-dimension-specific-proxy-reliability.md`
+- Selected direction: **SummEval Dimension-Specific Proxy Reliability**
+- Score: **48 / 50**
+- Inactive baseline remains valid; the selected proposal is not activation.
 
-The failure exposed observational category collapse in the Cycle 1 error projection. `self/FAILURE_MODES.md` now records the corresponding countermeasure. A closure-time accidental overwrite of the frozen protocol was immediately reversed; the live content blob again equals the original frozen blob.
+The proposal tests whether automatic summarization metrics that look reliable against an aggregate human score conceal dimension-specific false reassurance or expert-versus-crowd ranking instability in one exact pinned SummEval release.
+
+The design keeps coherence, consistency, fluency, and relevance separate; keeps expert and crowd judgments separate; treats the aggregate score as a suspect proxy under test; bootstraps by document; and requires every eligible metric, score direction, denominator, formula, seed, threshold, and gate fixture to be frozen before protected relationships are inspected.
+
+No dataset was acquired or frozen, no instrument was implemented, no metric or human value was analyzed, no active-study issue was opened, and no protected result exists.
+
+A repaired Study 007 successor was rejected as the next study because it would primarily repair a TEMPLEX/0-authored expectation while repeating the same exact-conformance matrix form.
 
 ## Next bounded work
 
-The next exact `承認` may perform **one post-Study-007 portfolio decision only**:
+The next exact `承認` may perform **one Study 008 activation decision and, only after GO unchanged, Cycle 1 freeze work**:
 
-1. re-read all seven closed studies, governance, self-model, failure modes, open issues, and recent commits;
-2. commit a selection threshold before candidate scoring;
-3. compare materially distinct next directions plus inactivity, including the cost of another exact-conformance study and the new category-collapse evidence;
-4. select at most one inactive proposal or remain inactive;
-5. update decision, state, restart, and intervention records;
-6. stop before study activation, implementation, corpus execution, protected outcome inspection, or external action.
+1. re-read the live threshold, portfolio assessment, frozen proposal, governance, restart state, issues, and recent commits;
+2. independently choose **GO unchanged** or **NO-GO**;
+3. for GO unchanged, pin one official upstream commit, license, safe UTF-8 JSON/JSONL file, byte identity, schema, exact 100-document / 16-system / 1,600-record denominator, population and dimension fields;
+4. freeze the eligible automatic metric inventory and upstream-supported directions before computing any relationship;
+5. freeze inclusion rules, formulas, bootstrap seed, mandatory tables, result schema, and resource caps;
+6. perform schema/count/type/missingness validation only;
+7. stop before statistic implementation, metric-human association, metric ranking, false-reassurance analysis, bootstrap outcome inspection, or hypothesis evaluation.
+
+No Study 008 activation or Cycle 1 work has yet occurred.
 
 ## Human action currently needed
 
-None beyond a later exact `承認` for the bounded post-Study-007 portfolio decision.
+None beyond a later exact `承認` for the activation decision and possible Cycle 1 freeze.
