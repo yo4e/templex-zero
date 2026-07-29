@@ -21,39 +21,39 @@ Negative results and visible corrections are intentional parts of the experiment
 
 ## Status
 
-- Phase: **No active study / frozen inactive Study 007 proposal**
+- Phase: **Active Study 007 / Cycle 1 complete**
 - Visibility: **Public**
 - Closed studies: **Study 001 through Study 006**
-- Active issue: **None**
+- Active issue: **#13**
 - Release state: **Approval-gated**
 - Public operator: **Templex Tsukino**
 
 Study 001 closed with a negative game-design result. Study 002 closed with a partial / incomplete exact-first result. Study 003 closed with methodological success under bounded procedural claims. Study 004 closed as a valid partial finite-state-conformance result. Study 005 closed as a positive bounded TZDB transition-round-trip conformance result. Study 006 closed as a valid partial Python tar extraction boundary-conformance result.
 
-## Proposed Study 007 — inactive
+## Active Study 007
 
-The post-Study-006 portfolio assessment compared five active directions plus inactivity under a selection threshold committed before candidate scoring.
+**SQLite Deferred-Constraint and Savepoint State Conformance** was activated unchanged on 2026-07-29 after live environment revalidation.
 
-| Direction | Score | Decision |
-|---|---:|---|
-| SQLite deferred constraints and savepoint state | **39 / 40** | **Frozen inactive proposal** |
-| Unicode 17 grapheme segmentation | 33 / 40 | Hold: feasibility floor failed |
-| RFC 8785 JSON canonicalization | 34 / 40 | Hold: diversification floor failed |
-| Reproducible scientific artifact envelope | 34 / 40 | Hold: diversification and self-confirmation floors failed |
-| Prospective project-selection calibration | 28 / 40 | Hold |
-| Remain inactive | baseline | Viable fallback |
+The study asks whether one exact local CPython 3.13.5 / SQLite 3.46.1 distribution build follows documented transaction-stack, nested-savepoint, failed-boundary, deferred-foreign-key, and recovery behavior across exactly 72 frozen original declarative sequences when compared with an independently implemented relational and savepoint-state model.
 
-The selected proposal asks whether pinned SQLite 3.46.1 transaction, nested-savepoint, failed-boundary, and deferred-foreign-key behavior agrees with an independently implemented relational and savepoint-stack model across exactly 72 frozen original sequences.
+Cycle 1 froze:
 
-The proposal is **not active**. No Study 007 Issue, model, harness, formal sequence manifest, or protected SQL result exists yet.
+- the active protocol, exact schema, action grammar, observations, error mapping, and resource caps;
+- exactly 72 sequences in six equal families and 439 total actions;
+- manifest SHA-256 `16a01c109b196a1127d7783f110e492e4609713f8f527e50e95d7ef254678b4c`;
+- the exact runtime, source ID, compile options, package identities, paths, and binary digests;
+- the four-cycle limit and protected-execution boundary.
 
-- Selection threshold: [`research/decisions/2026-07-28-post-study-006-selection-threshold.md`](research/decisions/2026-07-28-post-study-006-selection-threshold.md)
-- Portfolio assessment: [`research/decisions/2026-07-28-post-study-006-portfolio-assessment.md`](research/decisions/2026-07-28-post-study-006-portfolio-assessment.md)
-- Frozen proposal: [`research/proposals/007-sqlite-deferred-constraint-savepoint-state-conformance.md`](research/proposals/007-sqlite-deferred-constraint-savepoint-state-conformance.md)
+A material correction was recorded at activation. The local Debian SQLite source ID ends in `alt1`, not the vanilla SQLite 3.46.1 release suffix `1e33`. The study is therefore scoped to package `libsqlite3-0 3.46.1-7+deb13u1` and its exact pinned binary, not the vanilla release artifact or SQLite generally.
 
-A later approval must independently choose activation **GO unchanged** or **NO-GO** after revalidating CPython 3.13.5, SQLite 3.46.1, source identity, compile options, wrapper transaction behavior, and official documentation. Even after GO, the first cycle may freeze inputs and expectations only; protected SQL execution remains later work.
+Structure-only validation and setup capability preflight passed. No independent model, harness, comparator, hand-gate result, protected sequence result, mismatch, or hypothesis disposition exists yet.
 
-The proposal excludes concurrency, locking, WAL, crashes, durability, performance, hostile SQL, extension loading, arbitrary databases, and security certification.
+- Active study: [`research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/README.md`](research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/README.md)
+- Protocol: [`research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/PROTOCOL.md`](research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/PROTOCOL.md)
+- Activation decision: [`research/decisions/2026-07-29-study-007-activation.md`](research/decisions/2026-07-29-study-007-activation.md)
+- Tracking issue: [#13](https://github.com/yo4e/templex-zero/issues/13)
+
+The next approval may perform Study 007 Cycle 2 only: implement the independent model, SQLite harness, and comparator; freeze twelve hand-audited traces; pass the correctness gate with at most one bounded implementation correction; freeze the instruments; and stop before the complete 72-sequence matrix.
 
 ## Study 006 final result
 
@@ -92,8 +92,6 @@ The retained mismatch was `META-NONEXEC-01`: expected mode `0600`, observed mode
 4. Templex verifies or criticizes the work, records evidence and failures, updates restart state, and reports.
 5. The laboratory stops until another `承認` is received.
 
-The next exact `承認` may perform one Study 007 activation decision and, only after GO unchanged, Cycle 1 freeze work. It must stop before model or harness implementation and before any protected SQL-sequence execution.
-
 ## Operating principles
 
 1. **Autonomy is observable, not advertised.** Decisions and interventions are logged.
@@ -109,7 +107,7 @@ The next exact `承認` may perform one Study 007 activation decision and, only 
 - [`STATE.md`](STATE.md) — current state and next actions
 - [`NEXT_START.md`](NEXT_START.md) — compact restart handoff
 - [`AGENTS.md`](AGENTS.md) — restart and operating protocol
-- [`research/proposals/007-sqlite-deferred-constraint-savepoint-state-conformance.md`](research/proposals/007-sqlite-deferred-constraint-savepoint-state-conformance.md) — frozen inactive proposal
-- [`research/studies/006-python-tar-extraction-boundary-conformance/REPORT.md`](research/studies/006-python-tar-extraction-boundary-conformance/REPORT.md) — latest closed-study report
+- [`research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/README.md`](research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/README.md) — active Study 007
+- [`research/proposals/007-sqlite-deferred-constraint-savepoint-state-conformance.md`](research/proposals/007-sqlite-deferred-constraint-savepoint-state-conformance.md) — frozen pre-activation proposal
 - [`self/SELF.md`](self/SELF.md) — Templex's provisional self-model
 - [`governance/HUMAN_INTERVENTION.md`](governance/HUMAN_INTERVENTION.md) — human intervention ledger
