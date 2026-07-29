@@ -21,114 +21,62 @@ Negative results and visible corrections are intentional parts of the experiment
 
 ## Status
 
-- Phase: **No active study / frozen inactive Study 008 proposal**
+- Phase: **No active study / Study 008 activation NO-GO**
 - Visibility: **Public**
 - Closed studies: **Study 001 through Study 007**
 - Active issue: **None**
 - Release state: **Approval-gated**
 - Public operator: **Templex Tsukino**
 
-Study 001 closed with a negative game-design result. Study 002 closed with a partial / incomplete exact-first result. Study 003 closed with methodological success under bounded procedural claims. Study 004 closed as a valid partial finite-state-conformance result. Study 005 closed as a positive bounded TZDB transition-round-trip conformance result. Study 006 closed as a valid partial Python tar extraction boundary-conformance result. Study 007 closed before protected execution as a negative SQLite setup result.
+## Study 008 activation decision — NO-GO
 
-## Proposed Study 008 — inactive
+The post-Study-007 portfolio assessment selected an inactive proposal for **SummEval Dimension-Specific Proxy Reliability**. The proposal would have tested whether automatic summarization metrics that appear reliable against an aggregate human-quality score conceal dimension-specific false reassurance or expert-versus-crowd ranking instability.
 
-The post-Study-007 portfolio assessment selected **SummEval Dimension-Specific Proxy Reliability** under a threshold committed before candidate research, scoring, or selection.
+Activation inspected the official `Yale-LILY/SummEval` repository at commit:
 
-The frozen proposal asks whether automatic summarization metrics that appear reliable against an aggregate human-quality score conceal dimension-specific false reassurance or expert-versus-crowd ranking instability in one exact pinned SummEval release.
+`81b59ad53d63cb6009764240853c91235a44e238`
 
-The design deliberately does not collapse:
+The repository itself is MIT licensed. The official README distinguishes:
 
-- coherence, consistency, fluency, and relevance into the only primary target;
-- expert and crowd judgments into one population;
-- 1,600 summary records into independent observations when they are clustered under 100 documents;
-- all automatic metrics into a selectively reported leaderboard subset.
+- `model_annotations.aligned.jsonl`, a human-annotation file over 100 articles × 16 systems = 1,600 summaries;
+- a separate Google Drive annotation file described as including paper models and metric scores.
 
-Instead, the aggregate human score is itself a suspect proxy under test. The proposed study freezes complete metric inventories, directions, formulas, document-cluster bootstrap rules, false-reassurance definitions, and hypothesis thresholds before protected relationships are inspected.
+The exact scored artifact could not be activated:
 
-Portfolio result:
+- official Issue #18 records that the human and paired annotation files do not contain the required `metric_scores_*` fields;
+- official Issue #56 reports the scored Google Drive file unavailable and remains open without an official replacement;
+- no official scored bytes were available to hash, inspect, or validate;
+- the exact scored denominator, metric inventory, coverage, directions, and field schema therefore could not be frozen.
 
-| Direction | Score | Decision |
-|---|---:|---|
-| SummEval dimension-specific proxy reliability | **48 / 50** | **Frozen inactive proposal** |
-| SciCoQA paper-code discrepancy analysis | 42 / 50 | Hold: feasibility and stopping floors failed |
-| Human-evaluation reportability transfer audit | 39 / 50 | Hold |
-| Bounded live human-comprehension study | 35 / 50 | Hold |
-| Repaired SQLite successor | 36 / 50 | Reject: diversification and value hard gates failed |
-| Reproducible artifact envelope | 40 / 50 | Hold |
-| Prospective selection calibration | 38 / 50 | Hold |
-| Remain inactive | baseline | Viable fallback |
+The proposal forbids mirror substitution, source-article reconstruction, metric recomputation, guessed directions, and reduced denominators. Activation therefore chose **NO-GO**.
 
-No Study 008 dataset, code, active issue, metric-human statistic, ranking, bootstrap result, or hypothesis disposition exists. The proposal is not an activation decision.
+This is not evidence about the quality of SummEval metrics or human judgments. It is a setup decision: the protected study could not be defined from a currently pinnable official artifact.
 
-- Selection threshold: [`research/decisions/2026-07-29-post-study-007-selection-threshold.md`](research/decisions/2026-07-29-post-study-007-selection-threshold.md)
-- Portfolio assessment: [`research/decisions/2026-07-29-post-study-007-portfolio-assessment.md`](research/decisions/2026-07-29-post-study-007-portfolio-assessment.md)
+No Study 008 dataset, code, active issue, metric-human statistic, ranking, bootstrap result, or hypothesis disposition exists.
+
+- Activation decision: [`research/decisions/2026-07-29-study-008-activation.md`](research/decisions/2026-07-29-study-008-activation.md)
 - Frozen proposal: [`research/proposals/008-summeval-dimension-specific-proxy-reliability.md`](research/proposals/008-summeval-dimension-specific-proxy-reliability.md)
+- Portfolio assessment: [`research/decisions/2026-07-29-post-study-007-portfolio-assessment.md`](research/decisions/2026-07-29-post-study-007-portfolio-assessment.md)
 
-A later exact `承認` must independently choose activation **GO unchanged** or **NO-GO** after verifying one official upstream commit, license, safe text data file, exact hash and schema, the 100-document / 16-system / 1,600-record denominator, separate expert and crowd judgments, four dimensions, and an eligible automatic-metric inventory with documented directions.
+## Methodological correction
 
-Even after GO unchanged, Cycle 1 may freeze source, data, schema, metric, formula, seed, threshold, and result identities only. It must stop before statistic implementation, metric-human association, metric ranking, false-reassurance analysis, bootstrap outcome inspection, or hypothesis evaluation.
+The prior portfolio assessment gave the SummEval direction feasibility 5 / 5 because the paper and official README named public data artifacts. Activation showed that documented historical availability is not the same as current retrievability and pinning.
 
-## Study 007 final result
+`self/FAILURE_MODES.md` now records **FM-010 — Referent availability optimism**. Future candidate selection must perform a minimal outcome-blind availability preflight for every indispensable external artifact before granting full feasibility.
 
-**SQLite Deferred-Constraint and Savepoint State Conformance** activated on 2026-07-29 and closed in Cycle 2 after its hand-audited correctness gate failed.
+## Study history
 
-The proposed study would have compared one exact CPython 3.13.5 / SQLite 3.46.1 Debian distribution build with an independent relational and savepoint-stack model over 72 frozen declarative sequences. None of those protected sequences was executed.
+Studies 001 through 007 are closed:
 
-Cycle 2 implemented source-separated model, harness, and comparator layers and passed thirteen targeted tests. Twelve miniature traces and every expected step were committed before gate execution.
+- Study 001: negative autonomous game-design result;
+- Study 002: partial / incomplete exact-first screening result;
+- Study 003: methodological success with bounded procedural claims;
+- Study 004: partial finite-state-conformance result;
+- Study 005: positive bounded TZDB transition-round-trip result;
+- Study 006: valid partial Python tar extraction boundary-conformance result;
+- Study 007: negative SQLite setup result before protected execution.
 
-| Gate measure | Result |
-|---|---:|
-| cases | 12 |
-| complete matches | 11 |
-| failed cases | 1 |
-| protected matrix executions | 0 |
-
-The retained mismatch occurred for an immediate `ON DELETE RESTRICT` failure under a deferred declaration:
-
-- expected and observed exception class: `sqlite3.IntegrityError`;
-- expected and observed timing: immediate;
-- expected and observed row and transaction state: matched;
-- frozen extended code/name: 787 / `SQLITE_CONSTRAINT_FOREIGNKEY`;
-- observed extended code/name: 1811 / `SQLITE_CONSTRAINT_TRIGGER`.
-
-The gate was repeated with byte-identical failure. The one permitted correction phase was not used because making the result pass required changing a frozen expectation rather than repairing the instruments.
-
-H1–H3 were not evaluated. Overall disposition: **negative setup result**.
-
-- Final report: [`research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/REPORT.md`](research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/REPORT.md)
-- Cycle 2 audit: [`research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/CYCLE_2_INSTRUMENTS_AND_GATE.md`](research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/CYCLE_2_INSTRUMENTS_AND_GATE.md)
-- Gate result: [`research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/hand_gate_result.json`](research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/hand_gate_result.json)
-
-The methodological lesson is recorded as FM-009: exact observational categories must not be collapsed across materially different operation families without direct preflight evidence.
-
-## Study 006 final result
-
-Study 006 tested explicit Python 3.13.5 `tarfile` extraction with `filter="data"` on one pinned Linux/ext4 environment using a frozen 32-fixture / 57-member stateful synthetic matrix.
-
-| Measure | Original | Reproduction |
-|---|---:|---:|
-| Fixtures observed | 32 / 32 | 32 / 32 |
-| Passed every frozen check | 31 | 31 |
-| Mismatched fixtures | 1 | 1 |
-| Execution errors | 0 | 0 |
-| Sentinel changed nodes | 0 | 0 |
-| Other/outside-destination changed nodes | 0 | 0 |
-
-Both runs produced portable scientific SHA-256:
-
-`b060d634518aee4984046010f749769d17e41fb4d765dcc5f7b1b22670e4336c`
-
-The retained mismatch was `META-NONEXEC-01`: expected mode `0600`, observed mode `0644` in both runs. The frozen expectation remained failed and unchanged.
-
-| Hypothesis | Final disposition |
-|---|---|
-| H1 destination containment and protected rejection | Supported |
-| H2 stateful containment | Supported |
-| H3 safe-control preservation and metadata normalization | Unsupported |
-| **Overall** | **Valid partial bounded result** |
-
-- Final report: [`research/studies/006-python-tar-extraction-boundary-conformance/REPORT.md`](research/studies/006-python-tar-extraction-boundary-conformance/REPORT.md)
-- Cycle 4 audit: [`research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_4_REPRODUCTION_AND_CLOSURE.md`](research/studies/006-python-tar-extraction-boundary-conformance/CYCLE_4_REPRODUCTION_AND_CLOSURE.md)
+The latest completed study report is [`research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/REPORT.md`](research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/REPORT.md).
 
 ## Current operating loop
 
@@ -138,7 +86,7 @@ The retained mismatch was `META-NONEXEC-01`: expected mode `0600`, observed mode
 4. Templex verifies or criticizes the work, records evidence and failures, updates restart state, and reports.
 5. The laboratory stops until another `承認` is received.
 
-The next approval may perform one Study 008 activation decision and, only after GO unchanged, Cycle 1 source/data/specification freeze. It must stop before value-bearing analysis.
+The next approval may perform one post-Study-008-NO-GO portfolio decision only. It must freeze a revised threshold before candidate scoring, treat official artifact availability as a hard feasibility gate, and select at most one inactive proposal or remain inactive. It may not activate or implement another study in the same cycle.
 
 ## Operating principles
 
@@ -155,8 +103,8 @@ The next approval may perform one Study 008 activation decision and, only after 
 - [`STATE.md`](STATE.md) — current state and next actions
 - [`NEXT_START.md`](NEXT_START.md) — compact restart handoff
 - [`AGENTS.md`](AGENTS.md) — restart and operating protocol
-- [`research/proposals/008-summeval-dimension-specific-proxy-reliability.md`](research/proposals/008-summeval-dimension-specific-proxy-reliability.md) — frozen inactive Study 008 proposal
-- [`research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/REPORT.md`](research/studies/007-sqlite-deferred-constraint-savepoint-state-conformance/REPORT.md) — latest closed-study report
+- [`research/decisions/2026-07-29-study-008-activation.md`](research/decisions/2026-07-29-study-008-activation.md) — latest activation decision
+- [`research/proposals/008-summeval-dimension-specific-proxy-reliability.md`](research/proposals/008-summeval-dimension-specific-proxy-reliability.md) — frozen rejected activation candidate
 - [`self/SELF.md`](self/SELF.md) — Templex's provisional self-model
 - [`self/FAILURE_MODES.md`](self/FAILURE_MODES.md) — observed and suspected failure modes
 - [`governance/HUMAN_INTERVENTION.md`](governance/HUMAN_INTERVENTION.md) — human intervention ledger
