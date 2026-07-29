@@ -1,0 +1,36 @@
+{
+  "case_count": 12,
+  "cases": [
+    {"category": "basic savepoint and release", "id": "G01", "model_expected_mismatches": [], "model_sqlite_mismatches": [], "passed": true, "sqlite_expected_mismatches": []},
+    {"category": "inner release followed by outer rollback", "id": "G02", "model_expected_mismatches": [], "model_sqlite_mismatches": [], "passed": true, "sqlite_expected_mismatches": []},
+    {"category": "rollback-to with retained mark", "id": "G03", "model_expected_mismatches": [], "model_sqlite_mismatches": [], "passed": true, "sqlite_expected_mismatches": []},
+    {"category": "duplicate savepoint names", "id": "G04", "model_expected_mismatches": [], "model_sqlite_mismatches": [], "passed": true, "sqlite_expected_mismatches": []},
+    {"category": "missing savepoint name", "id": "G05", "model_expected_mismatches": [], "model_sqlite_mismatches": [], "passed": true, "sqlite_expected_mismatches": []},
+    {"category": "nested BEGIN error", "id": "G06", "model_expected_mismatches": [], "model_sqlite_mismatches": [], "passed": true, "sqlite_expected_mismatches": []},
+    {"category": "immediate foreign-key failure", "id": "G07", "model_expected_mismatches": [], "model_sqlite_mismatches": [], "passed": true, "sqlite_expected_mismatches": []},
+    {"category": "deferred violation repaired before commit", "id": "G08", "model_expected_mismatches": [], "model_sqlite_mismatches": [], "passed": true, "sqlite_expected_mismatches": []},
+    {"category": "failed commit leaves transaction open", "id": "G09", "model_expected_mismatches": [], "model_sqlite_mismatches": [], "passed": true, "sqlite_expected_mismatches": []},
+    {"category": "nested release during deferred violation", "id": "G10", "model_expected_mismatches": [], "model_sqlite_mismatches": [], "passed": true, "sqlite_expected_mismatches": []},
+    {"category": "failed outer transaction-savepoint release", "id": "G11", "model_expected_mismatches": [], "model_sqlite_mismatches": [], "passed": true, "sqlite_expected_mismatches": []},
+    {
+      "category": "immediate RESTRICT timing",
+      "id": "G12",
+      "model_expected_mismatches": [],
+      "model_sqlite_mismatches": [
+        {"expected": 787, "field": "sqlite_errorcode", "observed": 1811, "sequence_id": "G12", "step_index": 4},
+        {"expected": "SQLITE_CONSTRAINT_FOREIGNKEY", "field": "sqlite_errorname", "observed": "SQLITE_CONSTRAINT_TRIGGER", "sequence_id": "G12", "step_index": 4}
+      ],
+      "passed": false,
+      "sqlite_expected_mismatches": [
+        {"expected": 787, "field": "sqlite_errorcode", "observed": 1811, "sequence_id": "G12", "step_index": 4},
+        {"expected": "SQLITE_CONSTRAINT_FOREIGNKEY", "field": "sqlite_errorname", "observed": "SQLITE_CONSTRAINT_TRIGGER", "sequence_id": "G12", "step_index": 4}
+      ]
+    }
+  ],
+  "expectation_sha256": "cde3e40e9c43a9771123c4bc9a48750e6aa4ea1a1a0eac5747b6d0882f5b162e",
+  "failed_cases": 1,
+  "passed_cases": 11,
+  "protected_manifest_loaded": false,
+  "protected_matrix_executed": false,
+  "status": "fail"
+}
