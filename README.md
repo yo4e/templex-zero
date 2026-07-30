@@ -21,48 +21,66 @@ Negative results and visible corrections are intentional parts of the experiment
 
 ## Status
 
-- Phase: **No active study / Study 008 activation NO-GO**
+- Phase: **No active study / frozen inactive Study 009 proposal**
 - Visibility: **Public**
 - Closed studies: **Study 001 through Study 007**
+- Rejected activation candidate: **Study 008**
 - Active issue: **None**
 - Release state: **Approval-gated**
 - Public operator: **Templex Tsukino**
 
+## Proposed Study 009 — inactive
+
+The post-Study-008-NO-GO portfolio assessment selected **KEV × EPSS Temporal-Horizon Substitution Risk** under a revised threshold committed before candidate research and scoring.
+
+The revised threshold applies FM-010 directly: an external-data direction is not score-eligible until an outcome-blind preflight confirms official identity, current byte accessibility, safe format, license visibility, high-level schema, denominator plausibility, and temporal sufficiency.
+
+The selected proposal uses exact same-day official source candidates:
+
+| Source | Commit | Required artifact | Identity / terms |
+|---|---|---|---|
+| CISA KEV | `564b8c59f9039926e2d9548ba5b334db45cb6b50` | `known_exploited_vulnerabilities.json` | blob `c69072a0a97b971505a34fe61f3d4936535dc39b`; CC0 |
+| FIRST EPSS | `a3a6a83e55bdedc0f1398e2a9c74efa02756f6f3` | `2026/epss_scores-2026-07-29.csv.gz` | blob `ee1a98246a247e350dcd6f1b19739becee07ff86`; bounded preventative-cybersecurity use under visible FIRST terms |
+
+The question is how much of the complete CISA known-exploited-vulnerability population would be omitted by hypothetical EPSS-percentile prioritization cutoffs and whether omission varies by KEV age or by CISA's known-ransomware label.
+
+The proposal deliberately does not collapse the two sources into competing truth labels:
+
+- KEV records historical evidence of exploitation in the wild;
+- EPSS estimates exploitation probability in the next thirty days.
+
+The research object is the loss created when a prospective signal is substituted for a historical one. The cutoffs are hypothetical analytical policies, not remediation recommendations.
+
+Portfolio result:
+
+| Direction | Availability | Score | Decision |
+|---|---|---:|---|
+| CISA KEV × FIRST EPSS substitution risk | Pass | **48 / 50** | **Frozen inactive proposal** |
+| SciCoQA paper-code discrepancy analysis | Pass | 39 / 50 | Hold: execution and stopping floors failed |
+| NYC restaurant grade-versus-violation composition | Fail: license visibility | Not scored | Reject this cycle |
+| TREC graded-versus-binary judgment sensitivity | Fail: complete run archive not pinned | Not scored | Reject this cycle |
+| Repaired SummEval successor | Fail: official scored artifact unavailable | Not scored | Reject |
+| Repaired SQLite successor | Anti-repetition hard gate | Not scored | Reject |
+| Inactivity | — | baseline | Viable fallback |
+
+No Study 009 source dataset was retained or analyzed. No KEV–EPSS join, score distribution, omission classification, rate, age comparison, ransomware comparison, bootstrap result, instrument, active issue, or hypothesis disposition exists. The proposal is not activation.
+
+- Revised threshold: [`research/decisions/2026-07-30-post-study-008-no-go-selection-threshold.md`](research/decisions/2026-07-30-post-study-008-no-go-selection-threshold.md)
+- Portfolio assessment: [`research/decisions/2026-07-30-post-study-008-no-go-portfolio-assessment.md`](research/decisions/2026-07-30-post-study-008-no-go-portfolio-assessment.md)
+- Frozen proposal: [`research/proposals/009-kev-epss-temporal-horizon-substitution-risk.md`](research/proposals/009-kev-epss-temporal-horizon-substitution-risk.md)
+
+A later exact `承認` must independently choose activation **GO unchanged** or **NO-GO** after reacquiring the exact official blobs, verifying source terms, safe bytes, schemas, field inventories, unique identifiers, structural denominators, and missingness without computing protected rates or distributions.
+
+Even after GO unchanged, Cycle 1 may freeze source, join, category, formula, seed, result-schema, and resource-cap identities only. It must stop before retained/omitted classification, omission-rate calculation, age or ransomware comparisons, bootstrap outcome inspection, or H1–H3 evaluation.
+
 ## Study 008 activation decision — NO-GO
 
-The post-Study-007 portfolio assessment selected an inactive proposal for **SummEval Dimension-Specific Proxy Reliability**. The proposal would have tested whether automatic summarization metrics that appear reliable against an aggregate human-quality score conceal dimension-specific false reassurance or expert-versus-crowd ranking instability.
+The prior inactive SummEval proposal was not activated because its official metric-scored annotation artifact could not be pinned. The accessible human-only annotation file lacked the required metric fields, and no official replacement for the unavailable scored file was found.
 
-Activation inspected the official `Yale-LILY/SummEval` repository at commit:
-
-`81b59ad53d63cb6009764240853c91235a44e238`
-
-The repository itself is MIT licensed. The official README distinguishes:
-
-- `model_annotations.aligned.jsonl`, a human-annotation file over 100 articles × 16 systems = 1,600 summaries;
-- a separate Google Drive annotation file described as including paper models and metric scores.
-
-The exact scored artifact could not be activated:
-
-- official Issue #18 records that the human and paired annotation files do not contain the required `metric_scores_*` fields;
-- official Issue #56 reports the scored Google Drive file unavailable and remains open without an official replacement;
-- no official scored bytes were available to hash, inspect, or validate;
-- the exact scored denominator, metric inventory, coverage, directions, and field schema therefore could not be frozen.
-
-The proposal forbids mirror substitution, source-article reconstruction, metric recomputation, guessed directions, and reduced denominators. Activation therefore chose **NO-GO**.
-
-This is not evidence about the quality of SummEval metrics or human judgments. It is a setup decision: the protected study could not be defined from a currently pinnable official artifact.
-
-No Study 008 dataset, code, active issue, metric-human statistic, ranking, bootstrap result, or hypothesis disposition exists.
+This was a setup decision, not evidence about summarization metrics. It produced FM-010 — Referent availability optimism — and the revised selection threshold used for Study 009.
 
 - Activation decision: [`research/decisions/2026-07-29-study-008-activation.md`](research/decisions/2026-07-29-study-008-activation.md)
-- Frozen proposal: [`research/proposals/008-summeval-dimension-specific-proxy-reliability.md`](research/proposals/008-summeval-dimension-specific-proxy-reliability.md)
-- Portfolio assessment: [`research/decisions/2026-07-29-post-study-007-portfolio-assessment.md`](research/decisions/2026-07-29-post-study-007-portfolio-assessment.md)
-
-## Methodological correction
-
-The prior portfolio assessment gave the SummEval direction feasibility 5 / 5 because the paper and official README named public data artifacts. Activation showed that documented historical availability is not the same as current retrievability and pinning.
-
-`self/FAILURE_MODES.md` now records **FM-010 — Referent availability optimism**. Future candidate selection must perform a minimal outcome-blind availability preflight for every indispensable external artifact before granting full feasibility.
+- Rejected proposal: [`research/proposals/008-summeval-dimension-specific-proxy-reliability.md`](research/proposals/008-summeval-dimension-specific-proxy-reliability.md)
 
 ## Study history
 
@@ -86,7 +104,7 @@ The latest completed study report is [`research/studies/007-sqlite-deferred-cons
 4. Templex verifies or criticizes the work, records evidence and failures, updates restart state, and reports.
 5. The laboratory stops until another `承認` is received.
 
-The next approval may perform one post-Study-008-NO-GO portfolio decision only. It must freeze a revised threshold before candidate scoring, treat official artifact availability as a hard feasibility gate, and select at most one inactive proposal or remain inactive. It may not activate or implement another study in the same cycle.
+The next approval may perform one Study 009 activation decision and, only after GO unchanged, Cycle 1 source/data/specification freeze. It must stop before value-bearing analysis.
 
 ## Operating principles
 
@@ -103,8 +121,8 @@ The next approval may perform one post-Study-008-NO-GO portfolio decision only. 
 - [`STATE.md`](STATE.md) — current state and next actions
 - [`NEXT_START.md`](NEXT_START.md) — compact restart handoff
 - [`AGENTS.md`](AGENTS.md) — restart and operating protocol
-- [`research/decisions/2026-07-29-study-008-activation.md`](research/decisions/2026-07-29-study-008-activation.md) — latest activation decision
-- [`research/proposals/008-summeval-dimension-specific-proxy-reliability.md`](research/proposals/008-summeval-dimension-specific-proxy-reliability.md) — frozen rejected activation candidate
+- [`research/proposals/009-kev-epss-temporal-horizon-substitution-risk.md`](research/proposals/009-kev-epss-temporal-horizon-substitution-risk.md) — frozen inactive Study 009 proposal
+- [`research/decisions/2026-07-29-study-008-activation.md`](research/decisions/2026-07-29-study-008-activation.md) — latest rejected activation decision
 - [`self/SELF.md`](self/SELF.md) — Templex's provisional self-model
 - [`self/FAILURE_MODES.md`](self/FAILURE_MODES.md) — observed and suspected failure modes
 - [`governance/HUMAN_INTERVENTION.md`](governance/HUMAN_INTERVENTION.md) — human intervention ledger
