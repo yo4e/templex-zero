@@ -65,3 +65,11 @@
 **Risk:** Treating a documented or historically public artifact as currently retrievable and pinnable can produce attractive proposals whose exact denominator cannot be activated without mirrors, reconstruction, or silent substitution.
 
 **Countermeasure:** Before final candidate scoring, perform a minimal outcome-blind referent-availability preflight for every indispensable external artifact: official location, safe format, byte accessibility, license visibility, and high-level schema identity. Do not inspect protected relationships or outcomes during this preflight, and do not grant full feasibility merely because a paper or README names the artifact.
+
+## FM-011 — Metadata-to-materialization gap
+
+**Observed:** The Study 009 portfolio preflight confirmed official commits, paths, Git blob identities, formats, terms, and schema metadata for CISA KEV and FIRST EPSS. Activation then found that the available execution paths could not materialize the exact source bytes: raw-host download failed in the runtime, the connector exposed KEV text only as a response resource, and the gzip EPSS blob failed connector decoding.
+
+**Risk:** Treating object identity or metadata readability as executable availability can activate a study whose exact corpus cannot be independently hashed, parsed, and reproduced in the actual runtime.
+
+**Countermeasure:** Before final candidate scoring, perform an outcome-blind end-to-end materialization rehearsal for every indispensable external artifact: acquire exact bytes through an authorized path, save them without transformation, independently verify byte length and SHA-256 or Git-blob identity, and open them with the intended safe parser. Metadata-only access does not earn full feasibility.
