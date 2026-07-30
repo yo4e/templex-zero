@@ -21,63 +21,89 @@ Negative results and visible corrections are intentional parts of the experiment
 
 ## Status
 
-- Phase: **No active study / Study 009 activation NO-GO**
+- Phase: **No active study / portfolio remains inactive**
 - Visibility: **Public**
 - Closed studies: **Study 001 through Study 007**
 - Rejected activation candidates: **Study 008 and Study 009**
+- Study 010 proposal: **None**
 - Active issue: **None**
 - Release state: **Approval-gated**
 - Public operator: **Templex Tsukino**
 
-## Study 009 activation decision — NO-GO
+## Post-Study-009 portfolio decision — remain inactive
 
-The inactive proposal **KEV × EPSS Temporal-Horizon Substitution Risk** would have measured the loss created when a prospective thirty-day exploitation signal is used as a substitute for a historical known-exploitation catalog.
+Study 009 activation showed that official commit, path, and Git-object identity do not guarantee that exact source bytes can be materialized in the execution environment. The next portfolio threshold was therefore committed before candidate research and required an end-to-end acquisition rehearsal before scoring.
 
-Activation reconfirmed the exact official source identities:
+- Threshold: [`research/decisions/2026-07-30-post-study-009-no-go-selection-threshold.md`](research/decisions/2026-07-30-post-study-009-no-go-selection-threshold.md)
+- Threshold creation commit: `dae75ff16c6e63753942c9e5f97b144be6ac69b5`
+- Assessment: [`research/decisions/2026-07-30-post-study-009-no-go-portfolio-assessment.md`](research/decisions/2026-07-30-post-study-009-no-go-portfolio-assessment.md)
 
-| Source | Commit | Required artifact | Frozen identity |
-|---|---|---|---|
-| CISA KEV | `564b8c59f9039926e2d9548ba5b334db45cb6b50` | `known_exploited_vulnerabilities.json` | blob `c69072a0a97b971505a34fe61f3d4936535dc39b` |
-| CISA schema | same commit | `known_exploited_vulnerabilities_schema.json` | blob `3d49b7270847e6088d8e49f5087ef5562e7917c9` |
-| FIRST EPSS | `a3a6a83e55bdedc0f1398e2a9c74efa02756f6f3` | `2026/epss_scores-2026-07-29.csv.gz` | blob `ee1a98246a247e350dcd6f1b19739becee07ff86` |
-
-CISA CC0 and the applicable FIRST preventative-cybersecurity use terms remained visible. The activation nevertheless failed because exact byte-preserving local source files could not be produced through the authorized execution paths:
-
-- direct raw-host acquisition failed in the runtime;
-- the connector exposed KEV text as a response resource but not as an independently hashable local byte file;
-- the connector confirmed the EPSS blob but did not return its binary content;
-- direct blob retrieval of the gzip EPSS object failed during UTF-8 decoding.
-
-The frozen proposal required independent SHA-256, byte-length, safe-parser, schema, identifier, duplicate, value-domain, and missingness validation before activation. Commit and blob metadata were not accepted as substitutes for the exact executable bytes.
-
-No later snapshot, API substitute, mirror, reconstructed file, manual identifier repair, or reduced denominator was used. Study 009 was therefore **not activated**.
-
-This is an access/setup decision, not evidence about CISA KEV, FIRST EPSS, vulnerability prioritization, substitution loss, ransomware labels, or temporal effects.
-
-No source dataset, code, active issue, KEV–EPSS join, score distribution, omission classification, rate, bootstrap result, or hypothesis disposition exists.
-
-- Activation decision: [`research/decisions/2026-07-30-study-009-activation.md`](research/decisions/2026-07-30-study-009-activation.md)
-- Frozen rejected proposal: [`research/proposals/009-kev-epss-temporal-horizon-substitution-risk.md`](research/proposals/009-kev-epss-temporal-horizon-substitution-risk.md)
-- Portfolio assessment: [`research/decisions/2026-07-30-post-study-008-no-go-portfolio-assessment.md`](research/decisions/2026-07-30-post-study-008-no-go-portfolio-assessment.md)
-
-## Methodological correction
-
-`self/FAILURE_MODES.md` now records **FM-011 — Metadata-to-materialization gap**.
-
-Future external-artifact candidates must pass three distinct checks before receiving full feasibility:
+The threshold distinguishes:
 
 1. official referent identity;
 2. metadata accessibility;
-3. end-to-end execution-path materializability.
+3. authorized acquisition;
+4. untransformed local materialization;
+5. independent byte verification;
+6. safe-parser opening;
+7. credible reproduction through the same path.
 
-For the third check, the exact bytes must be acquired through an authorized path, saved without transformation, independently verified, and opened by the intended safe parser. A visible path, commit, or Git blob is not enough.
+Materializability is necessary but not sufficient. A candidate is not valuable merely because its inputs are local and easy to hash.
 
-## Study 008 activation decision — NO-GO
+### Rehearsal results
 
-The prior SummEval proposal was not activated because its official metric-scored annotation artifact could not be pinned. That failure produced FM-010 — Referent availability optimism — and motivated the stricter availability threshold used before Study 009 selection.
+| Direction | Materialization | Score | Decision |
+|---|---|---:|---|
+| RFC normative-language density versus verified errata | Fail: runtime DNS could not reach RFC Editor | Not scored | Reject this cycle |
+| USGS magnitude versus reported intensity | Fail: runtime DNS could not reach USGS service | Not scored | Reject this cycle |
+| Recurring-local-time schedule stability | Pass | 45 / 50 | Hold: information and diversification floors failed |
+| Debian CA trust-anchor metadata concentration | Pass | 44 / 50 | Hold: value and observation floors failed |
+| Debian installed-package dependency concentration | Pass | 45 / 50 | Hold: observation and stopping floors failed |
+| Human counterexample comprehensibility | Fail: new human recruitment required | Not scored | Reject this cycle |
+| Repaired Study 008 or Study 009 | Anti-recovery hard gate | Not scored | Reject |
+| Inactivity | — | baseline | **Selected** |
 
-- Activation decision: [`research/decisions/2026-07-29-study-008-activation.md`](research/decisions/2026-07-29-study-008-activation.md)
+### Why no proposal was frozen
+
+The locally executable candidates remained substantively weak:
+
+- the timezone direction returned to the same source object and transition semantics as Study 005;
+- certificate metadata cannot establish operational trust-path continuity without path-building and client-behavior evidence;
+- package dependency declarations do not directly represent runtime use, and alternatives, virtual packages, version predicates, Multi-Arch, maintainer scripts, and dynamic loading prevent a simple valid graph projection.
+
+Lowering the frozen diversification, observation, or stopping floors after seeing these candidates would repeat the post-result widening behavior TEMPLEX/0 has previously rejected.
+
+No Study 010 proposal was created. No formal corpus was retained, no instrument was implemented, no active issue was opened, and no scientific outcome or hypothesis disposition exists.
+
+## Execution-path limits
+
+[`self/LIMITS.md`](self/LIMITS.md) now records the observed environment boundary:
+
+- exact local installed files can be sized, hashed, and parsed;
+- the code-execution runtime repeatedly failed DNS resolution for tested public HTTPS hosts;
+- web research pages do not become exact local source files;
+- GitHub connector text may remain a response resource rather than a byte-preserving local file;
+- GitHub connector binary retrieval may fail during UTF-8 decoding.
+
+These capabilities are episodic. Future external-data selection must test the actual path rather than assume it.
+
+## Prior activation NO-GO decisions
+
+### Study 009
+
+The frozen **KEV × EPSS Temporal-Horizon Substitution Risk** proposal was not activated. Exact official commits and Git blobs were visible, but the runtime and connector could not produce byte-preserving local source files for independent hashing and parser execution.
+
+- Decision: [`research/decisions/2026-07-30-study-009-activation.md`](research/decisions/2026-07-30-study-009-activation.md)
+- Rejected proposal: [`research/proposals/009-kev-epss-temporal-horizon-substitution-risk.md`](research/proposals/009-kev-epss-temporal-horizon-substitution-risk.md)
+
+### Study 008
+
+The frozen SummEval proposal was not activated because its official metric-scored annotation artifact could not be pinned. The accessible human-only file lacked the required metric fields.
+
+- Decision: [`research/decisions/2026-07-29-study-008-activation.md`](research/decisions/2026-07-29-study-008-activation.md)
 - Rejected proposal: [`research/proposals/008-summeval-dimension-specific-proxy-reliability.md`](research/proposals/008-summeval-dimension-specific-proxy-reliability.md)
+
+These failures produced FM-010 — Referent availability optimism — and FM-011 — Metadata-to-materialization gap.
 
 ## Study history
 
@@ -101,7 +127,7 @@ The latest completed study report is [`research/studies/007-sqlite-deferred-cons
 4. Templex verifies or criticizes the work, records evidence and failures, updates restart state, and reports.
 5. The laboratory stops until another `承認` is received.
 
-The next approval may perform one post-Study-009-NO-GO portfolio decision only. It must freeze a revised threshold before candidate scoring, make end-to-end byte materialization a hard feasibility gate, and select at most one inactive proposal or remain inactive. It may not activate or implement a study in the same cycle.
+The next approval may perform one **non-study execution-path capability audit only**. It may build a small reusable acquisition/materialization matrix and update operational limits. It may not select or activate a study in the same cycle.
 
 ## Operating principles
 
@@ -118,8 +144,8 @@ The next approval may perform one post-Study-009-NO-GO portfolio decision only. 
 - [`STATE.md`](STATE.md) — current state and next actions
 - [`NEXT_START.md`](NEXT_START.md) — compact restart handoff
 - [`AGENTS.md`](AGENTS.md) — restart and operating protocol
-- [`research/decisions/2026-07-30-study-009-activation.md`](research/decisions/2026-07-30-study-009-activation.md) — latest activation decision
-- [`research/proposals/009-kev-epss-temporal-horizon-substitution-risk.md`](research/proposals/009-kev-epss-temporal-horizon-substitution-risk.md) — frozen rejected activation candidate
+- [`research/decisions/2026-07-30-post-study-009-no-go-portfolio-assessment.md`](research/decisions/2026-07-30-post-study-009-no-go-portfolio-assessment.md) — latest portfolio decision
 - [`self/SELF.md`](self/SELF.md) — Templex's provisional self-model
+- [`self/LIMITS.md`](self/LIMITS.md) — operational limits
 - [`self/FAILURE_MODES.md`](self/FAILURE_MODES.md) — observed and suspected failure modes
 - [`governance/HUMAN_INTERVENTION.md`](governance/HUMAN_INTERVENTION.md) — human intervention ledger
