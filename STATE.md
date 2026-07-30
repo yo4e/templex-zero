@@ -1,10 +1,10 @@
 # State
 
-_Last updated: 2026-07-30_
+_Last updated: 2026-07-31_
 
 ## Phase
 
-**No active study / portfolio decision remains inactive**
+**No active study / portfolio remains inactive / execution-path audit complete**
 
 ## Laboratory
 
@@ -22,36 +22,45 @@ Studies 001 through 007 are closed.
 - Study 007: negative SQLite setup result; hand gate failed before protected execution.
 - Study 008: frozen proposal rejected at activation; the required official metric-scored SummEval artifact could not be pinned.
 - Study 009: frozen proposal rejected at activation; exact official source identities were visible, but exact source bytes could not be materialized through the authorized execution paths.
+- Study 010 proposal: **None**.
 
-## Post-Study-009-NO-GO portfolio decision
+## Non-study execution-path capability audit
 
-- Revised threshold: `research/decisions/2026-07-30-post-study-009-no-go-selection-threshold.md`
-- Threshold commit: `dae75ff16c6e63753942c9e5f97b144be6ac69b5`
-- Portfolio assessment: `research/decisions/2026-07-30-post-study-009-no-go-portfolio-assessment.md`
-- Disposition: **REMAIN INACTIVE**
-- Study 010 proposal: **None**
+- Audit: `operations/execution-path-capability-audit-2026-07-31.md`
+- Machine-readable matrix: `operations/execution-path-capability-audit-2026-07-31.json`
+- Probe-matrix freeze commit: `56f01b116ae92c9785a2a0e69cd5f19c3f0dc901`
+- Result: **2 PASS, 2 PARTIAL, 4 FAIL**
 
-The revised threshold required end-to-end execution-path rehearsal before scoring. RFC Editor and USGS external-data directions failed local byte materialization. Three local directions passed materialization but failed substantive floors:
+Complete materialization passed only for tested existing local UTF-8 text and local binary files. Both paths supported byte-for-byte copies, local size and SHA-256, bounded safe-parser opening, and repeated identical results.
 
-- recurring-local-time schedule stability repeated the Study 005 object and lacked required diversification;
-- Debian CA trust-anchor metadata could not support operational trust-continuity claims;
-- Debian package dependency concentration could not preserve alternatives, virtual packages, and runtime-use semantics within four cycles.
+Tested official HTTPS paths did not create local files:
 
-No formal corpus was retained, no instrument was implemented, no active-study issue was opened, no scientific outcome was inspected, and no hypothesis disposition exists.
+- RFC Editor text and IANA gzip downloads failed through `container.download`;
+- bounded curl failed DNS resolution for `www.rfc-editor.org` and `data.iana.org`.
 
-`self/LIMITS.md` now records the observed DNS, connector-text, connector-binary, and local-file materialization boundaries. No new failure mode was added beyond FM-010 and FM-011.
+GitHub connector paths remained partial:
+
+- pinned UTF-8 text returned repeatable blob identity and complete response content but no mounted local file;
+- pinned binary returned blob identity and a base64 response resource but no mounted local file;
+- direct binary `fetch_blob` failed with `UnicodeDecodeError`.
+
+Connector response resources were not visible as execution-filesystem paths. No manual reconstruction or reserialization was accepted as byte-preserving materialization.
+
+All temporary audit files were deleted. No formal corpus, research instrument, scientific outcome, proposal, active study, or active Issue was created.
+
+`self/LIMITS.md` now records the sharper distinction between local materialization, public HTTPS failure, connector content inspection, and filesystem handoff. FM-010 and FM-011 remain sufficient; no new failure mode was added.
 
 ## Next bounded work
 
-The next exact `承認` may perform **one non-study execution-path capability audit only**:
+The next exact `承認` may perform **one non-study inactivity re-entry gate only**:
 
-1. re-read the live portfolio decision, limits, failure modes, governance, state, issues, and recent commits;
-2. define a small fixed matrix of acquisition paths and safe object types before probing;
-3. test local text, local binary, official HTTPS text, official HTTPS binary, GitHub connector text, GitHub connector binary, and safe-parser handoff using harmless bounded fixtures;
-4. record exact success, failure, transformation, byte-identity, and filesystem-materialization behavior;
-5. update operational limits and a reusable capability record;
-6. stop without selecting or activating a study, retaining a scientific corpus, inspecting protected outcomes, or taking external action.
+1. re-read the live capability audit, portfolio decision, limits, failure modes, governance, state, issues, and recent commits;
+2. freeze objective conditions that justify reopening portfolio candidate research rather than repeating search without changed evidence;
+3. distinguish capability change, a materially new externally governed local referent, an authorized human-evidence opportunity, and mere availability or activity pressure;
+4. classify the current state against those conditions;
+5. update the restart state and stop;
+6. do not research or score candidates, freeze a proposal, activate a study, retain a corpus, inspect protected outcomes, or take external action.
 
 ## Human action currently needed
 
-None beyond a later exact `承認` for the bounded non-study capability audit.
+None beyond a later exact `承認` for the bounded inactivity re-entry gate.
