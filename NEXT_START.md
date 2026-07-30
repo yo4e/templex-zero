@@ -4,89 +4,61 @@ _Updated: 2026-07-30 (Asia/Tokyo)_
 
 ## Purpose
 
-This is a compact advisory bridge, not authority. Re-read `STATE.md`, the post-Study-008-NO-GO threshold and portfolio assessment, the frozen Study 009 proposal, the Study 008 activation NO-GO decision, all seven closed-study results, governance and intervention records, self-model and failure modes, open issues, and recent commits.
+This is a compact advisory bridge, not authority. Re-read `STATE.md`, the Study 009 proposal and activation NO-GO decision, the Study 008 activation NO-GO decision, all seven closed-study results, governance and intervention records, self-model and failure modes, open issues, and recent commits.
 
 When Yoshie Yamada sends `承認`, follow `governance/APPROVAL_DRIVEN_EXECUTION.md`, complete one bounded cycle, report in the same project chat, and stop.
 
 ## Current position
 
-**TEMPLEX/0 has no active study. Studies 001 through 007 are closed. Study 008 was not activated. One Study 009 proposal is frozen and inactive.**
+**TEMPLEX/0 has no active study. Studies 001 through 007 are closed. Studies 008 and 009 were not activated.**
 
-The selected proposal is **KEV × EPSS Temporal-Horizon Substitution Risk**. It scored 48 / 50 after passing the revised outcome-blind official-artifact availability preflight.
+Study 009 concerned CISA KEV × FIRST EPSS temporal-horizon substitution risk. Activation chose **NO-GO** because exact official object identities were visible but exact source bytes could not be materialized through the authorized runtime and connector paths for independent hashing and parser execution.
 
-The direction asks how much of the complete CISA known-exploited-vulnerability population would be omitted by hypothetical FIRST EPSS percentile cutoffs and whether omission differs by:
+## Retained activation evidence
 
-- time since CISA KEV addition;
-- CISA's `knownRansomwareCampaignUse` label.
+- activation decision: `research/decisions/2026-07-30-study-009-activation.md`;
+- frozen proposal: `research/proposals/009-kev-epss-temporal-horizon-substitution-risk.md`;
+- CISA KEV commit: `564b8c59f9039926e2d9548ba5b334db45cb6b50`;
+- KEV JSON blob: `c69072a0a97b971505a34fe61f3d4936535dc39b`;
+- KEV schema blob: `3d49b7270847e6088d8e49f5087ef5562e7917c9`;
+- FIRST EPSS commit: `a3a6a83e55bdedc0f1398e2a9c74efa02756f6f3`;
+- EPSS gzip blob: `ee1a98246a247e350dcd6f1b19739becee07ff86`;
+- CISA CC0 and applicable FIRST preventative-cybersecurity use terms remained visible;
+- direct raw-host acquisition failed in the runtime;
+- the connector exposed KEV only as response text and failed to decode the gzip EPSS blob as binary;
+- no exact byte-preserving local source files were created;
+- no source corpus, code, active issue, join, distribution, rate, bootstrap result, or hypothesis outcome exists.
 
-KEV and EPSS must remain semantically separate: KEV records historical evidence of exploitation in the wild; EPSS estimates exploitation probability in the next thirty days. The proposal measures substitution loss and does not treat either signal as a universal ground truth.
+## Why NO-GO was mandatory
 
-No source dataset was retained or analyzed, no join or distribution was computed, no code or active issue exists, and no hypothesis outcome exists.
+GO unchanged required exact decoded source bytes, byte lengths, SHA-256 values, safe-parser behavior, schema validation, source counts, identifiers, category inventories, duplicate audit, and KEV-to-EPSS missingness to be frozen before any protected analysis.
 
-## Key records
+Commit, path, and Git-blob metadata prove object identity but do not supply the independently executable byte sequence required by the frozen scientific workflow. Proceeding from metadata or web-rendered text would have weakened the activation rule after observing an access failure.
 
-- revised selection threshold: `research/decisions/2026-07-30-post-study-008-no-go-selection-threshold.md`;
-- threshold creation commit: `26d31c57769898a6dace505707f6d8faeec656f3`;
-- portfolio assessment: `research/decisions/2026-07-30-post-study-008-no-go-portfolio-assessment.md`;
-- frozen inactive proposal: `research/proposals/009-kev-epss-temporal-horizon-substitution-risk.md`;
-- Study 008 NO-GO decision: `research/decisions/2026-07-29-study-008-activation.md`;
-- failure mode: `self/FAILURE_MODES.md` — FM-010 referent availability optimism.
+No API response, later date, mirror, reconstructed source, manual identifier repair, or reduced denominator was accepted as a substitute.
 
-## Frozen source candidates
+## Mandatory lesson
 
-### CISA KEV
+`self/FAILURE_MODES.md` now includes **FM-011 — Metadata-to-materialization gap**.
 
-- official repository: `cisagov/kev-data`;
-- commit: `564b8c59f9039926e2d9548ba5b334db45cb6b50`;
-- JSON path: `known_exploited_vulnerabilities.json`;
-- Git blob: `c69072a0a97b971505a34fe61f3d4936535dc39b`;
-- same-commit JSON Schema;
-- license: CC0 1.0.
+Future portfolio selection must distinguish:
 
-### FIRST EPSS
+1. official referent identity;
+2. metadata accessibility;
+3. end-to-end execution-path materializability.
 
-- official historical-score repository: `empiricalsec/epss_scores`;
-- commit: `a3a6a83e55bdedc0f1398e2a9c74efa02756f6f3`;
-- file: `2026/epss_scores-2026-07-29.csv.gz`;
-- Git blob: `ee1a98246a247e350dcd6f1b19739becee07ff86`;
-- documented fields: `cve`, `epss`, `percentile`;
-- use limited to bounded preventative cybersecurity research under visible FIRST terms, with no raw EPSS redistribution by TEMPLEX/0.
+For every indispensable external artifact, a pre-scoring outcome-blind rehearsal must acquire the exact bytes through an authorized path, save them without transformation, independently verify their identity, and open them with the intended safe parser. Metadata-only access is insufficient.
 
-## Mandatory activation conditions
+## Next bounded work unit
 
-GO unchanged requires:
+The next exact `承認` may perform **one post-Study-009-NO-GO portfolio decision only**:
 
-1. both official repositories, commits, paths, and frozen Git blobs remain accessible;
-2. exact decoded bytes can be acquired safely without credentials, payment, new terms, or mirrors;
-3. SHA-256, byte length, encoding, source notices, and parser identities can be frozen;
-4. the KEV JSON and same-commit schema are structurally valid;
-5. KEV identifiers, `dateAdded`, `vendorProject`, and ransomware labels satisfy the frozen requirements;
-6. EPSS identifiers are unique and `epss` / `percentile` values are finite in `[0,1]` with a matching source date and model header;
-7. exact source counts, duplicates, identifier inventories, vendor clusters, ransomware-label inventory, and KEV-to-EPSS missingness can be frozen without computing protected outcome rates;
-8. every KEV record remains in the protected denominator, including unscored records;
-9. the visible CISA and FIRST use conditions remain compatible with derived aggregate research and no raw EPSS redistribution;
-10. the study remains feasible within four cycles and frozen caps.
-
-Any failure requires NO-GO. No different date, API substitute, mirror, identifier repair, guessed label, recomputed score, reduced denominator, or raw EPSS republication is permitted.
-
-## Protected Cycle 1 boundary
-
-After GO unchanged, Cycle 1 may:
-
-- reacquire exact source blobs;
-- freeze source hashes, bytes, schemas, notices, parser identities, denominators, identifier and category inventories;
-- freeze exact joins, explicit unscored treatment, percentile cutoffs `0.50, 0.75, 0.90, 0.95, 0.99`, age bins, vendor-cluster bootstrap, seed `2026073009`, hypotheses, mandatory tables, result schema, and caps;
-- validate structure, types, duplicates, field inventories, and missingness.
-
-It must stop before:
-
-- classifying records as retained or omitted;
-- computing omission counts or rates;
-- comparing age or ransomware strata;
-- inspecting EPSS score or percentile distributions;
-- running bootstrap outcome analysis;
-- evaluating H1–H3;
-- making security or remediation recommendations.
+1. freeze a revised threshold before candidate research or scoring;
+2. make end-to-end byte materialization a hard feasibility gate;
+3. compare materially distinct candidates plus inactivity;
+4. select at most one frozen inactive proposal or remain inactive;
+5. update decision, state, restart, and intervention records;
+6. stop before activation, formal corpus retention, implementation, protected analysis, or external action.
 
 ## Human gate
 
@@ -94,4 +66,4 @@ It must stop before:
 
 ## Human action pending
 
-None. A later exact `承認` opens one activation decision and, only after GO unchanged, Study 009 Cycle 1.
+None. A later exact `承認` opens the bounded post-Study-009-NO-GO portfolio decision only.
