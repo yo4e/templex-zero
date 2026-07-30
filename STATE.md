@@ -4,7 +4,7 @@ _Last updated: 2026-07-30_
 
 ## Phase
 
-**No active study / frozen inactive Study 009 proposal**
+**No active study / Study 009 activation NO-GO**
 
 ## Laboratory
 
@@ -21,39 +21,39 @@ Studies 001 through 007 are closed.
 - Study 006: valid partial Python tar extraction boundary-conformance result; H1 and H2 supported, H3 unsupported.
 - Study 007: negative SQLite setup result; hand gate failed before protected execution.
 - Study 008: frozen proposal rejected at activation; the required official metric-scored SummEval artifact could not be pinned.
+- Study 009: frozen proposal rejected at activation; exact official source identities were visible, but exact source bytes could not be materialized through the authorized execution paths.
 
-## Post-Study-008-NO-GO portfolio decision
+## Study 009 activation decision
 
-- Revised threshold: `research/decisions/2026-07-30-post-study-008-no-go-selection-threshold.md`
-- Threshold commit: `26d31c57769898a6dace505707f6d8faeec656f3`
-- Portfolio assessment: `research/decisions/2026-07-30-post-study-008-no-go-portfolio-assessment.md`
-- Selected inactive proposal: `research/proposals/009-kev-epss-temporal-horizon-substitution-risk.md`
-- Selected direction: **KEV × EPSS Temporal-Horizon Substitution Risk**
-- Score: **48 / 50**
-- Inactivity remains a valid fallback; selection is not activation.
+- Frozen proposal: `research/proposals/009-kev-epss-temporal-horizon-substitution-risk.md`
+- Activation decision: `research/decisions/2026-07-30-study-009-activation.md`
+- Disposition: **NO-GO; Study 009 was not activated**
+- CISA KEV commit: `564b8c59f9039926e2d9548ba5b334db45cb6b50`
+- KEV JSON blob: `c69072a0a97b971505a34fe61f3d4936535dc39b`
+- KEV schema blob: `3d49b7270847e6088d8e49f5087ef5562e7917c9`
+- FIRST EPSS commit: `a3a6a83e55bdedc0f1398e2a9c74efa02756f6f3`
+- EPSS gzip blob: `ee1a98246a247e350dcd6f1b19739becee07ff86`
 
-The revised threshold requires outcome-blind official-artifact availability preflight before a candidate may be scored. The selected direction passed with exact same-day official source identities:
+The official commits, paths, blobs, formats, and source-use terms were reconfirmed. Activation nevertheless failed because the runtime and connector paths did not produce byte-preserving local copies suitable for independent SHA-256, byte-length, safe-parser, schema, identifier, duplicate, and missingness validation. The gzip EPSS blob failed connector decoding, and raw-host acquisition failed in the runtime.
 
-- CISA KEV commit `564b8c59f9039926e2d9548ba5b334db45cb6b50`, JSON blob `c69072a0a97b971505a34fe61f3d4936535dc39b`, CC0;
-- FIRST EPSS commit `a3a6a83e55bdedc0f1398e2a9c74efa02756f6f3`, file `2026/epss_scores-2026-07-29.csv.gz`, blob `ee1a98246a247e350dcd6f1b19739becee07ff86`.
+Metadata and Git-object identity were not accepted as substitutes for exact materialized bytes. No API substitute, later snapshot, mirror, reconstruction, or manual corpus copy was used.
 
-The proposal asks how much of the known-exploited-vulnerability population would be omitted by hypothetical EPSS-percentile prioritization cutoffs and whether omission varies by KEV age or known-ransomware label. KEV and EPSS remain explicitly different temporal signals rather than competing ground truths.
+No source dataset was retained, no active-study issue was opened, no instrument was implemented, no KEV–EPSS join or outcome statistic was computed, and no H1–H3 disposition exists.
 
-No formal source file was retained or analyzed, no join or distribution was computed, no instrument was implemented, no active-study issue was opened, and no H1–H3 disposition exists.
+`self/FAILURE_MODES.md` now records **FM-011 — Metadata-to-materialization gap**.
 
 ## Next bounded work
 
-The next exact `承認` may perform **one Study 009 activation decision and, only after GO unchanged, Cycle 1 source/data/specification freeze**:
+The next exact `承認` may perform **one post-Study-009-NO-GO portfolio decision only**:
 
-1. re-read the live threshold, portfolio assessment, frozen proposal, governance, restart state, failure modes, issues, and recent commits;
-2. independently choose **GO unchanged** or **NO-GO**;
-3. for GO unchanged, reacquire the exact pinned CISA and FIRST source blobs and freeze SHA-256, byte lengths, source notices, safe-parser identities, schemas, and exact structural denominators;
-4. freeze the complete KEV identity inventory, EPSS identity inventory, duplicate and missingness audit, allowed ransomware labels, vendor clusters, join rule, cutoffs, age bins, formulas, bootstrap seed, mandatory tables, result schema, and resource caps;
-5. perform structure, type, duplicate, field-inventory, and missingness validation only;
-6. stop before cutoff classification, omission counts or rates, age or ransomware comparisons, score distributions, bootstrap outcomes, or H1–H3 evaluation.
-
-No Study 009 activation or Cycle 1 work has yet occurred.
+1. re-read Studies 001–007, the Study 008 and Study 009 NO-GO decisions, governance, self-model, failure modes, open issues, and recent commits;
+2. freeze a revised selection threshold before candidate research or scoring;
+3. require an outcome-blind end-to-end byte-materialization rehearsal for every indispensable external artifact before full feasibility is awarded;
+4. compare materially distinct directions plus inactivity;
+5. select at most one frozen inactive proposal or remain inactive;
+6. update decision, state, restart, and intervention records;
+7. stop before activation, formal corpus retention, implementation, protected analysis, outcome inspection, or external action.
 
 ## Human action currently needed
 
-None beyond a later exact `承認` for the activation decision and possible Cycle 1 freeze.
+None beyond a later exact `承認` for the bounded post-Study-009-NO-GO portfolio decision.
