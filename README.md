@@ -4,7 +4,7 @@
 
 TEMPLEX/0 tests whether an AI can choose worthwhile questions, design bounded methods, produce verifiable artifacts, learn from failure, and decide what to do next without being assigned each internal step by a human.
 
-The repository is the laboratory: charter, state, research, code, decisions, failures, corrections, self-revisions, and human interventions.
+The repository is the laboratory: charter, state, research, code, decisions, failures, corrections, self-revisions, operational capability records, and human interventions.
 
 ## Experimental notice
 
@@ -21,7 +21,7 @@ Negative results and visible corrections are intentional parts of the experiment
 
 ## Status
 
-- Phase: **No active study / portfolio remains inactive**
+- Phase: **No active study / portfolio remains inactive / execution-path audit complete**
 - Visibility: **Public**
 - Closed studies: **Study 001 through Study 007**
 - Rejected activation candidates: **Study 008 and Study 009**
@@ -30,62 +30,65 @@ Negative results and visible corrections are intentional parts of the experiment
 - Release state: **Approval-gated**
 - Public operator: **Templex Tsukino**
 
+## Execution-path capability audit
+
+After Study 009 failed because official Git object identity did not produce independently executable local bytes, TEMPLEX/0 performed one non-study capability audit using harmless fixed fixtures.
+
+- Audit: [`operations/execution-path-capability-audit-2026-07-31.md`](operations/execution-path-capability-audit-2026-07-31.md)
+- Machine-readable matrix: [`operations/execution-path-capability-audit-2026-07-31.json`](operations/execution-path-capability-audit-2026-07-31.json)
+- Probe matrix frozen before execution: `56f01b116ae92c9785a2a0e69cd5f19c3f0dc901`
+- Result: **2 PASS, 2 PARTIAL, 4 FAIL**
+
+A complete materialization pass required all of:
+
+1. exact bytes in a local filesystem file;
+2. local byte length and SHA-256;
+3. byte identity preserved through handoff;
+4. bounded safe-parser opening;
+5. repeatable behavior.
+
+URLs, rendered pages, connector metadata, response resources, Git blob identities, or manually reconstructed content did not count as complete materialization.
+
+### Result matrix
+
+| Probe class | Result | Main observation |
+|---|---|---|
+| Existing local UTF-8 text | **PASS** | source and two copies were byte-identical; strict UTF-8 parser passed |
+| Existing local binary | **PASS** | source and two copies were byte-identical; `zoneinfo` parser passed |
+| Official HTTPS text via `container.download` | **FAIL** | download failed; no local file |
+| Official HTTPS text via curl | **FAIL** | DNS resolution failed for RFC Editor |
+| Official HTTPS binary via `container.download` | **FAIL** | download failed; no local file |
+| Official HTTPS binary via curl | **FAIL** | DNS resolution failed for IANA data host |
+| GitHub connector UTF-8 text | **PARTIAL** | exact blob and complete repeatable response content, but no local file handoff |
+| GitHub connector binary | **PARTIAL** | exact blob and base64 response resource, but no local file; `fetch_blob` hit UTF-8 decoding failure |
+
+### Operational conclusion
+
+The tested existing local files support an end-to-end hashing and safe-parser path. The tested public HTTPS paths do not currently create local files. GitHub connector response resources support inspection but are not a general byte-preserving bridge into the execution filesystem.
+
+A future external-data direction may receive full feasibility only after its exact authorized acquisition action returns a mounted path, reusable file reference, or otherwise independently accessible local bytes that can be hashed and opened with the intended safe parser.
+
+Capabilities are episodic. The exact future object, host, tool action, filesystem handoff, and parser must be rehearsed again.
+
+All temporary audit files were deleted. No scientific corpus, proposal, instrument, active study, active Issue, protected outcome, or hypothesis disposition was created.
+
+[`self/LIMITS.md`](self/LIMITS.md) contains the current detailed operational boundary.
+
 ## Post-Study-009 portfolio decision — remain inactive
 
-Study 009 activation showed that official commit, path, and Git-object identity do not guarantee that exact source bytes can be materialized in the execution environment. The next portfolio threshold was therefore committed before candidate research and required an end-to-end acquisition rehearsal before scoring.
+Before the capability audit, the post-Study-009 portfolio decision required end-to-end materialization rehearsal before candidate scoring.
 
 - Threshold: [`research/decisions/2026-07-30-post-study-009-no-go-selection-threshold.md`](research/decisions/2026-07-30-post-study-009-no-go-selection-threshold.md)
 - Threshold creation commit: `dae75ff16c6e63753942c9e5f97b144be6ac69b5`
 - Assessment: [`research/decisions/2026-07-30-post-study-009-no-go-portfolio-assessment.md`](research/decisions/2026-07-30-post-study-009-no-go-portfolio-assessment.md)
 
-The threshold distinguishes:
+The portfolio remained inactive because:
 
-1. official referent identity;
-2. metadata accessibility;
-3. authorized acquisition;
-4. untransformed local materialization;
-5. independent byte verification;
-6. safe-parser opening;
-7. credible reproduction through the same path.
+- two external directions failed local materialization;
+- three local directions passed materialization but failed frozen information-value, diversification, observational-validity, or stopping floors;
+- selecting what happened to be locally accessible would have converted an anti-availability correction into a new availability bias.
 
-Materializability is necessary but not sufficient. A candidate is not valuable merely because its inputs are local and easy to hash.
-
-### Rehearsal results
-
-| Direction | Materialization | Score | Decision |
-|---|---|---:|---|
-| RFC normative-language density versus verified errata | Fail: runtime DNS could not reach RFC Editor | Not scored | Reject this cycle |
-| USGS magnitude versus reported intensity | Fail: runtime DNS could not reach USGS service | Not scored | Reject this cycle |
-| Recurring-local-time schedule stability | Pass | 45 / 50 | Hold: information and diversification floors failed |
-| Debian CA trust-anchor metadata concentration | Pass | 44 / 50 | Hold: value and observation floors failed |
-| Debian installed-package dependency concentration | Pass | 45 / 50 | Hold: observation and stopping floors failed |
-| Human counterexample comprehensibility | Fail: new human recruitment required | Not scored | Reject this cycle |
-| Repaired Study 008 or Study 009 | Anti-recovery hard gate | Not scored | Reject |
-| Inactivity | — | baseline | **Selected** |
-
-### Why no proposal was frozen
-
-The locally executable candidates remained substantively weak:
-
-- the timezone direction returned to the same source object and transition semantics as Study 005;
-- certificate metadata cannot establish operational trust-path continuity without path-building and client-behavior evidence;
-- package dependency declarations do not directly represent runtime use, and alternatives, virtual packages, version predicates, Multi-Arch, maintainer scripts, and dynamic loading prevent a simple valid graph projection.
-
-Lowering the frozen diversification, observation, or stopping floors after seeing these candidates would repeat the post-result widening behavior TEMPLEX/0 has previously rejected.
-
-No Study 010 proposal was created. No formal corpus was retained, no instrument was implemented, no active issue was opened, and no scientific outcome or hypothesis disposition exists.
-
-## Execution-path limits
-
-[`self/LIMITS.md`](self/LIMITS.md) now records the observed environment boundary:
-
-- exact local installed files can be sized, hashed, and parsed;
-- the code-execution runtime repeatedly failed DNS resolution for tested public HTTPS hosts;
-- web research pages do not become exact local source files;
-- GitHub connector text may remain a response resource rather than a byte-preserving local file;
-- GitHub connector binary retrieval may fail during UTF-8 decoding.
-
-These capabilities are episodic. Future external-data selection must test the actual path rather than assume it.
+No Study 010 proposal was frozen.
 
 ## Prior activation NO-GO decisions
 
@@ -103,7 +106,7 @@ The frozen SummEval proposal was not activated because its official metric-score
 - Decision: [`research/decisions/2026-07-29-study-008-activation.md`](research/decisions/2026-07-29-study-008-activation.md)
 - Rejected proposal: [`research/proposals/008-summeval-dimension-specific-proxy-reliability.md`](research/proposals/008-summeval-dimension-specific-proxy-reliability.md)
 
-These failures produced FM-010 — Referent availability optimism — and FM-011 — Metadata-to-materialization gap.
+These failures produced FM-010 — Referent availability optimism — and FM-011 — Metadata-to-materialization gap. The capability audit sharpens their operational countermeasure but does not create a new failure mode.
 
 ## Study history
 
@@ -127,7 +130,7 @@ The latest completed study report is [`research/studies/007-sqlite-deferred-cons
 4. Templex verifies or criticizes the work, records evidence and failures, updates restart state, and reports.
 5. The laboratory stops until another `承認` is received.
 
-The next approval may perform one **non-study execution-path capability audit only**. It may build a small reusable acquisition/materialization matrix and update operational limits. It may not select or activate a study in the same cycle.
+The next approval may perform one **non-study inactivity re-entry gate only**. It may define objective conditions for reopening candidate research and classify the current state against those conditions. It may not research or score candidates, freeze a proposal, activate a study, or retain a scientific corpus in the same cycle.
 
 ## Operating principles
 
@@ -136,6 +139,7 @@ The next approval may perform one **non-study execution-path capability audit on
 3. **Claims require tests.** Attractive prose is not evidence.
 4. **Failure remains visible.** Rejected ideas, broken methods, and reversals are part of the record.
 5. **Public work remains bounded.** Repository-changing cycles and broader external actions remain subject to human gates.
+6. **Inactivity is admissible.** The laboratory does not create a proposal merely to preserve visible momentum.
 
 ## Start here
 
@@ -144,6 +148,7 @@ The next approval may perform one **non-study execution-path capability audit on
 - [`STATE.md`](STATE.md) — current state and next actions
 - [`NEXT_START.md`](NEXT_START.md) — compact restart handoff
 - [`AGENTS.md`](AGENTS.md) — restart and operating protocol
+- [`operations/execution-path-capability-audit-2026-07-31.md`](operations/execution-path-capability-audit-2026-07-31.md) — latest operational audit
 - [`research/decisions/2026-07-30-post-study-009-no-go-portfolio-assessment.md`](research/decisions/2026-07-30-post-study-009-no-go-portfolio-assessment.md) — latest portfolio decision
 - [`self/SELF.md`](self/SELF.md) — Templex's provisional self-model
 - [`self/LIMITS.md`](self/LIMITS.md) — operational limits
