@@ -1,0 +1,152 @@
+{
+  "audit_date": "2026-07-31",
+  "timezone": "Asia/Tokyo",
+  "class": "non-study operational capability audit",
+  "matrix_commit": "56f01b116ae92c9785a2a0e69cd5f19c3f0dc901",
+  "environment": {
+    "os": "Debian GNU/Linux 13 (trixie), DEBIAN_VERSION_FULL=13.3",
+    "kernel_platform": "Linux-6.12.13-x86_64-with-glibc2.41",
+    "python": "CPython 3.13.5",
+    "python_executable": "/opt/pyvenv/bin/python3",
+    "curl": "8.10.1",
+    "curl_tls": "OpenSSL/3.5.5"
+  },
+  "classification_rule": {
+    "PASS": "exact bytes exist as a local file, local byte length and SHA-256 are computed, and the frozen safe parser opens them",
+    "PARTIAL": "identity, metadata, or returned content is available, but byte-preserving filesystem materialization or safe-parser handoff is absent",
+    "FAIL": "the acquisition path does not return the frozen object or create a usable local file"
+  },
+  "probes": [
+    {
+      "id": "P1",
+      "class": "local UTF-8 text",
+      "source": "/etc/debian_version",
+      "source_resolved": "/etc/debian_version",
+      "source_bytes": 5,
+      "source_sha256": "cc49a4a1ef024f2f2efffe285cb147395fc57a2f9ed4e9a128338e2cbff44d8b",
+      "copies": 2,
+      "copy_bytes": 5,
+      "copy_sha256": "cc49a4a1ef024f2f2efffe285cb147395fc57a2f9ed4e9a128338e2cbff44d8b",
+      "safe_parser": "strict UTF-8; NUL rejection; nonempty-line check",
+      "parser_result": "pass; one nonempty line; no NUL",
+      "repeatability": "two copies byte-identical to source and each other",
+      "status": "PASS"
+    },
+    {
+      "id": "P2",
+      "class": "local binary",
+      "source": "/usr/share/zoneinfo/UTC",
+      "source_resolved": "/usr/share/zoneinfo/Etc/UTC",
+      "source_bytes": 114,
+      "source_sha256": "8b85846791ab2c8a5463c83a5be3c043e2570d7448434d41398969ed47e3e6f2",
+      "copies": 2,
+      "copy_bytes": 114,
+      "copy_sha256": "8b85846791ab2c8a5463c83a5be3c043e2570d7448434d41398969ed47e3e6f2",
+      "safe_parser": "zoneinfo.ZoneInfo.from_file",
+      "parser_result": "pass for both copies; UTC offset at epoch 0 seconds",
+      "repeatability": "two copies byte-identical to source and each other",
+      "status": "PASS"
+    },
+    {
+      "id": "P3",
+      "class": "official HTTPS UTF-8 text via container.download",
+      "source": "https://www.rfc-editor.org/rfc/rfc20.txt",
+      "tool_result": "ERROR: download failed",
+      "local_file_created": false,
+      "local_identity": null,
+      "safe_parser_run": false,
+      "status": "FAIL"
+    },
+    {
+      "id": "P4",
+      "class": "official HTTPS UTF-8 text via curl",
+      "source": "https://www.rfc-editor.org/rfc/rfc20.txt",
+      "command": "curl --fail --location --max-time 20 --output <path> https://www.rfc-editor.org/rfc/rfc20.txt",
+      "returncode": 6,
+      "error": "curl: (6) Could not resolve host: www.rfc-editor.org",
+      "local_file_created": false,
+      "local_identity": null,
+      "safe_parser_run": false,
+      "status": "FAIL"
+    },
+    {
+      "id": "P5",
+      "class": "official HTTPS binary via container.download",
+      "source": "https://data.iana.org/time-zones/releases/tzdata2025b.tar.gz",
+      "tool_result": "ERROR: download failed",
+      "local_file_created": false,
+      "local_identity": null,
+      "safe_parser_run": false,
+      "status": "FAIL"
+    },
+    {
+      "id": "P6",
+      "class": "official HTTPS binary via curl",
+      "source": "https://data.iana.org/time-zones/releases/tzdata2025b.tar.gz",
+      "command": "curl --fail --location --max-time 20 --output <path> https://data.iana.org/time-zones/releases/tzdata2025b.tar.gz",
+      "returncode": 6,
+      "error": "curl: (6) Could not resolve host: data.iana.org",
+      "local_file_created": false,
+      "local_identity": null,
+      "safe_parser_run": false,
+      "status": "FAIL"
+    },
+    {
+      "id": "P7",
+      "class": "GitHub connector UTF-8 text",
+      "repository": "yo4e/templex-zero",
+      "ref": "0539c75356891c7f2daa91e16aefad8873727a74",
+      "path": "CHARTER.md",
+      "expected_blob": "05cb1d457ab7b75f5fb23cd99af5851b1ad11c95",
+      "returned_blob": "05cb1d457ab7b75f5fb23cd99af5851b1ad11c95",
+      "connector_calls": 2,
+      "returned_content": "complete UTF-8 response resource in both calls",
+      "repeatability": "same blob SHA and response line count in both calls; bytes not independently compared",
+      "mounted_path_or_file_reference": false,
+      "response_uri_visible_in_execution_filesystem": false,
+      "local_identity": null,
+      "safe_parser_run_on_local_copy": false,
+      "status": "PARTIAL"
+    },
+    {
+      "id": "P8",
+      "class": "GitHub connector binary",
+      "repository": "python/cpython",
+      "ref": "2f381f5a90474d9dad12e1e4946f348dd4b513bc",
+      "path": "Lib/test/audiodata/pluck-pcm8.wav",
+      "expected_blob": "bb28cb8aa671050294436b01e5ffd586ae14acbb",
+      "fetch_file_result": "base64 response resource with matching blob SHA; no mounted file reference",
+      "fetch_blob_result": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd6 in position 138: invalid continuation byte",
+      "mounted_path_or_file_reference": false,
+      "response_uri_visible_in_execution_filesystem": false,
+      "local_identity": null,
+      "safe_parser_run_on_local_copy": false,
+      "status": "PARTIAL"
+    }
+  ],
+  "summary": {
+    "complete_pass": 2,
+    "partial": 2,
+    "fail": 4,
+    "complete_materialization_paths": [
+      "existing local UTF-8 text",
+      "existing local binary"
+    ],
+    "not_complete_materialization_paths": [
+      "official HTTPS text via container.download",
+      "official HTTPS text via curl",
+      "official HTTPS binary via container.download",
+      "official HTTPS binary via curl",
+      "GitHub connector UTF-8 response resource",
+      "GitHub connector binary response resource or fetch_blob"
+    ]
+  },
+  "boundaries": {
+    "formal_scientific_corpus_retained": false,
+    "research_proposal_selected": false,
+    "study_activated": false,
+    "active_issue_opened": false,
+    "protected_outcome_inspected": false,
+    "external_system_modified": false
+  }
+}
