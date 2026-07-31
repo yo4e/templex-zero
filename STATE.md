@@ -4,7 +4,7 @@ _Last updated: 2026-07-31_
 
 ## Phase
 
-**No active study / portfolio remains inactive / execution-path audit complete**
+**No active study / portfolio remains inactive / re-entry gate complete**
 
 ## Laboratory
 
@@ -24,43 +24,39 @@ Studies 001 through 007 are closed.
 - Study 009: frozen proposal rejected at activation; exact official source identities were visible, but exact source bytes could not be materialized through the authorized execution paths.
 - Study 010 proposal: **None**.
 
-## Non-study execution-path capability audit
+## Inactivity re-entry gate
 
-- Audit: `operations/execution-path-capability-audit-2026-07-31.md`
-- Machine-readable matrix: `operations/execution-path-capability-audit-2026-07-31.json`
-- Probe-matrix freeze commit: `56f01b116ae92c9785a2a0e69cd5f19c3f0dc901`
-- Result: **2 PASS, 2 PARTIAL, 4 FAIL**
+- Gate: `operations/inactivity-re-entry-gate-2026-07-31.md`
+- Criteria-freeze commit: `da19bfe0f76613f8d39d7c1a07639599767bb1fc`
+- Classification: **NO RE-ENTRY TRIGGER**
 
-Complete materialization passed only for tested existing local UTF-8 text and local binary files. Both paths supported byte-for-byte copies, local size and SHA-256, bounded safe-parser opening, and repeated identical results.
+Portfolio candidate research may reopen only when one concrete opportunity passes both:
 
-Tested official HTTPS paths did not create local files:
+- **Axis S:** a materially new externally meaningful decision problem, externally governed referent, or explicitly authorized human-evidence opportunity;
+- **Axis E:** a demonstrated complete acquisition/handoff change, complete local external referent, or explicitly authorized bounded human-evidence path for the same opportunity.
 
-- RFC Editor text and IANA gzip downloads failed through `container.download`;
-- bounded curl failed DNS resolution for `www.rfc-editor.org` and `data.iana.org`.
+Current evidence passes neither axis:
 
-GitHub connector paths remained partial:
+- no new decision problem or externally governed referent is recorded;
+- no human-evidence opportunity is authorized;
+- the execution-path audit remains 2 PASS, 2 PARTIAL, 4 FAIL with no later capability change;
+- existing local candidates were already held for substantive reasons;
+- exact `承認`, passage of time, activity pressure, rejected-proposal repair, and easy local bytes are not re-entry evidence.
 
-- pinned UTF-8 text returned repeatable blob identity and complete response content but no mounted local file;
-- pinned binary returned blob identity and a base64 response resource but no mounted local file;
-- direct binary `fetch_blob` failed with `UnicodeDecodeError`.
-
-Connector response resources were not visible as execution-filesystem paths. No manual reconstruction or reserialization was accepted as byte-preserving materialization.
-
-All temporary audit files were deleted. No formal corpus, research instrument, scientific outcome, proposal, active study, or active Issue was created.
-
-`self/LIMITS.md` now records the sharper distinction between local materialization, public HTTPS failure, connector content inspection, and filesystem handoff. FM-010 and FM-011 remain sufficient; no new failure mode was added.
+No candidate was researched, preflighted, or scored. No proposal, study, corpus, instrument, protected outcome, hypothesis disposition, or active Issue was created.
 
 ## Next bounded work
 
-The next exact `承認` may perform **one non-study inactivity re-entry gate only**:
+No proactive candidate-search cycle is justified.
 
-1. re-read the live capability audit, portfolio decision, limits, failure modes, governance, state, issues, and recent commits;
-2. freeze objective conditions that justify reopening portfolio candidate research rather than repeating search without changed evidence;
-3. distinguish capability change, a materially new externally governed local referent, an authorized human-evidence opportunity, and mere availability or activity pressure;
-4. classify the current state against those conditions;
-5. update the restart state and stop;
-6. do not research or score candidates, freeze a proposal, activate a study, retain a corpus, inspect protected outcomes, or take external action.
+A later exact `承認` may perform **one conditional re-entry trigger validation only**:
+
+1. re-read the live gate, capability audit, limits, state, issues, intervention records, and recent commits;
+2. identify whether a concrete change signal is already present in the repository, runtime, connected tools, or explicit human authorization;
+3. if no change signal exists, confirm **NO RE-ENTRY TRIGGER** and stop without candidate research or manufactured repository activity;
+4. if a change signal exists, write one bounded opportunity record and classify it against the frozen Axis S and Axis E rules;
+5. stop before candidate research, scoring, proposal freeze, activation, corpus retention, protected analysis, or external action.
 
 ## Human action currently needed
 
-None beyond a later exact `承認` for the bounded inactivity re-entry gate.
+None. A later exact `承認` alone does not reopen the portfolio; a concrete change signal is also required for substantive re-entry review.
