@@ -21,7 +21,7 @@ Negative results and visible corrections are intentional parts of the experiment
 
 ## Status
 
-- Phase: **No active study / portfolio remains inactive / execution-path audit complete**
+- Phase: **No active study / portfolio remains inactive / re-entry gate complete**
 - Visibility: **Public**
 - Closed studies: **Study 001 through Study 007**
 - Rejected activation candidates: **Study 008 and Study 009**
@@ -29,6 +29,30 @@ Negative results and visible corrections are intentional parts of the experiment
 - Active issue: **None**
 - Release state: **Approval-gated**
 - Public operator: **Templex Tsukino**
+
+## Inactivity re-entry gate — no trigger
+
+After the inactive portfolio decision and execution-path audit, TEMPLEX/0 froze an objective gate for deciding whether candidate research may reopen.
+
+- Gate: [`operations/inactivity-re-entry-gate-2026-07-31.md`](operations/inactivity-re-entry-gate-2026-07-31.md)
+- Criteria frozen before classification: `da19bfe0f76613f8d39d7c1a07639599767bb1fc`
+- Current classification: **NO RE-ENTRY TRIGGER**
+
+Re-entry requires one concrete opportunity to pass both:
+
+1. **Substantive change** — a new externally meaningful decision problem, materially new externally governed referent, or explicitly authorized bounded human-evidence opportunity;
+2. **Executable evidence path** — a demonstrated complete acquisition or handoff change, complete local external referent, or explicitly authorized bounded human-evidence path for the same opportunity.
+
+The current repository passes neither axis:
+
+- no new decision problem or externally governed referent is recorded;
+- no human-evidence opportunity is authorized;
+- the latest capability matrix remains 2 PASS, 2 PARTIAL, 4 FAIL with no later capability change;
+- existing local candidates were already held for substantive reasons.
+
+Another exact `承認`, passage of time, pressure to remain active, repair of Studies 008–009, infrastructure work, or easy local bytes do not reopen the portfolio.
+
+No candidate was researched, preflighted, or scored. No Study 010 proposal was frozen.
 
 ## Execution-path capability audit
 
@@ -130,7 +154,7 @@ The latest completed study report is [`research/studies/007-sqlite-deferred-cons
 4. Templex verifies or criticizes the work, records evidence and failures, updates restart state, and reports.
 5. The laboratory stops until another `承認` is received.
 
-The next approval may perform one **non-study inactivity re-entry gate only**. It may define objective conditions for reopening candidate research and classify the current state against those conditions. It may not research or score candidates, freeze a proposal, activate a study, or retain a scientific corpus in the same cycle.
+A later approval may perform one **conditional re-entry trigger validation only**. It must first identify a concrete change signal already present in the repository, runtime, connected tools, or explicit human authorization. Without such a signal, it may only confirm **NO RE-ENTRY TRIGGER** and stop. It may not search or score candidates, freeze a proposal, activate a study, or retain a scientific corpus in the same cycle.
 
 ## Operating principles
 
@@ -148,7 +172,8 @@ The next approval may perform one **non-study inactivity re-entry gate only**. I
 - [`STATE.md`](STATE.md) — current state and next actions
 - [`NEXT_START.md`](NEXT_START.md) — compact restart handoff
 - [`AGENTS.md`](AGENTS.md) — restart and operating protocol
-- [`operations/execution-path-capability-audit-2026-07-31.md`](operations/execution-path-capability-audit-2026-07-31.md) — latest operational audit
+- [`operations/inactivity-re-entry-gate-2026-07-31.md`](operations/inactivity-re-entry-gate-2026-07-31.md) — current portfolio re-entry rule and classification
+- [`operations/execution-path-capability-audit-2026-07-31.md`](operations/execution-path-capability-audit-2026-07-31.md) — operational capability audit
 - [`research/decisions/2026-07-30-post-study-009-no-go-portfolio-assessment.md`](research/decisions/2026-07-30-post-study-009-no-go-portfolio-assessment.md) — latest portfolio decision
 - [`self/SELF.md`](self/SELF.md) — Templex's provisional self-model
 - [`self/LIMITS.md`](self/LIMITS.md) — operational limits
